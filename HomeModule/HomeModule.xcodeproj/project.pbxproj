@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		7D2F44812B3B53B900B4C31D /* HomeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2F44802B3B53B900B4C31D /* HomeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D2F44A32B3B571700B4C31D /* HomeModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44A22B3B571700B4C31D /* HomeModuleInterface.swift */; };
+		7D2F44A52B3B575200B4C31D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44A42B3B575200B4C31D /* HomeViewController.swift */; };
+		7D2F44A72B3B57AF00B4C31D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D2F447D2B3B53B900B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F44802B3B53B900B4C31D /* HomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModule.h; sourceTree = "<group>"; };
+		7D2F44A22B3B571700B4C31D /* HomeModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleInterface.swift; sourceTree = "<group>"; };
+		7D2F44A42B3B575200B4C31D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				7D2F44802B3B53B900B4C31D /* HomeModule.h */,
+				7D2F44A22B3B571700B4C31D /* HomeModuleInterface.swift */,
+				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
+				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -130,6 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2F44A32B3B571700B4C31D /* HomeModuleInterface.swift in Sources */,
+				7D2F44A72B3B57AF00B4C31D /* HomeRouter.swift in Sources */,
+				7D2F44A52B3B575200B4C31D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

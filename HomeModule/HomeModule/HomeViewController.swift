@@ -2,6 +2,7 @@
 import UIKit
 import SnapKit
 class HomeViewController: UIViewController {
+    let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell"]
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Hi,Engin"
@@ -19,7 +20,7 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var searhTextField : UITextField = {
-       let textField = UITextField()
+        let textField = UITextField()
         textField.placeholder = "Search Movie"
         textField.backgroundColor = UIColor(resource: .secondatyBack)
         textField.textColor = UIColor(resource: .primaryLabel)
@@ -41,9 +42,29 @@ class HomeViewController: UIViewController {
     }()
     
     
+    
+    private lazy var movieListCollectionView : UICollectionView  = {
+     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+     layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+     
+     layout.scrollDirection = .vertical
+     let  collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+     collectionview.showsHorizontalScrollIndicator = false
+     collectionview.backgroundColor = UIColor(resource: .background)
+     return collectionview
+     }()
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(resource: .background)
+        movieListCollectionView.delegate = self
+        movieListCollectionView.dataSource = self
+        movieListCollectionView.register(MovieListCVCForFuture.self, forCellWithReuseIdentifier: MovieListCVCForFuture.idetifier)
+        movieListCollectionView.register(MovieListCVCForInCineme.self, forCellWithReuseIdentifier: MovieListCVCForInCineme.idetifier)
+
         configureUI()
     }
     
@@ -83,10 +104,71 @@ class HomeViewController: UIViewController {
             make.centerY.equalToSuperview()
             make.leading.equalTo(searchIcon.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
-            
+        }
+        
+        view.addSubview(movieListCollectionView)
+        movieListCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(searchView.snp.bottom).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
+    
+}
+
+
+extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, 
+                    numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, 
+                    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellType = cellTypes[indexPath.section]
+        
+        if cellType == "movieInCinemaCell" {
+            guard let cell = movieListCollectionView.dequeueReusableCell(
+                withReuseIdentifier: MovieListCVCForInCineme.idetifier,
+                for: indexPath) as? MovieListCVCForInCineme else {return UICollectionViewCell()}
+            return cell
+        }else{
+            guard let cell = movieListCollectionView.dequeueReusableCell(
+                withReuseIdentifier: MovieListCVCForFuture.idetifier,
+                for: indexPath) as? MovieListCVCForFuture else {return UICollectionViewCell()}
+            return cell
+        }
+
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+}
+
+
+extension HomeViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, 
+                    layout collectionViewLayout: UICollectionViewLayout,
+                    sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellType = cellTypes[indexPath.section]
+        if cellType == "movieInCinemaCell" {
+            return CGSize(width: UIScreen.main.bounds.width, 
+                       height: UIScreen.main.bounds.height / 2)
+        }else{
+            return CGSize(width: UIScreen.main.bounds.width, 
+                    height: UIScreen.main.bounds.height / 3)
         }
     }
 }
+
+
+
+
+
+
+
 
 
 

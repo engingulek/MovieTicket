@@ -10,6 +10,7 @@ final class FutureMovieCV : BaseCollectionView,UICollectionViewDelegateFlowLayou
         collectionView.backgroundColor = UIColor(resource: .background)
         collectionView.register(MovieCVC.self, 
                           forCellWithReuseIdentifier: MovieCVC.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal

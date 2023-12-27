@@ -2,7 +2,7 @@
 import UIKit
 import SnapKit
 class HomeViewController: UIViewController {
-    let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell"]
+    let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Hi,Engin"
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
      layout.scrollDirection = .vertical
      let  collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-     collectionview.showsHorizontalScrollIndicator = false
+        collectionview.showsVerticalScrollIndicator = false
      collectionview.backgroundColor = UIColor(resource: .background)
      return collectionview
      }()
@@ -62,8 +62,19 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor(resource: .background)
         movieListCollectionView.delegate = self
         movieListCollectionView.dataSource = self
-        movieListCollectionView.register(MovieListCVCForFuture.self, forCellWithReuseIdentifier: MovieListCVCForFuture.idetifier)
-        movieListCollectionView.register(MovieListCVCForInCineme.self, forCellWithReuseIdentifier: MovieListCVCForInCineme.idetifier)
+        movieListCollectionView.register(
+            MovieListCVCForFuture.self,
+            forCellWithReuseIdentifier: MovieListCVCForFuture.idetifier)
+        movieListCollectionView.register(
+            MovieListCVCForInCineme.self,
+            forCellWithReuseIdentifier: MovieListCVCForInCineme.idetifier)
+        movieListCollectionView.register(
+            MovieListCVCForGenre.self,
+            forCellWithReuseIdentifier: MovieListCVCForGenre.idetifier)
+        movieListCollectionView.register(
+            HeaderCollectionReuableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HeaderCollectionReuableView.identifier)
 
         configureUI()
     }
@@ -133,18 +144,25 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 withReuseIdentifier: MovieListCVCForInCineme.idetifier,
                 for: indexPath) as? MovieListCVCForInCineme else {return UICollectionViewCell()}
             return cell
-        }else{
+        }else if cellType == "futureMovieCell"{
             guard let cell = movieListCollectionView.dequeueReusableCell(
                 withReuseIdentifier: MovieListCVCForFuture.idetifier,
                 for: indexPath) as? MovieListCVCForFuture else {return UICollectionViewCell()}
+            return cell
+        } else {
+            guard let cell = movieListCollectionView.dequeueReusableCell(
+                withReuseIdentifier: MovieListCVCForGenre.idetifier,
+                for: indexPath) as? MovieListCVCForGenre else {return UICollectionViewCell()}
             return cell
         }
 
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return cellTypes.count
     }
+    
+    
 }
 
 
@@ -156,10 +174,37 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
         if cellType == "movieInCinemaCell" {
             return CGSize(width: UIScreen.main.bounds.width, 
                        height: UIScreen.main.bounds.height / 2)
-        }else{
-            return CGSize(width: UIScreen.main.bounds.width, 
+        }else if cellType == "futureMovieCell"{
+            return CGSize(width: UIScreen.main.bounds.width,
                     height: UIScreen.main.bounds.height / 3)
+        }else {
+            return CGSize(width: UIScreen.main.bounds.width,
+                            height: 80)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+           guard let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: HeaderCollectionReuableView.identifier,
+                for: indexPath) as? HeaderCollectionReuableView else {return UICollectionReusableView()}
+            if indexPath.section == 0 {
+                header.configureData(title: "Movie In Cinema")
+            }else if indexPath.section == 1{
+                header.configureData(title: "Future")
+            }else{
+                header.configureData(title: "Genres")
+            }
+            return header
+        }
+        return UICollectionReusableView()
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 50)
     }
 }
 

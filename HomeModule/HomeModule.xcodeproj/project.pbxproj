@@ -77,17 +77,14 @@
 		7D2F447F2B3B53B900B4C31D /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				7DCAB3032B3DA0D90045C37D /* InterfaceSource */,
+				7DCAB3022B3DA0B50045C37D /* Source */,
 				7D2F451C2B3C8BFD00B4C31D /* Cell */,
 				7D2F451F2B3C9DBA00B4C31D /* Genres */,
 				7D2F45172B3C7A9200B4C31D /* FutureMovie */,
 				7D2F45142B3C78DB00B4C31D /* MovieInCinema */,
 				7D2F44802B3B53B900B4C31D /* HomeModule.h */,
-				7D2F44A22B3B571700B4C31D /* HomeModuleInterface.swift */,
-				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
-				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
 				7D2F44F72B3B604400B4C31D /* Assets.xcassets */,
-				7D2F45122B3C77B400B4C31D /* BaseCollectionView.swift */,
-				7D2F451D2B3C974100B4C31D /* HeaderCollectionReuableView.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -126,6 +123,25 @@
 				7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */,
 			);
 			path = Genres;
+			sourceTree = "<group>";
+		};
+		7DCAB3022B3DA0B50045C37D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
+				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
+				7D2F45122B3C77B400B4C31D /* BaseCollectionView.swift */,
+				7D2F451D2B3C974100B4C31D /* HeaderCollectionReuableView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7DCAB3032B3DA0D90045C37D /* InterfaceSource */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F44A22B3B571700B4C31D /* HomeModuleInterface.swift */,
+			);
+			path = InterfaceSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

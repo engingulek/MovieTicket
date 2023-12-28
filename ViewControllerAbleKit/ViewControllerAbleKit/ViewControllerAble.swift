@@ -11,13 +11,42 @@ extension UIViewAble where Self : UIViewController {
 }
 
 //MARK: - NavConAble
-public protocol NavConAble {
+public protocol SegueAble {
     func pushViewControllerAble (_ vc:UIViewController,animated:Bool)
 }
 
-extension NavConAble  where Self : UIViewController{
+extension SegueAble  where Self : UIViewController{
     public func pushViewControllerAble (_ vc:UIViewController,animated:Bool) {
         navigationController?.pushViewController(vc, animated: animated)
+    }
+}
+
+
+public protocol NavConUIAble {
+    func changeNavBarColor(color:UIColor)
+    func changeTintColor(color:UIColor)
+    func changeTitle(title:String)
+    func navigationBarHidden(isHidden:Bool)
+}
+
+extension NavConUIAble where Self :  UIViewController {
+    public func changeNavBarColor(color:UIColor){
+        navigationController?.navigationBar.barTintColor = color
+    }
+    
+    public func changeTintColor(color:UIColor){
+        navigationController?.navigationBar.tintColor = color
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: color
+        ]
+    }
+    
+    public func changeTitle(title:String) {
+        navigationItem.title = title
+    }
+    
+    public func navigationBarHidden(isHidden:Bool){
+        navigationController?.navigationBar.isHidden = isHidden
     }
 }
 

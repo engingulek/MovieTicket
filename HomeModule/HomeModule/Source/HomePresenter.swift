@@ -3,31 +3,40 @@ import CommenUIKit
 
 protocol HomePresenterInterface {
     var view : HomeViewControllerInterface? {get}
-    
+    var router : HomeRouterInterface? {get}
     func viewDidLoad()
+    func viewWilAppear()
     func numberOfItemsInSection() -> Int
     func cellForItemAt(at indexPath: IndexPath) -> String
     func sizeForItemAt(at indexPath: IndexPath) -> CGSize
     func headerCollectionReuableView(at indexPath: IndexPath) -> String
     func referenceSizeForHeaderInSection() -> CGSize
+    func toMovieDetail()
 }
 
 
 final class HomePresenter : HomePresenterInterface {
-    
-   
+  
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     weak var view: HomeViewControllerInterface?
+    var router: HomeRouterInterface?
     
-    init(view: HomeViewControllerInterface?) {
+    init(view: HomeViewControllerInterface?,
+         router:HomeRouterInterface? = nil) {
         self.view = view
+        self.router = router
     }
     
     
     func viewDidLoad() {
         view?.setBackColorAble(color: .background)
+        view?.navigationBarHidden(isHidden: true)
         view?.prepareCollectionView()
         view?.reloadCollectionView()
+    }
+    
+    func viewWilAppear() {
+        view?.navigationBarHidden(isHidden: true)
     }
     
     
@@ -69,5 +78,7 @@ final class HomePresenter : HomePresenterInterface {
         return CGSize(width: UIScreenView.shared.screenWidth, height: 50)
     }
     
-    
+    func toMovieDetail() {
+        router?.toMovieDetail(view: view)
+    }
 }

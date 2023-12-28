@@ -3,8 +3,13 @@
 import Foundation
 import UIKit
 
+protocol MovieInCinemaCVDelegate {
+    func selectedMovie()
+}
+
+
 final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
-    
+    var delegate : MovieInCinemaCVDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(resource: .background)
@@ -33,6 +38,11 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
                         category: "Crime,Drama")
           return cell
       }
+    
+    override func collectionView(_ collectionView: UICollectionView, 
+                            didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.selectedMovie()
+    }
 }
 
 

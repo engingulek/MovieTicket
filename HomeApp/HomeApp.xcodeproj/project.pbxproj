@@ -15,6 +15,8 @@
 		7D2F44D62B3B5B9F00B4C31D /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44D32B3B5B9F00B4C31D /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D2F44D72B3B5B9F00B4C31D /* HomeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44D42B3B5B9F00B4C31D /* HomeModule.framework */; };
 		7D2F44D82B3B5B9F00B4C31D /* HomeModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44D42B3B5B9F00B4C31D /* HomeModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DCAB3912B3E03BB0045C37D /* MovieDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3902B3E03BB0045C37D /* MovieDetail.framework */; };
+		7DCAB3922B3E03BB0045C37D /* MovieDetail.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3902B3E03BB0045C37D /* MovieDetail.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7DCAB3922B3E03BB0045C37D /* MovieDetail.framework in Embed Frameworks */,
 				7D2F44D62B3B5B9F00B4C31D /* DependenyKit.framework in Embed Frameworks */,
 				7D2F44D82B3B5B9F00B4C31D /* HomeModule.framework in Embed Frameworks */,
 			);
@@ -41,6 +44,7 @@
 		7D2F44CC2B3B5B2800B4C31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D2F44D32B3B5B9F00B4C31D /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F44D42B3B5B9F00B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCAB3902B3E03BB0045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCAB3912B3E03BB0045C37D /* MovieDetail.framework in Frameworks */,
 				7D2F44D52B3B5B9F00B4C31D /* DependenyKit.framework in Frameworks */,
 				7D2F44D72B3B5B9F00B4C31D /* HomeModule.framework in Frameworks */,
 			);
@@ -88,6 +93,7 @@
 		7D2F44D22B3B5B9F00B4C31D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DCAB3902B3E03BB0045C37D /* MovieDetail.framework */,
 				7D2F44D32B3B5B9F00B4C31D /* DependenyKit.framework */,
 				7D2F44D42B3B5B9F00B4C31D /* HomeModule.framework */,
 			);

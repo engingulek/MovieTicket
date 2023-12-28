@@ -18,6 +18,8 @@
 		7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB3872B3DED7E0045C37D /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */; };
 		7DCAB3892B3DF2470045C37D /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */; };
+		7DCAB38E2B3DFD880045C37D /* ViewControllerAbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB38D2B3DFD880045C37D /* ViewControllerAbleKit.framework */; };
+		7DCAB38F2B3DFD880045C37D /* ViewControllerAbleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB38D2B3DFD880045C37D /* ViewControllerAbleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7DCAB38F2B3DFD880045C37D /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -44,6 +47,7 @@
 		7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		7DCAB38D2B3DFD880045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			files = (
 				7DCAB30E2B3DA2840045C37D /* SnapKit in Frameworks */,
 				7DCAB3102B3DA2840045C37D /* SnapKit-Dynamic in Frameworks */,
+				7DCAB38E2B3DFD880045C37D /* ViewControllerAbleKit.framework in Frameworks */,
 				7DCAB3622B3DBE4F0045C37D /* CommenUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +123,7 @@
 		7DCAB3602B3DBE4F0045C37D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DCAB38D2B3DFD880045C37D /* ViewControllerAbleKit.framework */,
 				7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */,
 			);
 			name = Frameworks;

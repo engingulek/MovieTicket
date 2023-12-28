@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & NavConAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol HomeViewControllerInterface : AnyObject,Ables {
     var presenter : HomePresenterInterface {get}
@@ -25,6 +25,10 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWilAppear()
+    }
 }
 
 
@@ -44,6 +48,9 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 withReuseIdentifier: MovieListCVCForInCineme.idetifier,
                 for: indexPath) as? MovieListCVCForInCineme 
             else {return UICollectionViewCell()}
+            cell.delegate = self
+           
+        
             return cell
         }else if cellType == "futureMovieCell"{
             guard let cell = collectionView.dequeueReusableCell(
@@ -74,6 +81,12 @@ extension HomeViewController : HomeViewControllerInterface {
     
     func reloadCollectionView() {
         homeView.reloadCollectionView()
+    }
+}
+
+extension HomeViewController : MovieListCVCForInCinemeDelegate {
+    func selectedMovieInCinema() {
+        presenter.toMovieDetail()
     }
 }
 

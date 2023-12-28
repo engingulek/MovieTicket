@@ -17,7 +17,6 @@ final class HomeViewController: UIViewController {
     private lazy var homeView = HomeView()
     
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
-    
     override func loadView() {
         view = homeView
     }
@@ -114,13 +113,3 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
         return size
     }
 }
-
-
-
-
-
-
-
-
-
-

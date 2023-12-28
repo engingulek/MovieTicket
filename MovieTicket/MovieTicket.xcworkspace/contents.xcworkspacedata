@@ -8,6 +8,9 @@
       location = "container:"
       name = "Apss">
       <FileRef
+         location = "group:../MovieDetailApp/MovieDetailApp.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:../HomeApp/HomeApp.xcodeproj">
       </FileRef>
    </Group>

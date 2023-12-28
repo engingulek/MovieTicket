@@ -1,7 +1,7 @@
 
 import UIKit
 import SnapKit
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     private lazy var nameLabel : UILabel = {
         let label = UILabel()

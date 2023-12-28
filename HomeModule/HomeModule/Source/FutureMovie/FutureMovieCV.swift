@@ -2,14 +2,14 @@
 
 import Foundation
 import UIKit
-
-final class FutureMovieCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
+import CommenUIKit
+final class FutureMovieCV : BaseCollectionView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(resource: .background)
-        collectionView.register(MovieCVC.self, 
-                          forCellWithReuseIdentifier: MovieCVC.identifier)
+        collectionView.register(PartnerCVC.self,
+                                forCellWithReuseIdentifier: PartnerCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
@@ -27,18 +27,20 @@ final class FutureMovieCV : BaseCollectionView,UICollectionViewDelegateFlowLayou
                             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MovieCVC.identifier,
-            for: indexPath) as? MovieCVC else {return UICollectionViewCell()}
+            withReuseIdentifier: PartnerCVC.identifier,
+            for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
         
-        cell.configureData(image: .movieTestImageTwo,
-                        movieName: "Dune Part Two",
-                        category: "Science Fiction")
+        cell.configureData(
+            image: .movieTestImageTwo,
+            firstText: "Dune Part Two",
+            secondaryText: "Science Fiction")
+      
         return cell
     }
 }
 
 
-extension FutureMovieCV {
+extension FutureMovieCV : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, 
                     layout collectionViewLayout: UICollectionViewLayout,
                     sizeForItemAt indexPath: IndexPath) -> CGSize {

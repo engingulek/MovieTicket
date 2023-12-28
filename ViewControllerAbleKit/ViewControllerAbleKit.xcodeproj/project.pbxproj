@@ -7,175 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DCAB2FB2B3DA0720045C37D /* MovieDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DCAB3072B3DA1B70045C37D /* MovieDetailModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */; };
-		7DCAB3092B3DA2480045C37D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3082B3DA2480045C37D /* MovieDetailViewController.swift */; };
-		7DCAB30B2B3DA25B0045C37D /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB30A2B3DA25B0045C37D /* MovieDetailRouter.swift */; };
-		7DCAB30E2B3DA2840045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB30D2B3DA2840045C37D /* SnapKit */; };
-		7DCAB3102B3DA2840045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB30F2B3DA2840045C37D /* SnapKit-Dynamic */; };
-		7DCAB3132B3DA2EC0045C37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */; };
-		7DCAB3622B3DBE4F0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */; };
-		7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DCAB3872B3DED7E0045C37D /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */; };
-		7DCAB3892B3DF2470045C37D /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */; };
+		7DCAB3752B3DD9790045C37D /* ViewControllerAbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DCAB37C2B3DD98F0045C37D /* ViewControllerAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		7DCAB3642B3DBE4F0045C37D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		7DCAB2F72B3DA0720045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetail.h; sourceTree = "<group>"; };
-		7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModuleInterface.swift; sourceTree = "<group>"; };
-		7DCAB3082B3DA2480045C37D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
-		7DCAB30A2B3DA25B0045C37D /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
-		7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
-		7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerAbleKit.h; sourceTree = "<group>"; };
+		7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DCAB2F42B3DA0720045C37D /* Frameworks */ = {
+		7DCAB36E2B3DD9790045C37D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB30E2B3DA2840045C37D /* SnapKit in Frameworks */,
-				7DCAB3102B3DA2840045C37D /* SnapKit-Dynamic in Frameworks */,
-				7DCAB3622B3DBE4F0045C37D /* CommenUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DCAB2ED2B3DA0720045C37D = {
+		7DCAB3672B3DD9790045C37D = {
 			isa = PBXGroup;
 			children = (
-				7DCAB2F92B3DA0720045C37D /* MovieDetail */,
-				7DCAB2F82B3DA0720045C37D /* Products */,
-				7DCAB3602B3DBE4F0045C37D /* Frameworks */,
+				7DCAB3732B3DD9790045C37D /* ViewControllerAbleKit */,
+				7DCAB3722B3DD9790045C37D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7DCAB2F82B3DA0720045C37D /* Products */ = {
+		7DCAB3722B3DD9790045C37D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB2F72B3DA0720045C37D /* MovieDetail.framework */,
+				7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DCAB2F92B3DA0720045C37D /* MovieDetail */ = {
+		7DCAB3732B3DD9790045C37D /* ViewControllerAbleKit */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB3112B3DA2D50045C37D /* Resource */,
-				7DCAB3052B3DA19D0045C37D /* InterfaceSource */,
-				7DCAB3042B3DA1970045C37D /* Source */,
-				7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */,
+				7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */,
+				7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */,
 			);
-			path = MovieDetail;
-			sourceTree = "<group>";
-		};
-		7DCAB3042B3DA1970045C37D /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				7DCAB3082B3DA2480045C37D /* MovieDetailViewController.swift */,
-				7DCAB30A2B3DA25B0045C37D /* MovieDetailRouter.swift */,
-				7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */,
-				7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		7DCAB3052B3DA19D0045C37D /* InterfaceSource */ = {
-			isa = PBXGroup;
-			children = (
-				7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */,
-			);
-			path = InterfaceSource;
-			sourceTree = "<group>";
-		};
-		7DCAB3112B3DA2D50045C37D /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		7DCAB3602B3DBE4F0045C37D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */,
-			);
-			name = Frameworks;
+			path = ViewControllerAbleKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7DCAB2F22B3DA0720045C37D /* Headers */ = {
+		7DCAB36C2B3DD9790045C37D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB2FB2B3DA0720045C37D /* MovieDetail.h in Headers */,
+				7DCAB3752B3DD9790045C37D /* ViewControllerAbleKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7DCAB2F62B3DA0720045C37D /* MovieDetail */ = {
+		7DCAB3702B3DD9790045C37D /* ViewControllerAbleKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DCAB2FE2B3DA0720045C37D /* Build configuration list for PBXNativeTarget "MovieDetail" */;
+			buildConfigurationList = 7DCAB3782B3DD9790045C37D /* Build configuration list for PBXNativeTarget "ViewControllerAbleKit" */;
 			buildPhases = (
-				7DCAB2F22B3DA0720045C37D /* Headers */,
-				7DCAB2F32B3DA0720045C37D /* Sources */,
-				7DCAB2F42B3DA0720045C37D /* Frameworks */,
-				7DCAB2F52B3DA0720045C37D /* Resources */,
-				7DCAB3642B3DBE4F0045C37D /* Embed Frameworks */,
+				7DCAB36C2B3DD9790045C37D /* Headers */,
+				7DCAB36D2B3DD9790045C37D /* Sources */,
+				7DCAB36E2B3DD9790045C37D /* Frameworks */,
+				7DCAB36F2B3DD9790045C37D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MovieDetail;
-			packageProductDependencies = (
-				7DCAB30D2B3DA2840045C37D /* SnapKit */,
-				7DCAB30F2B3DA2840045C37D /* SnapKit-Dynamic */,
-			);
-			productName = MovieDetail;
-			productReference = 7DCAB2F72B3DA0720045C37D /* MovieDetail.framework */;
+			name = ViewControllerAbleKit;
+			productName = ViewControllerAbleKit;
+			productReference = 7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DCAB2EE2B3DA0720045C37D /* Project object */ = {
+		7DCAB3682B3DD9790045C37D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					7DCAB2F62B3DA0720045C37D = {
+					7DCAB3702B3DD9790045C37D = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = 7DCAB2F12B3DA0720045C37D /* Build configuration list for PBXProject "MovieDetail" */;
+			buildConfigurationList = 7DCAB36B2B3DD9790045C37D /* Build configuration list for PBXProject "ViewControllerAbleKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,47 +108,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DCAB2ED2B3DA0720045C37D;
-			packageReferences = (
-				7DCAB30C2B3DA2840045C37D /* XCRemoteSwiftPackageReference "SnapKit" */,
-			);
-			productRefGroup = 7DCAB2F82B3DA0720045C37D /* Products */;
+			mainGroup = 7DCAB3672B3DD9790045C37D;
+			productRefGroup = 7DCAB3722B3DD9790045C37D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DCAB2F62B3DA0720045C37D /* MovieDetail */,
+				7DCAB3702B3DD9790045C37D /* ViewControllerAbleKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DCAB2F52B3DA0720045C37D /* Resources */ = {
+		7DCAB36F2B3DD9790045C37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB3132B3DA2EC0045C37D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DCAB2F32B3DA0720045C37D /* Sources */ = {
+		7DCAB36D2B3DD9790045C37D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB30B2B3DA25B0045C37D /* MovieDetailRouter.swift in Sources */,
-				7DCAB3092B3DA2480045C37D /* MovieDetailViewController.swift in Sources */,
-				7DCAB3872B3DED7E0045C37D /* MovieDetailView.swift in Sources */,
-				7DCAB3072B3DA1B70045C37D /* MovieDetailModuleInterface.swift in Sources */,
-				7DCAB3892B3DF2470045C37D /* MovieDetailPresenter.swift in Sources */,
+				7DCAB37C2B3DD98F0045C37D /* ViewControllerAble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DCAB2FC2B3DA0720045C37D /* Debug */ = {
+		7DCAB3762B3DD9790045C37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,7 +206,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB2FD2B3DA0720045C37D /* Release */ = {
+		7DCAB3772B3DD9790045C37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -348,7 +265,7 @@
 			};
 			name = Release;
 		};
-		7DCAB2FF2B3DA0720045C37D /* Debug */ = {
+		7DCAB3792B3DD9790045C37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -371,7 +288,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.MovieDetail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ViewControllerAbleKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -381,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB3002B3DA0720045C37D /* Release */ = {
+		7DCAB37A2B3DD9790045C37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -404,7 +321,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.MovieDetail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ViewControllerAbleKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -416,49 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DCAB2F12B3DA0720045C37D /* Build configuration list for PBXProject "MovieDetail" */ = {
+		7DCAB36B2B3DD9790045C37D /* Build configuration list for PBXProject "ViewControllerAbleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB2FC2B3DA0720045C37D /* Debug */,
-				7DCAB2FD2B3DA0720045C37D /* Release */,
+				7DCAB3762B3DD9790045C37D /* Debug */,
+				7DCAB3772B3DD9790045C37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DCAB2FE2B3DA0720045C37D /* Build configuration list for PBXNativeTarget "MovieDetail" */ = {
+		7DCAB3782B3DD9790045C37D /* Build configuration list for PBXNativeTarget "ViewControllerAbleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB2FF2B3DA0720045C37D /* Debug */,
-				7DCAB3002B3DA0720045C37D /* Release */,
+				7DCAB3792B3DD9790045C37D /* Debug */,
+				7DCAB37A2B3DD9790045C37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7DCAB30C2B3DA2840045C37D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7DCAB30D2B3DA2840045C37D /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB30C2B3DA2840045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		7DCAB30F2B3DA2840045C37D /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB30C2B3DA2840045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7DCAB2EE2B3DA0720045C37D /* Project object */;
+	rootObject = 7DCAB3682B3DD9790045C37D /* Project object */;
 }

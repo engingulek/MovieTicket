@@ -11,12 +11,14 @@
 		7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */; };
 		7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3572B3DBCC10045C37D /* SnapKit */; };
 		7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */; };
+		7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3842B3DE8300045C37D /* UIScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenUIKit.h; sourceTree = "<group>"; };
 		7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCVC.swift; sourceTree = "<group>"; };
+		7DCAB3842B3DE8300045C37D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */,
 				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
+				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
 			);
 			path = CommenUIKit;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
+				7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,23 @@
 		7D2F45212B3C9DF600B4C31D /* GenresCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45202B3C9DF600B4C31D /* GenresCV.swift */; };
 		7D2F45232B3C9E4400B4C31D /* GenreCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45222B3C9E4400B4C31D /* GenreCVC.swift */; };
 		7D2F45252B3CA03C00B4C31D /* MovieListCVCForGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */; };
+		7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; };
+		7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DCAB35F2B3DBCEB0045C37D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D2F447D2B3B53B900B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +59,7 @@
 		7D2F45202B3C9DF600B4C31D /* GenresCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCV.swift; sourceTree = "<group>"; };
 		7D2F45222B3C9E4400B4C31D /* GenreCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCVC.swift; sourceTree = "<group>"; };
 		7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCVCForGenre.swift; sourceTree = "<group>"; };
+		7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +69,7 @@
 			files = (
 				7D2F44DC2B3B5D9600B4C31D /* SnapKit in Frameworks */,
 				7D2F44DE2B3B5D9600B4C31D /* SnapKit-Dynamic in Frameworks */,
+				7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +81,7 @@
 			children = (
 				7D2F447F2B3B53B900B4C31D /* HomeModule */,
 				7D2F447E2B3B53B900B4C31D /* Products */,
+				7DCAB35B2B3DBCEB0045C37D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +171,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		7DCAB35B2B3DBCEB0045C37D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -174,6 +201,7 @@
 				7D2F44792B3B53B900B4C31D /* Sources */,
 				7D2F447A2B3B53B900B4C31D /* Frameworks */,
 				7D2F447B2B3B53B900B4C31D /* Resources */,
+				7DCAB35F2B3DBCEB0045C37D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

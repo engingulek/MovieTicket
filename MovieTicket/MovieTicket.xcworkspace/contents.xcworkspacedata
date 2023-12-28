@@ -17,12 +17,23 @@
    <Group
       location = "container:"
       name = "Kits">
-      <FileRef
-         location = "group:../CommenUIKit/CommenUIKit.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../DependenyKit/DependenyKit.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "DomanKits">
+         <FileRef
+            location = "group:../DependenyKit/DependenyKit.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "SharedKits">
+         <FileRef
+            location = "group:../ViewControllerAbleKit/ViewControllerAbleKit.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../CommenUIKit/CommenUIKit.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
    <Group
       location = "container:"

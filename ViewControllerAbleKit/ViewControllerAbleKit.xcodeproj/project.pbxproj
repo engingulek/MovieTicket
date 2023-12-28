@@ -7,111 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DCAB34E2B3DBBD00045C37D /* CommenUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */; };
-		7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3572B3DBCC10045C37D /* SnapKit */; };
-		7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */; };
-		7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3842B3DE8300045C37D /* UIScreen.swift */; };
+		7DCAB3752B3DD9790045C37D /* ViewControllerAbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DCAB37C2B3DD98F0045C37D /* ViewControllerAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenUIKit.h; sourceTree = "<group>"; };
-		7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCVC.swift; sourceTree = "<group>"; };
-		7DCAB3842B3DE8300045C37D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerAbleKit.h; sourceTree = "<group>"; };
+		7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DCAB3472B3DBBD00045C37D /* Frameworks */ = {
+		7DCAB36E2B3DD9790045C37D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */,
-				7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DCAB3402B3DBBD00045C37D = {
+		7DCAB3672B3DD9790045C37D = {
 			isa = PBXGroup;
 			children = (
-				7DCAB34C2B3DBBD00045C37D /* CommenUIKit */,
-				7DCAB34B2B3DBBD00045C37D /* Products */,
+				7DCAB3732B3DD9790045C37D /* ViewControllerAbleKit */,
+				7DCAB3722B3DD9790045C37D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7DCAB34B2B3DBBD00045C37D /* Products */ = {
+		7DCAB3722B3DD9790045C37D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */,
+				7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DCAB34C2B3DBBD00045C37D /* CommenUIKit */ = {
+		7DCAB3732B3DD9790045C37D /* ViewControllerAbleKit */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */,
-				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
-				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
+				7DCAB3742B3DD9790045C37D /* ViewControllerAbleKit.h */,
+				7DCAB37B2B3DD98F0045C37D /* ViewControllerAble.swift */,
 			);
-			path = CommenUIKit;
+			path = ViewControllerAbleKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7DCAB3452B3DBBD00045C37D /* Headers */ = {
+		7DCAB36C2B3DD9790045C37D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB34E2B3DBBD00045C37D /* CommenUIKit.h in Headers */,
+				7DCAB3752B3DD9790045C37D /* ViewControllerAbleKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7DCAB3492B3DBBD00045C37D /* CommenUIKit */ = {
+		7DCAB3702B3DD9790045C37D /* ViewControllerAbleKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DCAB3512B3DBBD00045C37D /* Build configuration list for PBXNativeTarget "CommenUIKit" */;
+			buildConfigurationList = 7DCAB3782B3DD9790045C37D /* Build configuration list for PBXNativeTarget "ViewControllerAbleKit" */;
 			buildPhases = (
-				7DCAB3452B3DBBD00045C37D /* Headers */,
-				7DCAB3462B3DBBD00045C37D /* Sources */,
-				7DCAB3472B3DBBD00045C37D /* Frameworks */,
-				7DCAB3482B3DBBD00045C37D /* Resources */,
+				7DCAB36C2B3DD9790045C37D /* Headers */,
+				7DCAB36D2B3DD9790045C37D /* Sources */,
+				7DCAB36E2B3DD9790045C37D /* Frameworks */,
+				7DCAB36F2B3DD9790045C37D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CommenUIKit;
-			packageProductDependencies = (
-				7DCAB3572B3DBCC10045C37D /* SnapKit */,
-				7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */,
-			);
-			productName = CommenUIKit;
-			productReference = 7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */;
+			name = ViewControllerAbleKit;
+			productName = ViewControllerAbleKit;
+			productReference = 7DCAB3712B3DD9790045C37D /* ViewControllerAbleKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DCAB3412B3DBBD00045C37D /* Project object */ = {
+		7DCAB3682B3DD9790045C37D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					7DCAB3492B3DBBD00045C37D = {
+					7DCAB3702B3DD9790045C37D = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = 7DCAB3442B3DBBD00045C37D /* Build configuration list for PBXProject "CommenUIKit" */;
+			buildConfigurationList = 7DCAB36B2B3DD9790045C37D /* Build configuration list for PBXProject "ViewControllerAbleKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,21 +108,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DCAB3402B3DBBD00045C37D;
-			packageReferences = (
-				7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */,
-			);
-			productRefGroup = 7DCAB34B2B3DBBD00045C37D /* Products */;
+			mainGroup = 7DCAB3672B3DD9790045C37D;
+			productRefGroup = 7DCAB3722B3DD9790045C37D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DCAB3492B3DBBD00045C37D /* CommenUIKit */,
+				7DCAB3702B3DD9790045C37D /* ViewControllerAbleKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DCAB3482B3DBBD00045C37D /* Resources */ = {
+		7DCAB36F2B3DD9790045C37D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -143,19 +129,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DCAB3462B3DBBD00045C37D /* Sources */ = {
+		7DCAB36D2B3DD9790045C37D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
-				7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */,
+				7DCAB37C2B3DD98F0045C37D /* ViewControllerAble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DCAB34F2B3DBBD00045C37D /* Debug */ = {
+		7DCAB3762B3DD9790045C37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +206,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB3502B3DBBD00045C37D /* Release */ = {
+		7DCAB3772B3DD9790045C37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,7 +265,7 @@
 			};
 			name = Release;
 		};
-		7DCAB3522B3DBBD00045C37D /* Debug */ = {
+		7DCAB3792B3DD9790045C37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -303,7 +288,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.CommenUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ViewControllerAbleKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -313,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB3532B3DBBD00045C37D /* Release */ = {
+		7DCAB37A2B3DD9790045C37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -336,7 +321,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.CommenUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ViewControllerAbleKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -348,49 +333,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DCAB3442B3DBBD00045C37D /* Build configuration list for PBXProject "CommenUIKit" */ = {
+		7DCAB36B2B3DD9790045C37D /* Build configuration list for PBXProject "ViewControllerAbleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB34F2B3DBBD00045C37D /* Debug */,
-				7DCAB3502B3DBBD00045C37D /* Release */,
+				7DCAB3762B3DD9790045C37D /* Debug */,
+				7DCAB3772B3DD9790045C37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DCAB3512B3DBBD00045C37D /* Build configuration list for PBXNativeTarget "CommenUIKit" */ = {
+		7DCAB3782B3DD9790045C37D /* Build configuration list for PBXNativeTarget "ViewControllerAbleKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB3522B3DBBD00045C37D /* Debug */,
-				7DCAB3532B3DBBD00045C37D /* Release */,
+				7DCAB3792B3DD9790045C37D /* Debug */,
+				7DCAB37A2B3DD9790045C37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7DCAB3572B3DBCC10045C37D /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7DCAB3412B3DBBD00045C37D /* Project object */;
+	rootObject = 7DCAB3682B3DD9790045C37D /* Project object */;
 }

@@ -11,6 +11,9 @@ protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
     
     func prepareCollectionView()
     func reloadCollectionView()
+    
+    func prepareTableView()
+    func reloadTableView()
 }
 
 final class HallsAndSessionsViewController : UIViewController {
@@ -27,12 +30,22 @@ final class HallsAndSessionsViewController : UIViewController {
 }
 
 extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterface {
+    
     func prepareCollectionView() {
         hallsAndSessionView.prepareCollectionView(view: self)
     }
     
     func reloadCollectionView() {
         hallsAndSessionView.reloadCollectionView()
+    }
+    
+    
+    func prepareTableView() {
+        hallsAndSessionView.prepareTableView(view: self)
+    }
+    
+    func reloadTableView() {
+        hallsAndSessionView.reloadTableView()
     }
 }
 
@@ -54,4 +67,22 @@ extension HallsAndSessionsViewController : UICollectionViewDelegateFlowLayout{
         return CGSize(width: UIScreen.main.bounds.width / 2 ,
                         height: 80)
     }
+}
+
+extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HallInfoTVC.identifier,for: indexPath) as? HallInfoTVC else {return UITableViewCell()}
+        cell.configureData(cinemaName: "Cinema Name", hallNumber: "Hall 2", movieLanguage: "Turkish")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    
 }

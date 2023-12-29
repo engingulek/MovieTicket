@@ -24,6 +24,16 @@ final class HallsAndSessionsView : UIView {
     }()
     
     
+    private lazy var hallsInfoTableView : UITableView = {
+        let tableView = UITableView()
+        tableView.register(HallInfoTVC.self,
+                           forCellReuseIdentifier: HallInfoTVC.identifier)
+        tableView.allowsMultipleSelection = true
+        tableView.backgroundColor = UIColor(resource: .background)
+        return tableView
+    }()
+    
+    
     func prepareCollectionView(view:HallsAndSessionsViewController){
         datecollectionview.delegate = view
         datecollectionview.dataSource = view
@@ -31,6 +41,15 @@ final class HallsAndSessionsView : UIView {
     
     func reloadCollectionView(){
         datecollectionview.reloadData()
+    }
+    
+    func prepareTableView(view:HallsAndSessionsViewController){
+        hallsInfoTableView.delegate = view
+        hallsInfoTableView.dataSource = view
+    }
+    
+    func reloadTableView(){
+        hallsInfoTableView.reloadData()
     }
     
     
@@ -42,6 +61,14 @@ final class HallsAndSessionsView : UIView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(80)
+        }
+        
+        addSubview(hallsInfoTableView)
+        hallsInfoTableView.snp.makeConstraints { make in
+            make.top.equalTo(datecollectionview.snp.bottom).offset(10)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     

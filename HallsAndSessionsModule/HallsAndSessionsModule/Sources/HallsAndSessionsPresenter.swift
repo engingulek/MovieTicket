@@ -19,6 +19,8 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         view?.setBackColorAble(color:.background)
         view?.prepareCollectionView()
         view?.reloadCollectionView()
+        view?.prepareTableView()
+        view?.reloadTableView()
     }
     
     

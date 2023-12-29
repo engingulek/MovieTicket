@@ -4,13 +4,16 @@ import UIKit
 import SnapKit
 import CommenUIKit
 
-protocol HallInfoTVCDelegate {
-    func selectedTime()
+
+protocol HallınfoTVCDelegate {
+    func selectedBaseLanguage()
+    func selectedSubLangue()
 }
+
 
 final class HallInfoTVC : UITableViewCell {
     static let identifier = "hallInfoTVC"
-    var delegate : HallInfoTVCDelegate?
+    var delegate : HallınfoTVCDelegate?
     private lazy var locIcon : UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "mappin.and.ellipse")
@@ -33,37 +36,38 @@ final class HallInfoTVC : UITableViewCell {
         return label
     }()
     
-    private lazy var movieLanguageLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20,weight: .medium)
-        label.textColor = .white
-        return label
+    private lazy var movieLanguageLabelBase : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(resource: .secondaryBack)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.addAction(movieLanguageLabelBaseTapped, for: .touchUpInside)
+        return button
     }()
     
-    private lazy var timeollectionview : UICollectionView  = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-       
-        layout.scrollDirection = .horizontal
-        let  collectionview = UICollectionView(frame: .zero,
-                                               collectionViewLayout: layout)
-        collectionview.register(
-            OnlyLabelCVC.self,
-            forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
+    private lazy var movieLanguageLabelBaseTapped : UIAction = UIAction { _ in
+        self.delegate?.selectedBaseLanguage()
+    }
     
-        collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = UIColor(resource: .background)
-        return collectionview
+    private lazy var movieLanguageLabelSubtitle : UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.backgroundColor = UIColor(resource: .secondaryBack)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.addAction(movieLanguageLabelSubtitleTapped, for: .touchUpInside)
+        return button
     }()
+    
+    private lazy var movieLanguageLabelSubtitleTapped : UIAction = UIAction { _ in
+        self.delegate?.selectedSubLangue()
+    }
 
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor =  UIColor(resource: .background)
-        
-        timeollectionview.delegate = self
-        timeollectionview.dataSource = self
-        timeollectionview.reloadData()
+       
         
         contentView.addSubview(locIcon)
         locIcon.snp.makeConstraints { make in
@@ -83,29 +87,38 @@ final class HallInfoTVC : UITableViewCell {
         hallNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(locIcon.snp.top)
             make.trailing.equalToSuperview().offset(-25)
+           
         }
         
-        contentView.addSubview(movieLanguageLabel)
-        movieLanguageLabel.snp.makeConstraints { make in
+        contentView.addSubview(movieLanguageLabelBase)
+        movieLanguageLabelBase.snp.makeConstraints { make in
             make.top.equalTo(cinemaNameLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(25)
+            make.height.equalTo(40)
+            make.width.equalTo(UIScreen.main.bounds.width / 4)
         }
-        contentView.addSubview(timeollectionview)
-        timeollectionview.snp.makeConstraints { make in
-            make.top.equalTo(movieLanguageLabel.snp.bottom).offset(5)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.height.equalTo(50)
+        
+      
+        
+        contentView.addSubview(movieLanguageLabelSubtitle)
+        movieLanguageLabelSubtitle.snp.makeConstraints { make in
+            make.top.equalTo(cinemaNameLabel.snp.bottom).offset(10)
+            make.leading.equalTo(movieLanguageLabelBase.snp.trailing).offset(20)
+            make.height.equalTo(40)
+            make.width.equalTo(UIScreen.main.bounds.width / 3)
         }
+       
     }
-    
     
     func configureData(cinemaName:String,
                 hallNumber:String,
-                movieLanguage:String){
+                movieLanguageBase:String,
+                movieLanguageSubtitle:String
+    ){
         cinemaNameLabel.text = cinemaName
         hallNumberLabel.text = hallNumber
-        movieLanguageLabel.text = movieLanguage
+        movieLanguageLabelBase.setTitle(movieLanguageBase, for: .normal) 
+        movieLanguageLabelSubtitle.setTitle(movieLanguageSubtitle, for: .normal)
         
     }
     
@@ -114,32 +127,6 @@ final class HallInfoTVC : UITableViewCell {
     }
 }
 
-extension HallInfoTVC : UICollectionViewDelegate,UICollectionViewDataSource {
-    
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 3
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
-            cell.configureData(labelText: "12:40")
-            cell.configureIU(backColor: .secondaryBack, ofSize: 18)
-            return cell
-        }
-    
-    func collectionView(_ collectionView: UICollectionView, 
-                    didSelectItemAt indexPath: IndexPath) {
-        delegate?.selectedTime()
-        
-    }
-    
-    
-    }
 
-extension HallInfoTVC :  UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width / 4 ,
-                  height: 40)
-    }
-}
+
 

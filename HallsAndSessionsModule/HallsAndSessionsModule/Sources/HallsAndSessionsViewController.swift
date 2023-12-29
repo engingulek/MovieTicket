@@ -77,21 +77,29 @@ extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HallInfoTVC.identifier,for: indexPath) as? HallInfoTVC else {return UITableViewCell()}
-        cell.configureData(cinemaName: "Cinema Name", hallNumber: "Hall 2", movieLanguage: "Turkish")
+        cell.configureData(cinemaName: "Cinema Name",
+                       hallNumber: "Hall 2",
+                       movieLanguageBase: "English",
+                       movieLanguageSubtitle: "Turkish(Subtitle)")
         cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return UIScreen.main.bounds.height / 6
     }
 }
 
 
-extension HallsAndSessionsViewController : HallInfoTVCDelegate {
-    func selectedTime() {
-        print("Selected Clock")
+extension HallsAndSessionsViewController : HallınfoTVCDelegate {
+    func selectedBaseLanguage() {
+        print("Base Language")
+    }
+    
+    func selectedSubLangue() {
+        print("Sub Language")
     }
     
     
 }
+

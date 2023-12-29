@@ -3,9 +3,14 @@ import Foundation
 import UIKit
 import SnapKit
 import CommenUIKit
+
+protocol HallInfoTVCDelegate {
+    func selectedTime()
+}
+
 final class HallInfoTVC : UITableViewCell {
     static let identifier = "hallInfoTVC"
-    
+    var delegate : HallInfoTVCDelegate?
     private lazy var locIcon : UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "mappin.and.ellipse")
@@ -121,6 +126,14 @@ extension HallInfoTVC : UICollectionViewDelegate,UICollectionViewDataSource {
             cell.configureIU(backColor: .secondaryBack, ofSize: 18)
             return cell
         }
+    
+    func collectionView(_ collectionView: UICollectionView, 
+                    didSelectItemAt indexPath: IndexPath) {
+        delegate?.selectedTime()
+        
+    }
+    
+    
     }
 
 extension HallInfoTVC :  UICollectionViewDelegateFlowLayout{

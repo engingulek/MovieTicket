@@ -2,14 +2,14 @@
 
 import Foundation
 import UIKit
-
+import CommenUIKit
 final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(resource: .background)
-        collectionView.register(GenreCVC.self,
-                          forCellWithReuseIdentifier: GenreCVC.identifier)
+        collectionView.register(OnlyLabelCVC.self,
+                          forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
@@ -27,9 +27,10 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
                             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: GenreCVC.identifier,
-            for: indexPath) as? GenreCVC else {return UICollectionViewCell()}
-        cell.configureData(genreName: "Action")
+            withReuseIdentifier: OnlyLabelCVC.identifier,
+            for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
+        cell.configureData(labelText: "Action")
+        cell.configureIU(backColor: UIColor(resource: .secondatyBack), ofSize: 20)
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 10
         return cell

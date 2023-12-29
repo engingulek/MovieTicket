@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */; };
+		7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */; };
 		7DCAB34E2B3DBBD00045C37D /* CommenUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */; };
 		7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3572B3DBCC10045C37D /* SnapKit */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyLabelCVC.swift; sourceTree = "<group>"; };
+		7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenUIKit.h; sourceTree = "<group>"; };
 		7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCVC.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 				7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */,
 				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
 				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
+				7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */,
+				7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */,
 			);
 			path = CommenUIKit;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
+				7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */,
 				7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

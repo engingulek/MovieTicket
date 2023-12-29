@@ -22,7 +22,6 @@
 		7D2F451B2B3C7B0100B4C31D /* MovieListCVCForFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F451A2B3C7B0100B4C31D /* MovieListCVCForFuture.swift */; };
 		7D2F451E2B3C974100B4C31D /* HeaderCollectionReuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F451D2B3C974100B4C31D /* HeaderCollectionReuableView.swift */; };
 		7D2F45212B3C9DF600B4C31D /* GenresCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45202B3C9DF600B4C31D /* GenresCV.swift */; };
-		7D2F45232B3C9E4400B4C31D /* GenreCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45222B3C9E4400B4C31D /* GenreCVC.swift */; };
 		7D2F45252B3CA03C00B4C31D /* MovieListCVCForGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */; };
 		7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; };
 		7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,7 +64,6 @@
 		7D2F451A2B3C7B0100B4C31D /* MovieListCVCForFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCVCForFuture.swift; sourceTree = "<group>"; };
 		7D2F451D2B3C974100B4C31D /* HeaderCollectionReuableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReuableView.swift; sourceTree = "<group>"; };
 		7D2F45202B3C9DF600B4C31D /* GenresCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCV.swift; sourceTree = "<group>"; };
-		7D2F45222B3C9E4400B4C31D /* GenreCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCVC.swift; sourceTree = "<group>"; };
 		7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCVCForGenre.swift; sourceTree = "<group>"; };
 		7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB37D2B3DDA050045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				7D2F450E2B3C6E2C00B4C31D /* MovieCVC.swift */,
-				7D2F45222B3C9E4400B4C31D /* GenreCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 				7D2F45252B3CA03C00B4C31D /* MovieListCVCForGenre.swift in Sources */,
 				7D2F44A52B3B575200B4C31D /* HomeViewController.swift in Sources */,
 				7D2F45162B3C797600B4C31D /* MovieListCVCForInCineme.swift in Sources */,
-				7D2F45232B3C9E4400B4C31D /* GenreCVC.swift in Sources */,
 				7D2F451B2B3C7B0100B4C31D /* MovieListCVCForFuture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

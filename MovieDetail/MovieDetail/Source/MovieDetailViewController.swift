@@ -37,6 +37,7 @@ extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionView
         cell.configureData(image: .castImages,
                            firstText: "Timothée Chalamet",
                            secondaryText: "Paul Atredies")
+        
         return cell
     }
 }

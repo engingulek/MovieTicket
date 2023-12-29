@@ -16,7 +16,9 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     }
     
     func viewDidLoad() {
-        view?.setBackColorAble(color:.background )
+        view?.setBackColorAble(color:.background)
+        view?.prepareCollectionView()
+        view?.reloadCollectionView()
     }
     
     

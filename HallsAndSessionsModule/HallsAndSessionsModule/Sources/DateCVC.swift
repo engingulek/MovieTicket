@@ -1,32 +1,25 @@
 
-import UIKit
-import SnapKit
 
-final class GenreCVC : UICollectionViewCell {
-    static let identifier : String = "genreCell"
-    
-    private lazy var genreNameLabel : UILabel = {
+import UIKit
+
+class DateCVC : UICollectionViewCell {
+    static let identifier : String = "dateCVC"
+    private lazy var timeLabel : UILabel = {
         let label = UILabel()
+        label.text = "Dec/29/2024"
+        label.font = .systemFont(ofSize: 20,weight: .semibold)
         label.textColor = .white
-        label.font = .systemFont(ofSize: 25,weight:.semibold)
         label.textAlignment = .center
-        label.textColor = .white
-        label.backgroundColor = UIColor(resource: .secondatyBack)
+        label.backgroundColor = UIColor(resource: .secondaryBack)
         label.clipsToBounds = true
         label.layer.cornerRadius = 10
         return label
     }()
-    
- 
-    func configureData(genreName:String){
-        genreNameLabel.text = genreName
-    }
-   
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(genreNameLabel)
-        genreNameLabel.snp.makeConstraints { make in
+        
+        contentView.addSubview(timeLabel)
+        timeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(10)
@@ -34,8 +27,8 @@ final class GenreCVC : UICollectionViewCell {
             make.bottom.equalToSuperview()
             
         }
-      
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

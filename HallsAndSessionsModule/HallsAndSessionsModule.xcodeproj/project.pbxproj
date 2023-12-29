@@ -20,7 +20,6 @@
 		7D4E7F332B3EEF3E00A7196B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7D4E7F322B3EEF3E00A7196B /* SnapKit-Dynamic */; };
 		7D4E7F352B3EF00900A7196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E7F342B3EF00900A7196B /* Assets.xcassets */; };
 		7D4E7F372B3EF36700A7196B /* HallsAndSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */; };
-		7D4E7F392B3EF3DE00A7196B /* DateCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F382B3EF3DE00A7196B /* DateCVC.swift */; };
 		7D4E7F402B3EFEF300A7196B /* HallınfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		7D4E7F292B3EEF1500A7196B /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4E7F342B3EF00900A7196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsView.swift; sourceTree = "<group>"; };
-		7D4E7F382B3EF3DE00A7196B /* DateCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCVC.swift; sourceTree = "<group>"; };
 		7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HallınfoTVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +110,6 @@
 				7D4E7EFB2B3EECE700A7196B /* HallsAndSessionsViewController.swift */,
 				7D4E7F252B3EEEFE00A7196B /* HallsAndSessionsPresenter.swift */,
 				7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */,
-				7D4E7F382B3EF3DE00A7196B /* DateCVC.swift */,
 				7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */,
 			);
 			path = Sources;
@@ -227,7 +224,6 @@
 				7D4E7F372B3EF36700A7196B /* HallsAndSessionsView.swift in Sources */,
 				7D4E7F262B3EEEFE00A7196B /* HallsAndSessionsPresenter.swift in Sources */,
 				7D4E7F402B3EFEF300A7196B /* HallınfoTVC.swift in Sources */,
-				7D4E7F392B3EF3DE00A7196B /* DateCVC.swift in Sources */,
 				7D4E7EFC2B3EECE700A7196B /* HallsAndSessionsViewController.swift in Sources */,
 				7D4E7EFA2B3EEC8E00A7196B /* HallsAndSessionsRouter.swift in Sources */,
 				7D4E7EF72B3EEC1800A7196B /* HallsAndSessionsModuleInterface.swift in Sources */,

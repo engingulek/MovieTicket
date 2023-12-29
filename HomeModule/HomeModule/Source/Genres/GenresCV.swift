@@ -30,6 +30,7 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
             withReuseIdentifier: OnlyLabelCVC.identifier,
             for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
         cell.configureData(labelText: "Action")
+        cell.configureIU(backColor: UIColor(resource: .secondatyBack), ofSize: 20)
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 10
         return cell

@@ -58,6 +58,7 @@ extension HallsAndSessionsViewController : UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
         cell.configureData(labelText: "Dec/29/2024")
+        cell.configureIU(backColor: UIColor(resource: .secondaryBack), ofSize: 20)
         return cell
     }
 }
@@ -65,7 +66,7 @@ extension HallsAndSessionsViewController : UICollectionViewDelegate,UICollection
 extension HallsAndSessionsViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width / 2 ,
-                        height: 80)
+                  height: 60)
     }
 }
 
@@ -81,7 +82,7 @@ extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 140
     }
     
     

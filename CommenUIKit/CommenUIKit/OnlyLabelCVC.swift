@@ -8,10 +8,7 @@ public final class OnlyLabelCVC : UICollectionViewCell {
     private lazy var textLabel : UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 20,weight:.semibold)
         label.textAlignment = .center
-        label.textColor = .white
-        label.backgroundColor = UIColor(resource: .secondaryBack)
         label.clipsToBounds = true
         label.layer.cornerRadius = 10
         return label
@@ -20,6 +17,11 @@ public final class OnlyLabelCVC : UICollectionViewCell {
  
    public func configureData(labelText:String){
         textLabel.text = labelText
+    }
+    
+    public func configureIU(backColor:UIColor,ofSize:Double){
+        textLabel.backgroundColor = backColor
+        textLabel.font = .systemFont(ofSize: ofSize,weight:.semibold)
     }
    
     

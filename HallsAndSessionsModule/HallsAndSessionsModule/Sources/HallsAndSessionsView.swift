@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 import SnapKit
 import CommenUIKit
-
+import ThemeKit
 final class HallsAndSessionsView : UIView {
     
     private lazy var datecollectionview : UICollectionView  = {
@@ -13,13 +13,13 @@ final class HallsAndSessionsView : UIView {
                                  height:UIScreen.main.bounds.height / 15 )
         layout.scrollDirection = .horizontal
         let  collectionview = UICollectionView(frame: .zero,
-                                               collectionViewLayout: layout)
+                                         collectionViewLayout: layout)
         collectionview.register(
             OnlyLabelCVC.self,
             forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = UIColor(resource: .background)
+        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
         return collectionview
     }()
     
@@ -29,7 +29,7 @@ final class HallsAndSessionsView : UIView {
         tableView.register(HallInfoTVC.self,
                            forCellReuseIdentifier: HallInfoTVC.identifier)
         tableView.allowsMultipleSelection = true
-        tableView.backgroundColor = UIColor(resource: .background)
+        tableView.backgroundColor = Theme.theme.themeColor.primaryBackground
         return tableView
     }()
     

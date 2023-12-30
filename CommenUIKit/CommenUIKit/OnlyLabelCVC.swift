@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import ThemeKit
 public final class OnlyLabelCVC : UICollectionViewCell {
-   public  static let identifier : String = "genreCell"
+   public  static let identifier : String = "onlyLabel"
     
     private lazy var textLabel : UILabel = {
         let label = UILabel()

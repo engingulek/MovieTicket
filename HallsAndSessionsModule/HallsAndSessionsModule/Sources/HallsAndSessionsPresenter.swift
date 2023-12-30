@@ -1,6 +1,6 @@
 
 import Foundation
-
+import ThemeKit
 
 protocol HallsAndSessionsPresenterInterface {
     var view: HallsAndSessionsViewControllerInterface? {get}
@@ -16,7 +16,7 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     }
     
     func viewDidLoad() {
-        view?.setBackColorAble(color:.background)
+        view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.prepareCollectionView()
         view?.reloadCollectionView()
         view?.prepareTableView()

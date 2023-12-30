@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 import CommenUIKit
-
+import ThemeKit
 protocol MovieDetailViewDelegate {
     func buyTicketButtonTapped()
 }
@@ -18,7 +18,7 @@ final class MovieDetailView : UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 15
-        view.backgroundColor = UIColor(resource:.background)
+        view.backgroundColor = Theme.theme.themeColor.primaryBackground
         return view
     }()
     
@@ -32,7 +32,7 @@ final class MovieDetailView : UIView {
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
         label.text = "Dune Part Two"
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 25,weight: .bold)
         return label
     }()
@@ -40,7 +40,7 @@ final class MovieDetailView : UIView {
     private lazy var movieGenresLabel : UILabel = {
         let label = UILabel()
         label.text = "Action,Drama"
-        label.textColor = UIColor(resource: .primaryLabel)
+        label.textColor = Theme.theme.themeColor.secondaryLabel
         label.font = .systemFont(ofSize: 20,weight: .semibold)
         return label
     }()
@@ -48,7 +48,7 @@ final class MovieDetailView : UIView {
     private lazy var movieDirectorNameLabel : UILabel = {
         let label = UILabel()
         label.text = "2025,Denis Villeneuve"
-        label.textColor = UIColor(resource: .primaryLabel)
+        label.textColor = Theme.theme.themeColor.secondaryLabel
         label.font = .systemFont(ofSize: 20,weight: .semibold)
         return label
     }()
@@ -56,7 +56,7 @@ final class MovieDetailView : UIView {
     private lazy var movieTime : UILabel = {
         let label = UILabel()
         label.text = "Runtime : 1h 45min"
-        label.textColor = UIColor(resource: .primaryLabel)
+        label.textColor = Theme.theme.themeColor.secondaryLabel
         label.font = .systemFont(ofSize: 20,weight: .semibold)
         return label
     }()
@@ -64,7 +64,7 @@ final class MovieDetailView : UIView {
     private lazy var movieInfoTitle: UILabel = {
         let label = UILabel()
         label.text = "Movie Info"
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 20,weight: .bold)
         return label
     }()
@@ -72,7 +72,7 @@ final class MovieDetailView : UIView {
     private lazy var movieInfo : UILabel = {
         let label = UILabel()
         label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
-        label.textColor = UIColor(resource: .primaryLabel)
+        label.textColor = Theme.theme.themeColor.secondaryLabel
         label.font = .systemFont(ofSize: 19,weight: .semibold)
         label.numberOfLines = .zero
         return label
@@ -81,7 +81,7 @@ final class MovieDetailView : UIView {
     private lazy var showMoreButton : UIButton = {
         let button = UIButton()
         button.setTitle("Show More", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
         button.titleLabel?.textAlignment = .left
         return  button
         
@@ -90,7 +90,7 @@ final class MovieDetailView : UIView {
     private lazy var castTitle: UILabel = {
         let label = UILabel()
         label.text = "Casts"
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 20,weight: .bold)
         return label
     }()
@@ -108,16 +108,16 @@ final class MovieDetailView : UIView {
             forCellWithReuseIdentifier: PartnerCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = UIColor(resource: .background)
+        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
         return collectionview
     }()
     
     private lazy var buyTicletButton : UIButton = {
         let button = UIButton()
         button.setTitle("Buy Ticket", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20,weight: .semibold)
-        button.backgroundColor =  UIColor(resource: .secondaryBack)
+        button.backgroundColor = Theme.theme.themeColor.thirdBack
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = 10
         button.addAction(buyTicketButtonTapped, for: .touchUpInside)

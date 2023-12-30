@@ -1,6 +1,6 @@
 import Foundation
 import CommenUIKit
-
+import ThemeKit
 protocol MovieDetailPresenterInterface {
     var view : MovieDetailViewControllerInterface? {get}
     var router : MovieDetailRouterInterface? {get}
@@ -22,10 +22,10 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
     }
     
     func viewDidLoad() {
-        view?.setBackColorAble(color: .background)
+        view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.navigationBarHidden(isHidden: false)
-        view?.changeNavBarColor(color: .background)
-        view?.changeTintColor(color: .white)
+        view?.changeNavBarColor(color: Theme.theme.themeColor.primaryBackground)
+        view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
         view?.changeTitle(title: "Movie Detail")
         view?.prepareCollectionView()
         view?.reloadCollectionView()

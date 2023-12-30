@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 import SnapKit
 import CommenUIKit
-
+import ThemeKit
 
 protocol HallınfoTVCDelegate {
     func selectedBaseLanguage()
@@ -17,7 +17,7 @@ final class HallInfoTVC : UITableViewCell {
     private lazy var locIcon : UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "mappin.and.ellipse")
-        imageView.tintColor = .white
+        imageView.tintColor = Theme.theme.themeColor.primaryLabel
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -25,22 +25,22 @@ final class HallInfoTVC : UITableViewCell {
     private lazy var cinemaNameLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20,weight: .semibold)
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
     
     private lazy var hallNumberLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20,weight: .medium)
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
     
     private lazy var movieLanguageLabelBase : UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(resource: .secondaryBack)
+        button.backgroundColor = Theme.theme.themeColor.thirdBack
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
         button.layer.cornerRadius = 10
         button.addAction(movieLanguageLabelBaseTapped, for: .touchUpInside)
         return button
@@ -53,8 +53,8 @@ final class HallInfoTVC : UITableViewCell {
     private lazy var movieLanguageLabelSubtitle : UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
-        button.backgroundColor = UIColor(resource: .secondaryBack)
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
         button.layer.cornerRadius = 10
         button.addAction(movieLanguageLabelSubtitleTapped, for: .touchUpInside)
         return button
@@ -66,7 +66,7 @@ final class HallInfoTVC : UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor =  UIColor(resource: .background)
+        contentView.backgroundColor = Theme.theme.themeColor.primaryBackground
        
         
         contentView.addSubview(locIcon)

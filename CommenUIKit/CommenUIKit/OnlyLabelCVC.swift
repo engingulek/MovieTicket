@@ -1,13 +1,13 @@
 
 import UIKit
 import SnapKit
-
+import ThemeKit
 public final class OnlyLabelCVC : UICollectionViewCell {
    public  static let identifier : String = "genreCell"
     
     private lazy var textLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.textAlignment = .center
         label.clipsToBounds = true
         label.layer.cornerRadius = 10

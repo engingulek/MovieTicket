@@ -1,9 +1,10 @@
-
 import UIKit
 import SnapKit
+import ThemeKit
 
 final class MovieCVC: UICollectionViewCell {
     static let identifier : String = "cell"
+    
     private lazy var movieImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -13,14 +14,14 @@ final class MovieCVC: UICollectionViewCell {
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 25,weight:.bold)
         return label
     }()
     
     private lazy var movieCategory : UILabel = {
        let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 15,weight:.medium)
         return label
     }()
@@ -55,9 +56,7 @@ final class MovieCVC: UICollectionViewCell {
              make.trailing.equalToSuperview()
          }
     }
-    
-   
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

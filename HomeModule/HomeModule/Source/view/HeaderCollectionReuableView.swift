@@ -1,13 +1,17 @@
 import UIKit
 import SnapKit
+import ThemeKit
+
 final class HeaderCollectionReuableView : UICollectionReusableView {
     static let identifier  = "headerCollectionReuableViewCell"
+    
     private lazy var titleLabel:UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 25,weight: .semibold)
         return label
     }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(titleLabel)

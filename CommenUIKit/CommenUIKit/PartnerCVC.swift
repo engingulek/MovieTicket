@@ -1,7 +1,7 @@
 
 import UIKit
 import SnapKit
-
+import ThemeKit
 public final class PartnerCVC: UICollectionViewCell {
    public static let identifier : String = "cell"
     private lazy var imageView : UIImageView = {
@@ -13,7 +13,7 @@ public final class PartnerCVC: UICollectionViewCell {
     
     private lazy var firstLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 20,weight:.bold)
         label.numberOfLines = .zero
         return label
@@ -21,7 +21,7 @@ public final class PartnerCVC: UICollectionViewCell {
     
     private lazy var secondryLabel : UILabel = {
        let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.font = .systemFont(ofSize: 15,weight:.medium)
         return label
     }()

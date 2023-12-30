@@ -1,13 +1,13 @@
 import Foundation
 import UIKit
+import ThemeKit
 
 final class HomeView : UIView {
-    
     
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Hi,Engin"
-        label.textColor = UIColor(resource: .primaryLabel)
+        label.textColor = Theme.theme.themeColor.secondaryLabel
         label.font = .systemFont(ofSize: 30,weight: .semibold)
         return label
     }()
@@ -23,22 +23,22 @@ final class HomeView : UIView {
     private lazy var searhTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Search Movie"
-        textField.backgroundColor = UIColor(resource: .secondatyBack)
-        textField.textColor = UIColor(resource: .primaryLabel)
+        textField.backgroundColor = Theme.theme.themeColor.secondaryBack
+        textField.textColor = Theme.theme.themeColor.secondaryLabel
         return textField
     }()
     
     private lazy var searchIcon : UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "magnifyingglass")
-        image.tintColor = UIColor(resource: .primaryLabel)
+        image.tintColor = Theme.theme.themeColor.secondaryLabel
         return image
     }()
     
     private lazy var searchView : UIView = {
         let uiview = UIView()
         uiview.layer.cornerRadius = 10
-        uiview.backgroundColor = UIColor(resource: .secondatyBack)
+        uiview.backgroundColor = Theme.theme.themeColor.secondaryBack
         return uiview
     }()
     
@@ -52,7 +52,7 @@ final class HomeView : UIView {
      let  collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionview.showsVerticalScrollIndicator = false
-     collectionview.backgroundColor = UIColor(resource: .background)
+        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
      return collectionview
      }()
     

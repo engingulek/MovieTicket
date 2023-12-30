@@ -1,19 +1,17 @@
-
-
 import Foundation
 import UIKit
+import ThemeKit
 
 protocol MovieInCinemaCVDelegate {
     func selectedMovie()
 }
 
-
 final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
     var delegate : MovieInCinemaCVDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = UIColor(resource: .background)
-        collectionView.register(MovieCVC.self, 
+        collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionView.register(MovieCVC.self,
                         forCellWithReuseIdentifier: MovieCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
@@ -53,6 +51,4 @@ extension MovieInCinemaCV  {
         return CGSize(width: UIScreen.main.bounds.width / 1.3, 
                   height: UIScreen.main.bounds.height / 2)
     }
-    
-   
 }

@@ -31,6 +31,9 @@
          location = "container:"
          name = "SharedKits">
          <FileRef
+            location = "group:../ThemeKit/ThemeKit.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:../ViewControllerAbleKit/ViewControllerAbleKit.xcodeproj">
          </FileRef>
          <FileRef

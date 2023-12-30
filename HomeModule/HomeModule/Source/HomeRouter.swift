@@ -22,7 +22,6 @@ public final class HomeRouter : HomeModuleInterface {
 
 extension HomeRouter : HomeRouterInterface {
     func toMovieDetail(view:HomeViewControllerInterface?) {
-        print("allll")
         @Dependency var movieDetailModuleInterface : MovieDetailModuleInterface
         let viewController = movieDetailModuleInterface.createMovieDetailModule()
         view?.pushViewControllerAble(viewController, animated: true)

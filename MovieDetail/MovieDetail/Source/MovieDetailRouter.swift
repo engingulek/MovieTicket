@@ -1,7 +1,8 @@
 import UIKit
-
+import DependenyKit
+import HallsAndSessionsModule
 protocol MovieDetailRouterInterface {
-    
+    func toHallsAndSessions(view:MovieDetailViewControllerInterface?)
 }
 
 public final class MovieDetailRouter : MovieDetailModuleInterface {
@@ -17,5 +18,13 @@ public final class MovieDetailRouter : MovieDetailModuleInterface {
 
 
 extension MovieDetailRouter : MovieDetailRouterInterface {
-    
+    func toHallsAndSessions(view:MovieDetailViewControllerInterface?) {
+        @Dependency var hallsAndSessionsInterface : HallsAndSessionsModuleInterface
+        let viewController = hallsAndSessionsInterface.createModule()
+        view?.pushViewControllerAble(
+            viewController, 
+            animated: true)
+        
+    }
+
 }

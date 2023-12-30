@@ -3,7 +3,7 @@ import SnapKit
 import CommenUIKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & NavConUIAble
+typealias Ables = UIViewAble & NavConUIAble & SegueAble
 
 protocol MovieDetailViewControllerInterface : AnyObject,Ables {
     var presenter : MovieDetailPresenterInterface {get}
@@ -16,6 +16,7 @@ final class MovieDetailViewController : UIViewController {
     private lazy var movieDetailView = MovieDetailView()
     override func loadView() {
         view = movieDetailView
+        movieDetailView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -60,6 +61,12 @@ extension MovieDetailViewController : MovieDetailViewControllerInterface {
     
     func reloadCollectionView() {
         movieDetailView.collectionViewReload()
+    }
+}
+
+extension MovieDetailViewController : MovieDetailViewDelegate {
+    func buyTicketButtonTapped() {
+        presenter.toHallsAndSessions()
     }
     
     

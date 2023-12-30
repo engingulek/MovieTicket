@@ -2,8 +2,13 @@
 import Foundation
 import UIKit
 import CommenUIKit
+
+protocol MovieDetailViewDelegate {
+    func buyTicketButtonTapped()
+}
+
 final class MovieDetailView : UIView {
-    
+    var delegate : MovieDetailViewDelegate?
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
@@ -115,8 +120,14 @@ final class MovieDetailView : UIView {
         button.backgroundColor =  UIColor(resource: .secondaryBack)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = 10
+        button.addAction(buyTicketButtonTapped, for: .touchUpInside)
         return  button
     }()
+    
+    private lazy var buyTicketButtonTapped : UIAction = UIAction { _ in
+        self.delegate?.buyTicketButtonTapped()
+        
+    }
     
     func prepareCollectionViewDelegate(view:MovieDetailViewController){
         castcollectionview.delegate = view

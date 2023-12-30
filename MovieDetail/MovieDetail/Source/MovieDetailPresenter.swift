@@ -7,9 +7,12 @@ protocol MovieDetailPresenterInterface {
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func sizeForItemAt() -> CGSize
+    func toHallsAndSessions()
 }
 
 final class MovieDetailPresenter : MovieDetailPresenterInterface {
+   
+    
     weak var view : MovieDetailViewControllerInterface?
     var router: MovieDetailRouterInterface?
     init(view: MovieDetailViewControllerInterface?,
@@ -35,5 +38,9 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
     func sizeForItemAt() -> CGSize {
         return CGSize(width: UIScreenView.shared.screenWidth / 2.5,
                       height: UIScreenView.shared.screenHeight / 4)
+    }
+    
+    func toHallsAndSessions() {
+        router?.toHallsAndSessions(view: view)
     }
 }

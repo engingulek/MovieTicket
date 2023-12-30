@@ -1,14 +1,13 @@
 import Foundation
 import UIKit
 import ThemeKit
-
 final class HomeView : UIView {
     
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Hi,Engin"
         label.textColor = Theme.theme.themeColor.secondaryLabel
-        label.font = .systemFont(ofSize: 30,weight: .semibold)
+        label.font =  Theme.theme.themeFont.primaryFont.boldVersion
         return label
     }()
     
@@ -37,7 +36,7 @@ final class HomeView : UIView {
     
     private lazy var searchView : UIView = {
         let uiview = UIView()
-        uiview.layer.cornerRadius = 10
+        uiview.layer.cornerRadius = Radius.small.rawValue
         uiview.backgroundColor = Theme.theme.themeColor.secondaryBack
         return uiview
     }()

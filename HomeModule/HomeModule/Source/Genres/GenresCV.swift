@@ -32,9 +32,9 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
         cell.configureData(labelText: "Action")
         cell.configureIU(
             backColor: Theme.theme.themeColor.secondaryBack,
-            ofSize: 20)
+            font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         cell.contentView.clipsToBounds = true
-        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.cornerRadius = Radius.small.rawValue
         return cell
     }
 }

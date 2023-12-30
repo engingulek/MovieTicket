@@ -8,25 +8,29 @@ final class MovieCVC: UICollectionViewCell {
     private lazy var movieImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = Radius.medium.rawValue
         return imageView
     }()
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 25,weight:.bold)
+        label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     
     private lazy var movieCategory : UILabel = {
        let label = UILabel()
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 15,weight:.medium)
+        label.font = Theme.theme.themeFont.cellSubLabelFont
         return label
     }()
     
-    func configureData(image:UIImage,movieName:String,category:String){
+    func configureData(
+        image:UIImage,
+        movieName:String,
+        category:String){
+            
         movieImageView.image = image
         movieNameLabel.text = movieName
         movieCategory.text = category

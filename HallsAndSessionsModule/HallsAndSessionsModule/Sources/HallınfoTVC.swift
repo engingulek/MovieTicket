@@ -24,14 +24,14 @@ final class HallInfoTVC : UITableViewCell {
     
     private lazy var cinemaNameLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
     
     private lazy var hallNumberLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20,weight: .medium)
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
@@ -39,9 +39,9 @@ final class HallInfoTVC : UITableViewCell {
     private lazy var movieLanguageLabelBase : UIButton = {
         let button = UIButton()
         button.backgroundColor = Theme.theme.themeColor.thirdBack
-        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.titleLabel?.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(movieLanguageLabelBaseTapped, for: .touchUpInside)
         return button
     }()
@@ -52,10 +52,10 @@ final class HallInfoTVC : UITableViewCell {
     
     private lazy var movieLanguageLabelSubtitle : UIButton = {
         let button = UIButton()
-        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.titleLabel?.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         button.backgroundColor = Theme.theme.themeColor.thirdBack
         button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(movieLanguageLabelSubtitleTapped, for: .touchUpInside)
         return button
     }()

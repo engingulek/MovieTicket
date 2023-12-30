@@ -8,7 +8,7 @@ final class HeaderCollectionReuableView : UICollectionReusableView {
     private lazy var titleLabel:UILabel = {
         let label = UILabel()
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 25,weight: .semibold)
+        label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     

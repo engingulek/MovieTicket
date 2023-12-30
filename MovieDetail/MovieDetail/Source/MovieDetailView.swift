@@ -33,7 +33,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Dune Part Two"
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 25,weight: .bold)
+        label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     
@@ -41,7 +41,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Action,Drama"
         label.textColor = Theme.theme.themeColor.secondaryLabel
-        label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
@@ -49,7 +49,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "2025,Denis Villeneuve"
         label.textColor = Theme.theme.themeColor.secondaryLabel
-        label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
@@ -57,7 +57,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Runtime : 1h 45min"
         label.textColor = Theme.theme.themeColor.secondaryLabel
-        label.font = .systemFont(ofSize: 20,weight: .semibold)
+        label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
@@ -65,7 +65,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Movie Info"
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 20,weight: .bold)
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
     
@@ -73,7 +73,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
         label.textColor = Theme.theme.themeColor.secondaryLabel
-        label.font = .systemFont(ofSize: 19,weight: .semibold)
+        label.font = Theme.theme.themeFont.cellLabelFont
         label.numberOfLines = .zero
         return label
     }()
@@ -91,7 +91,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.text = "Casts"
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = .systemFont(ofSize: 20,weight: .bold)
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
     
@@ -116,10 +116,10 @@ final class MovieDetailView : UIView {
         let button = UIButton()
         button.setTitle("Buy Ticket", for: .normal)
         button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20,weight: .semibold)
+        button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         button.backgroundColor = Theme.theme.themeColor.thirdBack
         button.titleLabel?.textAlignment = .left
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(buyTicketButtonTapped, for: .touchUpInside)
         return  button
     }()

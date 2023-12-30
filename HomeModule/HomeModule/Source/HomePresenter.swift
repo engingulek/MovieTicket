@@ -1,5 +1,6 @@
 import Foundation
 import CommenUIKit
+import ThemeKit
 
 protocol HomePresenterInterface {
     var view : HomeViewControllerInterface? {get}
@@ -29,7 +30,7 @@ final class HomePresenter : HomePresenterInterface {
     
     
     func viewDidLoad() {
-        view?.setBackColorAble(color: .background)
+        view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.navigationBarHidden(isHidden: true)
         view?.prepareCollectionView()
         view?.reloadCollectionView()

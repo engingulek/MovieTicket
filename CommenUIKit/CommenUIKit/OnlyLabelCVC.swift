@@ -1,16 +1,16 @@
 
 import UIKit
 import SnapKit
-
+import ThemeKit
 public final class OnlyLabelCVC : UICollectionViewCell {
-   public  static let identifier : String = "genreCell"
+   public  static let identifier : String = "onlyLabel"
     
     private lazy var textLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = Theme.theme.themeColor.primaryLabel
         label.textAlignment = .center
         label.clipsToBounds = true
-        label.layer.cornerRadius = 10
+        label.layer.cornerRadius = Radius.small.rawValue
         return label
     }()
     
@@ -19,9 +19,9 @@ public final class OnlyLabelCVC : UICollectionViewCell {
         textLabel.text = labelText
     }
     
-    public func configureIU(backColor:UIColor,ofSize:Double){
+    public func configureIU(backColor:UIColor,font:UIFont){
         textLabel.backgroundColor = backColor
-        textLabel.font = .systemFont(ofSize: ofSize,weight:.semibold)
+        textLabel.font = font
     }
    
     

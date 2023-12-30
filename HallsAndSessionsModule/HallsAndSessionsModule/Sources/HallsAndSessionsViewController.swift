@@ -4,6 +4,7 @@ import UIKit
 import ViewControllerAbleKit
 import SnapKit
 import CommenUIKit
+import ThemeKit
 
 typealias Ables = UIViewAble & SegueAble
 protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
@@ -58,7 +59,8 @@ extension HallsAndSessionsViewController : UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
         cell.configureData(labelText: "Dec/29/2024")
-        cell.configureIU(backColor: UIColor(resource: .secondaryBack), ofSize: 20)
+        cell.configureIU(backColor: Theme.theme.themeColor.thirdBack,
+                     font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }
 }
@@ -99,7 +101,5 @@ extension HallsAndSessionsViewController : HallınfoTVCDelegate {
     func selectedSubLangue() {
         print("Sub Language")
     }
-    
-    
 }
 

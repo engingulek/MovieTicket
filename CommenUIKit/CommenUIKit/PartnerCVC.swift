@@ -1,28 +1,28 @@
 
 import UIKit
 import SnapKit
-
+import ThemeKit
 public final class PartnerCVC: UICollectionViewCell {
    public static let identifier : String = "cell"
     private lazy var imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = Radius.medium.rawValue
         return imageView
     }()
     
     private lazy var firstLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 20,weight:.bold)
+        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.numberOfLines = .zero
         return label
     }()
     
     private lazy var secondryLabel : UILabel = {
        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 15,weight:.medium)
+        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.font = Theme.theme.themeFont.cellSubLabelFont
         return label
     }()
     

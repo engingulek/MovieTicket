@@ -1,13 +1,13 @@
-
-
 import Foundation
 import UIKit
 import CommenUIKit
+import ThemeKit
+
 final class FutureMovieCV : BaseCollectionView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = UIColor(resource: .background)
+        collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
         collectionView.register(PartnerCVC.self,
                                 forCellWithReuseIdentifier: PartnerCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false

@@ -1,13 +1,13 @@
-
-
 import Foundation
 import UIKit
 import CommenUIKit
+import ThemeKit
+
 final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = UIColor(resource: .background)
+        collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
         collectionView.register(OnlyLabelCVC.self,
                           forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
@@ -30,9 +30,11 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
             withReuseIdentifier: OnlyLabelCVC.identifier,
             for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
         cell.configureData(labelText: "Action")
-        cell.configureIU(backColor: UIColor(resource: .secondatyBack), ofSize: 20)
+        cell.configureIU(
+            backColor: Theme.theme.themeColor.secondaryBack,
+            font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         cell.contentView.clipsToBounds = true
-        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.cornerRadius = Radius.small.rawValue
         return cell
     }
 }

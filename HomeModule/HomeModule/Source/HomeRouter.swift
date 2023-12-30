@@ -2,10 +2,10 @@ import Foundation
 import MovieDetail
 import UIKit
 import DependenyKit
+
 protocol HomeRouterInterface {
     func toMovieDetail(view:HomeViewControllerInterface?)
 }
-
 
 public final class HomeRouter : HomeModuleInterface {
     public init(){}

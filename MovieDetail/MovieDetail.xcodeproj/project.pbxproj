@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D4E7F422B4034F000A7196B /* DependenyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F412B4034F000A7196B /* DependenyKit.framework */; };
 		7D4E7F432B4034F000A7196B /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F412B4034F000A7196B /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D4E7F6B2B40476100A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6A2B40476100A7196B /* ThemeKit.framework */; };
+		7D4E7F6C2B40476100A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6A2B40476100A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB2FB2B3DA0720045C37D /* MovieDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DCAB3072B3DA1B70045C37D /* MovieDetailModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */; };
 		7DCAB3092B3DA2480045C37D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3082B3DA2480045C37D /* MovieDetailViewController.swift */; };
@@ -32,6 +34,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7DCAB38F2B3DFD880045C37D /* ViewControllerAbleKit.framework in Embed Frameworks */,
+				7D4E7F6C2B40476100A7196B /* ThemeKit.framework in Embed Frameworks */,
 				7D4E7F432B4034F000A7196B /* DependenyKit.framework in Embed Frameworks */,
 				7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */,
 			);
@@ -42,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		7D4E7F412B4034F000A7196B /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4E7F6A2B40476100A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB2F72B3DA0720045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetail.h; sourceTree = "<group>"; };
 		7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModuleInterface.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 				7DCAB30E2B3DA2840045C37D /* SnapKit in Frameworks */,
 				7DCAB3102B3DA2840045C37D /* SnapKit-Dynamic in Frameworks */,
 				7DCAB38E2B3DFD880045C37D /* ViewControllerAbleKit.framework in Frameworks */,
+				7D4E7F6B2B40476100A7196B /* ThemeKit.framework in Frameworks */,
 				7DCAB3622B3DBE4F0045C37D /* CommenUIKit.framework in Frameworks */,
 				7D4E7F422B4034F000A7196B /* DependenyKit.framework in Frameworks */,
 			);
@@ -128,6 +133,7 @@
 		7DCAB3602B3DBE4F0045C37D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D4E7F6A2B40476100A7196B /* ThemeKit.framework */,
 				7D4E7F412B4034F000A7196B /* DependenyKit.framework */,
 				7DCAB38D2B3DFD880045C37D /* ViewControllerAbleKit.framework */,
 				7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */,

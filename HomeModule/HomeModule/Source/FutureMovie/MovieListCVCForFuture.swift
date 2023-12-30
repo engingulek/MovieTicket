@@ -1,10 +1,13 @@
 import UIKit
 import SnapKit
+
 final class MovieListCVCForFuture : UICollectionViewCell {
     static let idetifier : String = "movieListCVCForFuture"
     private let futureMovieCV = FutureMovieCV()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubview(futureMovieCV.view)
         futureMovieCV.view.snp.makeConstraints { make in
             make.top.equalToSuperview()

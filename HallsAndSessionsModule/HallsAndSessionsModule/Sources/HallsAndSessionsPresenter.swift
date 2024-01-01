@@ -4,15 +4,21 @@ import ThemeKit
 
 protocol HallsAndSessionsPresenterInterface {
     var view: HallsAndSessionsViewControllerInterface? {get}
+    var router : HallsAndSessionsRouterInterface? {get}
     func viewDidLoad()
+    func buyTicketButtonTapped()
     
 }
 
 final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
-    var view: HallsAndSessionsViewControllerInterface?
+   
     
-    init(view: HallsAndSessionsViewControllerInterface?) {
+    var view: HallsAndSessionsViewControllerInterface?
+    var router : HallsAndSessionsRouterInterface?
+    init(view: HallsAndSessionsViewControllerInterface?,
+         router: HallsAndSessionsRouterInterface? = nil) {
         self.view = view
+        self.router = router
     }
     
     func viewDidLoad() {
@@ -21,6 +27,12 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         view?.reloadCollectionView()
         view?.prepareTableView()
         view?.reloadTableView()
+    }
+    
+    
+    func buyTicketButtonTapped() {
+        print("ali")
+        router?.toChooseSeat(view: view)
     }
     
     

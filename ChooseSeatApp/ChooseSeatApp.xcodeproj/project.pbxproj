@@ -7,35 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D2F44602B3B53A200B4C31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */; };
-		7D2F44622B3B53A200B4C31D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */; };
-		7D2F44692B3B53A500B4C31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F44682B3B53A500B4C31D /* Assets.xcassets */; };
-		7D2F446C2B3B53A500B4C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */; };
-		7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44A92B3B587100B4C31D /* DependenyKit.framework */; };
-		7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44A92B3B587100B4C31D /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; };
-		7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */; };
-		7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; };
-		7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; };
-		7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */; };
-		7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D5132532B43227200D6AD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5132522B43227200D6AD70 /* AppDelegate.swift */; };
+		7D5132552B43227200D6AD70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5132542B43227200D6AD70 /* SceneDelegate.swift */; };
+		7D51325F2B43227400D6AD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51325D2B43227400D6AD70 /* LaunchScreen.storyboard */; };
+		7D5132682B43228F00D6AD70 /* DependenyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5132672B43228F00D6AD70 /* DependenyKit.framework */; };
+		7D5132692B43228F00D6AD70 /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5132672B43228F00D6AD70 /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D51326C2B43229600D6AD70 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51326B2B43229600D6AD70 /* ChooseSeatModule.framework */; };
+		7D51326D2B43229600D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51326B2B43229600D6AD70 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7D2F44AC2B3B587100B4C31D /* Embed Frameworks */ = {
+		7D51326A2B43228F00D6AD70 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */,
-				7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */,
-				7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
-				7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */,
-				7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */,
+				7D51326D2B43229600D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
+				7D5132692B43228F00D6AD70 /* DependenyKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,74 +32,61 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7D2F445C2B3B53A200B4C31D /* MovieTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D2F44682B3B53A500B4C31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7D2F446B2B3B53A500B4C31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7D2F446D2B3B53A500B4C31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D2F44A92B3B587100B4C31D /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2F44AD2B3B588600B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegister.swift; sourceTree = "<group>"; };
-		7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HallsAndSessionsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChooseSeatModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D51324F2B43227200D6AD70 /* ChooseSeatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChooseSeatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D5132522B43227200D6AD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D5132542B43227200D6AD70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7D51325E2B43227400D6AD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D5132602B43227400D6AD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5132672B43228F00D6AD70 /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D51326B2B43229600D6AD70 /* ChooseSeatModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChooseSeatModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7D2F44592B3B53A200B4C31D /* Frameworks */ = {
+		7D51324C2B43227200D6AD70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */,
-				7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */,
-				7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */,
-				7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */,
-				7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */,
+				7D51326C2B43229600D6AD70 /* ChooseSeatModule.framework in Frameworks */,
+				7D5132682B43228F00D6AD70 /* DependenyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D2F44532B3B53A200B4C31D = {
+		7D5132462B43227200D6AD70 = {
 			isa = PBXGroup;
 			children = (
-				7D2F445E2B3B53A200B4C31D /* MovieTicket */,
-				7D2F445D2B3B53A200B4C31D /* Products */,
-				7D2F44A82B3B587100B4C31D /* Frameworks */,
+				7D5132512B43227200D6AD70 /* ChooseSeatApp */,
+				7D5132502B43227200D6AD70 /* Products */,
+				7D5132662B43228F00D6AD70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		7D2F445D2B3B53A200B4C31D /* Products */ = {
+		7D5132502B43227200D6AD70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D2F445C2B3B53A200B4C31D /* MovieTicket.app */,
+				7D51324F2B43227200D6AD70 /* ChooseSeatApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D2F445E2B3B53A200B4C31D /* MovieTicket */ = {
+		7D5132512B43227200D6AD70 /* ChooseSeatApp */ = {
 			isa = PBXGroup;
 			children = (
-				7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */,
-				7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */,
-				7D2F44682B3B53A500B4C31D /* Assets.xcassets */,
-				7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */,
-				7D2F446D2B3B53A500B4C31D /* Info.plist */,
-				7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */,
+				7D5132522B43227200D6AD70 /* AppDelegate.swift */,
+				7D5132542B43227200D6AD70 /* SceneDelegate.swift */,
+				7D51325D2B43227400D6AD70 /* LaunchScreen.storyboard */,
+				7D5132602B43227400D6AD70 /* Info.plist */,
 			);
-			path = MovieTicket;
+			path = ChooseSeatApp;
 			sourceTree = "<group>";
 		};
-		7D2F44A82B3B587100B4C31D /* Frameworks */ = {
+		7D5132662B43228F00D6AD70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */,
-				7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */,
-				7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */,
-				7D2F44AD2B3B588600B4C31D /* HomeModule.framework */,
-				7D2F44A92B3B587100B4C31D /* DependenyKit.framework */,
+				7D51326B2B43229600D6AD70 /* ChooseSeatModule.framework */,
+				7D5132672B43228F00D6AD70 /* DependenyKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,40 +94,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7D2F445B2B3B53A200B4C31D /* MovieTicket */ = {
+		7D51324E2B43227200D6AD70 /* ChooseSeatApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D2F44702B3B53A500B4C31D /* Build configuration list for PBXNativeTarget "MovieTicket" */;
+			buildConfigurationList = 7D5132632B43227400D6AD70 /* Build configuration list for PBXNativeTarget "ChooseSeatApp" */;
 			buildPhases = (
-				7D2F44582B3B53A200B4C31D /* Sources */,
-				7D2F44592B3B53A200B4C31D /* Frameworks */,
-				7D2F445A2B3B53A200B4C31D /* Resources */,
-				7D2F44AC2B3B587100B4C31D /* Embed Frameworks */,
+				7D51324B2B43227200D6AD70 /* Sources */,
+				7D51324C2B43227200D6AD70 /* Frameworks */,
+				7D51324D2B43227200D6AD70 /* Resources */,
+				7D51326A2B43228F00D6AD70 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MovieTicket;
-			productName = MovieTicket;
-			productReference = 7D2F445C2B3B53A200B4C31D /* MovieTicket.app */;
+			name = ChooseSeatApp;
+			productName = ChooseSeatApp;
+			productReference = 7D51324F2B43227200D6AD70 /* ChooseSeatApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7D2F44542B3B53A200B4C31D /* Project object */ = {
+		7D5132472B43227200D6AD70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					7D2F445B2B3B53A200B4C31D = {
+					7D51324E2B43227200D6AD70 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 7D2F44572B3B53A200B4C31D /* Build configuration list for PBXProject "MovieTicket" */;
+			buildConfigurationList = 7D51324A2B43227200D6AD70 /* Build configuration list for PBXProject "ChooseSeatApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,46 +135,44 @@
 				en,
 				Base,
 			);
-			mainGroup = 7D2F44532B3B53A200B4C31D;
-			productRefGroup = 7D2F445D2B3B53A200B4C31D /* Products */;
+			mainGroup = 7D5132462B43227200D6AD70;
+			productRefGroup = 7D5132502B43227200D6AD70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D2F445B2B3B53A200B4C31D /* MovieTicket */,
+				7D51324E2B43227200D6AD70 /* ChooseSeatApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7D2F445A2B3B53A200B4C31D /* Resources */ = {
+		7D51324D2B43227200D6AD70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2F446C2B3B53A500B4C31D /* LaunchScreen.storyboard in Resources */,
-				7D2F44692B3B53A500B4C31D /* Assets.xcassets in Resources */,
+				7D51325F2B43227400D6AD70 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7D2F44582B3B53A200B4C31D /* Sources */ = {
+		7D51324B2B43227200D6AD70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */,
-				7D2F44602B3B53A200B4C31D /* AppDelegate.swift in Sources */,
-				7D2F44622B3B53A200B4C31D /* SceneDelegate.swift in Sources */,
+				7D5132532B43227200D6AD70 /* AppDelegate.swift in Sources */,
+				7D5132552B43227200D6AD70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */ = {
+		7D51325D2B43227400D6AD70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7D2F446B2B3B53A500B4C31D /* Base */,
+				7D51325E2B43227400D6AD70 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -206,7 +180,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7D2F446E2B3B53A500B4C31D /* Debug */ = {
+		7D5132612B43227400D6AD70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,7 +243,7 @@
 			};
 			name = Debug;
 		};
-		7D2F446F2B3B53A500B4C31D /* Release */ = {
+		7D5132622B43227400D6AD70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,7 +299,7 @@
 			};
 			name = Release;
 		};
-		7D2F44712B3B53A500B4C31D /* Debug */ = {
+		7D5132642B43227400D6AD70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -334,7 +308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34G99QRS57;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieTicket/Info.plist;
+				INFOPLIST_FILE = ChooseSeatApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -344,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.MovieTicket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ChooseSeatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -352,7 +326,7 @@
 			};
 			name = Debug;
 		};
-		7D2F44722B3B53A500B4C31D /* Release */ = {
+		7D5132652B43227400D6AD70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -361,7 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34G99QRS57;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieTicket/Info.plist;
+				INFOPLIST_FILE = ChooseSeatApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -371,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.MovieTicket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.ChooseSeatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -382,25 +356,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D2F44572B3B53A200B4C31D /* Build configuration list for PBXProject "MovieTicket" */ = {
+		7D51324A2B43227200D6AD70 /* Build configuration list for PBXProject "ChooseSeatApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7D2F446E2B3B53A500B4C31D /* Debug */,
-				7D2F446F2B3B53A500B4C31D /* Release */,
+				7D5132612B43227400D6AD70 /* Debug */,
+				7D5132622B43227400D6AD70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D2F44702B3B53A500B4C31D /* Build configuration list for PBXNativeTarget "MovieTicket" */ = {
+		7D5132632B43227400D6AD70 /* Build configuration list for PBXNativeTarget "ChooseSeatApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7D2F44712B3B53A500B4C31D /* Debug */,
-				7D2F44722B3B53A500B4C31D /* Release */,
+				7D5132642B43227400D6AD70 /* Debug */,
+				7D5132652B43227400D6AD70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7D2F44542B3B53A200B4C31D /* Project object */;
+	rootObject = 7D5132472B43227200D6AD70 /* Project object */;
 }

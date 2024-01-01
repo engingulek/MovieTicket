@@ -95,11 +95,11 @@ extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSo
 
 extension HallsAndSessionsViewController : HallınfoTVCDelegate {
     func selectedBaseLanguage() {
-        print("Base Language")
+        presenter.buyTicketButtonTapped()
     }
     
     func selectedSubLangue() {
-        print("Sub Language")
+        presenter.buyTicketButtonTapped()
     }
 }
 

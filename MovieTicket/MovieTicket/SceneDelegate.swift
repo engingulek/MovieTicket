@@ -7,7 +7,7 @@
 
 import UIKit
 import DependenyKit
-import HomeModule
+import TabbarModule
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         dependenyRegister.registerDependencies()
               window = UIWindow(frame: windowScene.coordinateSpace.bounds)
               window?.windowScene = windowScene
-        @Dependency var homeModule : HomeModuleInterface
-        window?.rootViewController = UINavigationController(rootViewController: homeModule.createHomeModule())
+        @Dependency var tabbarModule : TabbarModuleInterface
+        window?.rootViewController = UINavigationController(rootViewController: tabbarModule.createHomeModule())
               window?.makeKeyAndVisible()
           }
 }

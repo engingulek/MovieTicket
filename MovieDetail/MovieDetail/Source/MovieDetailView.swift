@@ -114,7 +114,7 @@ final class MovieDetailView : UIView {
     
     private lazy var buyTicletButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Buy Ticket", for: .normal)
+        button.setTitle("Choose Seat", for: .normal)
         button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         button.backgroundColor = Theme.theme.themeColor.thirdBack

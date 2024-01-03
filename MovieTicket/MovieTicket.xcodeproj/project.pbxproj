@@ -16,6 +16,8 @@
 		7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; };
 		7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */; };
+		7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; };
+		7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; };
 		7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; };
@@ -35,6 +37,7 @@
 				7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */,
 				7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
 				7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */,
+				7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */,
 				7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -52,6 +55,7 @@
 		7D2F44A92B3B587100B4C31D /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F44AD2B3B588600B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegister.swift; sourceTree = "<group>"; };
+		7D3F05082B459E0700044D01 /* PaymentPageModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PaymentPageModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HallsAndSessionsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChooseSeatModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,7 @@
 				7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */,
 				7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */,
 				7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */,
+				7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */,
 				7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +111,7 @@
 		7D2F44A82B3B587100B4C31D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D3F05082B459E0700044D01 /* PaymentPageModule.framework */,
 				7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */,
 				7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */,
 				7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */,

@@ -12,7 +12,8 @@ struct FontSize {
     static let cellLabel: CGFloat = 20
     /// is 15
     static let cellSubLabel: CGFloat = 15
-    
+    /// is 10
+    static let thirdLabel: CGFloat = 10
 }
 
 extension UIFont {

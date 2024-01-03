@@ -5,6 +5,7 @@ import ThemeKit
 
 final class PaymentPageView : UIView {
     private lazy var movieAndTicketView = MovieAndTicketInfoView()
+    private lazy var contactionInfoView = ContactinfoView()
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
@@ -38,11 +39,13 @@ final class PaymentPageView : UIView {
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-        [movieAndTicketView].forEach { view in
+        [movieAndTicketView,
+        contactionInfoView].forEach { view in
             scrollStackViewContainer.addArrangedSubview(view)
         }
         
-        [movieAndTicketView].forEach { view in
+        [movieAndTicketView,
+         contactionInfoView].forEach { view in
             view.snp.makeConstraints { make in
                 make.leading.equalToSuperview()
             }

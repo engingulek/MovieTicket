@@ -17,6 +17,7 @@
 		7D3F04FA2B4569CE00044D01 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F04F82B4569CE00044D01 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */; };
 		7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */; };
+		7D3F05022B45796200044D01 /* ContactinfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F05012B45796200044D01 /* ContactinfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 		7D3F04F82B4569CE00044D01 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAndTicketInfoView.swift; sourceTree = "<group>"; };
 		7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageView.swift; sourceTree = "<group>"; };
+		7D3F05012B45796200044D01 /* ContactinfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactinfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +98,9 @@
 		7D3F04EF2B4568A600044D01 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7D3F05002B45793100044D01 /* views */,
 				7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */,
 				7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */,
-				7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */,
-				7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -110,6 +111,16 @@
 				7D3F04F82B4569CE00044D01 /* ThemeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D3F05002B45793100044D01 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */,
+				7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */,
+				7D3F05012B45796200044D01 /* ContactinfoView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */,
 				7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */,
 				7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */,
+				7D3F05022B45796200044D01 /* ContactinfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

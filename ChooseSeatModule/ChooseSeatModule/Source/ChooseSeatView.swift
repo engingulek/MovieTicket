@@ -4,8 +4,13 @@ import SnapKit
 import CommenUIKit
 import ThemeKit
 
+protocol ChooseSeatViewDelegate {
+    func payNowButtonTappedDelegate()
+}
+
+
 final class ChooseSeatView : UIView {
-    
+    var delegate :  ChooseSeatViewDelegate?
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
@@ -126,6 +131,23 @@ final class ChooseSeatView : UIView {
        return label
     }()
     
+    private lazy var payNowButton : UIButton = {
+        let button = UIButton()
+        button.setTitle("Pay Now", for: .normal)
+        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
+        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.titleLabel?.textAlignment = .left
+        button.layer.cornerRadius = Radius.small.rawValue
+        button.addAction(payButtonTapped, for: .touchUpInside)
+        return  button
+    }()
+    
+    private lazy var payButtonTapped  :UIAction = UIAction { _ in
+        self.delegate?.payNowButtonTappedDelegate()
+        
+    }
+    
     func prepareTableView(view:ChooseSeatViewController){
         seatListTableView.delegate = view
         seatListTableView.dataSource = view
@@ -175,10 +197,20 @@ final class ChooseSeatView : UIView {
             make.height.equalTo(80)
         }
         
+        addSubview(payNowButton)
+        payNowButton.snp.makeConstraints { make in
+            make.top.equalTo(hourcollectionview.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            
+        }
+        
+        
         
         addSubview(seatFullUIView)
         seatFullUIView.snp.makeConstraints { make in
-            make.top.equalTo(hourcollectionview.snp.bottom).offset(10)
+            make.top.equalTo(payNowButton.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -193,7 +225,7 @@ final class ChooseSeatView : UIView {
         
         addSubview(seatChosenUIView)
         seatChosenUIView.snp.makeConstraints { make in
-            make.top.equalTo(hourcollectionview.snp.bottom).offset(10)
+            make.top.equalTo(payNowButton.snp.bottom).offset(10)
             make.leading.equalTo(seatFullLabel.snp.trailing).offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -209,7 +241,7 @@ final class ChooseSeatView : UIView {
         
         addSubview(seatEmptyUIView)
         seatEmptyUIView.snp.makeConstraints { make in
-            make.top.equalTo(hourcollectionview.snp.bottom).offset(10)
+            make.top.equalTo(payNowButton.snp.bottom).offset(10)
             make.leading.equalTo(seatChoseLabel.snp.trailing).offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -241,6 +273,7 @@ final class ChooseSeatView : UIView {
             make.bottom.equalToSuperview()
         }
         
+       
     }
     
     required init?(coder: NSCoder) {

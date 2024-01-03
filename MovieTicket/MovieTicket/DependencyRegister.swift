@@ -4,6 +4,7 @@ import MovieDetail
 import DependenyKit
 import HallsAndSessionsModule
 import ChooseSeatModule
+import PaymentPageModule
 
 
 final class DependencyRegister {
@@ -13,5 +14,6 @@ final class DependencyRegister {
         dependencyRegister.register(value: MovieDetailRouter(), for: MovieDetailModuleInterface.self)
         dependencyRegister.register(value: HallsAndSessionsRouter(), for: HallsAndSessionsModuleInterface.self)
         dependencyRegister.register(value: ChooseSeatRouter(), for: ChooseSeatModuleInterface.self)
+        dependencyRegister.register(value: PaymenPageRouter(), for: PaymentPageModuleInterface.self)
     }
 }

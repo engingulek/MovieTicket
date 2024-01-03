@@ -5,7 +5,7 @@ import CommenUIKit
 import ViewControllerAbleKit
 import ThemeKit
 
-typealias Ables = UIViewAble
+typealias Ables = UIViewAble & SegueAble
 
 protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     var presenter : ChooseSeatPresenterInterface {get}
@@ -23,6 +23,7 @@ final class ChooseSeatViewController : UIViewController {
     
     override func loadView() {
         view = chooseSeatView
+        chooseSeatView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -83,6 +84,14 @@ extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDa
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }
+}
+
+extension ChooseSeatViewController : ChooseSeatViewDelegate {
+    func payNowButtonTappedDelegate() {
+        presenter.toPaymentPage()
+    }
+    
+    
 }
     
     

@@ -6,6 +6,7 @@ import ThemeKit
 final class PaymentPageView : UIView {
     private lazy var movieAndTicketView = MovieAndTicketInfoView()
     private lazy var contactionInfoView = ContactinfoView()
+    private lazy var cardInfoView = CardInfoView()
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
@@ -24,7 +25,7 @@ final class PaymentPageView : UIView {
         backgroundColor = Theme.theme.themeColor.primaryBackground
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
@@ -40,21 +41,10 @@ final class PaymentPageView : UIView {
         }
         
         [movieAndTicketView,
-        contactionInfoView].forEach { view in
+        contactionInfoView,
+        cardInfoView].forEach { view in
             scrollStackViewContainer.addArrangedSubview(view)
         }
-        
-        [movieAndTicketView,
-         contactionInfoView].forEach { view in
-            view.snp.makeConstraints { make in
-                make.leading.equalToSuperview()
-            }
-        }
-        
-        movieAndTicketView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
-        }
-        
     }
     
     required init?(coder: NSCoder) {

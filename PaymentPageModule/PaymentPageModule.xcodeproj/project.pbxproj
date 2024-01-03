@@ -18,6 +18,7 @@
 		7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */; };
 		7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */; };
 		7D3F05022B45796200044D01 /* ContactinfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F05012B45796200044D01 /* ContactinfoView.swift */; };
+		7D3F05042B4583C000044D01 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F05032B4583C000044D01 /* CardInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAndTicketInfoView.swift; sourceTree = "<group>"; };
 		7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageView.swift; sourceTree = "<group>"; };
 		7D3F05012B45796200044D01 /* ContactinfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactinfoView.swift; sourceTree = "<group>"; };
+		7D3F05032B4583C000044D01 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */,
 				7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */,
 				7D3F05012B45796200044D01 /* ContactinfoView.swift */,
+				7D3F05032B4583C000044D01 /* CardInfoView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */,
 				7D3F04EE2B4563D200044D01 /* PaymenPageRouter.swift in Sources */,
+				7D3F05042B4583C000044D01 /* CardInfoView.swift in Sources */,
 				7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */,
 				7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */,
 				7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */,

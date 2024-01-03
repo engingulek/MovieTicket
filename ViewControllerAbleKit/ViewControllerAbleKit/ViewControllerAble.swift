@@ -46,8 +46,19 @@ extension NavConUIAble where Self :  UIViewController {
     }
     
     public func navigationBarHidden(isHidden:Bool){
-        navigationController?.navigationBar.isHidden = isHidden
+        navigationController?.setNavigationBarHidden(isHidden, animated: true)
     }
 }
 
+
+// MARK: - TabbarConAble
+public protocol TabbarConAble {
+    func tabbarisHidden(isHidden : Bool)
+}
+
+extension TabbarConAble  where Self : UIViewController  {
+    public func tabbarisHidden(isHidden : Bool) {
+        tabBarController?.tabBar.isHidden =  isHidden
+    }
+}
 

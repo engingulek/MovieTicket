@@ -5,6 +5,7 @@ protocol MovieDetailPresenterInterface {
     var view : MovieDetailViewControllerInterface? {get}
     var router : MovieDetailRouterInterface? {get}
     func viewDidLoad()
+
     func numberOfItemsInSection() -> Int
     func sizeForItemAt() -> CGSize
     func toHallsAndSessions()
@@ -29,6 +30,7 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
         view?.changeTitle(title: "Movie Detail")
         view?.prepareCollectionView()
         view?.reloadCollectionView()
+        view?.tabbarisHidden(isHidden: true)
     }
     
     func numberOfItemsInSection() -> Int {

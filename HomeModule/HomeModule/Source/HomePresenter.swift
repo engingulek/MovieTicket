@@ -38,6 +38,7 @@ final class HomePresenter : HomePresenterInterface {
     
     func viewWilAppear() {
         view?.navigationBarHidden(isHidden: true)
+        view?.tabbarisHidden(isHidden: false)
     }
     
     

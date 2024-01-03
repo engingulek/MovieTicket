@@ -11,7 +11,27 @@
 		7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04E92B45634C00044D01 /* PaymentPageModuleInterface.swift */; };
 		7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */; };
 		7D3F04EE2B4563D200044D01 /* PaymenPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */; };
+		7D3F04F42B4569B300044D01 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D3F04F32B4569B300044D01 /* SnapKit */; };
+		7D3F04F62B4569B300044D01 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7D3F04F52B4569B300044D01 /* SnapKit-Dynamic */; };
+		7D3F04F92B4569CE00044D01 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F04F82B4569CE00044D01 /* ThemeKit.framework */; };
+		7D3F04FA2B4569CE00044D01 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F04F82B4569CE00044D01 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */; };
+		7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D3F04FB2B4569CE00044D01 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D3F04FA2B4569CE00044D01 /* ThemeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D3F04B62B45629200044D01 /* PaymentPageModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentPageModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +39,9 @@
 		7D3F04E92B45634C00044D01 /* PaymentPageModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageModuleInterface.swift; sourceTree = "<group>"; };
 		7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageViewController.swift; sourceTree = "<group>"; };
 		7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymenPageRouter.swift; sourceTree = "<group>"; };
+		7D3F04F82B4569CE00044D01 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAndTicketInfoView.swift; sourceTree = "<group>"; };
+		7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3F04F92B4569CE00044D01 /* ThemeKit.framework in Frameworks */,
+				7D3F04F42B4569B300044D01 /* SnapKit in Frameworks */,
+				7D3F04F62B4569B300044D01 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +63,7 @@
 			children = (
 				7D3F04B82B45629200044D01 /* PaymentPageModule */,
 				7D3F04B72B45629200044D01 /* Products */,
+				7D3F04F72B4569CE00044D01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +78,7 @@
 		7D3F04B82B45629200044D01 /* PaymentPageModule */ = {
 			isa = PBXGroup;
 			children = (
+				7D3F04EF2B4568A600044D01 /* Source */,
 				7D3F04E82B45633300044D01 /* InterfaceSource */,
 				7D3F04B92B45629200044D01 /* PaymentPageModule.h */,
 			);
@@ -61,10 +89,27 @@
 			isa = PBXGroup;
 			children = (
 				7D3F04E92B45634C00044D01 /* PaymentPageModuleInterface.swift */,
-				7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */,
-				7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */,
 			);
 			path = InterfaceSource;
+			sourceTree = "<group>";
+		};
+		7D3F04EF2B4568A600044D01 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */,
+				7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */,
+				7D3F04FC2B456AD000044D01 /* MovieAndTicketInfoView.swift */,
+				7D3F04FE2B456DA200044D01 /* PaymentPageView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7D3F04F72B4569CE00044D01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D3F04F82B4569CE00044D01 /* ThemeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,12 +134,17 @@
 				7D3F04B22B45629200044D01 /* Sources */,
 				7D3F04B32B45629200044D01 /* Frameworks */,
 				7D3F04B42B45629200044D01 /* Resources */,
+				7D3F04FB2B4569CE00044D01 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PaymentPageModule;
+			packageProductDependencies = (
+				7D3F04F32B4569B300044D01 /* SnapKit */,
+				7D3F04F52B4569B300044D01 /* SnapKit-Dynamic */,
+			);
 			productName = PaymentPageModule;
 			productReference = 7D3F04B62B45629200044D01 /* PaymentPageModule.framework */;
 			productType = "com.apple.product-type.framework";
@@ -123,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 7D3F04AC2B45629200044D01;
+			packageReferences = (
+				7D3F04F22B4569B300044D01 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7D3F04B72B45629200044D01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,7 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */,
 				7D3F04EE2B4563D200044D01 /* PaymenPageRouter.swift in Sources */,
+				7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */,
 				7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */,
 				7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */,
 			);
@@ -368,6 +423,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D3F04F22B4569B300044D01 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D3F04F32B4569B300044D01 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D3F04F22B4569B300044D01 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7D3F04F52B4569B300044D01 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D3F04F22B4569B300044D01 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D3F04AD2B45629200044D01 /* Project object */;
 }

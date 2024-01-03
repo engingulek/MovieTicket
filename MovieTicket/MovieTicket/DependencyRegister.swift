@@ -1,10 +1,12 @@
 import Foundation
+import TabbarModule
 import HomeModule
 import MovieDetail
 import DependenyKit
 import HallsAndSessionsModule
 import ChooseSeatModule
 import PaymentPageModule
+
 
 
 final class DependencyRegister {
@@ -15,5 +17,6 @@ final class DependencyRegister {
         dependencyRegister.register(value: HallsAndSessionsRouter(), for: HallsAndSessionsModuleInterface.self)
         dependencyRegister.register(value: ChooseSeatRouter(), for: ChooseSeatModuleInterface.self)
         dependencyRegister.register(value: PaymenPageRouter(), for: PaymentPageModuleInterface.self)
+        dependencyRegister.register(value:TabbarRouter() , for: TabbarModuleInterface.self)
     }
 }

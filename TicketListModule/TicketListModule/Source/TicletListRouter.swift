@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 protocol TicketListRouterInterface {
-    
+    func toTicketView()
 }
 
 public final class TicletListRouter : TicketListModuleInterface{
@@ -11,6 +11,10 @@ public final class TicletListRouter : TicketListModuleInterface{
         let view = TicketListTableViewController()
         return view
     }
-    
-    
+}
+
+extension TicletListRouter : TicketListRouterInterface {
+    func toTicketView() {
+        
+    } 
 }

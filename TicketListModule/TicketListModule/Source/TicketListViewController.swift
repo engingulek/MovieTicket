@@ -2,16 +2,27 @@
 import Foundation
 import UIKit
 import ThemeKit
-protocol TicketListViewControllerInterface : AnyObject {
+import ViewControllerAbleKit
+
+typealias Ables = UIViewAble & NavConUIAble & SegueAble & TabbarConAble
+
+protocol TicketListViewControllerInterface : AnyObject,Ables {
     
 }
 
 
 final class TicketListTableViewController : UITableViewController {
+    lazy var presenter : TicketListPresenterInterface = TicketListPresenter(view: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(TicketListTVC.self, forCellReuseIdentifier: TicketListTVC.identifier)
-        tableView.backgroundColor =  Theme.theme.themeColor.primaryBackground
+        presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
     
     override func tableView(_ tableView: UITableView, 
@@ -25,6 +36,16 @@ final class TicketListTableViewController : UITableViewController {
         for: indexPath) as? TicketListTVC else {return UITableViewCell()}
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, 
+                        didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath)
+        
+    }
+}
+
+extension TicketListTableViewController : TicketListViewControllerInterface {
+    
 }
 
 

@@ -6,6 +6,8 @@ import DependenyKit
 import HallsAndSessionsModule
 import ChooseSeatModule
 import PaymentPageModule
+import TicketListModule
+import TicketModule
 
 
 
@@ -18,5 +20,7 @@ final class DependencyRegister {
         dependencyRegister.register(value: ChooseSeatRouter(), for: ChooseSeatModuleInterface.self)
         dependencyRegister.register(value: PaymenPageRouter(), for: PaymentPageModuleInterface.self)
         dependencyRegister.register(value:TabbarRouter() , for: TabbarModuleInterface.self)
+        dependencyRegister.register(value:TicletListRouter() ,for: TicketListModuleInterface.self)
+        dependencyRegister.register(value: TicketRouter(), for: TicketModuleInterface.self)
     }
 }

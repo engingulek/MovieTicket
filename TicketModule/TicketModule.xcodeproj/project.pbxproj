@@ -19,6 +19,7 @@
 		7DA75F5C2B46B65400AF1D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */; };
 		7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; };
 		7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 		7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */,
 				7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */,
 				7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */,
+				7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */,
 			);
 			path = TicketModule;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */,
+				7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */,
 				7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */,
 				7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */,
 				7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */,

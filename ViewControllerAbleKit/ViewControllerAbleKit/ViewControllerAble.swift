@@ -1,5 +1,5 @@
 import UIKit
-
+import ThemeKit
 public protocol UIViewAble {
     func setBackColorAble(color:UIColor)
 }
@@ -29,7 +29,7 @@ public protocol NavConUIAble {
     func navigationBarHidden(isHidden:Bool)
 }
 
-extension NavConUIAble where Self :  UIViewController {
+extension NavConUIAble where Self :  UIViewController{
     public func changeNavBarColor(color:UIColor){
         navigationController?.navigationBar.barTintColor = color
     }
@@ -46,19 +46,23 @@ extension NavConUIAble where Self :  UIViewController {
     }
     
     public func navigationBarHidden(isHidden:Bool){
-        navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        navigationController?.navigationBar.isHidden = isHidden
     }
 }
-
-
 // MARK: - TabbarConAble
 public protocol TabbarConAble {
     func tabbarisHidden(isHidden : Bool)
+    func tabbarColor(color:UIColor)
 }
 
 extension TabbarConAble  where Self : UIViewController  {
     public func tabbarisHidden(isHidden : Bool) {
         tabBarController?.tabBar.isHidden =  isHidden
+    }
+    
+    public func tabbarColor(color:UIColor){
+        tabBarController?.tabBar.backgroundColor = color
+        tabBarController?.tabBar.barTintColor = color
     }
 }
 

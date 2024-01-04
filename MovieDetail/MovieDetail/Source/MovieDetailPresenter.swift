@@ -28,9 +28,10 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
         view?.changeNavBarColor(color: Theme.theme.themeColor.primaryBackground)
         view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
         view?.changeTitle(title: "Movie Detail")
+        view?.tabbarisHidden(isHidden: true)
         view?.prepareCollectionView()
         view?.reloadCollectionView()
-        view?.tabbarisHidden(isHidden: true)
+        
     }
     
     func numberOfItemsInSection() -> Int {

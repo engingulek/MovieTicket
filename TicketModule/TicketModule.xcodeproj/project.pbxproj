@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */; };
-		7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */; };
-		7D4E7F672B4046A400A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; };
-		7D4E7F682B4046A400A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA75F632B46C56400AF1D25 /* DottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F622B46C56400AF1D25 /* DottedLineView.swift */; };
-		7DA75F652B46C99F00AF1D25 /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F642B46C99F00AF1D25 /* Barcode.swift */; };
-		7DCAB34E2B3DBBD00045C37D /* CommenUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */; };
-		7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3572B3DBCC10045C37D /* SnapKit */; };
-		7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */; };
-		7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3842B3DE8300045C37D /* UIScreen.swift */; };
+		7DA75F1A2B46B1E900AF1D25 /* TicketModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA75F192B46B1E900AF1D25 /* TicketModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */; };
+		7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */; };
+		7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */; };
+		7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */; };
+		7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA75F522B46B5CF00AF1D25 /* SnapKit */; };
+		7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */; };
+		7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; };
+		7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA75F5C2B46B65400AF1D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */; };
+		7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; };
+		7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7D4E7F692B4046A400A7196B /* Embed Frameworks */ = {
+		7DA75F5A2B46B61B00AF1D25 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D4E7F682B4046A400A7196B /* ThemeKit.framework in Embed Frameworks */,
+				7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */,
+				7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,123 +37,124 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyLabelCVC.swift; sourceTree = "<group>"; };
-		7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7D4E7F662B4046A400A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA75F622B46C56400AF1D25 /* DottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLineView.swift; sourceTree = "<group>"; };
-		7DA75F642B46C99F00AF1D25 /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
-		7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenUIKit.h; sourceTree = "<group>"; };
-		7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCVC.swift; sourceTree = "<group>"; };
-		7DCAB3842B3DE8300045C37D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		7DA75F162B46B1E900AF1D25 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F192B46B1E900AF1D25 /* TicketModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketModule.h; sourceTree = "<group>"; };
+		7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModuleInterface.swift; sourceTree = "<group>"; };
+		7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRouter.swift; sourceTree = "<group>"; };
+		7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DCAB3472B3DBBD00045C37D /* Frameworks */ = {
+		7DA75F132B46B1E900AF1D25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4E7F672B4046A400A7196B /* ThemeKit.framework in Frameworks */,
-				7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */,
-				7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */,
+				7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */,
+				7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */,
+				7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */,
+				7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D4E7F652B4046A400A7196B /* Frameworks */ = {
+		7DA75F0C2B46B1E900AF1D25 = {
 			isa = PBXGroup;
 			children = (
-				7D4E7F662B4046A400A7196B /* ThemeKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7DCAB3402B3DBBD00045C37D = {
-			isa = PBXGroup;
-			children = (
-				7DCAB34C2B3DBBD00045C37D /* CommenUIKit */,
-				7DCAB34B2B3DBBD00045C37D /* Products */,
-				7D4E7F652B4046A400A7196B /* Frameworks */,
+				7DA75F182B46B1E900AF1D25 /* TicketModule */,
+				7DA75F172B46B1E900AF1D25 /* Products */,
+				7DA75F562B46B61B00AF1D25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		7DCAB34B2B3DBBD00045C37D /* Products */ = {
+		7DA75F172B46B1E900AF1D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */,
+				7DA75F162B46B1E900AF1D25 /* TicketModule.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DCAB34C2B3DBBD00045C37D /* CommenUIKit */ = {
+		7DA75F182B46B1E900AF1D25 /* TicketModule */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */,
-				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
-				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
-				7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */,
-				7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */,
-				7DA75F622B46C56400AF1D25 /* DottedLineView.swift */,
-				7DA75F642B46C99F00AF1D25 /* Barcode.swift */,
+				7DA75F192B46B1E900AF1D25 /* TicketModule.h */,
+				7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */,
+				7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */,
+				7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */,
+				7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */,
+				7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */,
 			);
-			path = CommenUIKit;
+			path = TicketModule;
+			sourceTree = "<group>";
+		};
+		7DA75F562B46B61B00AF1D25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */,
+				7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7DCAB3452B3DBBD00045C37D /* Headers */ = {
+		7DA75F112B46B1E900AF1D25 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB34E2B3DBBD00045C37D /* CommenUIKit.h in Headers */,
+				7DA75F1A2B46B1E900AF1D25 /* TicketModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7DCAB3492B3DBBD00045C37D /* CommenUIKit */ = {
+		7DA75F152B46B1E900AF1D25 /* TicketModule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DCAB3512B3DBBD00045C37D /* Build configuration list for PBXNativeTarget "CommenUIKit" */;
+			buildConfigurationList = 7DA75F1D2B46B1E900AF1D25 /* Build configuration list for PBXNativeTarget "TicketModule" */;
 			buildPhases = (
-				7DCAB3452B3DBBD00045C37D /* Headers */,
-				7DCAB3462B3DBBD00045C37D /* Sources */,
-				7DCAB3472B3DBBD00045C37D /* Frameworks */,
-				7DCAB3482B3DBBD00045C37D /* Resources */,
-				7D4E7F692B4046A400A7196B /* Embed Frameworks */,
+				7DA75F112B46B1E900AF1D25 /* Headers */,
+				7DA75F122B46B1E900AF1D25 /* Sources */,
+				7DA75F132B46B1E900AF1D25 /* Frameworks */,
+				7DA75F142B46B1E900AF1D25 /* Resources */,
+				7DA75F5A2B46B61B00AF1D25 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CommenUIKit;
+			name = TicketModule;
 			packageProductDependencies = (
-				7DCAB3572B3DBCC10045C37D /* SnapKit */,
-				7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */,
+				7DA75F522B46B5CF00AF1D25 /* SnapKit */,
+				7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */,
 			);
-			productName = CommenUIKit;
-			productReference = 7DCAB34A2B3DBBD00045C37D /* CommenUIKit.framework */;
+			productName = TicketModule;
+			productReference = 7DA75F162B46B1E900AF1D25 /* TicketModule.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7DCAB3412B3DBBD00045C37D /* Project object */ = {
+		7DA75F0D2B46B1E900AF1D25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					7DCAB3492B3DBBD00045C37D = {
+					7DA75F152B46B1E900AF1D25 = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = 7DCAB3442B3DBBD00045C37D /* Build configuration list for PBXProject "CommenUIKit" */;
+			buildConfigurationList = 7DA75F102B46B1E900AF1D25 /* Build configuration list for PBXProject "TicketModule" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,47 +162,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DCAB3402B3DBBD00045C37D;
+			mainGroup = 7DA75F0C2B46B1E900AF1D25;
 			packageReferences = (
-				7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
-			productRefGroup = 7DCAB34B2B3DBBD00045C37D /* Products */;
+			productRefGroup = 7DA75F172B46B1E900AF1D25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DCAB3492B3DBBD00045C37D /* CommenUIKit */,
+				7DA75F152B46B1E900AF1D25 /* TicketModule */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7DCAB3482B3DBBD00045C37D /* Resources */ = {
+		7DA75F142B46B1E900AF1D25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */,
+				7DA75F5C2B46B65400AF1D25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7DCAB3462B3DBBD00045C37D /* Sources */ = {
+		7DA75F122B46B1E900AF1D25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
-				7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */,
-				7DA75F652B46C99F00AF1D25 /* Barcode.swift in Sources */,
-				7DA75F632B46C56400AF1D25 /* DottedLineView.swift in Sources */,
-				7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */,
+				7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */,
+				7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */,
+				7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */,
+				7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7DCAB34F2B3DBBD00045C37D /* Debug */ = {
+		7DA75F1B2B46B1E900AF1D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -265,7 +267,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB3502B3DBBD00045C37D /* Release */ = {
+		7DA75F1C2B46B1E900AF1D25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +326,7 @@
 			};
 			name = Release;
 		};
-		7DCAB3522B3DBBD00045C37D /* Debug */ = {
+		7DA75F1E2B46B1E900AF1D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -347,7 +349,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.CommenUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.TicketModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -357,7 +359,7 @@
 			};
 			name = Debug;
 		};
-		7DCAB3532B3DBBD00045C37D /* Release */ = {
+		7DA75F1F2B46B1E900AF1D25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -380,7 +382,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.CommenUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.TicketModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -392,20 +394,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DCAB3442B3DBBD00045C37D /* Build configuration list for PBXProject "CommenUIKit" */ = {
+		7DA75F102B46B1E900AF1D25 /* Build configuration list for PBXProject "TicketModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB34F2B3DBBD00045C37D /* Debug */,
-				7DCAB3502B3DBBD00045C37D /* Release */,
+				7DA75F1B2B46B1E900AF1D25 /* Debug */,
+				7DA75F1C2B46B1E900AF1D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DCAB3512B3DBBD00045C37D /* Build configuration list for PBXNativeTarget "CommenUIKit" */ = {
+		7DA75F1D2B46B1E900AF1D25 /* Build configuration list for PBXNativeTarget "TicketModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7DCAB3522B3DBBD00045C37D /* Debug */,
-				7DCAB3532B3DBBD00045C37D /* Release */,
+				7DA75F1E2B46B1E900AF1D25 /* Debug */,
+				7DA75F1F2B46B1E900AF1D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -413,28 +415,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
+				minimumVersion = 5.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7DCAB3572B3DBCC10045C37D /* SnapKit */ = {
+		7DA75F522B46B5CF00AF1D25 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */ = {
+		7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7DCAB3562B3DBCC10045C37D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 7DCAB3412B3DBBD00045C37D /* Project object */;
+	rootObject = 7DA75F0D2B46B1E900AF1D25 /* Project object */;
 }

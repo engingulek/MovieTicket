@@ -8,6 +8,9 @@
       location = "container:"
       name = "Apss">
       <FileRef
+         location = "group:../TicketApp/TicketApp.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:../TicletListApp/TicletListApp.xcodeproj">
       </FileRef>
       <FileRef
@@ -53,26 +56,37 @@
    <Group
       location = "container:"
       name = "Moduls">
-      <FileRef
-         location = "group:../TabbarModule/TabbarModule.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../HomeModule/HomeModule.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../MovieDetail/MovieDetail.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../TicketListModule/TicketListModule.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../HallsAndSessionsModule/HallsAndSessionsModule.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../ChooseSeatModule/ChooseSeatModule.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../PaymentPageModule/PaymentPageModule.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "Domain">
+         <FileRef
+            location = "group:../TabbarModule/TabbarModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../HomeModule/HomeModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../MovieDetail/MovieDetail.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../TicketListModule/TicketListModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../HallsAndSessionsModule/HallsAndSessionsModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../ChooseSeatModule/ChooseSeatModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../PaymentPageModule/PaymentPageModule.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Shared">
+         <FileRef
+            location = "group:../TicketModule/TicketModule.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>

@@ -16,7 +16,7 @@ final class ChooseSeatView : UIView {
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "Dune: Part Two"
-       return label
+        return label
     }()
     
     
@@ -25,7 +25,7 @@ final class ChooseSeatView : UIView {
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "04/01/2014"
-       return label
+        return label
     }()
     
     
@@ -34,17 +34,7 @@ final class ChooseSeatView : UIView {
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "English(Subtitle)"
-       return label
-    }()
-    
-    
-    private lazy var seatListTableView : UITableView = {
-        let tableView = UITableView()
-        tableView.register(SeatInfoTVC.self, forCellReuseIdentifier: SeatInfoTVC.identifier)
-        tableView.allowsMultipleSelection = true
-        tableView.backgroundColor = Theme.theme.themeColor.primaryBackground
-        tableView.separatorColor = Theme.theme.themeColor.primaryBackground
-        return tableView
+        return label
     }()
     
     private lazy var hourcollectionview : UICollectionView  = {
@@ -54,7 +44,7 @@ final class ChooseSeatView : UIView {
                                  height:UIScreen.main.bounds.height / 15 )
         layout.scrollDirection = .horizontal
         let  collectionview = UICollectionView(frame: .zero,
-                                         collectionViewLayout: layout)
+                                               collectionViewLayout: layout)
         collectionview.register(
             OnlyLabelCVC.self,
             forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
@@ -65,7 +55,7 @@ final class ChooseSeatView : UIView {
     }()
     
     
-  
+    
     
     private lazy var screneLabel : UILabel = {
         let label = UILabel()
@@ -73,7 +63,7 @@ final class ChooseSeatView : UIView {
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "Scene"
         label.textAlignment = .center
-       return label
+        return label
     }()
     
     
@@ -91,7 +81,7 @@ final class ChooseSeatView : UIView {
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "Full"
         label.textAlignment = .center
-       return label
+        return label
     }()
     
     
@@ -110,7 +100,7 @@ final class ChooseSeatView : UIView {
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "Chosen"
         label.textAlignment = .center
-       return label
+        return label
     }()
     
     
@@ -128,7 +118,7 @@ final class ChooseSeatView : UIView {
         label.textColor = Theme.theme.themeColor.primaryLabel
         label.text = "Empty"
         label.textAlignment = .center
-       return label
+        return label
     }()
     
     private lazy var payNowButton : UIButton = {
@@ -143,18 +133,19 @@ final class ChooseSeatView : UIView {
         return  button
     }()
     
+   private lazy var mainStackView : UIStackView = {
+     let stackView = UIStackView()
+     stackView.axis = .vertical
+     stackView.alignment = .fill
+     stackView.distribution = .fillEqually
+     stackView.spacing = 10
+     return stackView
+     }()
+     
+    
     private lazy var payButtonTapped  :UIAction = UIAction { _ in
         self.delegate?.payNowButtonTappedDelegate()
         
-    }
-    
-    func prepareTableView(view:ChooseSeatViewController){
-        seatListTableView.delegate = view
-        seatListTableView.dataSource = view
-    }
-    
-    func reloadDataTableView(){
-        seatListTableView.reloadData()
     }
     
     
@@ -169,7 +160,52 @@ final class ChooseSeatView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureUI()
+        seatDesing()
+    }
     
+    private func seatDesing(){
+            for rowIndex in 1...8 {
+                let rowStackView = UIStackView()
+                rowStackView.axis = .horizontal
+                rowStackView.alignment = .fill
+                rowStackView.distribution = .fillEqually
+                rowStackView.spacing = 10
+                
+                for columnIndex in 1...10 {
+                    let squareView = UIView()
+                    squareView.backgroundColor = UIColor.white
+                    squareView.layer.cornerRadius = Radius.small.rawValue
+                    rowStackView.addArrangedSubview(squareView)
+                    
+                    let tapGestureRecognizer = UITapGestureRecognizer(
+                        target: self,
+                        action: #selector(squareTapped(_:)))
+                    squareView.addGestureRecognizer(tapGestureRecognizer)
+                    // Exmaple
+                    /// row:  2,  column:3   -tag = 2 * 100  + 3 = 203
+                    squareView.tag = rowIndex * 100 + columnIndex
+                }
+                mainStackView.addArrangedSubview(rowStackView)
+            }
+    }
+      @objc func squareTapped(_ sender: UITapGestureRecognizer) {
+          if let tappedView = sender.view {
+              print(tappedView)
+              // Exmaple
+              /// row:  2,  column:3   -tag = 2 * 100  + 3 = 203
+              /// 203 / 100 = 2 = Row
+              /// 203 % 100 = 3 = Column
+              let rowIndex = tappedView.tag / 100
+              let columnIndex = tappedView.tag % 100
+              print("Tapped on square at Row \(rowIndex), Column \(columnIndex)")
+          }
+      }
+    
+    
+    private func configureUI(){
+        
+        
         addSubview(movieNameLabel)
         movieNameLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
@@ -189,28 +225,29 @@ final class ChooseSeatView : UIView {
             make.centerX.equalToSuperview()
         }
         
-        addSubview(hourcollectionview)
-        hourcollectionview.snp.makeConstraints { make in
+        
+        
+        addSubview(screneLabel)
+        screneLabel.snp.makeConstraints { make in
             make.top.equalTo(movieLanguageLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(80)
         }
         
-        addSubview(payNowButton)
-        payNowButton.snp.makeConstraints { make in
-            make.top.equalTo(hourcollectionview.snp.bottom).offset(10)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.width.equalToSuperview().multipliedBy(0.7)
-            
-        }
+        
+        addSubview(mainStackView)
+            mainStackView.snp.makeConstraints { make in
+                make.top.equalTo(screneLabel.snp.bottom).offset(20)
+                make.leading.equalToSuperview().offset(20)
+                make.trailing.equalToSuperview().offset(-20)
+                make.height.equalTo(UIScreen.main.bounds.height / 3)
+            }
         
         
         
         addSubview(seatFullUIView)
         seatFullUIView.snp.makeConstraints { make in
-            make.top.equalTo(payNowButton.snp.bottom).offset(10)
+            make.top.equalTo(mainStackView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -225,7 +262,7 @@ final class ChooseSeatView : UIView {
         
         addSubview(seatChosenUIView)
         seatChosenUIView.snp.makeConstraints { make in
-            make.top.equalTo(payNowButton.snp.bottom).offset(10)
+            make.top.equalTo(mainStackView.snp.bottom).offset(15)
             make.leading.equalTo(seatFullLabel.snp.trailing).offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -235,13 +272,13 @@ final class ChooseSeatView : UIView {
         seatChoseLabel.snp.makeConstraints { make in
             make.top.equalTo(seatChosenUIView.snp.top)
             make.leading.equalTo(seatChosenUIView.snp.trailing).offset(5)
-           
+            
         }
         
         
         addSubview(seatEmptyUIView)
         seatEmptyUIView.snp.makeConstraints { make in
-            make.top.equalTo(payNowButton.snp.bottom).offset(10)
+            make.top.equalTo(mainStackView.snp.bottom).offset(15)
             make.leading.equalTo(seatChoseLabel.snp.trailing).offset(20)
             make.height.equalTo(25)
             make.width.equalTo(25)
@@ -251,30 +288,30 @@ final class ChooseSeatView : UIView {
         seatEmptyLabel.snp.makeConstraints { make in
             make.top.equalTo(seatEmptyUIView.snp.top)
             make.leading.equalTo(seatEmptyUIView.snp.trailing).offset(5)
-
+            
         }
         
-        
-        addSubview(screneLabel)
-        screneLabel.snp.makeConstraints { make in
-            make.top.equalTo(seatFullUIView.snp.bottom).offset(10)
+        addSubview(hourcollectionview)
+        hourcollectionview.snp.makeConstraints { make in
+            make.top.equalTo(seatEmptyUIView.snp.bottom).offset(10)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+            make.height.equalTo(80)
         }
         
         
-        
-        
-        addSubview(seatListTableView)
-        seatListTableView.snp.makeConstraints { make in
-            make.top.equalTo(screneLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+        addSubview(payNowButton)
+        payNowButton.snp.makeConstraints { make in
+            
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
         }
-        
-       
     }
+    
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

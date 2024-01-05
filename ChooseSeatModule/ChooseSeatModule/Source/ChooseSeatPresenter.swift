@@ -24,8 +24,6 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     
     func viewDidLoad() {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
-        view?.prepareTableView()
-        view?.reloadTableView()
         view?.prepareCollectionView()
         view?.reloadCollecionView()
     }

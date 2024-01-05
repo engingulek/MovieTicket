@@ -15,6 +15,10 @@
 		7D3F05422B45D23F00044D01 /* TanbbarModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F05412B45D23F00044D01 /* TanbbarModuleInterface.swift */; };
 		7D3F05442B45D3FE00044D01 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05432B45D3FE00044D01 /* ThemeKit.framework */; };
 		7D3F05452B45D3FE00044D01 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05432B45D3FE00044D01 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D43721A2B487CA30049DB05 /* HomeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372192B487CA30049DB05 /* HomeModule.framework */; };
+		7D43721B2B487CA30049DB05 /* HomeModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372192B487CA30049DB05 /* HomeModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D43721D2B487CAE0049DB05 /* TicketListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43721C2B487CAE0049DB05 /* TicketListModule.framework */; };
+		7D43721E2B487CAE0049DB05 /* TicketListModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D43721C2B487CAE0049DB05 /* TicketListModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +28,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D43721E2B487CAE0049DB05 /* TicketListModule.framework in Embed Frameworks */,
 				7D3F05392B45D12600044D01 /* DependenyKit.framework in Embed Frameworks */,
 				7D3F05452B45D3FE00044D01 /* ThemeKit.framework in Embed Frameworks */,
+				7D43721B2B487CA30049DB05 /* HomeModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +46,8 @@
 		7D3F053E2B45D22900044D01 /* TabbarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarRouter.swift; sourceTree = "<group>"; };
 		7D3F05412B45D23F00044D01 /* TanbbarModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TanbbarModuleInterface.swift; sourceTree = "<group>"; };
 		7D3F05432B45D3FE00044D01 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4372192B487CA30049DB05 /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D43721C2B487CAE0049DB05 /* TicketListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TicketListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D43721D2B487CAE0049DB05 /* TicketListModule.framework in Frameworks */,
 				7D3F05382B45D12600044D01 /* DependenyKit.framework in Frameworks */,
 				7D3F05442B45D3FE00044D01 /* ThemeKit.framework in Frameworks */,
+				7D43721A2B487CA30049DB05 /* HomeModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +104,8 @@
 		7D3F05362B45D12600044D01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D43721C2B487CAE0049DB05 /* TicketListModule.framework */,
+				7D4372192B487CA30049DB05 /* HomeModule.framework */,
 				7D3F05432B45D3FE00044D01 /* ThemeKit.framework */,
 				7D3F05372B45D12600044D01 /* DependenyKit.framework */,
 			);

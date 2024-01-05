@@ -9,8 +9,6 @@ typealias Ables = UIViewAble & SegueAble
 
 protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     var presenter : ChooseSeatPresenterInterface {get}
-    func prepareTableView()
-    func reloadTableView()
     
     func prepareCollectionView()
     func reloadCollecionView()
@@ -41,35 +39,13 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
         chooseSeatView.reloadDataCollectionView()
     }
     
-    func prepareTableView() {
-        chooseSeatView.prepareTableView(view: self)
-    }
-    
-    func reloadTableView() {
-        chooseSeatView.reloadDataTableView()
-    }
+ 
     
    
 
 }
 
-extension ChooseSeatViewController : UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: SeatInfoTVC.identifier,
-            for: indexPath) as? SeatInfoTVC else {return UITableViewCell()}
-        cell.configureData(squenceData: indexPath.row,seatCount: 10)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height / 15
-    }
-}
+
 
 
 extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDataSource {

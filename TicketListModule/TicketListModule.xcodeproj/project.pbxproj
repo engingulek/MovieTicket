@@ -16,7 +16,6 @@
 		7D3F05912B45E0FB00044D01 /* TicketListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3F05902B45E0FB00044D01 /* TicketListTVC.swift */; };
 		7D3F05942B45E11100044D01 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D3F05932B45E11100044D01 /* SnapKit */; };
 		7D3F05962B45E11100044D01 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7D3F05952B45E11100044D01 /* SnapKit-Dynamic */; };
-		7D3F05982B45E16B00044D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3F05972B45E16B00044D01 /* Assets.xcassets */; };
 		7D3F059A2B45E1EF00044D01 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05992B45E1EF00044D01 /* ThemeKit.framework */; };
 		7D3F059B2B45E1EF00044D01 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05992B45E1EF00044D01 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA75F672B46DD6000AF1D25 /* TicketModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F662B46DD6000AF1D25 /* TicketModule.framework */; };
@@ -48,7 +47,6 @@
 		7D3F05642B45DBFC00044D01 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		7D3F05662B45DCAB00044D01 /* TicletListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicletListRouter.swift; sourceTree = "<group>"; };
 		7D3F05902B45E0FB00044D01 /* TicketListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListTVC.swift; sourceTree = "<group>"; };
-		7D3F05972B45E16B00044D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D3F05992B45E1EF00044D01 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F662B46DD6000AF1D25 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F692B46DDB400AF1D25 /* TicketListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListPresenter.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				7D3F05632B45DBE800044D01 /* Source */,
 				7D3F05602B45DBA900044D01 /* InterfaceSource */,
 				7D3F05532B45DB7300044D01 /* TicketListModule.h */,
-				7D3F05972B45E16B00044D01 /* Assets.xcassets */,
 			);
 			path = TicketListModule;
 			sourceTree = "<group>";
@@ -205,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3F05982B45E16B00044D01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

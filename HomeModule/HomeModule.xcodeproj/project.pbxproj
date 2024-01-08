@@ -171,6 +171,7 @@
 				7D2F45172B3C7A9200B4C31D /* FutureMovie */,
 				7D2F45142B3C78DB00B4C31D /* MovieInCinema */,
 				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
+				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
 				7DCAB3802B3DDA210045C37D /* HomePresenter.swift */,
 			);
 			path = Source;
@@ -208,7 +209,6 @@
 		7DCAB3662B3DD8AA0045C37D /* view */ = {
 			isa = PBXGroup;
 			children = (
-				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
 				7D2F45122B3C77B400B4C31D /* BaseCollectionView.swift */,
 				7D2F451D2B3C974100B4C31D /* HeaderCollectionReuableView.swift */,
 				7DCAB3822B3DDD010045C37D /* HomeView.swift */,

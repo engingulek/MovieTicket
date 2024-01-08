@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & SegueAble & NavConUIAble & TabbarConAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble 
 
 protocol HomeViewControllerInterface : AnyObject,Ables {
     var presenter : HomePresenterInterface {get}

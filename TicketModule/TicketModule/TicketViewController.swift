@@ -5,7 +5,7 @@ import CommenUIKit
 import ViewControllerAbleKit
 
 
-typealias Ables = UIViewAble & NavConUIAble & TabbarConAble
+typealias Ables = UIViewAble & NavConUIAble 
 
 protocol TicketViewControllerInterface : AnyObject,Ables {
     var presenter : TicketPresenterInterface {get}

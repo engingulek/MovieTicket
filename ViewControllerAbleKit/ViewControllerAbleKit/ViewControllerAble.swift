@@ -49,20 +49,5 @@ extension NavConUIAble where Self :  UIViewController{
         navigationController?.navigationBar.isHidden = isHidden
     }
 }
-// MARK: - TabbarConAble
-public protocol TabbarConAble {
-    func tabbarisHidden(isHidden : Bool)
-    func tabbarColor(color:UIColor)
-}
 
-extension TabbarConAble  where Self : UIViewController  {
-    public func tabbarisHidden(isHidden : Bool) {
-        tabBarController?.tabBar.isHidden =  isHidden
-    }
-    
-    public func tabbarColor(color:UIColor){
-        tabBarController?.tabBar.backgroundColor = color
-        tabBarController?.tabBar.barTintColor = color
-    }
-}
 

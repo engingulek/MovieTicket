@@ -4,7 +4,7 @@ import UIKit
 import ThemeKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & NavConUIAble & SegueAble & TabbarConAble
+typealias Ables = UIViewAble & NavConUIAble & SegueAble
 
 protocol TicketListViewControllerInterface : AnyObject,Ables {
     

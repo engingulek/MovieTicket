@@ -63,9 +63,6 @@
          location = "container:"
          name = "Domain">
          <FileRef
-            location = "group:../TabbarModule/TabbarModule.xcodeproj">
-         </FileRef>
-         <FileRef
             location = "group:../HomeModule/HomeModule.xcodeproj">
          </FileRef>
          <FileRef

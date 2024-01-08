@@ -3,7 +3,7 @@ import SnapKit
 import CommenUIKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & NavConUIAble & SegueAble & TabbarConAble
+typealias Ables = UIViewAble & NavConUIAble & SegueAble 
 
 protocol MovieDetailViewControllerInterface : AnyObject,Ables {
     var presenter : MovieDetailPresenterInterface {get}

@@ -18,8 +18,6 @@
 		7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */; };
 		7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; };
 		7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D3F053C2B45D1F500044D01 /* TabbarModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F053B2B45D1F500044D01 /* TabbarModule.framework */; };
-		7D3F053D2B45D1F500044D01 /* TabbarModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F053B2B45D1F500044D01 /* TabbarModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D4372D42B4C11DA0049DB05 /* SearchMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */; };
 		7D4372D52B4C11DA0049DB05 /* SearchMovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; };
@@ -42,7 +40,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */,
-				7D3F053D2B45D1F500044D01 /* TabbarModule.framework in Embed Frameworks */,
 				7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */,
 				7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
 				7DA75F702B46E05400AF1D25 /* TicketModule.framework in Embed Frameworks */,
@@ -83,7 +80,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */,
-				7D3F053C2B45D1F500044D01 /* TabbarModule.framework in Frameworks */,
 				7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */,
 				7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */,
 				7DA75F6F2B46E05400AF1D25 /* TicketModule.framework in Frameworks */,

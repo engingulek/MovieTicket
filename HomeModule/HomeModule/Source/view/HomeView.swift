@@ -84,6 +84,14 @@ final class HomeView : UIView {
         movieListCollectionView.reloadData()
     }
     
+    func prepareTextField(view:HomeViewController) {
+        searhTextField.delegate = view
+    }
+    
+    func textFieldTextRemove(){
+        searhTextField.text = ""
+    }
+    
     func returnMovieListCollectionView() -> UICollectionView {
         return  movieListCollectionView
     }

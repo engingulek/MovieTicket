@@ -5,12 +5,12 @@ import SnapKit
 import ThemeKit
 
 
-class TicketListTVC : UITableViewCell {
-    static let identifier : String = "ticketListTVC"
+class SearchMovieTVC : UITableViewCell {
+    static let identifier : String = "searchMovieTVC"
     
     private lazy var movieImageView : UIImageView = {
        let imageView = UIImageView()
-      
+        imageView.image =  UIImage(resource: .dune)
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Radius.small.rawValue
         return imageView
@@ -23,45 +23,34 @@ class TicketListTVC : UITableViewCell {
         label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
-    private lazy var languageInfoLabel : UILabel = {
-        let label = UILabel()
-        label.text = "English(Subtitle)"
-        label.font = Theme.theme.themeFont.cellSubLabelFont
-        label.textColor =  Theme.theme.themeColor.primaryLabel
-        return label
-    }()
     
-    
-    private lazy var cinemaNameLabel : UILabel = {
+    private lazy var languageLabel : UILabel = {
         let label = UILabel()
-        label.text = "Life Cinema"
+        label.text = "EnglishSubtitle"
         label.font = Theme.theme.themeFont.cellSubLabelFont
         label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
-    private lazy var hallNumberLabel : UILabel = {
+ 
+    
+    private lazy var genresLabel : UILabel = {
         let label = UILabel()
-        label.text = "Hall 2"
+        label.text = "Dram,Action"
         label.font = Theme.theme.themeFont.cellSubLabelFont
         label.textColor = Theme.theme.themeColor.primaryLabel
         return label
     }()
     
-    private lazy var dateInfoLabel : UILabel = {
-        let label = UILabel()
-        label.text = "01/04/2024 17:40"
-        label.font = Theme.theme.themeFont.cellLabelFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
-        return label
-    }()
     
-    private lazy var ticketAmount : UILabel = {
+    private lazy var detailLabelLabel : UILabel = {
         let label = UILabel()
-        label.text = "2 Person x $40"
-        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
+        label.text = "In publishing and graphic design, Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/) is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design."
+        label.font = Theme.theme.themeFont.cellSubLabelFont
         label.textColor = Theme.theme.themeColor.primaryLabel
+        label.numberOfLines = .zero
         return label
     }()
+   
     
    
     
@@ -85,36 +74,27 @@ class TicketListTVC : UITableViewCell {
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
         }
         
-        contentView.addSubview(languageInfoLabel)
-        languageInfoLabel.snp.makeConstraints { make in
+        contentView.addSubview(languageLabel)
+        languageLabel.snp.makeConstraints { make in
             make.top.equalTo(movieNameLabel.snp.bottom).offset(5)
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
         }
         
-        contentView.addSubview(cinemaNameLabel)
-        cinemaNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(languageInfoLabel.snp.bottom).offset(5)
+        contentView.addSubview(genresLabel)
+        genresLabel.snp.makeConstraints { make in
+            make.top.equalTo(languageLabel.snp.bottom).offset(5)
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
         }
         
-        contentView.addSubview(hallNumberLabel)
-        hallNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(cinemaNameLabel.snp.top)
-            make.leading.equalTo(cinemaNameLabel.snp.trailing).offset(10)
-        }
-        
-        contentView.addSubview(dateInfoLabel)
-        dateInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(hallNumberLabel.snp.bottom).offset(5)
+        contentView.addSubview(detailLabelLabel)
+        detailLabelLabel.snp.makeConstraints { make in
+            make.top.equalTo(genresLabel.snp.bottom).offset(5)
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().offset(-5)
+            make.bottom.equalToSuperview().offset(-5)
         }
         
         
-        contentView.addSubview(ticketAmount)
-        ticketAmount.snp.makeConstraints { make in
-            make.top.equalTo(dateInfoLabel.snp.bottom).offset(5)
-            make.leading.equalTo(movieImageView.snp.trailing).offset(10)
-        }
     }
     
     required init?(coder: NSCoder) {

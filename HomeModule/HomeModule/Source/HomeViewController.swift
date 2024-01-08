@@ -9,6 +9,7 @@ protocol HomeViewControllerInterface : AnyObject,Ables {
     var presenter : HomePresenterInterface {get}
     func prepareCollectionView()
     func reloadCollectionView()
+    func textFieldAction()
 }
 
 final class HomeViewController: UIViewController {
@@ -19,6 +20,7 @@ final class HomeViewController: UIViewController {
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     override func loadView() {
         view = homeView
+        homeView.prepareTextField(view: self)
     }
 
     override func viewDidLoad() {
@@ -75,6 +77,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
 
 
 extension HomeViewController : HomeViewControllerInterface {
+    
     func prepareCollectionView() {
         homeView.prepareCollectionView(view: self)
     }
@@ -82,11 +85,24 @@ extension HomeViewController : HomeViewControllerInterface {
     func reloadCollectionView() {
         homeView.reloadCollectionView()
     }
+    
+    func textFieldAction() {
+        homeView.textFieldTextRemove()
+    }
 }
 
 extension HomeViewController : MovieListCVCForInCinemeDelegate {
     func selectedMovieInCinema() {
-        presenter.toMovieDetail()
+        presenter.selectedMovie()
+    }
+}
+
+
+extension HomeViewController :  UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let text = textField.text {
+            presenter.textDidChange(text: text)
+        }
     }
 }
 

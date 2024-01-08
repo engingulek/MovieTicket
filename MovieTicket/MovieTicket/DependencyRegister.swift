@@ -8,6 +8,7 @@ import ChooseSeatModule
 import PaymentPageModule
 import TicketListModule
 import TicketModule
+import SearchMovie
 
 
 
@@ -22,5 +23,6 @@ final class DependencyRegister {
         dependencyRegister.register(value:TabbarRouter() , for: TabbarModuleInterface.self)
         dependencyRegister.register(value:TicletListRouter() ,for: TicketListModuleInterface.self)
         dependencyRegister.register(value: TicketRouter(), for: TicketModuleInterface.self)
+        dependencyRegister.register(value: SearchMovieRouter(), for: SearcMovieModuleInterface.self)
     }
 }

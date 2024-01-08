@@ -3,10 +3,17 @@ import UIKit
 import SnapKit
 import ThemeKit
 
-final class PaymentPageView : UIView {
+protocol PaymentPageViewDelegate {
+    func buyTicketButtonTapped()
+}
+
+
+final class PaymentPageView : UIView{
+   
     private lazy var movieAndTicketView = MovieAndTicketInfoView()
     private lazy var contactionInfoView = ContactinfoView()
     private lazy var cardInfoView = CardInfoView()
+    var delegate : PaymentPageViewDelegate?
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
@@ -22,6 +29,7 @@ final class PaymentPageView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        cardInfoView.delegate = self
         backgroundColor = Theme.theme.themeColor.primaryBackground
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
@@ -50,4 +58,13 @@ final class PaymentPageView : UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+
+extension PaymentPageView : CardInfoViewDelegate  {
+    func buyTicketButtonTapped() {
+        delegate?.buyTicketButtonTapped()
+    }
+    
+    
 }

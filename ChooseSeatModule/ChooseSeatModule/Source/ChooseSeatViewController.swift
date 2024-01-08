@@ -5,7 +5,7 @@ import CommenUIKit
 import ViewControllerAbleKit
 import ThemeKit
 
-typealias Ables = UIViewAble & SegueAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     var presenter : ChooseSeatPresenterInterface {get}
@@ -38,14 +38,7 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
     func reloadCollecionView() {
         chooseSeatView.reloadDataCollectionView()
     }
-    
- 
-    
-   
-
 }
-
-
 
 
 extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDataSource {

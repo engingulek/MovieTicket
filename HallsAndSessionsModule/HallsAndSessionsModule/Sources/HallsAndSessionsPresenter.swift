@@ -23,6 +23,7 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     
     func viewDidLoad() {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
+        view?.changeTitle(title: "Choose Cinema")
         view?.prepareCollectionView()
         view?.reloadCollectionView()
         view?.prepareTableView()

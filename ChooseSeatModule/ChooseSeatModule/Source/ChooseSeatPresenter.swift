@@ -26,6 +26,7 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.prepareCollectionView()
         view?.reloadCollecionView()
+        view?.changeTitle(title: "Choose Seat")
     }
     
     

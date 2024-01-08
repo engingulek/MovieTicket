@@ -3,9 +3,12 @@ import UIKit
 import SnapKit
 import ThemeKit
 
+protocol CardInfoViewDelegate {
+    func buyTicketButtonTapped()
+}
+
 final class CardInfoView : UIView {
-    
-    
+    var delegate : CardInfoViewDelegate?
     private lazy var nameOnTheCardabel : UILabel = {
         let label = UILabel()
         label.text = "Name On The Card"
@@ -93,8 +96,13 @@ final class CardInfoView : UIView {
         button.backgroundColor = Theme.theme.themeColor.thirdBack
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = Radius.small.rawValue
+        button.addAction(buyTicketButtonTapped, for: .touchUpInside)
         return  button
     }()
+    
+    private lazy var buyTicketButtonTapped : UIAction = UIAction { _ in
+        self.delegate?.buyTicketButtonTapped()
+    }
 
     
     

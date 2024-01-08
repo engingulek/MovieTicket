@@ -6,7 +6,7 @@ import SnapKit
 import CommenUIKit
 import ThemeKit
 
-typealias Ables = UIViewAble & SegueAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble
 protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
     var presenter : HallsAndSessionsPresenterInterface {get}
     

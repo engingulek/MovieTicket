@@ -7,7 +7,7 @@
 
 import UIKit
 import DependenyKit
-import TabbarModule
+import HomeModule
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         dependenyRegister.registerDependencies()
               window = UIWindow(frame: windowScene.coordinateSpace.bounds)
               window?.windowScene = windowScene
-        @Dependency var tabbarModule : TabbarModuleInterface
-        window?.rootViewController = tabbarModule.createHomeModule()
+        @Dependency var homeModule : HomeModuleInterface
+        window?.rootViewController = UINavigationController(rootViewController: homeModule .createHomeModule())
               window?.makeKeyAndVisible()
           }
 }

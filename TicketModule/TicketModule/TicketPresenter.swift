@@ -17,7 +17,6 @@ final class TicketPresenter : TicketPresenterInterface {
         view?.changeNavBarColor(color: Theme.theme.themeColor.primaryBackground)
         view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
         view?.changeTitle(title: "Ticket")
-        view?.tabbarisHidden(isHidden: true)
     }
     
     

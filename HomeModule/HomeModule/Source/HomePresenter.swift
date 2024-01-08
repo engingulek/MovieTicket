@@ -35,14 +35,14 @@ final class HomePresenter : HomePresenterInterface {
     func viewDidLoad() {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.navigationBarHidden(isHidden: true)
-        view?.tabbarColor(color: Theme.theme.themeColor.secondaryBack)
+        
         view?.prepareCollectionView()
         view?.reloadCollectionView()
     }
     
     func viewWilAppear() {
         view?.navigationBarHidden(isHidden: true)
-        view?.tabbarisHidden(isHidden: false)
+       
     }
     
     

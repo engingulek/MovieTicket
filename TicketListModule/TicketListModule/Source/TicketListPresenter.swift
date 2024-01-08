@@ -25,7 +25,7 @@ final class TicketListPresenter : TicketListPresenterInterface {
     }
     
     func viewWillAppear(){
-        view?.tabbarisHidden(isHidden: false)
+       
         view?.navigationBarHidden(isHidden: true)
     }
     

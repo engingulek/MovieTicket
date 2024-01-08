@@ -46,7 +46,7 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchMovieTVC.identifier,for: indexPath) as? SearchMovieTVC else {return UITableViewCell()}
-       
+        cell.selectionStyle = .none
         return cell
     }
 }

@@ -5,19 +5,22 @@ import ThemeKit
 protocol HomePresenterInterface {
     var view : HomeViewControllerInterface? {get}
     var router : HomeRouterInterface? {get}
+    
     func viewDidLoad()
     func viewWilAppear()
+    
     func numberOfItemsInSection() -> Int
     func cellForItemAt(at indexPath: IndexPath) -> String
     func sizeForItemAt(at indexPath: IndexPath) -> CGSize
     func headerCollectionReuableView(at indexPath: IndexPath) -> String
     func referenceSizeForHeaderInSection() -> CGSize
-    func toMovieDetail()
+    func selectedMovie()
+    func textDidChange(text:String)
 }
 
 
 final class HomePresenter : HomePresenterInterface {
-  
+    
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     weak var view: HomeViewControllerInterface?
     var router: HomeRouterInterface?
@@ -81,7 +84,16 @@ final class HomePresenter : HomePresenterInterface {
         return CGSize(width: UIScreenView.shared.screenWidth, height: 50)
     }
     
-    func toMovieDetail() {
+    func selectedMovie() {
         router?.toMovieDetail(view: view)
     }
+    
+    func textDidChange(text: String) {
+        if text.count > 3{
+            router?.toSearchMovie(view: view)
+            view?.textFieldAction()
+        }
+    }
+    
+  
 }

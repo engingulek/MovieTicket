@@ -31,10 +31,13 @@
 		7D4E7F642B40408E00A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F622B40408E00A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D74F7532B4ED1D90000A9BA /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D74F7522B4ED1D90000A9BA /* NetworkKit.framework */; };
 		7D74F7542B4ED1D90000A9BA /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D74F7522B4ED1D90000A9BA /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D74F7562B4ED2120000A9BA /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7552B4ED2120000A9BA /* HomeInteractor.swift */; };
 		7D74F7582B4ED2960000A9BA /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7572B4ED2960000A9BA /* Genres.swift */; };
 		7D74F75A2B4ED4300000A9BA /* GenresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */; };
-		7D74F75C2B4ED5080000A9BA /* GenresInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75B2B4ED5080000A9BA /* GenresInteractor.swift */; };
+		7D74F75C2B4ED5080000A9BA /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */; };
+		7D74F75E2B4F03260000A9BA /* MovieInCinemaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75D2B4F03260000A9BA /* MovieInCinemaPresenter.swift */; };
+		7D74F7602B4F03A80000A9BA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75F2B4F03A80000A9BA /* Movie.swift */; };
+		7D74F7622B4F08660000A9BA /* FutureMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7612B4F08660000A9BA /* FutureMoviePresenter.swift */; };
+		7D74F7652B4F0C000000A9BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D74F7642B4F0C000000A9BA /* Kingfisher */; };
 		7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; };
 		7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB37E2B3DDA050045C37D /* ViewControllerAbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB37D2B3DDA050045C37D /* ViewControllerAbleKit.framework */; };
@@ -85,10 +88,12 @@
 		7D4372E12B4C1D740049DB05 /* SearchMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4E7F622B40408E00A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D74F7522B4ED1D90000A9BA /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D74F7552B4ED2120000A9BA /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		7D74F7572B4ED2960000A9BA /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresPresenter.swift; sourceTree = "<group>"; };
-		7D74F75B2B4ED5080000A9BA /* GenresInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresInteractor.swift; sourceTree = "<group>"; };
+		7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		7D74F75D2B4F03260000A9BA /* MovieInCinemaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInCinemaPresenter.swift; sourceTree = "<group>"; };
+		7D74F75F2B4F03A80000A9BA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7D74F7612B4F08660000A9BA /* FutureMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureMoviePresenter.swift; sourceTree = "<group>"; };
 		7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB37D2B3DDA050045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB3802B3DDA210045C37D /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 				7D2F44DE2B3B5D9600B4C31D /* SnapKit-Dynamic in Frameworks */,
 				7DCAB37E2B3DDA050045C37D /* ViewControllerAbleKit.framework in Frameworks */,
 				7D4E7F632B40408E00A7196B /* ThemeKit.framework in Frameworks */,
+				7D74F7652B4F0C000000A9BA /* Kingfisher in Frameworks */,
 				7D4372232B487CE90049DB05 /* MovieDetail.framework in Frameworks */,
 				7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */,
 				7DCAB38B2B3DF8760045C37D /* DependenyKit.framework in Frameworks */,
@@ -150,6 +156,7 @@
 			children = (
 				7D2F45102B3C723200B4C31D /* MovieInCinemaCV.swift */,
 				7D2F45152B3C797600B4C31D /* MovieListCVCForInCineme.swift */,
+				7D74F75D2B4F03260000A9BA /* MovieInCinemaPresenter.swift */,
 			);
 			path = MovieInCinema;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 			children = (
 				7D2F45182B3C7AB000B4C31D /* FutureMovieCV.swift */,
 				7D2F451A2B3C7B0100B4C31D /* MovieListCVCForFuture.swift */,
+				7D74F7612B4F08660000A9BA /* FutureMoviePresenter.swift */,
 			);
 			path = FutureMovie;
 			sourceTree = "<group>";
@@ -177,7 +185,7 @@
 				7D2F45202B3C9DF600B4C31D /* GenresCV.swift */,
 				7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */,
 				7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */,
-				7D74F75B2B4ED5080000A9BA /* GenresInteractor.swift */,
+				7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
@@ -193,8 +201,8 @@
 				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
 				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
 				7DCAB3802B3DDA210045C37D /* HomePresenter.swift */,
-				7D74F7552B4ED2120000A9BA /* HomeInteractor.swift */,
 				7D74F7572B4ED2960000A9BA /* Genres.swift */,
+				7D74F75F2B4F03A80000A9BA /* Movie.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			packageProductDependencies = (
 				7D2F44DB2B3B5D9600B4C31D /* SnapKit */,
 				7D2F44DD2B3B5D9600B4C31D /* SnapKit-Dynamic */,
+				7D74F7642B4F0C000000A9BA /* Kingfisher */,
 			);
 			productName = HomeModule;
 			productReference = 7D2F447D2B3B53B900B4C31D /* HomeModule.framework */;
@@ -303,6 +312,7 @@
 			mainGroup = 7D2F44732B3B53B900B4C31D;
 			packageReferences = (
 				7D2F44DA2B3B5D9600B4C31D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D74F7632B4F0C000000A9BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7D2F447E2B3B53B900B4C31D /* Products */;
 			projectDirPath = "";
@@ -329,13 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D74F7602B4F03A80000A9BA /* Movie.swift in Sources */,
 				7D74F75A2B4ED4300000A9BA /* GenresPresenter.swift in Sources */,
 				7D2F45132B3C77B400B4C31D /* BaseCollectionView.swift in Sources */,
 				7D2F45212B3C9DF600B4C31D /* GenresCV.swift in Sources */,
 				7D2F44A32B3B571700B4C31D /* HomeModuleInterface.swift in Sources */,
-				7D74F7562B4ED2120000A9BA /* HomeInteractor.swift in Sources */,
 				7DCAB3832B3DDD010045C37D /* HomeView.swift in Sources */,
 				7D2F451E2B3C974100B4C31D /* HeaderCollectionReuableView.swift in Sources */,
+				7D74F75E2B4F03260000A9BA /* MovieInCinemaPresenter.swift in Sources */,
 				7D2F44A72B3B57AF00B4C31D /* HomeRouter.swift in Sources */,
 				7D2F450F2B3C6E2C00B4C31D /* MovieCVC.swift in Sources */,
 				7D2F45112B3C723200B4C31D /* MovieInCinemaCV.swift in Sources */,
@@ -343,7 +354,8 @@
 				7D2F45192B3C7AB000B4C31D /* FutureMovieCV.swift in Sources */,
 				7D74F7582B4ED2960000A9BA /* Genres.swift in Sources */,
 				7D2F45252B3CA03C00B4C31D /* MovieListCVCForGenre.swift in Sources */,
-				7D74F75C2B4ED5080000A9BA /* GenresInteractor.swift in Sources */,
+				7D74F75C2B4ED5080000A9BA /* HomeInteractor.swift in Sources */,
+				7D74F7622B4F08660000A9BA /* FutureMoviePresenter.swift in Sources */,
 				7D2F44A52B3B575200B4C31D /* HomeViewController.swift in Sources */,
 				7D2F45162B3C797600B4C31D /* MovieListCVCForInCineme.swift in Sources */,
 				7D2F451B2B3C7B0100B4C31D /* MovieListCVCForFuture.swift in Sources */,
@@ -575,6 +587,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		7D74F7632B4F0C000000A9BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -587,6 +607,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D2F44DA2B3B5D9600B4C31D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		7D74F7642B4F0C000000A9BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D74F7632B4F0C000000A9BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

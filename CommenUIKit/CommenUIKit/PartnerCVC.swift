@@ -1,7 +1,7 @@
-
 import UIKit
 import SnapKit
 import ThemeKit
+import Kingfisher
 public final class PartnerCVC: UICollectionViewCell {
    public static let identifier : String = "cell"
     private lazy var imageView : UIImageView = {
@@ -26,8 +26,14 @@ public final class PartnerCVC: UICollectionViewCell {
         return label
     }()
     
-   public func configureData(image:UIImage,firstText:String,secondaryText:String){
-        imageView.image = image
+   public func configureData(imageUrl:String,firstText:String,secondaryText:String){
+       let url = URL(string: imageUrl)
+
+       imageView.kf.setImage(
+                  with: url,
+              placeholder: UIImage(systemName: "pawprint.fill"),
+              options: [.transition(.fade(1))])
+      
         firstLabel.text = firstText
         secondryLabel.text = secondaryText
     }

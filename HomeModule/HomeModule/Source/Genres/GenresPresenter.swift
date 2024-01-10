@@ -2,7 +2,7 @@ import Foundation
 
 protocol GenresPresenterInterface {
     var view : GenresCVInterface? {get}
-    var interactor : GenresInteractorProtocol {get}
+    var interactor : HomeInteractorProtocol {get}
     
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
@@ -12,11 +12,11 @@ protocol GenresPresenterInterface {
 class GenresPresenter : GenresPresenterInterface {
     
     var view: GenresCVInterface?
-    var interactor: GenresInteractorProtocol
+    var interactor: HomeInteractorProtocol
     
     private var genres : [Genres] = []
     
-    init(view: GenresCVInterface, interactor: GenresInteractorProtocol = GenresInteractor.shared) {
+    init(view: GenresCVInterface, interactor: HomeInteractorProtocol = HomeInteractor.shared) {
         self.view = view
         self.interactor = interactor
     }

@@ -43,6 +43,9 @@
          location = "container:"
          name = "SharedKits">
          <FileRef
+            location = "group:../NetworkKit/NetworkKit.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:../ThemeKit/ThemeKit.xcodeproj">
          </FileRef>
          <FileRef

@@ -35,7 +35,7 @@ extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionView
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PartnerCVC.identifier,
             for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
-        cell.configureData(image: .castImages,
+        cell.configureData(imageUrl: "",
                            firstText: "Timothée Chalamet",
                            secondaryText: "Paul Atredies")
         

@@ -4,6 +4,8 @@ import Foundation
 import Alamofire
 public enum NetworkPath {
     case genres
+    case movieInCinema
+    case futureMovie
 
     
 }
@@ -15,9 +17,13 @@ extension NetworkPath : TargetType {
     
     var path: String {
         switch self {
+        case .movieInCinema:
+            return "movie/movieInCinema"
+        case .futureMovie:
+            return "movie/futureMovie"
         case .genres:
             return "genres/getGenres"
-        
+
         }
     }
     

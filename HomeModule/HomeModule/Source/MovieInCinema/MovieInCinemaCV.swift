@@ -1,13 +1,19 @@
 import Foundation
 import UIKit
 import ThemeKit
-
+import CommenUIKit
 protocol MovieInCinemaCVDelegate {
     func selectedMovie()
+    
+}
+
+protocol  MovieInCinemaCVInterface : AnyObject {
+    func realoadData()
 }
 
 final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
     var delegate : MovieInCinemaCVDelegate?
+    lazy var presenter : MovieInCinemaPresenterInterface = MovieInCinemaPresenter(view: self)
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
@@ -17,12 +23,14 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
                     layout.scrollDirection = .horizontal
                 }
+        
+        presenter.viewDidLoad()
     }
     
     
       override func collectionView(_ collectionView: UICollectionView, 
                             numberOfItemsInSection section: Int) -> Int {
-          return 10
+          return presenter.numberOfItemsInSection()
       }
       
       override func collectionView(_ collectionView: UICollectionView, 
@@ -31,9 +39,11 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
           guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MovieCVC.identifier,
             for: indexPath) as? MovieCVC else {return UICollectionViewCell()}
-          cell.configureData(image: .movieTest, 
-                        movieName: "Joker",
-                        category: "Crime,Drama")
+          let movie = presenter.cellForItemAt(at: indexPath)
+          //cell.configureData(image: .movieTest, movieName: movie.name ?? "", category: "\(movie.genres?.joined(separator: ", ") ?? "")")
+         cell.configureData(imageUrl:movie.imageUrl ?? "",
+                             firstText: movie.name ?? "",
+                             secondaryText: "\(movie.genres?.joined(separator: ", ") ?? "")")
           return cell
       }
     
@@ -50,5 +60,16 @@ extension MovieInCinemaCV  {
                     sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width / 1.3, 
                   height: UIScreen.main.bounds.height / 2)
+    }
+}
+
+
+extension MovieInCinemaCV : MovieInCinemaCVInterface {
+    func realoadData() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            collectionView.reloadData()
+        }
+       
     }
 }

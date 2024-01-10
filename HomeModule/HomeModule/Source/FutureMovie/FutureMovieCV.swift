@@ -3,8 +3,13 @@ import UIKit
 import CommenUIKit
 import ThemeKit
 
+protocol FutureMovieCVInterface : AnyObject {
+    func realoadData()
+}
+
+
 final class FutureMovieCV : BaseCollectionView {
-    
+    lazy var presenter : FutureMoviePresenterInterface = FutureMoviePresenterr(view: self)
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
@@ -15,12 +20,13 @@ final class FutureMovieCV : BaseCollectionView {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
+        presenter.viewDidLoad()
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, 
                         numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return presenter.numberOfItemsInSection()
     }
     
     override func collectionView(_ collectionView: UICollectionView, 
@@ -29,12 +35,12 @@ final class FutureMovieCV : BaseCollectionView {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PartnerCVC.identifier,
             for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
+        let movie = presenter.cellForItemAt(at:indexPath)
         
         cell.configureData(
-            image: .movieTestImageTwo,
-            firstText: "Dune Part Two",
-            secondaryText: "Science Fiction")
-      
+            imageUrl: movie.imageUrl ?? "",
+            firstText: "\(movie.name ?? "")",
+            secondaryText: "test")
         return cell
     }
 }
@@ -47,5 +53,15 @@ extension FutureMovieCV : UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: UIScreen.main.bounds.width / 2, 
                    height: UIScreen.main.bounds.height / 3)
+    }
+}
+
+extension FutureMovieCV : FutureMovieCVInterface {
+    func realoadData() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            collectionView.reloadData()
+        }
+       
     }
 }

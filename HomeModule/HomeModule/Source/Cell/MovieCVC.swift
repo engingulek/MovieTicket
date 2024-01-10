@@ -26,15 +26,17 @@ final class MovieCVC: UICollectionViewCell {
         return label
     }()
     
-    func configureData(
-        image:UIImage,
-        movieName:String,
-        category:String){
-            
-        movieImageView.image = image
-        movieNameLabel.text = movieName
-        movieCategory.text = category
-    }
+    public func configureData(imageUrl:String,firstText:String,secondaryText:String){
+        let url = URL(string: imageUrl)
+
+       movieImageView.kf.setImage(
+                   with: url,
+               placeholder: UIImage(systemName: "pawprint.fill"),
+               options: [.transition(.fade(1))])
+       
+         movieNameLabel.text = firstText
+         movieCategory.text = secondaryText
+     }
    
     
     override init(frame: CGRect) {

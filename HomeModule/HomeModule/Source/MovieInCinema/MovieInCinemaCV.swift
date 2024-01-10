@@ -17,8 +17,8 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
-        collectionView.register(MovieCVC.self,
-                        forCellWithReuseIdentifier: MovieCVC.identifier)
+        collectionView.register(PartnerCVC.self,
+                        forCellWithReuseIdentifier: PartnerCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
                     layout.scrollDirection = .horizontal
@@ -37,8 +37,8 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
                             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
           
           guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MovieCVC.identifier,
-            for: indexPath) as? MovieCVC else {return UICollectionViewCell()}
+            withReuseIdentifier: PartnerCVC.identifier,
+            for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
           let movie = presenter.cellForItemAt(at: indexPath)
           //cell.configureData(image: .movieTest, movieName: movie.name ?? "", category: "\(movie.genres?.joined(separator: ", ") ?? "")")
          cell.configureData(imageUrl:movie.imageUrl ?? "",

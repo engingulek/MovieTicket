@@ -22,7 +22,7 @@ public final class PartnerCVC: UICollectionViewCell {
     private lazy var secondryLabel : UILabel = {
        let label = UILabel()
         label.textColor = Theme.theme.themeColor.primaryLabel
-        label.font = Theme.theme.themeFont.cellSubLabelFont
+        label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         return label
     }()
     
@@ -31,7 +31,6 @@ public final class PartnerCVC: UICollectionViewCell {
 
        imageView.kf.setImage(
                   with: url,
-              placeholder: UIImage(systemName: "pawprint.fill"),
               options: [.transition(.fade(1))])
       
         firstLabel.text = firstText
@@ -41,27 +40,27 @@ public final class PartnerCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
+
         contentView.addSubview(secondryLabel)
-        secondryLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(20)
-        }
-        
-        contentView.addSubview(firstLabel)
-        firstLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(secondryLabel.snp.top).offset(-5)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-        }
-        
-        contentView.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-             make.top.equalToSuperview()
-            make.bottom.equalTo(firstLabel.snp.top).offset(-5)
-            make.leading.equalToSuperview().offset(20)
-             make.trailing.equalToSuperview()
-         }
+               secondryLabel.snp.makeConstraints { make in
+                   make.bottom.equalToSuperview()
+                   make.leading.equalToSuperview().offset(20)
+               }
+               
+               contentView.addSubview(firstLabel)
+               firstLabel.snp.makeConstraints { make in
+                   make.bottom.equalTo(secondryLabel.snp.top).offset(-5)
+                   make.leading.equalToSuperview().offset(20)
+                   make.trailing.equalToSuperview().offset(-20)
+               }
+               
+               contentView.addSubview(imageView)
+               imageView.snp.makeConstraints { make in
+                    make.top.equalToSuperview()
+                   make.bottom.equalToSuperview().offset(-50)
+                   make.leading.equalToSuperview().offset(20)
+                    make.trailing.equalToSuperview()
+                }
     }
     
    

@@ -40,7 +40,7 @@ final class FutureMovieCV : BaseCollectionView {
         cell.configureData(
             imageUrl: movie.imageUrl ?? "",
             firstText: "\(movie.name ?? "")",
-            secondaryText: "test")
+            secondaryText: "\(movie.genres?.joined(separator: ", ") ?? "")")
         return cell
     }
 }

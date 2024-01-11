@@ -41,9 +41,9 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
             for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
           let movie = presenter.cellForItemAt(at: indexPath)
           //cell.configureData(image: .movieTest, movieName: movie.name ?? "", category: "\(movie.genres?.joined(separator: ", ") ?? "")")
-         cell.configureData(imageUrl:movie.imageUrl ?? "",
-                             firstText: movie.name ?? "",
-                             secondaryText: "\(movie.genres?.joined(separator: ", ") ?? "")")
+          cell.configureData(imageUrl:movie.imageURL,
+                             firstText: movie.name,
+                             secondaryText: "\(movie.genres.joined(separator: ", "))")
           return cell
       }
     

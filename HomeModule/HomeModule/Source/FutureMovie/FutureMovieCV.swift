@@ -38,9 +38,9 @@ final class FutureMovieCV : BaseCollectionView {
         let movie = presenter.cellForItemAt(at:indexPath)
         
         cell.configureData(
-            imageUrl: movie.imageUrl ?? "",
-            firstText: "\(movie.name ?? "")",
-            secondaryText: "\(movie.genres?.joined(separator: ", ") ?? "")")
+            imageUrl: movie.imageURL,
+            firstText: "\(movie.name)",
+            secondaryText: "\(movie.genres.joined(separator: ", "))")
         return cell
     }
 }

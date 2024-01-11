@@ -12,17 +12,17 @@ public enum NetworkPath {
 
 extension NetworkPath : TargetType {
     var baseURL: String {
-        return "http://localhost:8080/api/"
+        return "https://movieticket-c36a3-default-rtdb.firebaseio.com/"
     }
     
     var path: String {
         switch self {
         case .movieInCinema:
-            return "movie/movieInCinema"
+            return "movieInCinema.json"
         case .futureMovie:
-            return "movie/futureMovie"
+            return "futureMovie.json"
         case .genres:
-            return "genres/getGenres"
+            return "genres.json"
 
         }
     }

@@ -185,7 +185,6 @@
 				7D2F45202B3C9DF600B4C31D /* GenresCV.swift */,
 				7D2F45242B3CA03C00B4C31D /* MovieListCVCForGenre.swift */,
 				7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */,
-				7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
@@ -200,6 +199,7 @@
 				7D2F45142B3C78DB00B4C31D /* MovieInCinema */,
 				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
 				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
+				7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */,
 				7DCAB3802B3DDA210045C37D /* HomePresenter.swift */,
 				7D74F7572B4ED2960000A9BA /* Genres.swift */,
 				7D74F75F2B4F03A80000A9BA /* Movie.swift */,

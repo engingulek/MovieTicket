@@ -17,7 +17,7 @@ final class HomeInteractor : HomeInteractorProtocol {
             let response = try await NetworkManager.shared.fetch(
                 target: .genres,
                 responseClass: DataResult<[Genres]>.self)
-            return response.data
+            return response.list
         }catch{
             throw error
         }
@@ -29,7 +29,7 @@ final class HomeInteractor : HomeInteractorProtocol {
             let response = try await NetworkManager.shared.fetch(
                 target: .movieInCinema,
                 responseClass: DataResult<[Movie]>.self)
-            return response.data
+            return response.list
         }catch{
             throw error
         }
@@ -42,7 +42,7 @@ final class HomeInteractor : HomeInteractorProtocol {
             let response = try await NetworkManager.shared.fetch(
                 target: .futureMovie,
                 responseClass: DataResult<[Movie]>.self)
-            return response.data
+            return response.list
         }catch{
             throw error
         }

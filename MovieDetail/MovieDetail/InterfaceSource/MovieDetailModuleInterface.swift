@@ -1,7 +1,7 @@
 
 import Foundation
 import UIKit
-
+import ModelKit
 public protocol MovieDetailModuleInterface {
-    func createMovieDetailModule() -> UIViewController
+    func createMovieDetailModule(movie : MovieResult) -> UIViewController
 }

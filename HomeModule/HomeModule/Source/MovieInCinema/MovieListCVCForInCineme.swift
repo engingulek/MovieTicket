@@ -1,8 +1,8 @@
 import UIKit
 import SnapKit
-
+import ModelKit
 protocol MovieListCVCForInCinemeDelegate {
-    func selectedMovieInCinema()
+    func selectedMovieInCinema(movie:MovieResult)
 }
 
 
@@ -29,7 +29,7 @@ final class MovieListCVCForInCineme : UICollectionViewCell {
 
 
 extension MovieListCVCForInCineme : MovieInCinemaCVDelegate {
-    func selectedMovie() {
-        self.delegate?.selectedMovieInCinema()
+    func selectedMovie(movie:MovieResult) {
+        self.delegate?.selectedMovieInCinema(movie:movie)
     }
 }

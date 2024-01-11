@@ -1,6 +1,7 @@
 import Foundation
 import CommenUIKit
 import ThemeKit
+import ModelKit
 protocol MovieDetailPresenterInterface {
     var view : MovieDetailViewControllerInterface? {get}
     var router : MovieDetailRouterInterface? {get}
@@ -39,7 +40,7 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
     }
     
     func sizeForItemAt() -> CGSize {
-        return CGSize(width: UIScreenView.shared.screenWidth / 2.5,
+        return CGSize(width: UIScreenView.shared.screenWidth / 2,
                       height: UIScreenView.shared.screenHeight / 4)
     }
     
@@ -47,3 +48,9 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
         router?.toHallsAndSessions(view: view)
     }
 }
+
+
+
+
+
+

@@ -2,21 +2,25 @@
 import UIKit
 import SnapKit
 import ViewControllerAbleKit
-
-typealias Ables = UIViewAble & SegueAble & NavConUIAble 
+import ModelKit
+import MovieDetail
+typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol HomeViewControllerInterface : AnyObject,Ables {
     var presenter : HomePresenterInterface {get}
     func prepareCollectionView()
     func reloadCollectionView()
     func textFieldAction()
+  
+
 }
 
 final class HomeViewController: UIViewController {
     
     lazy var presenter: HomePresenterInterface = HomePresenter(view: self)
+   
     private lazy var homeView = HomeView()
-    
+   
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
     override func loadView() {
         view = homeView
@@ -92,8 +96,8 @@ extension HomeViewController : HomeViewControllerInterface {
 }
 
 extension HomeViewController : MovieListCVCForInCinemeDelegate {
-    func selectedMovieInCinema() {
-        presenter.selectedMovie()
+    func selectedMovieInCinema(movie:MovieResult) {
+        presenter.selectedMovie(movie: movie)
     }
 }
 

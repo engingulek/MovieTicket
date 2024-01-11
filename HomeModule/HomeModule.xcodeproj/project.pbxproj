@@ -35,9 +35,10 @@
 		7D74F75A2B4ED4300000A9BA /* GenresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */; };
 		7D74F75C2B4ED5080000A9BA /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */; };
 		7D74F75E2B4F03260000A9BA /* MovieInCinemaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75D2B4F03260000A9BA /* MovieInCinemaPresenter.swift */; };
-		7D74F7602B4F03A80000A9BA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F75F2B4F03A80000A9BA /* Movie.swift */; };
 		7D74F7622B4F08660000A9BA /* FutureMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74F7612B4F08660000A9BA /* FutureMoviePresenter.swift */; };
 		7D74F7652B4F0C000000A9BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D74F7642B4F0C000000A9BA /* Kingfisher */; };
+		7DA136562B5054A200767870 /* ModelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA136552B5054A200767870 /* ModelKit.framework */; };
+		7DA136572B5054A200767870 /* ModelKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA136552B5054A200767870 /* ModelKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB35D2B3DBCEB0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; };
 		7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB37E2B3DDA050045C37D /* ViewControllerAbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB37D2B3DDA050045C37D /* ViewControllerAbleKit.framework */; };
@@ -62,6 +63,7 @@
 				7D4372242B487CE90049DB05 /* MovieDetail.framework in Embed Frameworks */,
 				7DCAB35E2B3DBCEB0045C37D /* CommenUIKit.framework in Embed Frameworks */,
 				7D74F7542B4ED1D90000A9BA /* NetworkKit.framework in Embed Frameworks */,
+				7DA136572B5054A200767870 /* ModelKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,8 +94,8 @@
 		7D74F7592B4ED4300000A9BA /* GenresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresPresenter.swift; sourceTree = "<group>"; };
 		7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		7D74F75D2B4F03260000A9BA /* MovieInCinemaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInCinemaPresenter.swift; sourceTree = "<group>"; };
-		7D74F75F2B4F03A80000A9BA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7D74F7612B4F08660000A9BA /* FutureMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureMoviePresenter.swift; sourceTree = "<group>"; };
+		7DA136552B5054A200767870 /* ModelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ModelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB35C2B3DBCEB0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB37D2B3DDA050045C37D /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB3802B3DDA210045C37D /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				7D2F44DC2B3B5D9600B4C31D /* SnapKit in Frameworks */,
 				7D2F44DE2B3B5D9600B4C31D /* SnapKit-Dynamic in Frameworks */,
 				7DCAB37E2B3DDA050045C37D /* ViewControllerAbleKit.framework in Frameworks */,
+				7DA136562B5054A200767870 /* ModelKit.framework in Frameworks */,
 				7D4E7F632B40408E00A7196B /* ThemeKit.framework in Frameworks */,
 				7D74F7652B4F0C000000A9BA /* Kingfisher in Frameworks */,
 				7D4372232B487CE90049DB05 /* MovieDetail.framework in Frameworks */,
@@ -202,7 +205,6 @@
 				7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */,
 				7DCAB3802B3DDA210045C37D /* HomePresenter.swift */,
 				7D74F7572B4ED2960000A9BA /* Genres.swift */,
-				7D74F75F2B4F03A80000A9BA /* Movie.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -226,6 +228,7 @@
 		7DCAB35B2B3DBCEB0045C37D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DA136552B5054A200767870 /* ModelKit.framework */,
 				7D74F7522B4ED1D90000A9BA /* NetworkKit.framework */,
 				7D4372E12B4C1D740049DB05 /* SearchMovie.framework */,
 				7D4372222B487CE90049DB05 /* MovieDetail.framework */,
@@ -339,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D74F7602B4F03A80000A9BA /* Movie.swift in Sources */,
 				7D74F75A2B4ED4300000A9BA /* GenresPresenter.swift in Sources */,
 				7D2F45132B3C77B400B4C31D /* BaseCollectionView.swift in Sources */,
 				7D2F45212B3C9DF600B4C31D /* GenresCV.swift in Sources */,

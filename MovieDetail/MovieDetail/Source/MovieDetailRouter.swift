@@ -1,17 +1,19 @@
 import UIKit
 import DependenyKit
 import HallsAndSessionsModule
+import ModelKit
 protocol MovieDetailRouterInterface {
     func toHallsAndSessions(view:MovieDetailViewControllerInterface?)
 }
 
 public final class MovieDetailRouter : MovieDetailModuleInterface {
     public init(){}
-    public func createMovieDetailModule() -> UIViewController {
+    public func createMovieDetailModule(movie : MovieResult) -> UIViewController {
         let view = MovieDetailViewController()
         let router = MovieDetailRouter()
         let presenter = MovieDetailPresenter(view: view,router: router)
         view.presenter = presenter
+        view.movie =  movie
         return view
     }
 }

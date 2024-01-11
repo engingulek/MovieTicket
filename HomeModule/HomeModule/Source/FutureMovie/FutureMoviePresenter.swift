@@ -1,13 +1,12 @@
-// FutureMoviePresenter
 
 import Foundation
-
+import ModelKit
 
 protocol FutureMoviePresenterInterface {
     var view : FutureMovieCVInterface? {get}
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
-    func  cellForItemAt(at indexPath:IndexPath) -> Movie
+    func  cellForItemAt(at indexPath:IndexPath) -> MovieResult
     
 }
 
@@ -15,7 +14,7 @@ protocol FutureMoviePresenterInterface {
 class FutureMoviePresenterr : FutureMoviePresenterInterface {
     var view: FutureMovieCVInterface?
     private var interactor : HomeInteractorProtocol
-    private var futureMovie : [Movie] = []
+    private var futureMovie : [MovieResult] = []
     
     init(view: FutureMovieCVInterface? ,
         interactor: HomeInteractorProtocol = HomeInteractor.shared) {
@@ -48,7 +47,7 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
         return futureMovie.count
     }
     
-    func cellForItemAt(at indexPath: IndexPath) -> Movie {
+    func cellForItemAt(at indexPath: IndexPath) -> MovieResult {
         let movie = futureMovie[indexPath.item]
         return movie
     }

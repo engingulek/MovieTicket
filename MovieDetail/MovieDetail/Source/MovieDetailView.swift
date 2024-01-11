@@ -3,6 +3,8 @@ import Foundation
 import UIKit
 import CommenUIKit
 import ThemeKit
+import ModelKit
+import Kingfisher
 protocol MovieDetailViewDelegate {
     func buyTicketButtonTapped()
 }
@@ -148,6 +150,20 @@ final class MovieDetailView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configureData(movie:MovieResult){
+        let url = URL(string: movie.detailImageURL)
+        movieImageView.kf.setImage(
+                   with: url,
+               options: [.transition(.fade(1))])
+        
+        movieNameLabel.text = movie.name
+        movieGenresLabel.text = movie.genres.joined(separator: ", ")
+        movieDirectorNameLabel.text = movie.director
+        movieTime.text = "\(movie.year)  \(movie.runtime) mn"
+        movieInfo.text = movie.movieInfo
+        
+    }
+    
     private func configureUI(){
         
         addSubview(scrollView)
@@ -182,6 +198,7 @@ final class MovieDetailView : UIView {
         movieImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
+            make.height.equalTo(UIScreen.main.bounds.height/3 )
         }
         [movieNameLabel,
          movieGenresLabel,

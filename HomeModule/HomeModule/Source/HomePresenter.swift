@@ -1,7 +1,7 @@
 import Foundation
 import CommenUIKit
 import ThemeKit
-
+import ModelKit
 protocol HomePresenterInterface {
     var view : HomeViewControllerInterface? {get}
     var router : HomeRouterInterface? {get}
@@ -14,7 +14,7 @@ protocol HomePresenterInterface {
     func sizeForItemAt(at indexPath: IndexPath) -> CGSize
     func headerCollectionReuableView(at indexPath: IndexPath) -> String
     func referenceSizeForHeaderInSection() -> CGSize
-    func selectedMovie()
+    func selectedMovie(movie:MovieResult)
     func textDidChange(text:String)
 }
 
@@ -84,8 +84,8 @@ final class HomePresenter : HomePresenterInterface {
         return CGSize(width: UIScreenView.shared.screenWidth, height: 50)
     }
     
-    func selectedMovie() {
-        router?.toMovieDetail(view: view)
+    func selectedMovie(movie:MovieResult) {
+        router?.toMovieDetail(movie: movie,view: view)
     }
     
     func textDidChange(text: String) {
@@ -94,6 +94,5 @@ final class HomePresenter : HomePresenterInterface {
             view?.textFieldAction()
         }
     }
-    
-  
 }
+

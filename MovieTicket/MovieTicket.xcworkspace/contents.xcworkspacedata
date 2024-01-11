@@ -43,6 +43,9 @@
          location = "container:"
          name = "SharedKits">
          <FileRef
+            location = "group:../ModelKit/ModelKit.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:../NetworkKit/NetworkKit.xcodeproj">
          </FileRef>
          <FileRef

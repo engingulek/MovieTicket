@@ -2,8 +2,9 @@ import Foundation
 import UIKit
 import ThemeKit
 import CommenUIKit
+import ModelKit
 protocol MovieInCinemaCVDelegate {
-    func selectedMovie()
+    func selectedMovie(movie:MovieResult)
     
 }
 
@@ -49,7 +50,8 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
     
     override func collectionView(_ collectionView: UICollectionView, 
                             didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.selectedMovie()
+        let movie = presenter.didSelectItem(at: indexPath)
+        self.delegate?.selectedMovie(movie: movie)
     }
 }
 

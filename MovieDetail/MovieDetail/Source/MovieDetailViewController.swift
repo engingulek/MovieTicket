@@ -2,8 +2,8 @@ import UIKit
 import SnapKit
 import CommenUIKit
 import ViewControllerAbleKit
-
-typealias Ables = UIViewAble & NavConUIAble & SegueAble 
+import ModelKit
+typealias Ables = UIViewAble & NavConUIAble & SegueAble
 
 protocol MovieDetailViewControllerInterface : AnyObject,Ables {
     var presenter : MovieDetailPresenterInterface {get}
@@ -13,6 +13,7 @@ protocol MovieDetailViewControllerInterface : AnyObject,Ables {
 
 final class MovieDetailViewController : UIViewController {
    lazy var presenter: MovieDetailPresenterInterface  = MovieDetailPresenter(view: self)
+    var movie:MovieResult?
     private lazy var movieDetailView = MovieDetailView()
     override func loadView() {
         view = movieDetailView
@@ -22,22 +23,24 @@ final class MovieDetailViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        movieDetailView.configureData(movie: movie ?? MovieResult.defaultData)
     }
 }
 
 
 extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.numberOfItemsInSection()
+        return movie?.cast.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PartnerCVC.identifier,
             for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
-        cell.configureData(imageUrl: "",
-                           firstText: "Timothée Chalamet",
-                           secondaryText: "Paul Atredies")
+        let cast = movie?.cast[indexPath.item]
+        cell.configureData(imageUrl:cast?.imageURL ?? "" ,
+                           firstText: cast?.name ?? "",
+                           secondaryText: cast?.role ?? "")
         
         return cell
     }
@@ -68,6 +71,6 @@ extension MovieDetailViewController : MovieDetailViewDelegate {
     func buyTicketButtonTapped() {
         presenter.toHallsAndSessions()
     }
-    
-    
 }
+
+

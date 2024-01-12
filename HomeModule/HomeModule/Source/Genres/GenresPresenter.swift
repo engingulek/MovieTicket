@@ -26,10 +26,8 @@ class GenresPresenter : GenresPresenterInterface {
         do{
             let result = try await interactor.fetchGenres()
             genres = result
-            print("Genres Data : \(genres)")
             view?.realoadData()
         }catch{
-            print("Genres Data : \(error.localizedDescription)")
             genres = []
             view?.realoadData()
         }

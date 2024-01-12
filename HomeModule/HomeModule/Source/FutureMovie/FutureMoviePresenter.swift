@@ -26,7 +26,6 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
         do{
             let result = try await interactor.fetchFutureMovie()
             futureMovie = result
-            print("Future \(futureMovie)")
             view?.realoadData()
         }catch{
             futureMovie = []

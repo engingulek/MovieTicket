@@ -32,7 +32,6 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     
     
     func buyTicketButtonTapped() {
-        print("ali")
         router?.toChooseSeat(view: view)
     }
     

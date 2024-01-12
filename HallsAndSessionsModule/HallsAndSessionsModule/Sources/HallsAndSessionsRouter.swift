@@ -23,7 +23,6 @@ public final class HallsAndSessionsRouter : HallsAndSessionsModuleInterface {
 
 extension HallsAndSessionsRouter : HallsAndSessionsRouterInterface {
     func toChooseSeat(view: HallsAndSessionsViewControllerInterface?) {
-        print("can")
         @Dependency var chooseSeatModule : ChooseSeatModuleInterface
         let viewController = chooseSeatModule.createModule()
         view?.pushViewControllerAble(

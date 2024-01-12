@@ -191,7 +191,6 @@ final class ChooseSeatView : UIView {
     }
       @objc func squareTapped(_ sender: UITapGestureRecognizer) {
           if let tappedView = sender.view {
-              print(tappedView)
               // Exmaple
               /// row:  2,  column:3   -tag = 2 * 100  + 3 = 203
               /// 203 / 100 = 2 = Row

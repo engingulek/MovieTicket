@@ -5,4 +5,3 @@ import ModelKit
 public protocol HomeModuleInterface {
     func createHomeModule() -> UIViewController
 }
-

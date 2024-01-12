@@ -11,14 +11,11 @@ protocol HomeViewControllerInterface : AnyObject,Ables {
     func prepareCollectionView()
     func reloadCollectionView()
     func textFieldAction()
-  
-
 }
 
 final class HomeViewController: UIViewController {
     
     lazy var presenter: HomePresenterInterface = HomePresenter(view: self)
-   
     private lazy var homeView = HomeView()
    
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]

@@ -12,35 +12,35 @@ protocol MovieDetailViewControllerInterface : AnyObject,Ables {
 }
 
 final class MovieDetailViewController : UIViewController {
-   lazy var presenter: MovieDetailPresenterInterface  = MovieDetailPresenter(view: self)
-    var movie:MovieResult?
+    lazy var presenter: MovieDetailPresenterInterface  = MovieDetailPresenter(view: self)
     private lazy var movieDetailView = MovieDetailView()
     override func loadView() {
         view = movieDetailView
         movieDetailView.delegate = self
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        movieDetailView.configureData(movie: movie ?? MovieResult.defaultData)
+        movieDetailView.configureData(movie:presenter.configureData())
     }
 }
 
 
 extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movie?.cast.count ?? 0
+        return presenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: PartnerCVC.identifier,
             for: indexPath) as? PartnerCVC else {return UICollectionViewCell()}
-        let cast = movie?.cast[indexPath.item]
-        cell.configureData(imageUrl:cast?.imageURL ?? "" ,
-                           firstText: cast?.name ?? "",
-                           secondaryText: cast?.role ?? "")
+        let cast = presenter.cellForItem(at: indexPath)
+        cell.configureData(imageUrl:cast.imageURL,
+                           firstText: cast.name,
+                           secondaryText: cast.role)
         
         return cell
     }

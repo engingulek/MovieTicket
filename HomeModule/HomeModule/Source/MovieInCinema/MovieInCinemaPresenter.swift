@@ -27,7 +27,6 @@ class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
         do{
             let result = try await interactor.fetchMovieInCinema()
             movieInCinema = result
-            print("Data \(movieInCinema)")
             view?.realoadData()
         }catch{
             movieInCinema = []

@@ -89,8 +89,8 @@ final class HomePresenter : HomePresenterInterface {
     }
     
     func textDidChange(text: String) {
-        if text.count > 3{
-            router?.toSearchMovie(view: view)
+        if text.count > 4{
+            router?.toSearchMovie(searchText: text, view: view)
             view?.textFieldAction()
         }
     }

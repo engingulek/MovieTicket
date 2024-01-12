@@ -2,6 +2,6 @@
 import Foundation
 import UIKit
 public protocol SearcMovieModuleInterface {
-    func createModule() -> UIViewController
+    func createModule(searchText:String) -> UIViewController
     
 }

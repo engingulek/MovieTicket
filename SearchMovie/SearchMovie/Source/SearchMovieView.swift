@@ -45,6 +45,10 @@ class SearchMovieView : UIView {
         configureUI()
     }
     
+    func configureView(searhtext:String){
+        searhTextField.text = searhtext
+    }
+    
     
     func prepareTableView(view : SearchMovieViewController){
         searchMovieTableView.delegate = view

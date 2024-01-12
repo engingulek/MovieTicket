@@ -7,7 +7,7 @@ import ModelKit
 
 protocol HomeRouterInterface {
     func toMovieDetail(movie:MovieResult,view:HomeViewControllerInterface?)
-    func toSearchMovie(view:HomeViewControllerInterface?)
+    func toSearchMovie(searchText:String,view: HomeViewControllerInterface?)
 }
 
 public final class HomeRouter : HomeModuleInterface {
@@ -31,9 +31,9 @@ extension HomeRouter : HomeRouterInterface {
         view?.pushViewControllerAble(viewController, animated: true)
     }
     
-    func toSearchMovie(view: HomeViewControllerInterface?) {
+    func toSearchMovie(searchText:String,view: HomeViewControllerInterface?) {
         @Dependency var searchMovieModuleInterface : SearcMovieModuleInterface
-        let viewController = searchMovieModuleInterface.createModule()
+        let viewController = searchMovieModuleInterface.createModule(searchText: searchText)
         view?.pushViewControllerAble(viewController, animated: true)
     }
 }

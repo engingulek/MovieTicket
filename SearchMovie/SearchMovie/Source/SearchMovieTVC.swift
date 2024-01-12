@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 import SnapKit
 import ThemeKit
+import ModelKit
 
 
 class SearchMovieTVC : UITableViewCell {
@@ -24,14 +25,7 @@ class SearchMovieTVC : UITableViewCell {
         return label
     }()
     
-    private lazy var languageLabel : UILabel = {
-        let label = UILabel()
-        label.text = "EnglishSubtitle"
-        label.font = Theme.theme.themeFont.cellSubLabelFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
-        return label
-    }()
- 
+   
     
     private lazy var genresLabel : UILabel = {
         let label = UILabel()
@@ -51,6 +45,14 @@ class SearchMovieTVC : UITableViewCell {
         return label
     }()
    
+    func configureData(movieResult :MovieResult) {
+        let url = URL(string: movieResult.imageURL)
+        movieImageView.kf.setImage(with: url)
+        movieNameLabel.text = movieResult.name
+        genresLabel.text = movieResult.genres.joined(separator: ", ")
+        detailLabelLabel.text = movieResult.movieInfo
+        
+    }
     
    
     
@@ -74,15 +76,10 @@ class SearchMovieTVC : UITableViewCell {
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
         }
         
-        contentView.addSubview(languageLabel)
-        languageLabel.snp.makeConstraints { make in
-            make.top.equalTo(movieNameLabel.snp.bottom).offset(5)
-            make.leading.equalTo(movieImageView.snp.trailing).offset(10)
-        }
         
         contentView.addSubview(genresLabel)
         genresLabel.snp.makeConstraints { make in
-            make.top.equalTo(languageLabel.snp.bottom).offset(5)
+            make.top.equalTo(movieNameLabel.snp.bottom).offset(5)
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
         }
         
@@ -92,6 +89,7 @@ class SearchMovieTVC : UITableViewCell {
             make.leading.equalTo(movieImageView.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-5)
+            make.height.equalTo(UIScreen.main.bounds.height / 10)
         }
         
         

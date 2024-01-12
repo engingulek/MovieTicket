@@ -25,6 +25,12 @@
 		7D4372D92B4C140B0049DB05 /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4372D82B4C140B0049DB05 /* SearchMovieView.swift */; };
 		7D4372DD2B4C17DD0049DB05 /* SearchMovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4372DC2B4C17DD0049DB05 /* SearchMovieTVC.swift */; };
 		7D4372E02B4C18550049DB05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4372DF2B4C18550049DB05 /* Assets.xcassets */; };
+		7DE8C0FE2B51A091004ED253 /* SearchViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE8C0FD2B51A091004ED253 /* SearchViewInteractor.swift */; };
+		7DE8C1002B51A356004ED253 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE8C0FF2B51A356004ED253 /* NetworkKit.framework */; };
+		7DE8C1012B51A356004ED253 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE8C0FF2B51A356004ED253 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DE8C1032B51A6A6004ED253 /* ModelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE8C1022B51A6A6004ED253 /* ModelKit.framework */; };
+		7DE8C1042B51A6A6004ED253 /* ModelKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE8C1022B51A6A6004ED253 /* ModelKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DE8C1072B51B729004ED253 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7DE8C1062B51B729004ED253 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,10 +40,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7DE8C1012B51A356004ED253 /* NetworkKit.framework in Embed Frameworks */,
 				7D4372C02B4C0FD70049DB05 /* ThemeKit.framework in Embed Frameworks */,
 				7D4372BD2B4C0FD10049DB05 /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7D4372C32B4C0FEA0049DB05 /* CommenUIKit.framework in Embed Frameworks */,
 				7D4372B92B4C0FCB0049DB05 /* DependenyKit.framework in Embed Frameworks */,
+				7DE8C1042B51A6A6004ED253 /* ModelKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +66,9 @@
 		7D4372D82B4C140B0049DB05 /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
 		7D4372DC2B4C17DD0049DB05 /* SearchMovieTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieTVC.swift; sourceTree = "<group>"; };
 		7D4372DF2B4C18550049DB05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DE8C0FD2B51A091004ED253 /* SearchViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewInteractor.swift; sourceTree = "<group>"; };
+		7DE8C0FF2B51A356004ED253 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE8C1022B51A6A6004ED253 /* ModelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ModelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +79,12 @@
 				7D4372BF2B4C0FD70049DB05 /* ThemeKit.framework in Frameworks */,
 				7D4372BC2B4C0FD10049DB05 /* ViewControllerAbleKit.framework in Frameworks */,
 				7D4372C22B4C0FEA0049DB05 /* CommenUIKit.framework in Frameworks */,
+				7DE8C1072B51B729004ED253 /* Kingfisher in Frameworks */,
 				7D4372B82B4C0FCB0049DB05 /* DependenyKit.framework in Frameworks */,
 				7D4372C62B4C102B0049DB05 /* SnapKit in Frameworks */,
 				7D4372C82B4C102C0049DB05 /* SnapKit-Dynamic in Frameworks */,
+				7DE8C1002B51A356004ED253 /* NetworkKit.framework in Frameworks */,
+				7DE8C1032B51A6A6004ED253 /* ModelKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +127,7 @@
 				7D4372D82B4C140B0049DB05 /* SearchMovieView.swift */,
 				7D4372DC2B4C17DD0049DB05 /* SearchMovieTVC.swift */,
 				7D4372DF2B4C18550049DB05 /* Assets.xcassets */,
+				7DE8C0FD2B51A091004ED253 /* SearchViewInteractor.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -128,6 +143,8 @@
 		7D4372B62B4C0FCB0049DB05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DE8C1022B51A6A6004ED253 /* ModelKit.framework */,
+				7DE8C0FF2B51A356004ED253 /* NetworkKit.framework */,
 				7D4372C12B4C0FEA0049DB05 /* CommenUIKit.framework */,
 				7D4372BE2B4C0FD70049DB05 /* ThemeKit.framework */,
 				7D4372BB2B4C0FD10049DB05 /* ViewControllerAbleKit.framework */,
@@ -168,6 +185,7 @@
 			packageProductDependencies = (
 				7D4372C52B4C102B0049DB05 /* SnapKit */,
 				7D4372C72B4C102C0049DB05 /* SnapKit-Dynamic */,
+				7DE8C1062B51B729004ED253 /* Kingfisher */,
 			);
 			productName = SearchMovie;
 			productReference = 7D4372862B4C0F000049DB05 /* SearchMovie.framework */;
@@ -199,6 +217,7 @@
 			mainGroup = 7D43727C2B4C0F000049DB05;
 			packageReferences = (
 				7D4372C42B4C102B0049DB05 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7DE8C1052B51B729004ED253 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7D4372872B4C0F000049DB05 /* Products */;
 			projectDirPath = "";
@@ -231,6 +250,7 @@
 				7D4372B32B4C0F5F0049DB05 /* SearchModuleInterface.swift in Sources */,
 				7D4372D92B4C140B0049DB05 /* SearchMovieView.swift in Sources */,
 				7D4372D72B4C129B0049DB05 /* SearchMoviePresenter.swift in Sources */,
+				7DE8C0FE2B51A091004ED253 /* SearchViewInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +479,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		7DE8C1052B51B729004ED253 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -471,6 +499,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D4372C42B4C102B0049DB05 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		7DE8C1062B51B729004ED253 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DE8C1052B51B729004ED253 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

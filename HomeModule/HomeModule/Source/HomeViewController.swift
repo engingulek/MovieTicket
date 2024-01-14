@@ -60,6 +60,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 withReuseIdentifier: MovieListCVCForFuture.idetifier,
                 for: indexPath) as? MovieListCVCForFuture 
             else {return UICollectionViewCell()}
+            cell.delegate = self
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(
@@ -94,7 +95,13 @@ extension HomeViewController : HomeViewControllerInterface {
 
 extension HomeViewController : MovieListCVCForInCinemeDelegate {
     func selectedMovieInCinema(movie:MovieResult) {
-        presenter.selectedMovie(movie: movie)
+        presenter.selectedMovie(movie: movie,buttonHidden: false)
+    }
+}
+
+extension HomeViewController : MovieListCVCForFutureDelegate{
+    func selectedFutureMovie(movie: MovieResult) {
+        presenter.selectedMovie(movie: movie,buttonHidden: true)
     }
 }
 

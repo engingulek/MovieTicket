@@ -14,7 +14,7 @@ protocol HomePresenterInterface {
     func sizeForItemAt(at indexPath: IndexPath) -> CGSize
     func headerCollectionReuableView(at indexPath: IndexPath) -> String
     func referenceSizeForHeaderInSection() -> CGSize
-    func selectedMovie(movie:MovieResult)
+    func selectedMovie(movie:MovieResult,buttonHidden:Bool)
     func textDidChange(text:String)
 }
 
@@ -84,8 +84,8 @@ final class HomePresenter : HomePresenterInterface {
         return CGSize(width: UIScreenView.shared.screenWidth, height: 50)
     }
     
-    func selectedMovie(movie:MovieResult) {
-        router?.toMovieDetail(movie: movie,view: view)
+    func selectedMovie(movie:MovieResult,buttonHidden:Bool) {
+        router?.toMovieDetail(movie: movie,view: view,buttonHidden: buttonHidden)
     }
     
     func textDidChange(text: String) {

@@ -9,6 +9,7 @@ protocol MovieDetailViewControllerInterface : AnyObject,Ables {
     var presenter : MovieDetailPresenterInterface {get}
     func prepareCollectionView()
     func reloadCollectionView()
+    func buttonHiddenAction(buttonHidden:Bool)
 }
 
 final class MovieDetailViewController : UIViewController {
@@ -57,13 +58,16 @@ extension MovieDetailViewController : UICollectionViewDelegateFlowLayout {
 }
 
 extension MovieDetailViewController : MovieDetailViewControllerInterface {
-    
     func prepareCollectionView() {
         movieDetailView.prepareCollectionViewDelegate(view: self)
     }
     
     func reloadCollectionView() {
         movieDetailView.collectionViewReload()
+    }
+    
+    func buttonHiddenAction(buttonHidden: Bool) {
+        movieDetailView.buttonHiddenAction(buttonHidden: buttonHidden)
     }
 }
 

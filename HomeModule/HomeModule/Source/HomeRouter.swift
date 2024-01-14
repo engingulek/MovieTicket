@@ -6,7 +6,7 @@ import DependenyKit
 import ModelKit
 
 protocol HomeRouterInterface {
-    func toMovieDetail(movie:MovieResult,view:HomeViewControllerInterface?)
+    func toMovieDetail(movie:MovieResult,view:HomeViewControllerInterface?,buttonHidden:Bool)
     func toSearchMovie(searchText:String,view: HomeViewControllerInterface?)
 }
 
@@ -25,9 +25,11 @@ public final class HomeRouter : HomeModuleInterface {
 
 extension HomeRouter : HomeRouterInterface {
    
-    func toMovieDetail(movie:MovieResult,view:HomeViewControllerInterface?) {
+    func toMovieDetail(movie:MovieResult,view:HomeViewControllerInterface?,buttonHidden:Bool) {
         @Dependency var movieDetailModuleInterface : MovieDetailModuleInterface
-        let viewController = movieDetailModuleInterface.createMovieDetailModule(movie: movie)
+        let viewController = movieDetailModuleInterface.createMovieDetailModule(
+            movie: movie,
+            buttonHidden: buttonHidden)
         view?.pushViewControllerAble(viewController, animated: true)
     }
     

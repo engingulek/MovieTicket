@@ -2,6 +2,12 @@ import Foundation
 import UIKit
 import CommenUIKit
 import ThemeKit
+import ModelKit
+
+protocol FutureMovieCVDelegate {
+    func selectedMovie(movie:MovieResult)
+}
+
 
 protocol FutureMovieCVInterface : AnyObject {
     func realoadData()
@@ -9,6 +15,7 @@ protocol FutureMovieCVInterface : AnyObject {
 
 
 final class FutureMovieCV : BaseCollectionView {
+    var delegate : FutureMovieCVDelegate?
     lazy var presenter : FutureMoviePresenterInterface = FutureMoviePresenterr(view: self)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +49,12 @@ final class FutureMovieCV : BaseCollectionView {
             firstText: "\(movie.name)",
             secondaryText: "\(movie.genres.joined(separator: ", "))")
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = presenter.didSelectItem(at: indexPath)
+        self.delegate?.selectedMovie(movie: movie)
+        
     }
 }
 

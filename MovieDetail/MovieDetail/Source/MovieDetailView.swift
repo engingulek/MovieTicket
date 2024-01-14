@@ -27,7 +27,6 @@ final class MovieDetailView : UIView {
     
     private lazy var movieImageView : UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(resource: .movieImageThird)
         return imageView
     }()
     
@@ -114,7 +113,7 @@ final class MovieDetailView : UIView {
         return collectionview
     }()
     
-    private lazy var buyTicletButton : UIButton = {
+    private lazy var chooseSeatButton: UIButton = {
         let button = UIButton()
         button.setTitle("Choose Seat", for: .normal)
         button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
@@ -162,6 +161,10 @@ final class MovieDetailView : UIView {
         movieTime.text = "\(movie.year)  \(movie.runtime) mn"
         movieInfo.text = movie.movieInfo
         
+    }
+    
+     func buttonHiddenAction(buttonHidden:Bool){
+        chooseSeatButton.isHidden = buttonHidden
     }
     
     private func configureUI(){
@@ -223,8 +226,8 @@ final class MovieDetailView : UIView {
             make.height.equalTo(UIScreen.main.bounds.height / 4)
         }
         
-        addSubview(buyTicletButton)
-        buyTicletButton.snp.makeConstraints { make in
+        addSubview(chooseSeatButton)
+        chooseSeatButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-5)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-10)

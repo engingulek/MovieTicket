@@ -34,10 +34,10 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         self.interactor = interactor
     }
     
-    private func fetchHallsAndSessions() async {
+    private func fetchHallsAndSessions(selectedDate:String) async {
        
         do {
-            let result = try await interactor.fetchHallsAndSessions(movieId: movieId )
+            let result = try await interactor.filterHallsAndSessionsFilterDate(movieId: movieId, date: selectedDate)
             print("Halll \(result.count)")
             hallsAndSessions = result
             view?.reloadTableView()
@@ -47,6 +47,8 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
            
         }
     }
+    
+  
     
     func dateFormantter(date:Date) -> String {
         let dateFormatter = DateFormatter()
@@ -66,8 +68,9 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
                     dataList.append(formantDate)
                 }
             }
-        
     }
+    
+   
     
     
     func viewDidLoad() {
@@ -80,11 +83,17 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         futureDateCalculater()
         selectedDate = dateFormantter(date: Date())
         
-        
         Task {
             @MainActor in
-            await fetchHallsAndSessions()
+            await fetchHallsAndSessions(selectedDate: selectedDate)
         }
+       
+       
+       
+        
+        print(hallsAndSessions.count)
+
+        
     }
     
     
@@ -128,5 +137,9 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         let selected = dataList[indexPath.item]
         selectedDate = selected
         view?.reloadCollectionView()
+        Task {
+            @MainActor in
+            await fetchHallsAndSessions(selectedDate: selectedDate)
+        }
     }
 }

@@ -95,7 +95,7 @@ final class HallInfoTVC : UITableViewCell {
             make.top.equalTo(cinemaNameLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(25)
             make.height.equalTo(40)
-            make.width.equalTo(UIScreen.main.bounds.width / 4)
+            make.width.equalTo(UIScreen.main.bounds.width / 3)
         }
         
       
@@ -110,15 +110,18 @@ final class HallInfoTVC : UITableViewCell {
        
     }
     
-    func configureData(cinemaName:String,
-                hallNumber:String,
-                movieLanguageBase:String,
-                movieLanguageSubtitle:String
-    ){
-        cinemaNameLabel.text = cinemaName
-        hallNumberLabel.text = hallNumber
-        movieLanguageLabelBase.setTitle(movieLanguageBase, for: .normal) 
-        movieLanguageLabelSubtitle.setTitle(movieLanguageSubtitle, for: .normal)
+    func configureData(hallAndSession : HallAndSession){
+        cinemaNameLabel.text = hallAndSession.cinameName
+        hallNumberLabel.text = "Hall \(hallAndSession.hallNumber)"
+        let language = hallAndSession.language
+        
+        if language.count == 2 {
+            movieLanguageLabelBase.setTitle(language[0].type, for: .normal)
+            movieLanguageLabelSubtitle.setTitle(language[1].type, for: .normal)
+        }else{
+            movieLanguageLabelBase.setTitle(language[0].type, for: .normal)
+            movieLanguageLabelSubtitle.isHidden = true
+        }
         
     }
     

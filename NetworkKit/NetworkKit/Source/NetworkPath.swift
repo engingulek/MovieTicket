@@ -6,6 +6,7 @@ public enum NetworkPath {
     case genres
     case movieInCinema
     case futureMovie
+    case hallsAndSessions(Int)
 
     
 }
@@ -23,6 +24,8 @@ extension NetworkPath : TargetType {
             return "futureMovie.json"
         case .genres:
             return "genres.json"
+        case .hallsAndSessions(let movieId):
+            return "hallsAndSessions/list.json?orderBy=\"movieId\"&equalTo=\(movieId)"
 
         }
     }

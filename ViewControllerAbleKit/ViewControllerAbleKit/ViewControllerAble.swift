@@ -1,5 +1,5 @@
 import UIKit
-import ThemeKit
+
 public protocol UIViewAble {
     func setBackColorAble(color:UIColor)
 }

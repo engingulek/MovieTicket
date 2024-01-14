@@ -23,6 +23,12 @@
 		7D4E7F402B3EFEF300A7196B /* HallınfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */; };
 		7D4E7F6E2B40497100A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6D2B40497100A7196B /* ThemeKit.framework */; };
 		7D4E7F6F2B40497100A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6D2B40497100A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DF7B21C2B53FB1B001EBF94 /* HallAndSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7B21B2B53FB1B001EBF94 /* HallAndSession.swift */; };
+		7DF7B21E2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7B21D2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift */; };
+		7DF7B2202B53FBA3001EBF94 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */; };
+		7DF7B2212B53FBA3001EBF94 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DF7B2232B5404B0001EBF94 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */; };
+		7DF7B2242B5404B0001EBF94 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +40,8 @@
 			files = (
 				7D4E7F6F2B40497100A7196B /* ThemeKit.framework in Embed Frameworks */,
 				7D4E7F2D2B3EEF1500A7196B /* ViewControllerAbleKit.framework in Embed Frameworks */,
+				7DF7B2242B5404B0001EBF94 /* ChooseSeatModule.framework in Embed Frameworks */,
+				7DF7B2212B53FBA3001EBF94 /* NetworkKit.framework in Embed Frameworks */,
 				7D4E7F2B2B3EEF1500A7196B /* CommenUIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -54,6 +62,10 @@
 		7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsView.swift; sourceTree = "<group>"; };
 		7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HallınfoTVC.swift"; sourceTree = "<group>"; };
 		7D4E7F6D2B40497100A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF7B21B2B53FB1B001EBF94 /* HallAndSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallAndSession.swift; sourceTree = "<group>"; };
+		7DF7B21D2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsInteractor.swift; sourceTree = "<group>"; };
+		7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChooseSeatModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +74,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4E7F312B3EEF3E00A7196B /* SnapKit in Frameworks */,
+				7DF7B2232B5404B0001EBF94 /* ChooseSeatModule.framework in Frameworks */,
 				7D4E7F2C2B3EEF1500A7196B /* ViewControllerAbleKit.framework in Frameworks */,
+				7DF7B2202B53FBA3001EBF94 /* NetworkKit.framework in Frameworks */,
 				7D4E7F2A2B3EEF1500A7196B /* CommenUIKit.framework in Frameworks */,
 				7D4E7F6E2B40497100A7196B /* ThemeKit.framework in Frameworks */,
 				7D4E7F332B3EEF3E00A7196B /* SnapKit-Dynamic in Frameworks */,
@@ -116,6 +130,8 @@
 				7D4E7F252B3EEEFE00A7196B /* HallsAndSessionsPresenter.swift */,
 				7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */,
 				7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */,
+				7DF7B21B2B53FB1B001EBF94 /* HallAndSession.swift */,
+				7DF7B21D2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -123,6 +139,8 @@
 		7D4E7F272B3EEF1500A7196B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */,
+				7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */,
 				7D4E7F6D2B40497100A7196B /* ThemeKit.framework */,
 				7D4E7F282B3EEF1500A7196B /* CommenUIKit.framework */,
 				7D4E7F292B3EEF1500A7196B /* ViewControllerAbleKit.framework */,
@@ -227,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF7B21E2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift in Sources */,
 				7D4E7F372B3EF36700A7196B /* HallsAndSessionsView.swift in Sources */,
+				7DF7B21C2B53FB1B001EBF94 /* HallAndSession.swift in Sources */,
 				7D4E7F262B3EEEFE00A7196B /* HallsAndSessionsPresenter.swift in Sources */,
 				7D4E7F402B3EFEF300A7196B /* HallınfoTVC.swift in Sources */,
 				7D4E7EFC2B3EECE700A7196B /* HallsAndSessionsViewController.swift in Sources */,

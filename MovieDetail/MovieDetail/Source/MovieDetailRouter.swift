@@ -3,7 +3,7 @@ import DependenyKit
 import HallsAndSessionsModule
 import ModelKit
 protocol MovieDetailRouterInterface {
-    func toHallsAndSessions(view:MovieDetailViewControllerInterface?)
+    func toHallsAndSessions(view:MovieDetailViewControllerInterface?,movieId:Int)
     
 }
 
@@ -23,9 +23,9 @@ public final class MovieDetailRouter : MovieDetailModuleInterface {
 
 
 extension MovieDetailRouter : MovieDetailRouterInterface {
-    func toHallsAndSessions(view:MovieDetailViewControllerInterface?) {
+    func toHallsAndSessions(view:MovieDetailViewControllerInterface?,movieId:Int) {
         @Dependency var hallsAndSessionsInterface : HallsAndSessionsModuleInterface
-        let viewController = hallsAndSessionsInterface.createModule()
+        let viewController = hallsAndSessionsInterface.createModule(movieId: movieId)
         view?.pushViewControllerAble(
             viewController, 
             animated: true)

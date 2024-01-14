@@ -59,7 +59,8 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
     }
     
     func toHallsAndSessions() {
-        router?.toHallsAndSessions(view: view)
+        let id = movieInfo?.id ?? 0
+        router?.toHallsAndSessions(view: view,movieId: id)
     }
 }
 

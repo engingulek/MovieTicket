@@ -6,7 +6,7 @@ import ThemeKit
 import ModelKit
 import Kingfisher
 protocol MovieDetailViewDelegate {
-    func buyTicketButtonTapped()
+    func chooseCinema()
 }
 
 final class MovieDetailView : UIView {
@@ -20,7 +20,7 @@ final class MovieDetailView : UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 15
-        view.backgroundColor = Theme.theme.themeColor.primaryBackground
+        view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return view
     }()
     
@@ -32,32 +32,28 @@ final class MovieDetailView : UIView {
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Dune Part Two"
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     
     private lazy var movieGenresLabel : UILabel = {
         let label = UILabel()
-        label.text = "Action,Drama"
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
     private lazy var movieDirectorNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "2025,Denis Villeneuve"
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
     private lazy var movieTime : UILabel = {
         let label = UILabel()
-        label.text = "Runtime : 1h 45min"
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
@@ -65,15 +61,14 @@ final class MovieDetailView : UIView {
     private lazy var movieInfoTitle: UILabel = {
         let label = UILabel()
         label.text = "Movie Info"
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
     
     private lazy var movieInfo : UILabel = {
         let label = UILabel()
-        label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         label.numberOfLines = .zero
         return label
@@ -82,7 +77,7 @@ final class MovieDetailView : UIView {
     private lazy var showMoreButton : UIButton = {
         let button = UIButton()
         button.setTitle("Show More", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.textAlignment = .left
         return  button
         
@@ -91,7 +86,7 @@ final class MovieDetailView : UIView {
     private lazy var castTitle: UILabel = {
         let label = UILabel()
         label.text = "Casts"
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
@@ -109,24 +104,24 @@ final class MovieDetailView : UIView {
             forCellWithReuseIdentifier: PartnerCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return collectionview
     }()
     
-    private lazy var chooseSeatButton: UIButton = {
+    private lazy var chooseCinemaButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose Seat", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitle("Choose Cinema", for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = Radius.small.rawValue
-        button.addAction(buyTicketButtonTapped, for: .touchUpInside)
+        button.addAction(chooseCinemaButtonTapped, for: .touchUpInside)
         return  button
     }()
     
-    private lazy var buyTicketButtonTapped : UIAction = UIAction { _ in
-        self.delegate?.buyTicketButtonTapped()
+    private lazy var chooseCinemaButtonTapped : UIAction = UIAction { _ in
+        self.delegate?.chooseCinema()
         
     }
     
@@ -164,7 +159,7 @@ final class MovieDetailView : UIView {
     }
     
      func buttonHiddenAction(buttonHidden:Bool){
-        chooseSeatButton.isHidden = buttonHidden
+         chooseCinemaButton.isHidden = buttonHidden
     }
     
     private func configureUI(){
@@ -226,8 +221,8 @@ final class MovieDetailView : UIView {
             make.height.equalTo(UIScreen.main.bounds.height / 4)
         }
         
-        addSubview(chooseSeatButton)
-        chooseSeatButton.snp.makeConstraints { make in
+        addSubview(chooseCinemaButton)
+        chooseCinemaButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-5)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-10)

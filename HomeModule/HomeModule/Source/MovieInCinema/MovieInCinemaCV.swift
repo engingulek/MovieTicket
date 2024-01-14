@@ -17,7 +17,7 @@ final class MovieInCinemaCV : BaseCollectionView,UICollectionViewDelegateFlowLay
     lazy var presenter : MovieInCinemaPresenterInterface = MovieInCinemaPresenter(view: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(PartnerCVC.self,
                         forCellWithReuseIdentifier: PartnerCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false

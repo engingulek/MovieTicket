@@ -50,6 +50,7 @@ extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
         cell.configureData(labelText: "12:40")
         cell.configureIU(backColor: Theme.theme.themeColor.thirdBack,
+                     labelColor: Theme.theme.themeColor.primaryLabel,
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }

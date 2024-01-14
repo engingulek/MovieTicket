@@ -9,7 +9,7 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "Dune : Part Two"
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
@@ -17,7 +17,7 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "English(Subtitle)"
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
@@ -26,7 +26,7 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "Life Cinema"
         label.font = Theme.theme.themeFont.cellLabelFont
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
@@ -35,13 +35,13 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "Hall 2"
         label.font = Theme.theme.themeFont.cellLabelFont
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
     private lazy var horizatalLine : UIView = {
        let uiView = UIView()
-        uiView.backgroundColor = Theme.theme.themeColor.thirdLabel
+        uiView.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
        return uiView
     }()
     
@@ -50,7 +50,7 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "01/04/2024 17:40"
         label.font = Theme.theme.themeFont.cellLabelFont
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
@@ -58,7 +58,7 @@ final class MovieAndTicketInfoView : UIView {
         let label = UILabel()
         label.text = "Ticket Amount : 40$"
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         return label
     }()
     

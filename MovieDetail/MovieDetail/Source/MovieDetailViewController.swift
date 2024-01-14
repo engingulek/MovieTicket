@@ -72,9 +72,12 @@ extension MovieDetailViewController : MovieDetailViewControllerInterface {
 }
 
 extension MovieDetailViewController : MovieDetailViewDelegate {
-    func buyTicketButtonTapped() {
+    func chooseCinema() {
         presenter.toHallsAndSessions()
     }
+    
+  
+   
 }
 
 

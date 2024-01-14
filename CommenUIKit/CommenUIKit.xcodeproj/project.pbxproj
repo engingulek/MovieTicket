@@ -19,6 +19,7 @@
 		7DCAB3582B3DBCC10045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3572B3DBCC10045C37D /* SnapKit */; };
 		7DCAB35A2B3DBCC10045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB3592B3DBCC10045C37D /* SnapKit-Dynamic */; };
 		7DCAB3852B3DE8300045C37D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3842B3DE8300045C37D /* UIScreen.swift */; };
+		7DF7B2262B541AE1001EBF94 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommenUIKit.h; sourceTree = "<group>"; };
 		7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCVC.swift; sourceTree = "<group>"; };
 		7DCAB3842B3DE8300045C37D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */,
 				7DA75F622B46C56400AF1D25 /* DottedLineView.swift */,
 				7DA75F642B46C99F00AF1D25 /* Barcode.swift */,
+				7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */,
 			);
 			path = CommenUIKit;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
+				7DF7B2262B541AE1001EBF94 /* UIColor+Extensions.swift in Sources */,
 				7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */,
 				7DA75F652B46C99F00AF1D25 /* Barcode.swift in Sources */,
 				7DA75F632B46C56400AF1D25 /* DottedLineView.swift in Sources */,

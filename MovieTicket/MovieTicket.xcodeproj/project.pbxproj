@@ -24,8 +24,6 @@
 		7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; };
 		7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA75F6D2B46E05400AF1D25 /* TicketListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6B2B46E05400AF1D25 /* TicketListModule.framework */; };
-		7DA75F6E2B46E05400AF1D25 /* TicketListModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6B2B46E05400AF1D25 /* TicketListModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA75F6F2B46E05400AF1D25 /* TicketModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */; };
 		7DA75F702B46E05400AF1D25 /* TicketModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */; };
@@ -43,7 +41,6 @@
 				7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */,
 				7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
 				7DA75F702B46E05400AF1D25 /* TicketModule.framework in Embed Frameworks */,
-				7DA75F6E2B46E05400AF1D25 /* TicketListModule.framework in Embed Frameworks */,
 				7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */,
 				7D4372D52B4C11DA0049DB05 /* SearchMovie.framework in Embed Frameworks */,
 				7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */,
@@ -83,7 +80,6 @@
 				7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */,
 				7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */,
 				7DA75F6F2B46E05400AF1D25 /* TicketModule.framework in Frameworks */,
-				7DA75F6D2B46E05400AF1D25 /* TicketListModule.framework in Frameworks */,
 				7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */,
 				7D4372D42B4C11DA0049DB05 /* SearchMovie.framework in Frameworks */,
 				7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */,

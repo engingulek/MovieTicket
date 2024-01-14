@@ -13,7 +13,7 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
     lazy var presenter: GenresPresenterInterface = GenresPresenter(view: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(OnlyLabelCVC.self,
                           forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         collectionView.showsHorizontalScrollIndicator = false
@@ -40,7 +40,8 @@ final class GenresCV : BaseCollectionView,UICollectionViewDelegateFlowLayout {
         let genreName = presenter.cellForItemAt(at: indexPath).name ?? ""
         cell.configureData(labelText:genreName)
         cell.configureIU(
-            backColor: Theme.theme.themeColor.secondaryBack,
+            backColor: Theme.theme.themeColor.secondaryBack, 
+            labelColor: Theme.theme.themeColor.primaryLabel,
             font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = Radius.small.rawValue

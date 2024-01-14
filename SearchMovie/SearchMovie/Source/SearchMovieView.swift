@@ -11,22 +11,22 @@ class SearchMovieView : UIView {
     private lazy var searhTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Search Movie"
-        textField.backgroundColor = Theme.theme.themeColor.secondaryBack
-        textField.textColor = Theme.theme.themeColor.secondaryLabel
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
+        textField.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return textField
     }()
     
     private lazy var searchIcon : UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "magnifyingglass")
-        image.tintColor = Theme.theme.themeColor.secondaryLabel
+        image.tintColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return image
     }()
     
     private lazy var searchView : UIView = {
         let uiview = UIView()
         uiview.layer.cornerRadius = Radius.small.rawValue
-        uiview.backgroundColor = Theme.theme.themeColor.secondaryBack
+        uiview.backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
         return uiview
     }()
     
@@ -35,7 +35,7 @@ class SearchMovieView : UIView {
         tableView.register(SearchMovieTVC.self,
                            forCellReuseIdentifier: SearchMovieTVC.identifier)
         tableView.allowsMultipleSelection = true
-        tableView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        tableView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return tableView
     }()
     

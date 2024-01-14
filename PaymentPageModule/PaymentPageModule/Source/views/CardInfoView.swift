@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import SnapKit
 import ThemeKit
+import CommenUIKit
 
 protocol CardInfoViewDelegate {
     func buyTicketButtonTapped()
@@ -13,7 +14,7 @@ final class CardInfoView : UIView {
         let label = UILabel()
         label.text = "Name On The Card"
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
@@ -21,8 +22,8 @@ final class CardInfoView : UIView {
     private lazy var nameOnTheCardTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Name on the card"
-        textField.backgroundColor = Theme.theme.themeColor.textFieldBackColor
-        textField.textColor = Theme.theme.themeColor.thirdLabel
+        textField.backgroundColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
+        textField.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
@@ -34,15 +35,15 @@ final class CardInfoView : UIView {
         let label = UILabel()
         label.text = "Card Number"
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
     private lazy var cardNumberTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Name on the card"
-        textField.backgroundColor = Theme.theme.themeColor.textFieldBackColor
-        textField.textColor = Theme.theme.themeColor.thirdLabel
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
@@ -53,15 +54,15 @@ final class CardInfoView : UIView {
         let label = UILabel()
         label.text = "Expiration Date"
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
     }()
     
     private lazy var expirationDateTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "MM/YY"
-        textField.backgroundColor = Theme.theme.themeColor.textFieldBackColor
-        textField.textColor = Theme.theme.themeColor.thirdLabel
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
@@ -72,7 +73,7 @@ final class CardInfoView : UIView {
         let label = UILabel()
         label.text = "Security Code"
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.thirdLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         label.textAlignment = .left
         return label
     }()
@@ -80,8 +81,8 @@ final class CardInfoView : UIView {
     private lazy var securityCodeTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "***"
-        textField.backgroundColor = Theme.theme.themeColor.textFieldBackColor
-        textField.textColor = Theme.theme.themeColor.thirdLabel
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
@@ -91,9 +92,9 @@ final class CardInfoView : UIView {
     private lazy var buyTicletButton : UIButton = {
         let button = UIButton()
         button.setTitle("Buy Ticket", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(buyTicketButtonTapped, for: .touchUpInside)

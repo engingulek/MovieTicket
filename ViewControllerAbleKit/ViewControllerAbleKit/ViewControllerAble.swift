@@ -1,12 +1,12 @@
 import UIKit
-import ThemeKit
+import CommenUIKit
 public protocol UIViewAble {
-    func setBackColorAble(color:UIColor)
+    func setBackColorAble(color:String)
 }
 
 extension UIViewAble where Self : UIViewController {
-    public func setBackColorAble(color:UIColor){
-        view.backgroundColor = color
+    public func setBackColorAble(color:String){
+        view.backgroundColor = UIColor(hex:color)
     }
 }
 
@@ -23,21 +23,21 @@ extension SegueAble  where Self : UIViewController{
 
 
 public protocol NavConUIAble {
-    func changeNavBarColor(color:UIColor)
-    func changeTintColor(color:UIColor)
+    func changeNavBarColor(color:String)
+    func changeTintColor(color:String)
     func changeTitle(title:String)
     func navigationBarHidden(isHidden:Bool)
 }
 
 extension NavConUIAble where Self :  UIViewController{
-    public func changeNavBarColor(color:UIColor){
-        navigationController?.navigationBar.barTintColor = color
+    public func changeNavBarColor(color:String){
+        navigationController?.navigationBar.barTintColor = UIColor(hex:color)
     }
     
-    public func changeTintColor(color:UIColor){
-        navigationController?.navigationBar.tintColor = color
+    public func changeTintColor(color:String){
+        navigationController?.navigationBar.tintColor = UIColor(hex:color)
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: color
+            NSAttributedString.Key.foregroundColor: UIColor(hex:color) ?? UIColor.white
         ]
     }
     

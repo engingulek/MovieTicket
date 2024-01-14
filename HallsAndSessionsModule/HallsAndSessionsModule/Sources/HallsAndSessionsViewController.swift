@@ -37,7 +37,10 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
     }
     
     func reloadCollectionView() {
-        hallsAndSessionView.reloadCollectionView()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hallsAndSessionView.reloadCollectionView()
+        }
     }
     
     
@@ -46,22 +49,31 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
     }
     
     func reloadTableView() {
-        hallsAndSessionView.reloadTableView()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hallsAndSessionView.reloadTableView()
+        }
     }
 }
 
 
 extension HallsAndSessionsViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
-        cell.configureData(labelText: "Dec/29/2024")
-        cell.configureIU(backColor: Theme.theme.themeColor.thirdBack,
+        let item = presenter.cellForItem(at: indexPath)
+        cell.configureData(labelText:item.date)
+        cell.configureIU(backColor: item.backColor, 
+                         labelColor: item.labelColor,
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }
 
@@ -74,15 +86,13 @@ extension HallsAndSessionsViewController : UICollectionViewDelegateFlowLayout{
 
 extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HallInfoTVC.identifier,for: indexPath) as? HallInfoTVC else {return UITableViewCell()}
-        cell.configureData(cinemaName: "Cinema Name",
-                       hallNumber: "Hall 2",
-                       movieLanguageBase: "English",
-                       movieLanguageSubtitle: "Turkish(Subtitle)")
+        let hallAndSession =  presenter.cellForRow(at: indexPath)
+        cell.configureData(hallAndSession: hallAndSession)
         cell.delegate = self
         return cell
     }

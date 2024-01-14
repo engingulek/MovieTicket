@@ -16,7 +16,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "Dune : Part Two"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -26,7 +26,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "Jan 06, 04:15 p.m"
         label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -37,7 +37,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "Hall"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -46,7 +46,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "5"
         label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -55,7 +55,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "Row"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -64,7 +64,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "2"
         label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -75,7 +75,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "Seats"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -84,7 +84,7 @@ final class TicketView : UIView {
         let label = UILabel()
         label.text = "2,3"
         label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         return label
     }()
@@ -107,7 +107,7 @@ final class TicketView : UIView {
         }
         
         
-        backgroundColor = Theme.theme.themeColor.secondaryBack
+        backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
         layer.cornerRadius = Radius.medium.rawValue
         
         addSubview(movieImage)

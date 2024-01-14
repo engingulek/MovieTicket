@@ -24,13 +24,13 @@ final class SeatInfoTVC : UITableViewCell, UICollectionViewDelegate, UICollectio
             forCellWithReuseIdentifier: SeatCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return collectionview
     }()
     
     private lazy var sequenceLabel : UILabel = {
         let label = UILabel()
-         label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
          label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
          label.textAlignment = .center
          return label
@@ -38,7 +38,7 @@ final class SeatInfoTVC : UITableViewCell, UICollectionViewDelegate, UICollectio
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        contentView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
        
         seatsCollectionView.delegate = self
         seatsCollectionView.dataSource = self

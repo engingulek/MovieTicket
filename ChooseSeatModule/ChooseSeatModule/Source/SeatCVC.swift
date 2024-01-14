@@ -7,11 +7,11 @@ final class SeatCVC : UICollectionViewCell {
     
     private lazy var seatLabel : UILabel = {
        let label = UILabel()
-        label.backgroundColor = Theme.theme.themeColor.primaryLabel
+        label.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.layer.cornerRadius = Radius.small.rawValue
         label.text = "A1"
         label.layer.masksToBounds = true
-        label.textColor = Theme.theme.themeColor.thirdBack
+        label.textColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textAlignment = .center
         return label

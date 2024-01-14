@@ -11,10 +11,11 @@ public final class HallsAndSessionsRouter : HallsAndSessionsModuleInterface {
     
     public init(){}
     
-   public func createModule() -> UIViewController {
+    public func createModule(movieId:Int) -> UIViewController {
         let view = HallsAndSessionsViewController()
        let router = HallsAndSessionsRouter()
        let presenter = HallsAndSessionsPresenter(view: view, router: router)
+        presenter.movieId = movieId
        view.presenter = presenter
        return view
     }

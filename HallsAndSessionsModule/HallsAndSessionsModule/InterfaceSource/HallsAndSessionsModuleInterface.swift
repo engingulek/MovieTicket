@@ -2,5 +2,5 @@ import Foundation
 import UIKit
 
 public protocol HallsAndSessionsModuleInterface {
-    func createModule() -> UIViewController
+    func createModule(movieId:Int) -> UIViewController
 }

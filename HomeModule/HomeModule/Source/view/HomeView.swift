@@ -6,22 +6,22 @@ final class HomeView : UIView {
     private lazy var searhTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Search Movie"
-        textField.backgroundColor = Theme.theme.themeColor.secondaryBack
-        textField.textColor = Theme.theme.themeColor.secondaryLabel
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
+        textField.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return textField
     }()
     
     private lazy var searchIcon : UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "magnifyingglass")
-        image.tintColor = Theme.theme.themeColor.secondaryLabel
+        image.tintColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return image
     }()
     
     private lazy var searchView : UIView = {
         let uiview = UIView()
         uiview.layer.cornerRadius = Radius.small.rawValue
-        uiview.backgroundColor = Theme.theme.themeColor.secondaryBack
+        uiview.backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
         return uiview
     }()
     
@@ -35,7 +35,7 @@ final class HomeView : UIView {
      let  collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionview.showsVerticalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
      return collectionview
      }()
     

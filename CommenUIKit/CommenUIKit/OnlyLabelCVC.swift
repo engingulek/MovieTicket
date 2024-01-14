@@ -7,7 +7,7 @@ public final class OnlyLabelCVC : UICollectionViewCell {
     
     private lazy var textLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
         label.clipsToBounds = true
         label.layer.cornerRadius = Radius.small.rawValue
@@ -19,8 +19,9 @@ public final class OnlyLabelCVC : UICollectionViewCell {
         textLabel.text = labelText
     }
     
-    public func configureIU(backColor:UIColor,font:UIFont){
-        textLabel.backgroundColor = backColor
+    public func configureIU(backColor:String,labelColor:String,font:UIFont){
+        textLabel.backgroundColor = UIColor(hex:backColor)
+        textLabel.textColor = UIColor(hex:labelColor)
         textLabel.font = font
     }
    

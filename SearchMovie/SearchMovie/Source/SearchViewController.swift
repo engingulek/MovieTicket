@@ -70,13 +70,13 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        headerView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        headerView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         let label = UILabel()
         label.frame = CGRect.init(x: 15, y: 5, width: headerView.frame.width, height: headerView.frame.height-10)
         let title =  presenter.viewForHeaderInSection(section: section)
         label.text = title
         label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         
         headerView.addSubview(label)
         

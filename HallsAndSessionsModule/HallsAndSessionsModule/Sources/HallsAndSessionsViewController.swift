@@ -56,15 +56,21 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
 
 extension HallsAndSessionsViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
-        cell.configureData(labelText: "Dec/29/2024")
-        cell.configureIU(backColor: Theme.theme.themeColor.thirdBack,
+        let item = presenter.cellForItem(at: indexPath)
+        cell.configureData(labelText:item.date)
+        cell.configureIU(backColor: item.backColor, 
+                         labelColor: item.labelColor,
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }
 

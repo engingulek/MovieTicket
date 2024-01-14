@@ -20,6 +20,8 @@
 		7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; };
 		7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */; };
+		7DF7B2302B541F66001EBF94 /* ViewControllerAbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */; };
+		7DF7B2312B541F66001EBF94 /* ViewControllerAbleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */,
+				7DF7B2312B541F66001EBF94 /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -48,6 +51,7 @@
 		7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
+		7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			files = (
 				7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */,
 				7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */,
+				7DF7B2302B541F66001EBF94 /* ViewControllerAbleKit.framework in Frameworks */,
 				7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */,
 				7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */,
 			);
@@ -99,6 +104,7 @@
 		7DA75F562B46B61B00AF1D25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */,
 				7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */,
 				7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */,
 			);

@@ -13,7 +13,7 @@ public final class PartnerCVC: UICollectionViewCell {
     
     private lazy var firstLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.numberOfLines = .zero
         return label
@@ -21,7 +21,7 @@ public final class PartnerCVC: UICollectionViewCell {
     
     private lazy var secondryLabel : UILabel = {
        let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         return label
     }()

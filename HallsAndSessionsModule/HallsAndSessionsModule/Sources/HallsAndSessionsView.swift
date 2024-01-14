@@ -19,7 +19,7 @@ final class HallsAndSessionsView : UIView {
             forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return collectionview
     }()
     
@@ -29,7 +29,7 @@ final class HallsAndSessionsView : UIView {
         tableView.register(HallInfoTVC.self,
                            forCellReuseIdentifier: HallInfoTVC.identifier)
         tableView.allowsMultipleSelection = true
-        tableView.backgroundColor = Theme.theme.themeColor.primaryBackground
+        tableView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return tableView
     }()
     

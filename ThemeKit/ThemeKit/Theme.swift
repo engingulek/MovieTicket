@@ -9,13 +9,13 @@ public struct Theme {
 }
 
 public struct ThemeColor {
-    public  let primaryBackground: UIColor
-    public  let secondaryBack : UIColor
-    public  let thirdBack : UIColor
-    public  let primaryLabel:UIColor
-    public  let secondaryLabel:UIColor
-    public let thirdLabel : UIColor
-    public let textFieldBackColor : UIColor
+    public  let primaryBackground: String
+    public  let secondaryBack : String
+    public  let thirdBack : String
+    public  let primaryLabel:String
+    public  let secondaryLabel:String
+    public let thirdLabel :String
+    public let textFieldBackColor : String
 }
 
 public struct ThemeFont {
@@ -31,13 +31,13 @@ public struct ThemeFont {
 extension Theme {
     public static var theme : Theme{
         Theme(themeColor: ThemeColor(
-            primaryBackground: UIColor(resource: .primaryBack),
-            secondaryBack: UIColor(resource: .secondaryBack),
-            thirdBack: UIColor(resource: .thirdBack),
-            primaryLabel: UIColor(resource: .primaryColorLabel),
-            secondaryLabel: UIColor(resource: .secondaryColorLabel),
-            thirdLabel: UIColor.black,
-            textFieldBackColor: UIColor.gray.withAlphaComponent(0.5)), 
+            primaryBackground: "#211921",
+            secondaryBack: "#382C3E",
+            thirdBack: "#7C44C2",
+            primaryLabel: "#FEFFFF",
+            secondaryLabel: "#998396",
+            thirdLabel: "#000000",
+            textFieldBackColor: "#808080"),
               
             themeFont: ThemeFont(
                 primaryFont: .systemFont(ofSize: FontSize.primarySize),

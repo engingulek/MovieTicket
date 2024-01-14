@@ -14,7 +14,7 @@ final class ChooseSeatView : UIView {
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "Dune: Part Two"
         return label
     }()
@@ -23,7 +23,7 @@ final class ChooseSeatView : UIView {
     private lazy var moviedateLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "04/01/2014"
         return label
     }()
@@ -32,7 +32,7 @@ final class ChooseSeatView : UIView {
     private lazy var movieLanguageLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "English(Subtitle)"
         return label
     }()
@@ -50,7 +50,7 @@ final class ChooseSeatView : UIView {
             forCellWithReuseIdentifier: OnlyLabelCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return collectionview
     }()
     
@@ -60,7 +60,7 @@ final class ChooseSeatView : UIView {
     private lazy var screneLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "Scene"
         label.textAlignment = .center
         return label
@@ -78,7 +78,7 @@ final class ChooseSeatView : UIView {
     private lazy var seatFullLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "Full"
         label.textAlignment = .center
         return label
@@ -88,7 +88,7 @@ final class ChooseSeatView : UIView {
     
     private lazy var seatChosenUIView : UIView = {
         let view = UIView()
-        view.backgroundColor = Theme.theme.themeColor.thirdBack
+        view.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         view.layer.cornerRadius = Radius.small.rawValue
         return view
         
@@ -97,7 +97,7 @@ final class ChooseSeatView : UIView {
     private lazy var seatChoseLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "Chosen"
         label.textAlignment = .center
         return label
@@ -106,7 +106,7 @@ final class ChooseSeatView : UIView {
     
     private lazy var seatEmptyUIView : UIView = {
         let view = UIView()
-        view.backgroundColor = Theme.theme.themeColor.primaryLabel
+        view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         view.layer.cornerRadius = Radius.small.rawValue
         return view
         
@@ -115,7 +115,7 @@ final class ChooseSeatView : UIView {
     private lazy var seatEmptyLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.text = "Empty"
         label.textAlignment = .center
         return label
@@ -124,9 +124,9 @@ final class ChooseSeatView : UIView {
     private lazy var payNowButton : UIButton = {
         let button = UIButton()
         button.setTitle("Pay Now", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(payButtonTapped, for: .touchUpInside)

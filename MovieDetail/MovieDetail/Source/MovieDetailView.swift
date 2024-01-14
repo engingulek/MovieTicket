@@ -20,7 +20,7 @@ final class MovieDetailView : UIView {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 15
-        view.backgroundColor = Theme.theme.themeColor.primaryBackground
+        view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return view
     }()
     
@@ -32,28 +32,28 @@ final class MovieDetailView : UIView {
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     
     private lazy var movieGenresLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
     private lazy var movieDirectorNameLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
     
     private lazy var movieTime : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         return label
     }()
@@ -61,14 +61,14 @@ final class MovieDetailView : UIView {
     private lazy var movieInfoTitle: UILabel = {
         let label = UILabel()
         label.text = "Movie Info"
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
     
     private lazy var movieInfo : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.secondaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont
         label.numberOfLines = .zero
         return label
@@ -77,7 +77,7 @@ final class MovieDetailView : UIView {
     private lazy var showMoreButton : UIButton = {
         let button = UIButton()
         button.setTitle("Show More", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.textAlignment = .left
         return  button
         
@@ -86,7 +86,7 @@ final class MovieDetailView : UIView {
     private lazy var castTitle: UILabel = {
         let label = UILabel()
         label.text = "Casts"
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
     }()
@@ -104,16 +104,16 @@ final class MovieDetailView : UIView {
             forCellWithReuseIdentifier: PartnerCVC.identifier)
         
         collectionview.showsHorizontalScrollIndicator = false
-        collectionview.backgroundColor = Theme.theme.themeColor.primaryBackground
+        collectionview.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return collectionview
     }()
     
     private lazy var chooseCinemaButton: UIButton = {
         let button = UIButton()
         button.setTitle("Choose Cinema", for: .normal)
-        button.setTitleColor(Theme.theme.themeColor.primaryLabel, for: .normal)
+        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
-        button.backgroundColor = Theme.theme.themeColor.thirdBack
+        button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
         button.titleLabel?.textAlignment = .left
         button.layer.cornerRadius = Radius.small.rawValue
         button.addAction(chooseCinemaButtonTapped, for: .touchUpInside)

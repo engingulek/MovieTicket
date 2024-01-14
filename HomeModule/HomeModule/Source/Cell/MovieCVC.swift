@@ -14,14 +14,14 @@ final class MovieCVC: UICollectionViewCell {
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         return label
     }()
     
     private lazy var movieCategory : UILabel = {
        let label = UILabel()
-        label.textColor = Theme.theme.themeColor.primaryLabel
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellSubLabelFont
         return label
     }()

@@ -23,14 +23,14 @@ final class PaymentPageView : UIView{
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 15
-        view.backgroundColor = Theme.theme.themeColor.primaryBackground
+        view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         cardInfoView.delegate = self
-        backgroundColor = Theme.theme.themeColor.primaryBackground
+        backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)

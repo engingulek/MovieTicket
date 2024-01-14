@@ -16,6 +16,7 @@ protocol MovieDetailPresenterInterface {
 
 final class MovieDetailPresenter : MovieDetailPresenterInterface {
     var movieInfo: MovieResult?
+    var buttonHidde:Bool = true
     
     weak var view : MovieDetailViewControllerInterface?
     var router: MovieDetailRouterInterface?
@@ -36,6 +37,7 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
        
         view?.prepareCollectionView()
         view?.reloadCollectionView()
+        view?.buttonHiddenAction(buttonHidden: buttonHidde)
     }
     
     func configureData() -> MovieResult {

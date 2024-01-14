@@ -7,6 +7,7 @@ protocol FutureMoviePresenterInterface {
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func  cellForItemAt(at indexPath:IndexPath) -> MovieResult
+    func  didSelectItem(at indexPath:IndexPath) -> MovieResult
     
 }
 
@@ -47,6 +48,11 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
     }
     
     func cellForItemAt(at indexPath: IndexPath) -> MovieResult {
+        let movie = futureMovie[indexPath.item]
+        return movie
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) -> MovieResult {
         let movie = futureMovie[indexPath.item]
         return movie
     }

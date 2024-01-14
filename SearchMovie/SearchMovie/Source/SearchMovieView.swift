@@ -4,7 +4,7 @@ import Foundation
 import UIKit
 import SnapKit
 import ThemeKit
-
+import CommenUIKit
 
 class SearchMovieView : UIView {
     
@@ -57,6 +57,10 @@ class SearchMovieView : UIView {
     
     func reloadTableView(){
         searchMovieTableView.reloadData()
+    }
+    
+    func prepareTextField(view:SearchMovieViewController) {
+        searhTextField.delegate = view
     }
     
     private func configureUI(){

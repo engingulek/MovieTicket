@@ -19,7 +19,7 @@ final class MovieDetailView : UIView {
     private lazy var  scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = 15
+        view.spacing = 10
         view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return view
     }()
@@ -72,15 +72,6 @@ final class MovieDetailView : UIView {
         label.font = Theme.theme.themeFont.cellLabelFont
         label.numberOfLines = .zero
         return label
-    }()
-    
-    private lazy var showMoreButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("Show More", for: .normal)
-        button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
-        button.titleLabel?.textAlignment = .left
-        return  button
-        
     }()
     
     private lazy var castTitle: UILabel = {
@@ -187,9 +178,9 @@ final class MovieDetailView : UIView {
          movieTime,
          movieInfoTitle,
          movieInfo,
-         showMoreButton,
          castTitle,
-         castcollectionview].forEach { view in
+         castcollectionview,
+         chooseCinemaButton].forEach { view in
             scrollStackViewContainer.addArrangedSubview(view)
         }
         
@@ -221,11 +212,9 @@ final class MovieDetailView : UIView {
             make.height.equalTo(UIScreen.main.bounds.height / 4)
         }
         
-        addSubview(chooseCinemaButton)
+       
         chooseCinemaButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-5)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(10)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-10)
+           
             make.height.equalTo(60)
         }
     }

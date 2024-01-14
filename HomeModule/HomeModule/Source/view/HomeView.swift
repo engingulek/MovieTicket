@@ -50,9 +50,7 @@ final class HomeView : UIView {
         movieListCollectionView.register(
             MovieListCVCForInCineme.self,
             forCellWithReuseIdentifier: MovieListCVCForInCineme.idetifier)
-        movieListCollectionView.register(
-            MovieListCVCForGenre.self,
-            forCellWithReuseIdentifier: MovieListCVCForGenre.idetifier)
+        
         movieListCollectionView.register(
             HeaderCollectionReuableView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,

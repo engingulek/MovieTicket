@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
     lazy var presenter: HomePresenterInterface = HomePresenter(view: self)
     private lazy var homeView = HomeView()
    
-    private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
+    private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell"]
     override func loadView() {
         view = homeView
         homeView.prepareTextField(view: self)
@@ -63,11 +63,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             cell.delegate = self
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: MovieListCVCForGenre.idetifier,
-                for: indexPath) as? MovieListCVCForGenre 
-            else {return UICollectionViewCell()}
-            return cell
+            return UICollectionViewCell()
         }
     }
     

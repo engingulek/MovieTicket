@@ -22,11 +22,22 @@ final class SearchMovieViewController : UIViewController {
     
     override func loadView() {
         view = searchMovieView
+        searchMovieView.prepareTextField(view: self)
         
     }
     
     override func viewDidLoad() {
         presenter.viewDidLoad()
+    }
+}
+
+extension SearchMovieViewController :  UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if let text = textField.text {
+            presenter.textDidChange(text: text)
+        }
+        
     }
 }
 
@@ -61,11 +72,17 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchMovieTVC.identifier,for: indexPath) as? SearchMovieTVC else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SearchMovieTVC.identifier,
+            for: indexPath) as? SearchMovieTVC else {return UITableViewCell()}
         cell.selectionStyle = .none
         let movie = presenter.cellForRow(at: indexPath)
         cell.configureData(movieResult: movie)
         return cell
+    }
+    func tableView(_ tableView: UITableView, 
+                didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -77,9 +94,7 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
         label.text = title
         label.font = Theme.theme.themeFont.secondaryFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        
         headerView.addSubview(label)
-        
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

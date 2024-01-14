@@ -13,6 +13,8 @@ protocol SearchMoviePresenterInterface {
     func cellForRow(at indexPath : IndexPath) -> MovieResult
     func viewForHeaderInSection(section:Int) -> String
     func heightForHeaderInSection() -> CGFloat
+    func didSelectRow(at indexPath:IndexPath)
+    func textDidChange(text:String)
 }
 
 class SearchMoviePresenter  {
@@ -35,9 +37,19 @@ class SearchMoviePresenter  {
     private func searchMovieInCinema() async {
         do {
            let result = try await interactor.searchMovieInCinema()
-            movieInCinemaList =  result.filter{$0.name.contains(searchText ?? "")}
-            print("MovieInCinema \(result.count)")
+            guard let text = searchText else {
+                movieInCinemaList = []
+                view?.relaodTableView()
+                return
+            }
+            
+            if text.isEmpty {
+                movieInCinemaList = result
+            }else{
+                movieInCinemaList =  result.filter{$0.name.contains(searchText ?? "")}
+            }
             view?.relaodTableView()
+            
         }catch{
             movieInCinemaList = []
             print("Search Movie \(error.localizedDescription)")
@@ -49,12 +61,21 @@ class SearchMoviePresenter  {
     private func searchFutureSinema() async {
         do {
             let result = try await interactor.searchFutureMovie()
-            futureCinemaList =  result.filter{$0.name.contains(searchText ?? "")}
-            print("futureCinema  \(futureCinemaList.count)")
+            guard let text = searchText else {
+                futureCinemaList  = []
+                view?.relaodTableView()
+                return
+            }
+            if text.isEmpty {
+                futureCinemaList  = result
+            }else{
+                futureCinemaList  =  result.filter{
+                    $0.name.contains(searchText ?? "")
+                }
+            }
             view?.relaodTableView()
         }catch{
             futureCinemaList = []
-            print("Search Movie \(error.localizedDescription)")
             view?.relaodTableView()
         }
     }
@@ -78,7 +99,6 @@ class SearchMoviePresenter  {
 
 extension SearchMoviePresenter : SearchMoviePresenterInterface{
     
-   
     func numberOfSections() -> Int {
         return sections.count
     }
@@ -107,6 +127,26 @@ extension SearchMoviePresenter : SearchMoviePresenterInterface{
         }
     }
     
+    func didSelectRow(at indexPath: IndexPath) {
+        let section = indexPath.section
+        if section == 0 {
+            let row =  indexPath.row
+            let movieInCinema = movieInCinemaList[row]
+            router?.toMovieDetail(
+                movie: movieInCinema,
+                view: view,
+                buttonHidden: false)
+        }else{
+            let row =  indexPath.row
+            let futureCinema = futureCinemaList[row]
+            router?.toMovieDetail(
+                movie: futureCinema,
+                view: view,
+                buttonHidden: true)
+        }
+    }
+    
+    
     
     func viewForHeaderInSection(section: Int) -> String {
         if section == 0 {
@@ -121,5 +161,16 @@ extension SearchMoviePresenter : SearchMoviePresenterInterface{
     func heightForHeaderInSection() -> CGFloat {
         return 40
     }
+    
+    func textDidChange(text: String) {
+        print(text)
+        searchText = text
+        Task {
+            @MainActor in
+            await searchMovieInCinema()
+            await searchFutureSinema()
+        }
+    }
+    
 
 }

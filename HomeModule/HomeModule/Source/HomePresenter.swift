@@ -21,7 +21,7 @@ protocol HomePresenterInterface {
 
 final class HomePresenter : HomePresenterInterface {
     
-    private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell","genresCell"]
+    private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell"]
     weak var view: HomeViewControllerInterface?
     var router: HomeRouterInterface?
     
@@ -64,8 +64,8 @@ final class HomePresenter : HomePresenterInterface {
             return CGSize(width: UIScreenView.shared.screenWidth,
                     height: UIScreenView.shared.screenHeight / 3)
         }else {
-            return CGSize(width: UIScreenView.shared.screenWidth,
-                            height: 80)
+            return CGSize(width: 0,
+                            height: 0)
         }
     }
     
@@ -76,7 +76,7 @@ final class HomePresenter : HomePresenterInterface {
         }else if indexPath.section == 1{
             return "Future"
         }else{
-            return "Genres"
+            return ""
         }
     }
     

@@ -8,11 +8,13 @@ protocol ChooseSeatRouterInterface {
 
 public final class ChooseSeatRouter : ChooseSeatModuleInterface {
     public init(){}
-    public func createModule()-> UIViewController {
+    public func createModule(hallAndSessionId:Int,languageId:Int)-> UIViewController {
         let view = ChooseSeatViewController()
         let router = ChooseSeatRouter()
         let presenter = ChooseSeatPresenter(view: view,
                                     router: router)
+        presenter.hallAndSessionId = hallAndSessionId
+        presenter.languageId = languageId
         view.presenter = presenter
         return view
     }

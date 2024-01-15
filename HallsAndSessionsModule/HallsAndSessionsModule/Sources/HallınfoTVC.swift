@@ -6,14 +6,18 @@ import CommenUIKit
 import ThemeKit
 
 protocol HallınfoTVCDelegate {
-    func selectedBaseLanguage()
-    func selectedSubLangue()
+    func selectedBaseLanguage(row:Int,baseLanguageId:Int)
+    func selectedSubLangue(row:Int,subLanguageId:Int)
 }
 
 
 final class HallInfoTVC : UITableViewCell {
     static let identifier = "hallInfoTVC"
     var delegate : HallınfoTVCDelegate?
+    var indexPath : IndexPath?
+    private var baseLanguageId:Int = 0
+    private var subLanguageId:Int = 0
+    
     private lazy var locIcon : UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "mappin.and.ellipse")
@@ -47,7 +51,8 @@ final class HallInfoTVC : UITableViewCell {
     }()
     
     private lazy var movieLanguageLabelBaseTapped : UIAction = UIAction { _ in
-        self.delegate?.selectedBaseLanguage()
+        guard let row =  self.indexPath?.row else {return }
+        self.delegate?.selectedBaseLanguage(row: row, baseLanguageId: self.baseLanguageId)
     }
     
     private lazy var movieLanguageLabelSubtitle : UIButton = {
@@ -61,7 +66,8 @@ final class HallInfoTVC : UITableViewCell {
     }()
     
     private lazy var movieLanguageLabelSubtitleTapped : UIAction = UIAction { _ in
-        self.delegate?.selectedSubLangue()
+        guard let row =  self.indexPath?.row else {return }
+        self.delegate?.selectedSubLangue(row: row,subLanguageId: self.subLanguageId)
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -117,10 +123,16 @@ final class HallInfoTVC : UITableViewCell {
         
         if language.count == 2 {
             movieLanguageLabelBase.setTitle(language[0].type, for: .normal)
+            baseLanguageId = language[0].id
             movieLanguageLabelSubtitle.setTitle(language[1].type, for: .normal)
+            subLanguageId = language[1].id
+            movieLanguageLabelSubtitle.isHidden = false
+            movieLanguageLabelSubtitle.isEnabled = true
         }else{
             movieLanguageLabelBase.setTitle(language[0].type, for: .normal)
+            baseLanguageId = language[0].id
             movieLanguageLabelSubtitle.isHidden = true
+            movieLanguageLabelSubtitle.isEnabled = false
         }
         
     }

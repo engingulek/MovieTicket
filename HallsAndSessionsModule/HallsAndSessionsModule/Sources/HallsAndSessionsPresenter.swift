@@ -7,7 +7,7 @@ protocol HallsAndSessionsPresenterInterface {
     var router : HallsAndSessionsRouterInterface? {get}
     func viewDidLoad()
     /// For HallsAndSession TableView
-    func buyTicketButtonTapped()
+    func hallAndSessionSelected(row:Int,languageId:Int)
     func numberOfRowsInSection() -> Int
     func cellForRow(at indexPath : IndexPath) -> HallAndSession
     ///For Date Collection View
@@ -19,6 +19,8 @@ protocol HallsAndSessionsPresenterInterface {
 }
 
 final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
+  
+    
     private var dataList : [String] = []
     private var hallsAndSessions : [HallAndSession] = []
     private var selectedDate:String = ""
@@ -96,10 +98,14 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
         
     }
     
-    
-    func buyTicketButtonTapped() {
-        router?.toChooseSeat(view: view)
+    func hallAndSessionSelected(row:Int,languageId:Int) {
+        let hallId = hallsAndSessions[row].id
+        print("HallId \(hallId) language\(languageId)")
+        router?.toChooseSeat(view: view, hallAndSessionId: hallId,
+                             languageId: languageId)
     }
+    
+   
     
     func numberOfRowsInSection() -> Int {
         return hallsAndSessions.count

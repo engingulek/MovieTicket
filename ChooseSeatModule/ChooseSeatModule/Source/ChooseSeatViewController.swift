@@ -14,6 +14,7 @@ protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     func reloadCollecionView()
     
     func configureMovieInfo(info:ChooseHallAndSessionInfo)
+    func seatIndos(info:[SeatsInfo],selectedInfo:[SeatsInfo])
 }
 
 final class ChooseSeatViewController : UIViewController {
@@ -33,6 +34,8 @@ final class ChooseSeatViewController : UIViewController {
 }
 
 extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
+   
+    
     func prepareCollectionView() {
         chooseSeatView.prepareCollectionView(view: self)
     }
@@ -49,7 +52,10 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
         DispatchQueue.main.async {
             self.chooseSeatView.configureMovieInfo(info: info)
         }
-     
+    }
+    
+    func seatIndos(info: [SeatsInfo],selectedInfo:[SeatsInfo]) {
+        chooseSeatView.seatDesing(seatInfo: info,selectedInfo:selectedInfo)
     }
 }
 
@@ -68,9 +74,17 @@ extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDa
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, 
+                    didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
+    }
 }
 
 extension ChooseSeatViewController : ChooseSeatViewDelegate {
+    func chooseSeat(chooseSeatInfo: SeatsInfo) {
+        presenter.addSelectedInfos(chooseInfo: chooseSeatInfo)
+    }
+    
     func payNowButtonTappedDelegate() {
         presenter.toPaymentPage()
     }

@@ -6,11 +6,13 @@ import ThemeKit
 
 protocol ChooseSeatViewDelegate {
     func payNowButtonTappedDelegate()
+    func chooseSeat(chooseSeatInfo:SeatsInfo)
 }
 
 
 final class ChooseSeatView : UIView {
     var delegate :  ChooseSeatViewDelegate?
+    private var seatCount : Int = 0
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
@@ -25,6 +27,13 @@ final class ChooseSeatView : UIView {
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
        
+        return label
+    }()
+    
+    private lazy var ticketAmountLabel : UILabel = {
+        let label = UILabel()
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         return label
     }()
     
@@ -121,6 +130,17 @@ final class ChooseSeatView : UIView {
         return label
     }()
     
+    private lazy var choosenSeatsLabel :  UILabel = {
+        let label = UILabel()
+        label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
+        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
+        label.numberOfLines = .zero
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
+    
     private lazy var payNowButton : UIButton = {
         let button = UIButton()
         button.setTitle("Pay Now", for: .normal)
@@ -142,7 +162,7 @@ final class ChooseSeatView : UIView {
      return stackView
      }()
      
-    
+   
     private lazy var payButtonTapped  :UIAction = UIAction { _ in
         self.delegate?.payNowButtonTappedDelegate()
         
@@ -153,7 +173,7 @@ final class ChooseSeatView : UIView {
         hourcollectionview.delegate = view
         hourcollectionview.dataSource = view
     }
-    
+
     func reloadDataCollectionView(){
         hourcollectionview.reloadData()
     }
@@ -161,10 +181,17 @@ final class ChooseSeatView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
-        seatDesing()
     }
     
-    private func seatDesing(){
+    func seatDesing(seatInfo:[SeatsInfo],selectedInfo:[SeatsInfo]){
+        var chosen = "Chosen Seat : "
+        for seat in selectedInfo {
+            chosen += "(\(seat.row),\(seat.col))"
+        }
+        choosenSeatsLabel.text = chosen
+        seatCount = selectedInfo.count
+    
+        mainStackView.arrangedSubviews.forEach {  mainStackView.removeArrangedSubview($0) }
             for rowIndex in 1...8 {
                 let rowStackView = UIStackView()
                 rowStackView.axis = .horizontal
@@ -174,9 +201,25 @@ final class ChooseSeatView : UIView {
                 
                 for columnIndex in 1...10 {
                     let squareView = UIView()
-                    squareView.backgroundColor = UIColor.white
+                    let fullcontrol = seatInfo.contains(where: {
+                        $0.col == columnIndex && $0.row == rowIndex
+                    })
+                    
+                    let selectedControl = selectedInfo.contains(where: {
+                        $0.col == columnIndex && $0.row == rowIndex
+                    })
+                    if fullcontrol  {
+                        squareView.backgroundColor = UIColor.red
+                    }else if selectedControl{
+                        squareView.backgroundColor = UIColor.green
+                    }else{
+                        squareView.backgroundColor = UIColor.white
+                    }
+                    
                     squareView.layer.cornerRadius = Radius.small.rawValue
+                   
                     rowStackView.addArrangedSubview(squareView)
+                    
                     
                     let tapGestureRecognizer = UITapGestureRecognizer(
                         target: self,
@@ -186,6 +229,7 @@ final class ChooseSeatView : UIView {
                     /// row:  2,  column:3   -tag = 2 * 100  + 3 = 203
                     squareView.tag = rowIndex * 100 + columnIndex
                 }
+                
                 mainStackView.addArrangedSubview(rowStackView)
             }
     }
@@ -197,15 +241,18 @@ final class ChooseSeatView : UIView {
               /// 203 % 100 = 3 = Column
               let rowIndex = tappedView.tag / 100
               let columnIndex = tappedView.tag % 100
+              let choseSeat = SeatsInfo(col: columnIndex, row: rowIndex, status: "full")
+              self.delegate?.chooseSeat(chooseSeatInfo: choseSeat)
               print("Tapped on square at Row \(rowIndex), Column \(columnIndex)")
           }
       }
     
     func configureMovieInfo(info:ChooseHallAndSessionInfo){
-        print("Testtra \(info.movieName)")
         movieNameLabel.text = info.movieName
         moviedateLabel.text =  info.date
         movieLanguageLabel.text = info.language.type
+        ticketAmountLabel.text = "$\(info.ticketAmount)"
+       
     }
     
     
@@ -224,10 +271,16 @@ final class ChooseSeatView : UIView {
             make.centerX.equalToSuperview()
         }
         
+        addSubview(ticketAmountLabel)
+        ticketAmountLabel.snp.makeConstraints { make in
+            make.top.equalTo(moviedateLabel.snp.bottom).offset(5)
+            make.centerX.equalToSuperview()
+        }
+        
         
         addSubview(movieLanguageLabel)
         movieLanguageLabel.snp.makeConstraints { make in
-            make.top.equalTo(moviedateLabel.snp.bottom).offset(5)
+            make.top.equalTo(ticketAmountLabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
         }
         
@@ -305,7 +358,6 @@ final class ChooseSeatView : UIView {
             make.height.equalTo(80)
         }
         
-        
         addSubview(payNowButton)
         payNowButton.snp.makeConstraints { make in
             
@@ -314,6 +366,17 @@ final class ChooseSeatView : UIView {
             make.width.equalToSuperview().multipliedBy(0.7)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
         }
+        
+        addSubview(choosenSeatsLabel)
+        choosenSeatsLabel.snp.makeConstraints { make in
+            make.top.equalTo(hourcollectionview.snp.bottom).offset(5)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(payNowButton.snp.top).offset(-5)
+            make.height.equalTo(80)
+        }
+        
+      
     }
     
     

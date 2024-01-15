@@ -13,12 +13,12 @@ protocol ChooseSeatPresenterInterface {
                                         backColor:String,
                                         labelColor:String)
     func didSelectItem(at indexPath: IndexPath)
+    func addSelectedInfos(chooseInfo:SeatsInfo)
 }
 
 
 final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
-   
-    
+
     var view: ChooseSeatViewControllerInterface?
     var router: ChooseSeatRouterInterface?
     var interactor: ChooseSeatInteractorProtocol
@@ -26,6 +26,8 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     var languageId:Int?
     private var chooseHallAndSessionInfo:ChooseHallAndSessionInfo?
     private var hours:[Hour] = []
+    private var fullSeatInfos : [SeatsInfo] = []
+    private var selectedSeatInfos : [SeatsInfo] = []
     private var selectedHourId:Int = 0
     
     
@@ -77,7 +79,8 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
             view?.configureMovieInfo(info: info)
             print("tEAA \(info.id)")
             await fetchSeatAndHoursInfo(chooseId: info.id)
-          //  print("tEAA \(seatAndHourInfo[0].hours.count)")
+            fullSeatInfos =  hours[0].seatsInfo
+            view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
         }
 
     }
@@ -109,9 +112,30 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     }
     
     func didSelectItem(at indexPath: IndexPath){
+        selectedSeatInfos = []
         selectedHourId = hours[indexPath.item].id
+        fullSeatInfos = hours[indexPath.item].seatsInfo
+        view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
         view?.reloadCollecionView()
     }
+    
+    func addSelectedInfos(chooseInfo: SeatsInfo) {
+        // Do not click full seat
+       let fullcontrol =  fullSeatInfos.contains {
+           $0.row ==  chooseInfo.row && 
+           $0.col == chooseInfo.col}
+        if !fullcontrol {
+            if let index = selectedSeatInfos.firstIndex(of: chooseInfo) {
+                selectedSeatInfos.remove(at: index)
+            } else {
+                selectedSeatInfos.append(chooseInfo)
+            }
+            view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
+        }
+    }
+    
+   
+    
     
 
     

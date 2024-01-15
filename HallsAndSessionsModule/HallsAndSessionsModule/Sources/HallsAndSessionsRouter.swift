@@ -4,7 +4,9 @@ import UIKit
 import DependenyKit
 import ChooseSeatModule
 protocol HallsAndSessionsRouterInterface {
-    func toChooseSeat(view:HallsAndSessionsViewControllerInterface?)
+    func toChooseSeat(view:HallsAndSessionsViewControllerInterface?,
+                 hallAndSessionId:Int,
+                 languageId:Int)
 }
 
 public final class HallsAndSessionsRouter : HallsAndSessionsModuleInterface {
@@ -23,9 +25,13 @@ public final class HallsAndSessionsRouter : HallsAndSessionsModuleInterface {
 
 
 extension HallsAndSessionsRouter : HallsAndSessionsRouterInterface {
-    func toChooseSeat(view: HallsAndSessionsViewControllerInterface?) {
+    func toChooseSeat(view: HallsAndSessionsViewControllerInterface?,
+                 hallAndSessionId:Int,
+                 languageId:Int) {
         @Dependency var chooseSeatModule : ChooseSeatModuleInterface
-        let viewController = chooseSeatModule.createModule()
+        let viewController = chooseSeatModule.createModule(
+            hallAndSessionId: hallAndSessionId,
+            languageId: languageId)
         view?.pushViewControllerAble(
             viewController,
             animated: true)

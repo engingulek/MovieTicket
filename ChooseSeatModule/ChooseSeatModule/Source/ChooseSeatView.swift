@@ -15,7 +15,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.primaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "Dune: Part Two"
+      
         return label
     }()
     
@@ -24,7 +24,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "04/01/2014"
+       
         return label
     }()
     
@@ -33,7 +33,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "English(Subtitle)"
+       
         return label
     }()
     
@@ -200,6 +200,13 @@ final class ChooseSeatView : UIView {
               print("Tapped on square at Row \(rowIndex), Column \(columnIndex)")
           }
       }
+    
+    func configureMovieInfo(info:ChooseHallAndSessionInfo){
+        print("Testtra \(info.movieName)")
+        movieNameLabel.text = info.movieName
+        moviedateLabel.text =  info.date
+        movieLanguageLabel.text = info.language.type
+    }
     
     
     private func configureUI(){

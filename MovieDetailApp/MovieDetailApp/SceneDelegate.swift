@@ -2,6 +2,7 @@
 import UIKit
 import DependenyKit
 import MovieDetail
+import ModelKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -15,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         @Dependency var movieDetailinterface : MovieDetailModuleInterface
-        window?.rootViewController = movieDetailinterface.createMovieDetailModule()
+        window?.rootViewController = movieDetailinterface.createMovieDetailModule(movie:MovieResult.defaultData, buttonHidden: true)
         window?.makeKeyAndVisible()
     }
 

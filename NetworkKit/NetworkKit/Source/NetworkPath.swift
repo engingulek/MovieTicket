@@ -7,6 +7,8 @@ public enum NetworkPath {
     case movieInCinema
     case futureMovie
     case hallsAndSessions(Int)
+    case choosedHallAndSession
+    case hoursAndSeats
 
     
 }
@@ -26,6 +28,11 @@ extension NetworkPath : TargetType {
             return "genres.json"
         case .hallsAndSessions(let movieId):
             return "hallsAndSessions/list.json?orderBy=\"movieId\"&equalTo=\(movieId)"
+        case .choosedHallAndSession:
+            return "choosedHallAndSession.json"
+        case .hoursAndSeats:
+            return "hoursAndSeats.json"
+            
 
         }
     }

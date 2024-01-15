@@ -27,6 +27,11 @@
 		7D5132762B4325D400D6AD70 /* ChooseSeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5132752B4325D400D6AD70 /* ChooseSeatView.swift */; };
 		7D5132782B43288E00D6AD70 /* SeatInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5132772B43288E00D6AD70 /* SeatInfoTVC.swift */; };
 		7D51329A2B432AB100D6AD70 /* SeatCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5132992B432AB100D6AD70 /* SeatCVC.swift */; };
+		7D515D382B5555410067EFFC /* ChooseSeatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D515D372B5555410067EFFC /* ChooseSeatInteractor.swift */; };
+		7D515D3A2B55563B0067EFFC /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D515D392B55563B0067EFFC /* NetworkKit.framework */; };
+		7D515D3B2B55563B0067EFFC /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D515D392B55563B0067EFFC /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D515D3D2B5557110067EFFC /* ChooseHallAndSessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D515D3C2B5557110067EFFC /* ChooseHallAndSessionInfo.swift */; };
+		7D515D402B556B100067EFFC /* SeatAndHoursInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D515D3F2B556B100067EFFC /* SeatAndHoursInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +43,7 @@
 			files = (
 				7D51323B2B4320D400D6AD70 /* ThemeKit.framework in Embed Frameworks */,
 				7D5132392B4320D400D6AD70 /* CommenUIKit.framework in Embed Frameworks */,
+				7D515D3B2B55563B0067EFFC /* NetworkKit.framework in Embed Frameworks */,
 				7D51323D2B4320D400D6AD70 /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7D3F05072B459B3A00044D01 /* PaymentPageModule.framework in Embed Frameworks */,
 				7D5132332B4320C500D6AD70 /* DependenyKit.framework in Embed Frameworks */,
@@ -62,6 +68,10 @@
 		7D5132752B4325D400D6AD70 /* ChooseSeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSeatView.swift; sourceTree = "<group>"; };
 		7D5132772B43288E00D6AD70 /* SeatInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatInfoTVC.swift; sourceTree = "<group>"; };
 		7D5132992B432AB100D6AD70 /* SeatCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCVC.swift; sourceTree = "<group>"; };
+		7D515D372B5555410067EFFC /* ChooseSeatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSeatInteractor.swift; sourceTree = "<group>"; };
+		7D515D392B55563B0067EFFC /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D515D3C2B5557110067EFFC /* ChooseHallAndSessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHallAndSessionInfo.swift; sourceTree = "<group>"; };
+		7D515D3F2B556B100067EFFC /* SeatAndHoursInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatAndHoursInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 			files = (
 				7D51323A2B4320D400D6AD70 /* ThemeKit.framework in Frameworks */,
 				7D5132382B4320D400D6AD70 /* CommenUIKit.framework in Frameworks */,
+				7D515D3A2B55563B0067EFFC /* NetworkKit.framework in Frameworks */,
 				7D51323C2B4320D400D6AD70 /* ViewControllerAbleKit.framework in Frameworks */,
 				7D5132322B4320C500D6AD70 /* DependenyKit.framework in Frameworks */,
 				7D5132702B4323C700D6AD70 /* SnapKit in Frameworks */,
@@ -112,6 +123,7 @@
 		7D5132302B4320C500D6AD70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D515D392B55563B0067EFFC /* NetworkKit.framework */,
 				7D3F05052B459B3A00044D01 /* PaymentPageModule.framework */,
 				7D5132352B4320D400D6AD70 /* CommenUIKit.framework */,
 				7D5132362B4320D400D6AD70 /* ThemeKit.framework */,
@@ -124,12 +136,14 @@
 		7D5132442B43213000D6AD70 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7D515D3E2B556AFF0067EFFC /* Model */,
 				7D51323E2B4320EE00D6AD70 /* ChooseSeatViewController.swift */,
 				7D5132402B4320FD00D6AD70 /* ChooseSeatRouter.swift */,
 				7D5132732B43242A00D6AD70 /* ChooseSeatPresenter.swift */,
 				7D5132752B4325D400D6AD70 /* ChooseSeatView.swift */,
 				7D5132772B43288E00D6AD70 /* SeatInfoTVC.swift */,
 				7D5132992B432AB100D6AD70 /* SeatCVC.swift */,
+				7D515D372B5555410067EFFC /* ChooseSeatInteractor.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -140,6 +154,15 @@
 				7D5132422B43212C00D6AD70 /* ChooseSeatModuleInterface.swift */,
 			);
 			path = InterfaceSource;
+			sourceTree = "<group>";
+		};
+		7D515D3E2B556AFF0067EFFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D515D3C2B5557110067EFFC /* ChooseHallAndSessionInfo.swift */,
+				7D515D3F2B556B100067EFFC /* SeatAndHoursInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,12 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D515D402B556B100067EFFC /* SeatAndHoursInfo.swift in Sources */,
 				7D51329A2B432AB100D6AD70 /* SeatCVC.swift in Sources */,
 				7D5132762B4325D400D6AD70 /* ChooseSeatView.swift in Sources */,
 				7D5132412B4320FD00D6AD70 /* ChooseSeatRouter.swift in Sources */,
 				7D5132432B43212C00D6AD70 /* ChooseSeatModuleInterface.swift in Sources */,
+				7D515D3D2B5557110067EFFC /* ChooseHallAndSessionInfo.swift in Sources */,
 				7D5132742B43242A00D6AD70 /* ChooseSeatPresenter.swift in Sources */,
 				7D5132782B43288E00D6AD70 /* SeatInfoTVC.swift in Sources */,
+				7D515D382B5555410067EFFC /* ChooseSeatInteractor.swift in Sources */,
 				7D51323F2B4320EE00D6AD70 /* ChooseSeatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

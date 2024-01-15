@@ -7,4 +7,4 @@ public struct DataResult<T:Decodable> : Decodable {
 }
 
 
-public typealias HallAndSessionResult<T:Decodable> = [String: T]
+public typealias DictinoryResult<T:Decodable> = [String: T]

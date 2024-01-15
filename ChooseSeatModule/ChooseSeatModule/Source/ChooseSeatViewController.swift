@@ -12,6 +12,8 @@ protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     
     func prepareCollectionView()
     func reloadCollecionView()
+    
+    func configureMovieInfo(info:ChooseHallAndSessionInfo)
 }
 
 final class ChooseSeatViewController : UIViewController {
@@ -36,21 +38,33 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
     }
     
     func reloadCollecionView() {
-        chooseSeatView.reloadDataCollectionView()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            chooseSeatView.reloadDataCollectionView()
+        }
+       
+    }
+    
+    func configureMovieInfo(info:ChooseHallAndSessionInfo) {
+        DispatchQueue.main.async {
+            self.chooseSeatView.configureMovieInfo(info: info)
+        }
+     
     }
 }
 
 
 extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return presenter.numberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
-        cell.configureData(labelText: "12:40")
-        cell.configureIU(backColor: Theme.theme.themeColor.thirdBack,
-                     labelColor: Theme.theme.themeColor.primaryLabel,
+        let item = presenter.cellForItem(at: indexPath)
+        cell.configureData(labelText: item.hour.hour)
+        cell.configureIU(backColor: item.backColor,
+                         labelColor: item.labelColor,
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }

@@ -93,6 +93,7 @@ extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSo
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HallInfoTVC.identifier,for: indexPath) as? HallInfoTVC else {return UITableViewCell()}
         let hallAndSession =  presenter.cellForRow(at: indexPath)
         cell.configureData(hallAndSession: hallAndSession)
+        cell.indexPath = indexPath
         cell.delegate = self
         return cell
     }
@@ -104,12 +105,15 @@ extension HallsAndSessionsViewController : UITableViewDelegate,UITableViewDataSo
 
 
 extension HallsAndSessionsViewController : HallınfoTVCDelegate {
-    func selectedBaseLanguage() {
-        presenter.buyTicketButtonTapped()
+    func selectedBaseLanguage(row: Int, baseLanguageId: Int) {
+        presenter.hallAndSessionSelected(row: row, languageId: baseLanguageId)
     }
     
-    func selectedSubLangue() {
-        presenter.buyTicketButtonTapped()
+    func selectedSubLangue(row: Int, subLanguageId: Int) {
+        presenter.hallAndSessionSelected(row: row, languageId: subLanguageId)
     }
+    
+   
+    
 }
 

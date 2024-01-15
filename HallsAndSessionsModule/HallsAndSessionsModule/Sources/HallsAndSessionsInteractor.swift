@@ -16,7 +16,7 @@ class HallsAndSessionsInteractor : HallsAndSessionsInteractorProtocol {
         do{
             let response = try await NetworkManager.shared.fetch(
                 target: .hallsAndSessions(movieId),
-                responseClass: HallAndSessionResult<HallAndSession>.self)
+                responseClass: DictinoryResult<HallAndSession>.self)
             //Convert from Dictionart's Values to Array
             return Array(response.values)
         }catch{
@@ -28,7 +28,7 @@ class HallsAndSessionsInteractor : HallsAndSessionsInteractorProtocol {
         do{
             let response = try await NetworkManager.shared.fetch(
                 target: .hallsAndSessions(movieId),
-                responseClass: HallAndSessionResult<HallAndSession>.self)
+                responseClass: DictinoryResult<HallAndSession>.self)
             //Convert from Dictionart's Values to Array
             let list = Array(response.values).filter {  $0.date == date}
             return list

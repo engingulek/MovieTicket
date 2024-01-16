@@ -28,6 +28,9 @@
 		7D4372EE2B4C4BCE0049DB05 /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA473C12B56A1B3007BEC31 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473C02B56A1B3007BEC31 /* Infos.swift */; };
 		7DA473C32B56B038007BEC31 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473C22B56B038007BEC31 /* Extension.swift */; };
+		7DA473C52B56E27F007BEC31 /* PaymentPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473C42B56E27F007BEC31 /* PaymentPageInteractor.swift */; };
+		7DA473C72B56E2AA007BEC31 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA473C62B56E2AA007BEC31 /* NetworkKit.framework */; };
+		7DA473C82B56E2AA007BEC31 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA473C62B56E2AA007BEC31 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DF7B2282B541C5C001EBF94 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */; };
 		7DF7B2292B541C5C001EBF94 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -41,6 +44,7 @@
 			files = (
 				7D4372E82B4C48C70049DB05 /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7D4372EB2B4C4BB80049DB05 /* TicketModule.framework in Embed Frameworks */,
+				7DA473C82B56E2AA007BEC31 /* NetworkKit.framework in Embed Frameworks */,
 				7D4372EE2B4C4BCE0049DB05 /* DependenyKit.framework in Embed Frameworks */,
 				7DF7B2292B541C5C001EBF94 /* CommenUIKit.framework in Embed Frameworks */,
 				7D3F04FA2B4569CE00044D01 /* ThemeKit.framework in Embed Frameworks */,
@@ -67,6 +71,8 @@
 		7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA473C02B56A1B3007BEC31 /* Infos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
 		7DA473C22B56B038007BEC31 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7DA473C42B56E27F007BEC31 /* PaymentPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageInteractor.swift; sourceTree = "<group>"; };
+		7DA473C62B56E2AA007BEC31 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,7 @@
 			files = (
 				7D3F04F92B4569CE00044D01 /* ThemeKit.framework in Frameworks */,
 				7D4372EA2B4C4BB80049DB05 /* TicketModule.framework in Frameworks */,
+				7DA473C72B56E2AA007BEC31 /* NetworkKit.framework in Frameworks */,
 				7D3F04F42B4569B300044D01 /* SnapKit in Frameworks */,
 				7DF7B2282B541C5C001EBF94 /* CommenUIKit.framework in Frameworks */,
 				7D4372E72B4C48C70049DB05 /* ViewControllerAbleKit.framework in Frameworks */,
@@ -132,6 +139,7 @@
 				7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */,
 				7D4372E42B4C47E50049DB05 /* PaymentPagePresenter.swift */,
 				7DA473C22B56B038007BEC31 /* Extension.swift */,
+				7DA473C42B56E27F007BEC31 /* PaymentPageInteractor.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 		7D3F04F72B4569CE00044D01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DA473C62B56E2AA007BEC31 /* NetworkKit.framework */,
 				7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */,
 				7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */,
 				7D4372E92B4C4BB80049DB05 /* TicketModule.framework */,
@@ -264,6 +273,7 @@
 				7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */,
 				7DA473C12B56A1B3007BEC31 /* Infos.swift in Sources */,
 				7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */,
+				7DA473C52B56E27F007BEC31 /* PaymentPageInteractor.swift in Sources */,
 				7D3F05022B45796200044D01 /* ContactinfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

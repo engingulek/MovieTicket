@@ -8,3 +8,8 @@ public struct DataResult<T:Decodable> : Decodable {
 
 
 public typealias DictinoryResult<T:Decodable> = [String: T]
+
+
+public struct AddDataResult: Codable {
+    let name: String
+}

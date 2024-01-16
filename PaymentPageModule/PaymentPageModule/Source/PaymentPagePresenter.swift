@@ -12,12 +12,25 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     weak var view: PaymentPageViewControllerInterface?
     var router: PaymenPageRouterInterface?
+    private var interactor : PaymentPageInteractorProtocol
     private var controlInfo : Bool = false
     
     init(view: PaymentPageViewControllerInterface?,
-         router: PaymenPageRouterInterface? = nil) {
+         router: PaymenPageRouterInterface? = nil,
+         interactor:PaymentPageInteractorProtocol = PaymentPageInteractor.shared) {
         self.view = view
         self.router = router
+        self.interactor = interactor
+    }
+    
+    private func createTicket(parameters:[String:Any]) async {
+        
+        do {
+            try await interactor.createTicket(parametets: parameters)
+            router?.toTicket(view: view)
+        }catch{
+            print(error.localizedDescription)
+        }
     }
     
     func viewDidLoad() {
@@ -28,14 +41,35 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     func buyTicketButtonTapped(contanctInfo:ContanctInfo,cardInfo:CardInfo) {
         controlForContanctInfo(contanctInfo: contanctInfo)
         controlForCardInfo(cardInfo: cardInfo)
-        if controlInfo {
-            router?.toTicket(view: view)
+        router?.toTicket(view: view)
+        
+       if controlInfo {
+           let barcodeCode = generateRandom9DigitNumber()
+           let phoneNumber = contanctInfo.phoneNumber
+           let parameters:[String:Any] = [
+            "barcode" : barcodeCode,
+            "phoneNumber":phoneNumber
+           ]
+           Task {
+               @MainActor in
+               await createTicket(parameters:parameters)
+           }
+           
         }else{
             view?.createAlertMesssage(
                 title: "Alert",
                 message: "Please check the red areas",
                 actionTitle: "Okey")
         }
+    }
+    
+    func generateRandom9DigitNumber() -> Int {
+        let lowerBound = 100_000_000 // En küçük 9 basamaklı sayı
+        let upperBound = 999_999_999 // En büyük 9 basamaklı sayı
+
+        let randomNumber = Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
+
+        return randomNumber
     }
     
     private func controlForCardInfo(cardInfo:CardInfo){

@@ -9,6 +9,7 @@ public enum NetworkPath {
     case hallsAndSessions(Int)
     case choosedHallAndSession
     case hoursAndSeats
+    case createTicket(Parameters)
 
     
 }
@@ -32,6 +33,8 @@ extension NetworkPath : TargetType {
             return "choosedHallAndSession.json"
         case .hoursAndSeats:
             return "hoursAndSeats.json"
+        case .createTicket:
+            return "ticketList.json"
             
 
         }
@@ -46,6 +49,8 @@ extension NetworkPath : TargetType {
     
     var requestType: RequestType {
         switch self {
+        case .createTicket(let ticket):
+            return .requestParameters(parameters: ticket, encoding: JSONEncoding.init())
         default:
             return .requestPlain
         }

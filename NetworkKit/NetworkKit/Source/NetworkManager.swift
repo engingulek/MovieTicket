@@ -62,6 +62,8 @@ public final class NetworkManager : NetworkManagerProtocol  {
            switch requestType {
            case .requestPlain:
                return ([:], URLEncoding.default)
+           case .requestParameters(parameters: let parameters, encoding: let encoding):
+               return (parameters, encoding)
            }
        }
 }

@@ -11,8 +11,10 @@ protocol TargetType {
 
 enum AlamofireMethod: String {
     case GET
+    case POST
 }
 
 enum RequestType {
     case requestPlain
+    case requestParameters(parameters: Parameters, encoding: ParameterEncoding)
 }

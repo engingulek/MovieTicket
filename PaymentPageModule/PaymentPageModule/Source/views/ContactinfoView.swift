@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 import SnapKit
 import ThemeKit
+
+
 final class ContactinfoView : UIView{
     
     private lazy var titleLabel: UILabel = {
@@ -25,7 +27,7 @@ final class ContactinfoView : UIView{
     private lazy var nameTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Name"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -36,7 +38,7 @@ final class ContactinfoView : UIView{
     private lazy var subnameTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Surname"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -48,18 +50,19 @@ final class ContactinfoView : UIView{
     private lazy var emailTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "E-mail"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .emailAddress
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.autocapitalizationType = .none
         return textField
     }()
     
     private lazy var phoneNumberTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "(***) *** ** **"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.placeholder = MaskFormat.phoneNumber.rawValue
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -67,10 +70,13 @@ final class ContactinfoView : UIView{
         return textField
     }()
     
+   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         layer.cornerRadius = Radius.small.rawValue
+        phoneNumberTextField.delegate = self
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
@@ -124,5 +130,16 @@ final class ContactinfoView : UIView{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ContactinfoView : UITextFieldDelegate {
+    func textField(_ textField: UITextField, 
+                shouldChangeCharactersIn range: NSRange,
+                replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        phoneNumberTextField.text = newString.format(mask: .phoneNumber)
+        return false
     }
 }

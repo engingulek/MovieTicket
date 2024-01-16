@@ -12,7 +12,7 @@ final class PaymentPageView : UIView{
     
     private lazy var movieAndTicketView = MovieAndTicketInfoView()
      lazy var contactionInfoView = ContactinfoView()
-    private lazy var cardInfoView = CardInfoView()
+   lazy var cardInfoView = CardInfoView()
     var delegate : PaymentPageViewDelegate?
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()

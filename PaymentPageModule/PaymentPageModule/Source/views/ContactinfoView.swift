@@ -95,7 +95,7 @@ final class ContactinfoView : UIView{
             phoneNumberTextField.layer.borderColor = UIColor(hex:color)?.cgColor
             phoneNumberTextField.layer.borderWidth = 1
         }
-        print("Contact Info View Alert \(color) \(tag)")
+       
     }
     
    

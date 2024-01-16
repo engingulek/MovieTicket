@@ -12,6 +12,7 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     weak var view: PaymentPageViewControllerInterface?
     var router: PaymenPageRouterInterface?
+    private var controlInfo : Bool = false
     
     init(view: PaymentPageViewControllerInterface?,
          router: PaymenPageRouterInterface? = nil) {
@@ -26,32 +27,108 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     func buyTicketButtonTapped(contanctInfo:ContanctInfo,cardInfo:CardInfo) {
         controlForContanctInfo(contanctInfo: contanctInfo)
-       // router?.toTicket(view: view)
+        controlForCardInfo(cardInfo: cardInfo)
+        if controlInfo {
+            router?.toTicket(view: view)
+        }else{
+            view?.createAlertMesssage(
+                title: "Alert",
+                message: "Please check the red areas",
+                actionTitle: "Okey")
+        }
     }
     
-    private func controlForContanctInfo(contanctInfo:ContanctInfo){
-        if contanctInfo.name.count <= 3 {
-            view?.congigureUIForContanctInfo(color: "#FF0000", tag: 0)
+    private func controlForCardInfo(cardInfo:CardInfo){
+        
+        if cardInfo.nameOfTheCard.count <= 3 {
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 0)
+            controlInfo = false
         }else{
-            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 0)
-        }
-        if contanctInfo.surname.count <= 2{
-            view?.congigureUIForContanctInfo(color: "#FF0000", tag: 1)
-        }else{
-            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 1)
-        }
-        if !contanctInfo.email.isValidEmail() {
-            view?.congigureUIForContanctInfo(color: "#FF0000", tag: 2)
-        }else{
-            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 2)
-        }
-        if contanctInfo.phoneNumber.isEmpty {
-            view?.congigureUIForContanctInfo(color: "#FF0000", tag: 3)
-        }else{
-            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 3)
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.primaryLabel,
+                tag: 0)
+            controlInfo = true
         }
         
+        
+        if cardInfo.cardNumber.count != 16 {
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 1)
+            controlInfo = false
+        }else{
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.primaryLabel,
+                tag: 1)
+            controlInfo = true
+        }
+        
+        if cardInfo.exparationDate.isEmpty ||
+         cardInfo.exparationDate.convertStringToDate()! < Date.now.convertDateToString().convertStringToDate()! {
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 2)
+            controlInfo = false
+        }else{
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.primaryLabel,
+                tag: 2)
+            controlInfo = true
+        }
+        
+        if cardInfo.securarityCode.count < 3 {
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 3)
+            controlInfo = false
+        }else{
+            view?.congigureUIForCardInfo(
+                color: Theme.theme.themeColor.primaryLabel,
+                tag: 3)
+            controlInfo = true
+        }
     }
     
-    
+    private func controlForContanctInfo(contanctInfo:ContanctInfo) {
+        if contanctInfo.name.count <= 3 {
+            view?.congigureUIForContanctInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 0)
+            controlInfo = false
+        }else{
+            view?.congigureUIForContanctInfo(
+                color: Theme.theme.themeColor.primaryLabel,
+                tag: 0)
+            controlInfo = true
+        }
+        if contanctInfo.surname.count <= 2{
+            view?.congigureUIForContanctInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 1)
+            controlInfo = false
+        }else{
+            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 1)
+            controlInfo = true
+        }
+        if !contanctInfo.email.isValidEmail() {
+            view?.congigureUIForContanctInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 2)
+            controlInfo = false
+        }else{
+            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 2)
+            controlInfo = true
+        }
+        if contanctInfo.phoneNumber.isEmpty {
+            view?.congigureUIForContanctInfo(
+                color: Theme.theme.themeColor.alertTextFieldBorderColor,
+                tag: 3)
+            controlInfo = false
+        }else{
+            view?.congigureUIForContanctInfo(color: Theme.theme.themeColor.primaryLabel, tag: 3)
+            controlInfo = true
+        }
+    }
 }

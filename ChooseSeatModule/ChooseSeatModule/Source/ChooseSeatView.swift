@@ -201,15 +201,20 @@ final class ChooseSeatView : UIView {
                 
                 for columnIndex in 1...10 {
                     let squareView = UIView()
-                    let fullcontrol = seatInfo.contains(where: {
+                    let seatTypes = seatInfo.filter( {
                         $0.col == columnIndex && $0.row == rowIndex
                     })
                     
                     let selectedControl = selectedInfo.contains(where: {
                         $0.col == columnIndex && $0.row == rowIndex
                     })
-                    if fullcontrol  {
-                        squareView.backgroundColor = UIColor.red
+                    if !seatTypes.isEmpty  {
+                        if seatTypes[0].status == "disable"{
+                            squareView.backgroundColor = UIColor(hex: Theme.theme.themeColor.primaryBackground)
+                        }else{
+                            squareView.backgroundColor = UIColor.red
+                        }
+                      
                     }else if selectedControl{
                         squareView.backgroundColor = UIColor.green
                     }else{

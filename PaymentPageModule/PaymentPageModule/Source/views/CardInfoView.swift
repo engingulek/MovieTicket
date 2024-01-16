@@ -182,6 +182,15 @@ final class CardInfoView : UIView {
         }
     }
     
+    func returnCardInfo() -> CardInfo {
+        let cardInfo = CardInfo(
+            nameOfTheCard: nameOnTheCardTextField.text ?? "",
+            cardNumber: cardNumberTextField.text ?? "",
+            exparationDate: expirationDateTextField.text ?? "",
+            securarityCode: securityCodeTextField.text ?? "")
+        return cardInfo
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

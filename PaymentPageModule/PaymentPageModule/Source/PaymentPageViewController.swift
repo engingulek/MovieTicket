@@ -3,6 +3,15 @@ import UIKit
 import ThemeKit
 import ViewControllerAbleKit
 
+
+enum MaskFormat :String {
+    case phoneNumber = "*** *** ** **"
+    case cardNumber = "**** **** **** ****"
+    case expirationDate = "**/**"
+    case securatiyCode = "***"
+    case defaultCode = "** *******"
+}
+
 typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol PaymentPageViewControllerInterface : AnyObject,Ables {

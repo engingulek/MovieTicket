@@ -22,7 +22,7 @@ final class CardInfoView : UIView {
     private lazy var nameOnTheCardTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "Name on the card"
-        textField.backgroundColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -41,8 +41,8 @@ final class CardInfoView : UIView {
     
     private lazy var cardNumberTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Name on the card"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.placeholder = MaskFormat.cardNumber.rawValue
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -61,7 +61,7 @@ final class CardInfoView : UIView {
     private lazy var expirationDateTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "MM/YY"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -81,7 +81,7 @@ final class CardInfoView : UIView {
     private lazy var securityCodeTextField : UITextField = {
         let textField = UITextField()
         textField.placeholder = "***"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)
+        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -111,6 +111,9 @@ final class CardInfoView : UIView {
         super.init(frame: frame)
         backgroundColor = .white
         layer.cornerRadius = Radius.small.rawValue
+        cardNumberTextField.delegate = self
+        expirationDateTextField.delegate = self
+        securityCodeTextField.delegate = self
         addSubview(nameOnTheCardabel)
         nameOnTheCardabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
@@ -176,11 +179,36 @@ final class CardInfoView : UIView {
             make.width.equalTo(UIScreen.main.bounds.width / 1.5)
             make.height.equalTo(50)
             make.bottom.equalToSuperview().offset(-10)
-           
         }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CardInfoView : UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                shouldChangeCharactersIn range: NSRange,
+                replacementString string: String) -> Bool {
+        if textField == cardNumberTextField {
+            guard let text = textField.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            cardNumberTextField.text = newString.format(mask: .cardNumber)
+        }else if textField == expirationDateTextField {
+            guard let text = textField.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            expirationDateTextField.text = newString.format(mask: .expirationDate)
+        }else if textField == securityCodeTextField {
+            guard let text = textField.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            securityCodeTextField.text = newString.format(mask: .securatiyCode)
+        }else{
+            guard let text = textField.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.text = newString.format(mask: .defaultCode)
+        }
+       
+        return false
     }
 }

@@ -32,6 +32,7 @@ final class ContactinfoView : UIView{
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 0
         return textField
     }()
     
@@ -43,6 +44,7 @@ final class ContactinfoView : UIView{
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 1
         return textField
     }()
     
@@ -56,6 +58,7 @@ final class ContactinfoView : UIView{
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
         textField.autocapitalizationType = .none
+        textField.tag = 2
         return textField
     }()
     
@@ -67,8 +70,33 @@ final class ContactinfoView : UIView{
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 3
         return textField
     }()
+    
+    
+    func configureUIForAlert(color:String,tag:Int){
+        if tag == 0 {
+            nameTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            nameTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 1 {
+            subnameTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+        subnameTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 2 {
+            emailTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            emailTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 3 {
+            phoneNumberTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            phoneNumberTextField.layer.borderWidth = 1
+        }
+       
+    }
     
    
     
@@ -124,8 +152,15 @@ final class ContactinfoView : UIView{
             make.bottom.equalToSuperview().offset(-10)
             make.height.equalTo(40)
         }
-        
-        
+    }
+    
+    func returnContactInfo() -> ContanctInfo {
+        let contactInfo = ContanctInfo(
+            name: nameTextField.text ?? "",
+            surname: subnameTextField.text ?? "",
+            email: emailTextField.text ?? "",
+            phoneNumber: phoneNumberTextField.text ?? "")
+        return contactInfo
     }
     
     required init?(coder: NSCoder) {

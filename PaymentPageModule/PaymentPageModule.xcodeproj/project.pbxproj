@@ -26,7 +26,8 @@
 		7D4372EB2B4C4BB80049DB05 /* TicketModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372E92B4C4BB80049DB05 /* TicketModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D4372ED2B4C4BCE0049DB05 /* DependenyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */; };
 		7D4372EE2B4C4BCE0049DB05 /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA473BE2B569024007BEC31 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473BD2B569024007BEC31 /* UITextField+Extension.swift */; };
+		7DA473C12B56A1B3007BEC31 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473C02B56A1B3007BEC31 /* Infos.swift */; };
+		7DA473C32B56B038007BEC31 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA473C22B56B038007BEC31 /* Extension.swift */; };
 		7DF7B2282B541C5C001EBF94 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */; };
 		7DF7B2292B541C5C001EBF94 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -64,7 +65,8 @@
 		7D4372E62B4C48C70049DB05 /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4372E92B4C4BB80049DB05 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4372EC2B4C4BCE0049DB05 /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA473BD2B569024007BEC31 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		7DA473C02B56A1B3007BEC31 /* Infos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
+		7DA473C22B56B038007BEC31 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7DF7B2272B541C5C001EBF94 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,11 +126,12 @@
 		7D3F04EF2B4568A600044D01 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7DA473BF2B56A19E007BEC31 /* model */,
 				7D3F05002B45793100044D01 /* views */,
 				7D3F04EB2B45639D00044D01 /* PaymentPageViewController.swift */,
 				7D3F04ED2B4563D200044D01 /* PaymenPageRouter.swift */,
 				7D4372E42B4C47E50049DB05 /* PaymentPagePresenter.swift */,
-				7DA473BD2B569024007BEC31 /* UITextField+Extension.swift */,
+				7DA473C22B56B038007BEC31 /* Extension.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -154,6 +157,14 @@
 				7D3F05032B4583C000044D01 /* CardInfoView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		7DA473BF2B56A19E007BEC31 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7DA473C02B56A1B3007BEC31 /* Infos.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,13 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA473BE2B569024007BEC31 /* UITextField+Extension.swift in Sources */,
+				7DA473C32B56B038007BEC31 /* Extension.swift in Sources */,
 				7D4372E52B4C47E50049DB05 /* PaymentPagePresenter.swift in Sources */,
 				7D3F04FF2B456DA200044D01 /* PaymentPageView.swift in Sources */,
 				7D3F04EE2B4563D200044D01 /* PaymenPageRouter.swift in Sources */,
 				7D3F05042B4583C000044D01 /* CardInfoView.swift in Sources */,
 				7D3F04FD2B456AD000044D01 /* MovieAndTicketInfoView.swift in Sources */,
 				7D3F04EC2B45639D00044D01 /* PaymentPageViewController.swift in Sources */,
+				7DA473C12B56A1B3007BEC31 /* Infos.swift in Sources */,
 				7D3F04EA2B45634C00044D01 /* PaymentPageModuleInterface.swift in Sources */,
 				7D3F05022B45796200044D01 /* ContactinfoView.swift in Sources */,
 			);

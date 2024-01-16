@@ -16,6 +16,7 @@ public struct ThemeColor {
     public  let secondaryLabel:String
     public let thirdLabel :String
     public let textFieldBackColor : String
+    public let alertTextFieldBorderColor:String
 }
 
 public struct ThemeFont {
@@ -37,7 +38,8 @@ extension Theme {
             primaryLabel: "#FEFFFF",
             secondaryLabel: "#998396",
             thirdLabel: "#000000",
-            textFieldBackColor: "#808080"),
+            textFieldBackColor: "#808080", 
+            alertTextFieldBorderColor: "#FF0000"),
               
             themeFont: ThemeFont(
                 primaryFont: .systemFont(ofSize: FontSize.primarySize),

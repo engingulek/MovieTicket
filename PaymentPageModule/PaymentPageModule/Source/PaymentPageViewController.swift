@@ -12,10 +12,12 @@ enum MaskFormat :String {
     case defaultCode = "** *******"
 }
 
-typealias Ables = UIViewAble & SegueAble & NavConUIAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble & AlertMessageAble
 
 protocol PaymentPageViewControllerInterface : AnyObject,Ables {
     var presenter : PaymentPagePresenterInterface {get}
+    func congigureUIForContanctInfo(color:String,tag:Int)
+    func congigureUIForCardInfo(color:String,tag:Int)
 }
 
 
@@ -34,12 +36,23 @@ final class PaymentPageViewController : UIViewController {
 
 extension  PaymentPageViewController : PaymentPageViewControllerInterface {
     
+    func congigureUIForContanctInfo(color: String, tag: Int) {
+        paymetPageView.contactionInfoView.configureUIForAlert(color: color, tag: tag)
+    }
+    
+    func congigureUIForCardInfo(color: String, tag: Int) {
+        paymetPageView.cardInfoView.configureUIForAlert(color: color, tag: tag)
+    }
+    
+    
 }
 
 
 extension PaymentPageViewController : PaymentPageViewDelegate {
     func buyTicketButtonTapped() {
-        presenter.buyTicketButtonTapped()
+        let infos = paymetPageView.returnInfos()
+        presenter.buyTicketButtonTapped(contanctInfo:infos.contanctInfo,
+                              cardInfo:infos.cardInfo)
     }
     
     

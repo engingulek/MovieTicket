@@ -9,10 +9,10 @@ protocol PaymentPageViewDelegate {
 
 
 final class PaymentPageView : UIView{
-   
+    
     private lazy var movieAndTicketView = MovieAndTicketInfoView()
-    private lazy var contactionInfoView = ContactinfoView()
-    private lazy var cardInfoView = CardInfoView()
+     lazy var contactionInfoView = ContactinfoView()
+   lazy var cardInfoView = CardInfoView()
     var delegate : PaymentPageViewDelegate?
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -49,10 +49,17 @@ final class PaymentPageView : UIView{
         }
         
         [movieAndTicketView,
-        contactionInfoView,
-        cardInfoView].forEach { view in
+         contactionInfoView,
+         cardInfoView].forEach { view in
             scrollStackViewContainer.addArrangedSubview(view)
         }
+    }
+    
+    func returnInfos() -> (contanctInfo:ContanctInfo,cardInfo:CardInfo){
+        let contanctInfo:ContanctInfo = contactionInfoView.returnContactInfo()
+        let cardInfo:CardInfo = cardInfoView.returnCardInfo()
+        
+        return(contanctInfo,cardInfo)
     }
     
     required init?(coder: NSCoder) {

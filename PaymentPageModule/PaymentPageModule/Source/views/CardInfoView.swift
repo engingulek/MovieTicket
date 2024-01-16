@@ -27,6 +27,7 @@ final class CardInfoView : UIView {
         textField.keyboardType = .default
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 0
         return textField
     }()
     
@@ -47,6 +48,7 @@ final class CardInfoView : UIView {
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 1
         return textField
     }()
     
@@ -66,6 +68,7 @@ final class CardInfoView : UIView {
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 2
         return textField
     }()
     
@@ -86,6 +89,7 @@ final class CardInfoView : UIView {
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
         textField.textAlignment = .center
+        textField.tag = 3
         return textField
     }()
     
@@ -100,6 +104,28 @@ final class CardInfoView : UIView {
         button.addAction(buyTicketButtonTapped, for: .touchUpInside)
         return  button
     }()
+    
+    func configureUIForAlert(color:String,tag:Int){
+        if tag == 0 {
+            nameOnTheCardTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            nameOnTheCardTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 1 {
+            cardNumberTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            cardNumberTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 2 {
+            expirationDateTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            expirationDateTextField.layer.borderWidth = 1
+        }
+        
+        if tag == 3 {
+            securityCodeTextField.layer.borderColor = UIColor(hex:color)?.cgColor
+            securityCodeTextField.layer.borderWidth = 1
+        }
+    }
     
     private lazy var buyTicketButtonTapped : UIAction = UIAction { _ in
         self.delegate?.buyTicketButtonTapped()
@@ -180,6 +206,15 @@ final class CardInfoView : UIView {
             make.height.equalTo(50)
             make.bottom.equalToSuperview().offset(-10)
         }
+    }
+    
+    func returnCardInfo() -> CardInfo {
+        let cardInfo = CardInfo(
+            nameOfTheCard: nameOnTheCardTextField.text ?? "",
+            cardNumber: cardNumberTextField.text ?? "",
+            exparationDate: expirationDateTextField.text ?? "",
+            securarityCode: securityCodeTextField.text ?? "")
+        return cardInfo
     }
     
     required init?(coder: NSCoder) {

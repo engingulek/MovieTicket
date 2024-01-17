@@ -6,7 +6,6 @@ import CommenUIKit
 import ViewControllerAbleKit
 import ThemeKit
 
-
 typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol SearchMovieViewControllerInterface :  AnyObject,Ables {
@@ -23,7 +22,6 @@ final class SearchMovieViewController : UIViewController {
     override func loadView() {
         view = searchMovieView
         searchMovieView.prepareTextField(view: self)
-        
     }
     
     override func viewDidLoad() {
@@ -33,11 +31,9 @@ final class SearchMovieViewController : UIViewController {
 
 extension SearchMovieViewController :  UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
         if let text = textField.text {
             presenter.textDidChange(text: text)
         }
-        
     }
 }
 
@@ -67,11 +63,14 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
         return presenter.numberOfSections()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, 
+              numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRowsIn(section: section)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: SearchMovieTVC.identifier,
             for: indexPath) as? SearchMovieTVC else {return UITableViewCell()}
@@ -85,7 +84,8 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
         presenter.didSelectRow(at: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, 
+                viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         headerView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         let label = UILabel()
@@ -97,7 +97,9 @@ extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource 
         headerView.addSubview(label)
         return headerView
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    
+    func tableView(_ tableView: UITableView, 
+                heightForHeaderInSection section: Int) -> CGFloat {
         return presenter.heightForHeaderInSection()
     }
 }

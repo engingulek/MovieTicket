@@ -5,7 +5,6 @@ import ModelKit
 
 protocol SearchMoviePresenterInterface {
     var view : SearchMovieViewControllerInterface? {get}
-    var router : SearchMovieRouterInterface? {get}
     func viewDidLoad()
     
     func numberOfSections() -> Int
@@ -18,16 +17,19 @@ protocol SearchMoviePresenterInterface {
 }
 
 class SearchMoviePresenter  {
-     var view: SearchMovieViewControllerInterface?
-    var router: SearchMovieRouterInterface?
+    var view: SearchMovieViewControllerInterface?
+    private var router: SearchMovieRouterInterface?
     private var interactor : SearchViewInteractorProtocol
-    var searchText : String?
-    private var sections:[String] = ["Movie In Cinema","Future Movie"]
+    var searchText : String = Theme.theme.themeText.defaultText
+    
+    private var sections:[String] = [
+        Theme.theme.themeText.movieInCinema,
+        Theme.theme.themeText.future]
     
     private var movieInCinemaList : [MovieResult] = []
     private var futureCinemaList : [MovieResult] = []
     init(view: SearchMovieViewControllerInterface?,
-        router : SearchMovieRouterInterface? = nil,
+         router : SearchMovieRouterInterface? = nil,
          interactor : SearchViewInteractorProtocol = SearchViewInteractor.shared) {
         self.view = view
         self.router = router
@@ -36,23 +38,18 @@ class SearchMoviePresenter  {
     
     private func searchMovieInCinema() async {
         do {
-           let result = try await interactor.searchMovieInCinema()
-            guard let text = searchText else {
-                movieInCinemaList = []
-                view?.relaodTableView()
-                return
-            }
-            
-            if text.isEmpty {
+            let result = try await interactor.searchMovieInCinema()
+            if searchText.isEmpty {
                 movieInCinemaList = result
             }else{
-                movieInCinemaList =  result.filter{$0.name.contains(searchText ?? "")}
+                movieInCinemaList =  result.filter{
+                    $0.name.contains(searchText)
+                }
             }
             view?.relaodTableView()
             
         }catch{
             movieInCinemaList = []
-            print("Search Movie \(error.localizedDescription)")
             view?.relaodTableView()
         }
     }
@@ -61,16 +58,12 @@ class SearchMoviePresenter  {
     private func searchFutureSinema() async {
         do {
             let result = try await interactor.searchFutureMovie()
-            guard let text = searchText else {
-                futureCinemaList  = []
-                view?.relaodTableView()
-                return
-            }
-            if text.isEmpty {
+            
+            if searchText.isEmpty {
                 futureCinemaList  = result
             }else{
                 futureCinemaList  =  result.filter{
-                    $0.name.contains(searchText ?? "")
+                    $0.name.contains(searchText)
                 }
             }
             view?.relaodTableView()
@@ -84,10 +77,10 @@ class SearchMoviePresenter  {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.navigationBarHidden(isHidden: false)
         view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
-        view?.changeTitle(title: "Search Movie")
+        view?.changeTitle(title: Theme.theme.themeText.navTitleSearchMovie)
         view?.prepareTableView()
         view?.relaodTableView()
-        view?.searchTextfieldText(searchText: searchText ?? "")
+        view?.searchTextfieldText(searchText: searchText)
         Task {
             @MainActor in
             await searchMovieInCinema()
@@ -146,16 +139,8 @@ extension SearchMoviePresenter : SearchMoviePresenterInterface{
         }
     }
     
-    
-    
     func viewForHeaderInSection(section: Int) -> String {
-        if section == 0 {
-            return "Movie In Cinema"
-        }else if section == 1{
-            return "Future Cinema"
-        }else{
-            return ""
-        }
+        return sections[section]
     }
     
     func heightForHeaderInSection() -> CGFloat {
@@ -163,7 +148,6 @@ extension SearchMoviePresenter : SearchMoviePresenterInterface{
     }
     
     func textDidChange(text: String) {
-        print(text)
         searchText = text
         Task {
             @MainActor in
@@ -172,5 +156,5 @@ extension SearchMoviePresenter : SearchMoviePresenterInterface{
         }
     }
     
-
+    
 }

@@ -6,7 +6,6 @@ public class BarcodeGenerator {
         
         if let filter = CIFilter(name: "CICode128BarcodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
-            
             if let outputCIImage = filter.outputImage {
                 let scaleX = 200 / outputCIImage.extent.width
                 let scaleY = 100 / outputCIImage.extent.height
@@ -15,7 +14,6 @@ public class BarcodeGenerator {
                 return UIImage(ciImage: transformedImage)
             }
         }
-        
         return nil
     }
 }

@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class BaseCollectionView : UICollectionViewController {

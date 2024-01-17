@@ -2,9 +2,9 @@ import Foundation
 import CommenUIKit
 import ThemeKit
 import ModelKit
+
 protocol HomePresenterInterface {
     var view : HomeViewControllerInterface? {get}
-    var router : HomeRouterInterface? {get}
     
     func viewDidLoad()
     func viewWilAppear()
@@ -19,18 +19,17 @@ protocol HomePresenterInterface {
 }
 
 
-final class HomePresenter : HomePresenterInterface {
+final class HomePresenter {
     
     private let cellTypes : [String] = ["movieInCinemaCell","futureMovieCell"]
     weak var view: HomeViewControllerInterface?
-    var router: HomeRouterInterface?
+    private var router: HomeRouterInterface?
     
     init(view: HomeViewControllerInterface?,
-         router:HomeRouterInterface? = nil) {
+        router:HomeRouterInterface? = nil) {
         self.view = view
         self.router = router
     }
-    
     
     func viewDidLoad() {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
@@ -42,9 +41,11 @@ final class HomePresenter : HomePresenterInterface {
     
     func viewWilAppear() {
         view?.navigationBarHidden(isHidden: true)
-       
     }
-    
+}
+
+// MARK: HomePresenterInterface
+extension HomePresenter : HomePresenterInterface {
     
     func numberOfItemsInSection() -> Int {
         return 1
@@ -65,18 +66,18 @@ final class HomePresenter : HomePresenterInterface {
                     height: UIScreenView.shared.screenHeight / 3)
         }else {
             return CGSize(width: 0,
-                            height: 0)
+                      height: 0)
         }
     }
     
     
     func headerCollectionReuableView(at indexPath: IndexPath) -> String {
         if indexPath.section == 0 {
-            return "Movie In Cinema"
+            return Theme.theme.themeText.movieInCinema
         }else if indexPath.section == 1{
-            return "Future"
+            return Theme.theme.themeText.future
         }else{
-            return ""
+            return Theme.theme.themeText.defaultText
         }
     }
     
@@ -95,4 +96,3 @@ final class HomePresenter : HomePresenterInterface {
         }
     }
 }
-

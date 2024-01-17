@@ -14,6 +14,14 @@ final class HeaderCollectionReuableView : UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureUI(){
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -21,15 +29,11 @@ final class HeaderCollectionReuableView : UICollectionReusableView {
         }
     }
     
-    func configureData(title:String){
-        titleLabel.text = title
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    func configureData(title:String){
+        titleLabel.text = title
     }
 }

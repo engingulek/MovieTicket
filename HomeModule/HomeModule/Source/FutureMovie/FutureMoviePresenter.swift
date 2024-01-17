@@ -1,19 +1,17 @@
 
 import Foundation
 import ModelKit
-
 protocol FutureMoviePresenterInterface {
     var view : FutureMovieCVInterface? {get}
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func  cellForItemAt(at indexPath:IndexPath) -> MovieResult
     func  didSelectItem(at indexPath:IndexPath) -> MovieResult
-    
 }
 
-
 class FutureMoviePresenterr : FutureMoviePresenterInterface {
-    var view: FutureMovieCVInterface?
+    
+    weak var view: FutureMovieCVInterface?
     private var interactor : HomeInteractorProtocol
     private var futureMovie : [MovieResult] = []
     
@@ -31,10 +29,8 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
         }catch{
             futureMovie = []
             view?.realoadData()
-            
         }
     }
-    
     
     func viewDidLoad() {
         Task{

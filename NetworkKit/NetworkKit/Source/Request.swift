@@ -9,8 +9,6 @@ protocol Request {
     var method : HTTPMethod {get}
 }
 
-
-
 enum HTTPMethod  : String {
     case GET
     case POST

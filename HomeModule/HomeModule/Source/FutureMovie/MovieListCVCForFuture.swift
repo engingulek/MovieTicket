@@ -33,6 +33,4 @@ extension MovieListCVCForFuture : FutureMovieCVDelegate {
     func selectedMovie(movie: MovieResult) {
         self.delegate?.selectedFutureMovie(movie: movie)
     }
-    
-    
 }

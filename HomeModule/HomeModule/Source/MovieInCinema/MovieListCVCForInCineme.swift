@@ -5,13 +5,20 @@ protocol MovieListCVCForInCinemeDelegate {
     func selectedMovieInCinema(movie:MovieResult)
 }
 
-
 final class MovieListCVCForInCineme : UICollectionViewCell {
     static let idetifier : String = "movieListCVCForInCineme"
     private let movieInCinemaCV = MovieInCinemaCV()
     var delegate : MovieListCVCForInCinemeDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureUI(){
         addSubview(movieInCinemaCV.view)
         movieInCinemaCV.delegate = self
         movieInCinemaCV.view.snp.makeConstraints { make in
@@ -20,10 +27,6 @@ final class MovieListCVCForInCineme : UICollectionViewCell {
             make.leading.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

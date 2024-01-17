@@ -1,12 +1,13 @@
-
 import UIKit
 import SnapKit
 import ViewControllerAbleKit
 import ModelKit
 import MovieDetail
+
 typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol HomeViewControllerInterface : AnyObject,Ables {
+    
     var presenter : HomePresenterInterface {get}
     func prepareCollectionView()
     func reloadCollectionView()
@@ -28,13 +29,30 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWilAppear()
     }
 }
 
+//MARK:  HomeViewControllerInterface
+extension HomeViewController : HomeViewControllerInterface {
+    
+    func prepareCollectionView() {
+        homeView.prepareCollectionView(view: self)
+    }
+    
+    func reloadCollectionView() {
+        homeView.reloadCollectionView()
+    }
+    
+    func textFieldAction() {
+        homeView.textFieldTextRemove()
+    }
+}
 
+// MARK : UICollectionViewDelegate,UICollectionViewDataSource
 extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -52,9 +70,8 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
                 for: indexPath) as? MovieListCVCForInCineme 
             else {return UICollectionViewCell()}
             cell.delegate = self
-           
-        
             return cell
+            
         }else if cellType == "futureMovieCell"{
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: MovieListCVCForFuture.idetifier,
@@ -62,6 +79,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
             else {return UICollectionViewCell()}
             cell.delegate = self
             return cell
+            
         } else {
             return UICollectionViewCell()
         }
@@ -72,36 +90,21 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     }
 }
 
-
-
-extension HomeViewController : HomeViewControllerInterface {
-    
-    func prepareCollectionView() {
-        homeView.prepareCollectionView(view: self)
-    }
-    
-    func reloadCollectionView() {
-        homeView.reloadCollectionView()
-    }
-    
-    func textFieldAction() {
-        homeView.textFieldTextRemove()
-    }
-}
-
+//MARK: MovieListCVCForInCinemeDelegate
 extension HomeViewController : MovieListCVCForInCinemeDelegate {
     func selectedMovieInCinema(movie:MovieResult) {
         presenter.selectedMovie(movie: movie,buttonHidden: false)
     }
 }
 
+//MARK: MovieListCVCForFutureDelegate
 extension HomeViewController : MovieListCVCForFutureDelegate{
     func selectedFutureMovie(movie: MovieResult) {
         presenter.selectedMovie(movie: movie,buttonHidden: true)
     }
 }
 
-
+//MARK: UITextFieldDelegate
 extension HomeViewController :  UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if let text = textField.text {
@@ -110,7 +113,7 @@ extension HomeViewController :  UITextFieldDelegate {
     }
 }
 
-
+//MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
@@ -129,19 +132,20 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
                 ofKind: kind,
                 withReuseIdentifier: HeaderCollectionReuableView.identifier,
                 for: indexPath) as? HeaderCollectionReuableView 
+                    
             else {return UICollectionReusableView()}
             
             let title = presenter.headerCollectionReuableView(at: indexPath)
             header.configureData(title: title)
             return header
         }
+        
         return UICollectionReusableView()
     }
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
+    func collectionView(_ collectionView: UICollectionView, 
+                 layout collectionViewLayout: UICollectionViewLayout,
+                referenceSizeForHeaderInSection section: Int) -> CGSize {
         let size = presenter.referenceSizeForHeaderInSection()
         return size
     }

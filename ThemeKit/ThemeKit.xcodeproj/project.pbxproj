@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7D4E7F552B403C0D00A7196B /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D4E7F542B403C0D00A7196B /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D4E7F5F2B403E0F00A7196B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F5E2B403E0F00A7196B /* Theme.swift */; };
-		7D4E7F612B403EE200A7196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E7F602B403EE200A7196B /* Assets.xcassets */; };
 		7D4E7F722B40506B00A7196B /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F712B40506B00A7196B /* FontSize.swift */; };
 		7D4E7F742B407A8400A7196B /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F732B407A8400A7196B /* Radius.swift */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		7D4E7F512B403C0D00A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4E7F542B403C0D00A7196B /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
 		7D4E7F5E2B403E0F00A7196B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		7D4E7F602B403EE200A7196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4E7F712B40506B00A7196B /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		7D4E7F732B407A8400A7196B /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +54,6 @@
 				7D4E7F702B40505D00A7196B /* Size */,
 				7D4E7F542B403C0D00A7196B /* ThemeKit.h */,
 				7D4E7F5E2B403E0F00A7196B /* Theme.swift */,
-				7D4E7F602B403EE200A7196B /* Assets.xcassets */,
 			);
 			path = ThemeKit;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4E7F612B403EE200A7196B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

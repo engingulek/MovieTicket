@@ -21,8 +21,7 @@ struct Hour: Decodable {
 
 
 // MARK: - SeatsInfo
-struct SeatsInfo: Codable,Equatable {
-   
+struct SeatsInfo: Decodable,Equatable {
     let col, row: Int
     let status: String
 }

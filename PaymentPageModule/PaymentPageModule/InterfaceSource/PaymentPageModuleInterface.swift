@@ -3,5 +3,5 @@ import UIKit
 
 
 public protocol PaymentPageModuleInterface {
-    func createModule() -> UIViewController
+    func createModule(ticketInfo:[String:Any]) -> UIViewController
 }

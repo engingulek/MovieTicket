@@ -44,6 +44,13 @@ public struct ThemeText {
     public let defaultSearchText:String
     public let navTitleSearchMovie:String
     public let navTitleChooseCinema:String
+    public let navTitleChooseSeat:String
+    public let scene : String
+    public let full : String
+    public let chosen:String
+    public let empty:String
+    public let payNowButton:String
+    public let chosenSeat:String
 }
 
 public struct ThemeSystemNameImage {
@@ -82,7 +89,14 @@ extension Theme {
             chooseCinemaButtonTitle: "Choose Cinema",
             defaultSearchText: "Default Search Text", 
             navTitleSearchMovie: "Search Movie", 
-            navTitleChooseCinema: "Choose Cinema"
+            navTitleChooseCinema: "Choose Cinema", 
+            navTitleChooseSeat: "Choose Seat", 
+            scene: "Scene", 
+            full: "Full",
+            chosen: "Chosen",
+            empty: "Empty", 
+            payNowButton: "Pay Now", 
+            chosenSeat: "Chosen Seat"
             ),
             
             themeSystemImageName: ThemeSystemNameImage(

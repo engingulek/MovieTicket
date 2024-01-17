@@ -1,6 +1,7 @@
 
 import Foundation
 import ThemeKit
+import ModelKit
 
 
 protocol ChooseSeatPresenterInterface {
@@ -29,6 +30,7 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     private var fullSeatInfos : [SeatsInfo] = []
     private var selectedSeatInfos : [SeatsInfo] = []
     private var selectedHourId:Int = 0
+    private var selecteedHour: String = ""
     
     
     init(view: ChooseSeatViewControllerInterface?,
@@ -42,11 +44,11 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     
     private func fetchChooseHallAndSessionInfo() async {
         do{
+            guard let hallAndSessionId = hallAndSessionId,
+                  let languageId = languageId else {return}
             
-            guard let hallAndSessionId = hallAndSessionId,let languageId = languageId else {return}
             let info = try await
             interactor.chooseHallAndSessionInfo(hallAndSessionId,languageId)
-          
             chooseHallAndSessionInfo = info
           
         }catch{
@@ -57,7 +59,6 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     private func fetchSeatAndHoursInfo(chooseId:Int) async {
         do{
             let result = try await interactor.hoursAndSeats(chooseId: chooseId)
-            print("presenter \(result)")
             hours = result.hours
             view?.reloadCollecionView()
           
@@ -71,23 +72,38 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.prepareCollectionView()
         view?.reloadCollecionView()
-        view?.changeTitle(title: "Choose Seat")
+        view?.changeTitle(title: Theme.theme.themeText.navTitleChooseSeat)
         Task {
             @MainActor in
             await fetchChooseHallAndSessionInfo()
             guard let info = chooseHallAndSessionInfo  else {return}
             view?.configureMovieInfo(info: info)
-            print("tEAA \(info.id)")
             await fetchSeatAndHoursInfo(chooseId: info.id)
             fullSeatInfos =  hours[0].seatsInfo
+            selecteedHour = hours[0].hour
             view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
         }
-
     }
     
-    
     func toPaymentPage() {
-        router?.toPaymentPage(view: view)
+        guard let info = chooseHallAndSessionInfo  else {return}
+        
+        if selectedSeatInfos.isEmpty {
+            view?.createAlertMesssage(title: "Error",
+                                    message: "Please Choose Seat(s)",
+                                    actionTitle: "Ok")
+        }else{
+            let ticketInfo : [String:Any] = [
+                "movieName" : info.movieName,
+                "movieUrl": info.movieimageUrl,
+                "hallNumber" :info.hallNumber,
+                "date":info.date,
+                "hour" : selecteedHour,
+                "ticketAmount" : info.ticketAmount,
+                "seats":selectedSeatInfos
+            ]
+            router?.toPaymentPage(view: view,ticketInfo: ticketInfo)
+        }
     }
     
     func numberOfItemsInSection() -> Int {
@@ -114,6 +130,7 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     func didSelectItem(at indexPath: IndexPath){
         selectedSeatInfos = []
         selectedHourId = hours[indexPath.item].id
+        selecteedHour = hours[indexPath.item].hour
         fullSeatInfos = hours[indexPath.item].seatsInfo
         view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
         view?.reloadCollecionView()
@@ -133,10 +150,4 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
             view?.seatIndos(info: fullSeatInfos,selectedInfo:selectedSeatInfos)
         }
     }
-    
-   
-    
-    
-
-    
 }

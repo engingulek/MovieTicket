@@ -5,7 +5,7 @@ import CommenUIKit
 import ViewControllerAbleKit
 import ThemeKit
 
-typealias Ables = UIViewAble & SegueAble & NavConUIAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble & AlertMessageAble
 
 protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     var presenter : ChooseSeatPresenterInterface {get}
@@ -33,9 +33,9 @@ final class ChooseSeatViewController : UIViewController {
     }
 }
 
+//MARK: ChooseSeatViewControllerInterface
 extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
    
-    
     func prepareCollectionView() {
         chooseSeatView.prepareCollectionView(view: self)
     }
@@ -45,7 +45,6 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
             guard let self = self else {return}
             chooseSeatView.reloadDataCollectionView()
         }
-       
     }
     
     func configureMovieInfo(info:ChooseHallAndSessionInfo) {
@@ -59,27 +58,35 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
     }
 }
 
-
+//MARK: UICollectionViewDelegate,UICollectionViewDataSource
 extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, 
+                   numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfItemsInSection()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyLabelCVC.identifier, for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
+    func collectionView(_ collectionView: UICollectionView, 
+                    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: OnlyLabelCVC.identifier,
+            for: indexPath) as? OnlyLabelCVC else {return UICollectionViewCell()}
+        
         let item = presenter.cellForItem(at: indexPath)
         cell.configureData(labelText: item.hour.hour)
         cell.configureIU(backColor: item.backColor,
-                         labelColor: item.labelColor,
+                     labelColor: item.labelColor,
                      font: Theme.theme.themeFont.cellLabelFont.boldVersion)
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, 
+    
+    func collectionView(_ collectionView: UICollectionView,
                     didSelectItemAt indexPath: IndexPath) {
         presenter.didSelectItem(at: indexPath)
     }
 }
 
+//MARK: ChooseSeatViewDelegate
 extension ChooseSeatViewController : ChooseSeatViewDelegate {
     func chooseSeat(chooseSeatInfo: SeatsInfo) {
         presenter.addSelectedInfos(chooseInfo: chooseSeatInfo)
@@ -88,12 +95,4 @@ extension ChooseSeatViewController : ChooseSeatViewDelegate {
     func payNowButtonTappedDelegate() {
         presenter.toPaymentPage()
     }
-    
-    
 }
-    
-    
-
-
-
-

@@ -5,10 +5,7 @@ import SnapKit
 import CommenUIKit
 import ThemeKit
 
-
-final class SeatInfoTVC : UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    
+final class SeatInfoTVC : UITableViewCell{
     
     static let identifier = "seatInfoTVC"
     private var seatValue : Int = 0
@@ -50,8 +47,6 @@ final class SeatInfoTVC : UITableViewCell, UICollectionViewDelegate, UICollectio
             make.leading.equalToSuperview().offset(10)
         }
         
-        
-        
         addSubview(seatsCollectionView)
         seatsCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -72,21 +67,28 @@ final class SeatInfoTVC : UITableViewCell, UICollectionViewDelegate, UICollectio
     }
 }
 
-
-extension SeatInfoTVC {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
+extension SeatInfoTVC : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, 
+                    numberOfItemsInSection section: Int) -> Int {
         return seatValue
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, 
+                    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SeatCVC.identifier,
             for: indexPath) as? SeatCVC else {return UICollectionViewCell()}
             return cell
     }
+}
+
+//MARK: UICollectionViewDelegateFlowLayout
+extension SeatInfoTVC : UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           // Hücre boyutunu belirleyin
-           return CGSize(width: 50, height: 50) // Örneğin, genişlik ve yükseklik 100 olarak belirlendi
+    func collectionView(_ collectionView: UICollectionView, 
+                    layout collectionViewLayout: UICollectionViewLayout,
+                    sizeForItemAt indexPath: IndexPath) -> CGSize {
+           return CGSize(width: 50, height: 50)
        }
 }

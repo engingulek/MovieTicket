@@ -1,5 +1,7 @@
 import UIKit
 import CommenUIKit
+
+//MARK: - UIViewAble
 public protocol UIViewAble {
     func setBackColorAble(color:String)
 }
@@ -10,7 +12,7 @@ extension UIViewAble where Self : UIViewController {
     }
 }
 
-//MARK: - NavConAble
+//MARK: - SegueAble
 public protocol SegueAble {
     func pushViewControllerAble (_ vc:UIViewController,animated:Bool)
 }
@@ -21,7 +23,7 @@ extension SegueAble  where Self : UIViewController{
     }
 }
 
-
+//MARK: - NavConUIAble
 public protocol NavConUIAble {
     func changeNavBarColor(color:String)
     func changeTintColor(color:String)
@@ -50,14 +52,18 @@ extension NavConUIAble where Self :  UIViewController{
     }
 }
 
-
+//MARK: - AlertMessageAble
 public protocol AlertMessageAble {
     func createAlertMesssage(title:String,message:String,actionTitle:String)
    
 }
 
 extension AlertMessageAble  where Self : UIViewController {
-    public  func createAlertMesssage(title:String,message:String,actionTitle:String){
+    public  func createAlertMesssage(
+        title:String,
+        message:String,
+        actionTitle:String){
+            
         let alert = UIAlertController(
             title: title,
             message: message,

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */; };
-		7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */; };
 		7D4E7F672B4046A400A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; };
 		7D4E7F682B4046A400A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D74F7682B4F0C350000A9BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D74F7672B4F0C350000A9BA /* Kingfisher */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyLabelCVC.swift; sourceTree = "<group>"; };
-		7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4E7F662B4046A400A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F622B46C56400AF1D25 /* DottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLineView.swift; sourceTree = "<group>"; };
 		7DA75F642B46C99F00AF1D25 /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
 				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
 				7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */,
-				7D4E7F3C2B3EFACA00A7196B /* Assets.xcassets */,
 				7DA75F622B46C56400AF1D25 /* DottedLineView.swift */,
 				7DA75F642B46C99F00AF1D25 /* Barcode.swift */,
 				7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */,
@@ -184,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4E7F3D2B3EFACA00A7196B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

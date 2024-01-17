@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import ThemeKit
 public final class OnlyLabelCVC : UICollectionViewCell {
-   public  static let identifier : String = "onlyLabel"
+   public  static let identifier : String = "onlyLabelCVC"
     
     private lazy var textLabel : UILabel = {
         let label = UILabel()
@@ -25,9 +25,9 @@ public final class OnlyLabelCVC : UICollectionViewCell {
         textLabel.font = font
     }
    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         contentView.addSubview(textLabel)
         textLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -37,7 +37,6 @@ public final class OnlyLabelCVC : UICollectionViewCell {
             make.bottom.equalToSuperview()
             
         }
-      
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

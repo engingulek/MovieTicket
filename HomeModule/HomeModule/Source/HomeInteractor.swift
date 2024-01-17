@@ -1,8 +1,8 @@
 import Foundation
 import NetworkKit
 import ModelKit
+
 protocol HomeInteractorProtocol {
-    func fetchGenres() async throws -> [Genres]
     func fetchMovieInCinema() async throws -> [MovieResult]
     func fetchFutureMovie() async throws -> [MovieResult]
 }
@@ -11,19 +11,9 @@ final class HomeInteractor : HomeInteractorProtocol {
 
     static let shared = HomeInteractor()
     
-    // MARK: - Fetch Genres
-    func fetchGenres() async throws -> [Genres] {
-        do{
-            let response = try await NetworkManager.shared.fetch(
-                target: .genres,
-                responseClass: DataResult<[Genres]>.self)
-            return response.list
-        }catch{
-            throw error
-        }
-    }
-    
     // MARK: - Fetch MovieInCinema
+    /// Description : Movie in the cinema are brought here
+    /// - Returns: [MovieResult]
     func fetchMovieInCinema() async throws -> [MovieResult] {
         do{
             let response = try await NetworkManager.shared.fetch(
@@ -35,8 +25,9 @@ final class HomeInteractor : HomeInteractorProtocol {
         }
     }
     
-    
     // MARK: - Fetch FutureMovie
+    /// Description:  Movie in the future are brought here
+    /// - Returns: [MovieResult]
     func fetchFutureMovie() async throws -> [MovieResult] {
         do{
             let response = try await NetworkManager.shared.fetch(
@@ -47,6 +38,4 @@ final class HomeInteractor : HomeInteractorProtocol {
             throw error
         }
     }
-    
-    
 }

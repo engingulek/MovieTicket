@@ -3,45 +3,40 @@
 import Foundation
 import Alamofire
 public enum NetworkPath {
-    case genres
     case movieInCinema
     case futureMovie
     case hallsAndSessions(Int)
     case choosedHallAndSession
     case hoursAndSeats
     case createTicket(Parameters)
-
-    
 }
 
 extension NetworkPath : TargetType {
     var baseURL: String {
-        return "https://movieticket-c36a3-default-rtdb.firebaseio.com/"
+        return Constants.constansts.baseUrl
     }
     
     var path: String {
         switch self {
         case .movieInCinema:
-            return "movieInCinema.json"
+            return Constants.constansts.movieInCinema
         case .futureMovie:
-            return "futureMovie.json"
-        case .genres:
-            return "genres.json"
+            return Constants.constansts.futureMovie
         case .hallsAndSessions(let movieId):
             return "hallsAndSessions/list.json?orderBy=\"movieId\"&equalTo=\(movieId)"
         case .choosedHallAndSession:
-            return "choosedHallAndSession.json"
+            return Constants.constansts.choosedHallAndSession
         case .hoursAndSeats:
-            return "hoursAndSeats.json"
+            return Constants.constansts.hoursAndSeats
         case .createTicket:
-            return "ticketList.json"
-            
-
+            return Constants.constansts.createTicket
         }
     }
     
     var method: AlamofireMethod {
         switch self {
+        case .createTicket:
+            return .POST
         default:
             return .GET
         }

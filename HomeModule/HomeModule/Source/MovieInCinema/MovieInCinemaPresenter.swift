@@ -2,6 +2,7 @@ import Foundation
 import ModelKit
 protocol MovieInCinemaPresenterInterface {
     var view : MovieInCinemaCVInterface? {get}
+    
     func viewDidLoad()
     func numberOfItemsInSection() -> Int
     func cellForItemAt(at indexPath:IndexPath) -> MovieResult
@@ -12,8 +13,7 @@ protocol MovieInCinemaPresenterInterface {
 
 class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
    
-    
-    var view: MovieInCinemaCVInterface?
+    weak var view: MovieInCinemaCVInterface?
     private var interactor : HomeInteractorProtocol
     private var movieInCinema : [MovieResult] = []
     
@@ -33,7 +33,6 @@ class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
             
         }
     }
-    
     
     func viewDidLoad() {
         Task{

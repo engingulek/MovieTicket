@@ -22,7 +22,6 @@
 		7DCAB30B2B3DA25B0045C37D /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB30A2B3DA25B0045C37D /* MovieDetailRouter.swift */; };
 		7DCAB30E2B3DA2840045C37D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB30D2B3DA2840045C37D /* SnapKit */; };
 		7DCAB3102B3DA2840045C37D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCAB30F2B3DA2840045C37D /* SnapKit-Dynamic */; };
-		7DCAB3132B3DA2EC0045C37D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */; };
 		7DCAB3622B3DBE4F0045C37D /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */; };
 		7DCAB3632B3DBE4F0045C37D /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DCAB3872B3DED7E0045C37D /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */; };
@@ -60,7 +59,6 @@
 		7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModuleInterface.swift; sourceTree = "<group>"; };
 		7DCAB3082B3DA2480045C37D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		7DCAB30A2B3DA25B0045C37D /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
-		7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCAB3612B3DBE4F0045C37D /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCAB3862B3DED7E0045C37D /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		7DCAB3882B3DF2470045C37D /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		7DCAB2F92B3DA0720045C37D /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAB3112B3DA2D50045C37D /* Resource */,
 				7DCAB3052B3DA19D0045C37D /* InterfaceSource */,
 				7DCAB3042B3DA1970045C37D /* Source */,
 				7DCAB2FA2B3DA0720045C37D /* MovieDetail.h */,
@@ -132,14 +129,6 @@
 				7DCAB3062B3DA1B70045C37D /* MovieDetailModuleInterface.swift */,
 			);
 			path = InterfaceSource;
-			sourceTree = "<group>";
-		};
-		7DCAB3112B3DA2D50045C37D /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				7DCAB3122B3DA2EC0045C37D /* Assets.xcassets */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		7DCAB3602B3DBE4F0045C37D /* Frameworks */ = {
@@ -235,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAB3132B3DA2EC0045C37D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ protocol MovieDetailViewDelegate {
 
 final class MovieDetailView : UIView {
     var delegate : MovieDetailViewDelegate?
+    
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         return view
@@ -19,7 +20,7 @@ final class MovieDetailView : UIView {
     private lazy var  scrollStackViewContainer: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = 10
+        view.spacing = Spacing.small.rawValue
         view.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return view
     }()
@@ -34,6 +35,7 @@ final class MovieDetailView : UIView {
         let label = UILabel()
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
+        label.numberOfLines = .zero
         return label
     }()
     
@@ -60,7 +62,7 @@ final class MovieDetailView : UIView {
     
     private lazy var movieInfoTitle: UILabel = {
         let label = UILabel()
-        label.text = "Movie Info"
+        label.text = Theme.theme.themeText.movieInfo
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
@@ -76,7 +78,7 @@ final class MovieDetailView : UIView {
     
     private lazy var castTitle: UILabel = {
         let label = UILabel()
-        label.text = "Casts"
+        label.text = Theme.theme.themeText.casts
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         return label
@@ -101,7 +103,8 @@ final class MovieDetailView : UIView {
     
     private lazy var chooseCinemaButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Choose Cinema", for: .normal)
+        button.setTitle(Theme.theme.themeText.chooseCinemaButtonTitle,
+                     for: .normal)
         button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
@@ -124,7 +127,6 @@ final class MovieDetailView : UIView {
     func collectionViewReload(){
         castcollectionview.reloadData()
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -200,7 +202,6 @@ final class MovieDetailView : UIView {
             }
         }
         
-        
         movieInfo.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
@@ -208,13 +209,11 @@ final class MovieDetailView : UIView {
         }
         
         castcollectionview.snp.makeConstraints { make in
-            
             make.height.equalTo(UIScreen.main.bounds.height / 4)
         }
         
        
         chooseCinemaButton.snp.makeConstraints { make in
-           
             make.height.equalTo(60)
         }
     }

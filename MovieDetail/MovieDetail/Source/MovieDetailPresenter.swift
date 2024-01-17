@@ -4,9 +4,9 @@ import ThemeKit
 import ModelKit
 protocol MovieDetailPresenterInterface {
     var view : MovieDetailViewControllerInterface? {get}
-    var router : MovieDetailRouterInterface? {get}
+    
     func viewDidLoad()
- 
+    
     func numberOfItemsInSection() -> Int
     func sizeForItemAt() -> CGSize
     func cellForItem(at indexPath:IndexPath) -> Cast
@@ -15,17 +15,17 @@ protocol MovieDetailPresenterInterface {
 }
 
 final class MovieDetailPresenter : MovieDetailPresenterInterface {
-    var movieInfo: MovieResult?
+    var movieInfo: MovieResult = MovieResult.defaultData
     var buttonHidde:Bool = true
     
     weak var view : MovieDetailViewControllerInterface?
-    var router: MovieDetailRouterInterface?
+    private var router: MovieDetailRouterInterface?
     init(view: MovieDetailViewControllerInterface?,
          router:MovieDetailRouterInterface? = nil
     ) {
         self.view = view
         self.router = router
-     
+        
     }
     
     func viewDidLoad() {
@@ -33,40 +33,34 @@ final class MovieDetailPresenter : MovieDetailPresenterInterface {
         view?.navigationBarHidden(isHidden: false)
         view?.changeNavBarColor(color: Theme.theme.themeColor.primaryBackground)
         view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
-        view?.changeTitle(title: "\(movieInfo?.name ?? "")")
-       
+        view?.changeTitle(title: movieInfo.name)
+        
         view?.prepareCollectionView()
         view?.reloadCollectionView()
         view?.buttonHiddenAction(buttonHidden: buttonHidde)
     }
     
     func configureData() -> MovieResult {
-        return movieInfo ?? MovieResult.defaultData
+        return movieInfo
     }
     
     func numberOfItemsInSection() -> Int {
-        return movieInfo?.cast.count ?? 0
+        return movieInfo.cast.count
     }
     
     func cellForItem(at indexPath:IndexPath) -> Cast {
-        let cast = movieInfo?.cast[indexPath.item]
-        return cast ?? MovieResult.defaultData.cast[0]
+        let cast = movieInfo.cast[indexPath.item]
+        return cast
     }
     
     func sizeForItemAt() -> CGSize {
         return CGSize(width: UIScreenView.shared.screenWidth / 2,
-                      height: UIScreenView.shared.screenHeight / 4)
+                   height: UIScreenView.shared.screenHeight / 4)
     }
     
     func toHallsAndSessions() {
-        let id = movieInfo?.id ?? 0
+        let id = movieInfo.id
         router?.toHallsAndSessions(view: view,movieId: id)
     }
 }
-
-
-
-
-
-
 

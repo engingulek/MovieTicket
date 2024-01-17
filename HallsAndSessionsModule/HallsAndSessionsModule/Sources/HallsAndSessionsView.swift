@@ -27,7 +27,7 @@ final class HallsAndSessionsView : UIView {
     private lazy var hallsInfoTableView : UITableView = {
         let tableView = UITableView()
         tableView.register(HallInfoTVC.self,
-                           forCellReuseIdentifier: HallInfoTVC.identifier)
+                        forCellReuseIdentifier: HallInfoTVC.identifier)
         tableView.allowsMultipleSelection = true
         tableView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         return tableView
@@ -51,7 +51,6 @@ final class HallsAndSessionsView : UIView {
     func reloadTableView(){
         hallsInfoTableView.reloadData()
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

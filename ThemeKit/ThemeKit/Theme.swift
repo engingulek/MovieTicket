@@ -39,13 +39,16 @@ public struct ThemeText {
     public let searchTextFieldPlaceholder:String
     public let movieInfo:String
     public let casts: String
+    public let hall:String
     public let chooseCinemaButtonTitle : String
     public let defaultSearchText:String
     public let navTitleSearchMovie:String
+    public let navTitleChooseCinema:String
 }
 
 public struct ThemeSystemNameImage {
     public let searchIcon : String
+    public let mapIn:String
 }
 
 extension Theme {
@@ -75,12 +78,16 @@ extension Theme {
             searchTextFieldPlaceholder: "Search Movie",
             movieInfo: "Movie Info", 
             casts: "Casts", 
+            hall: "Hall", 
             chooseCinemaButtonTitle: "Choose Cinema",
             defaultSearchText: "Default Search Text", 
-            navTitleSearchMovie: "Search Movie"
+            navTitleSearchMovie: "Search Movie", 
+            navTitleChooseCinema: "Choose Cinema"
             ),
             
             themeSystemImageName: ThemeSystemNameImage(
-            searchIcon: "magnifyingglass"))
+                searchIcon: "magnifyingglass", 
+                mapIn: "mappin.and.ellipse")
+        )
     }
 }

@@ -1,5 +1,3 @@
-
-
 import Foundation
 import UIKit
 import SnapKit
@@ -10,7 +8,7 @@ class SearchMovieView : UIView {
     
     private lazy var searhTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Search Movie"
+        textField.placeholder = Theme.theme.themeText.defaultSearchText
         textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return textField
@@ -18,7 +16,7 @@ class SearchMovieView : UIView {
     
     private lazy var searchIcon : UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "magnifyingglass")
+        image.image = UIImage(systemName: Theme.theme.themeSystemImageName.searchIcon)
         image.tintColor = UIColor(hex:Theme.theme.themeColor.secondaryLabel)
         return image
     }()

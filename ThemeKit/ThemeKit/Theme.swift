@@ -40,6 +40,8 @@ public struct ThemeText {
     public let movieInfo:String
     public let casts: String
     public let chooseCinemaButtonTitle : String
+    public let defaultSearchText:String
+    public let navTitleSearchMovie:String
 }
 
 public struct ThemeSystemNameImage {
@@ -68,12 +70,14 @@ extension Theme {
             
             themeText: ThemeText(
             movieInCinema: "Movie In Cinema",
-            future: "Future",
+            future: "Future Movie",
             defaultText: "", 
             searchTextFieldPlaceholder: "Search Movie",
             movieInfo: "Movie Info", 
             casts: "Casts", 
-            chooseCinemaButtonTitle: "Choose Cinema"
+            chooseCinemaButtonTitle: "Choose Cinema",
+            defaultSearchText: "Default Search Text", 
+            navTitleSearchMovie: "Search Movie"
             ),
             
             themeSystemImageName: ThemeSystemNameImage(

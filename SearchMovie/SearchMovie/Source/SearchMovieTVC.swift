@@ -11,7 +11,6 @@ class SearchMovieTVC : UITableViewCell {
     
     private lazy var movieImageView : UIImageView = {
        let imageView = UIImageView()
-        imageView.image =  UIImage(resource: .dune)
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Radius.small.rawValue
         return imageView
@@ -19,7 +18,6 @@ class SearchMovieTVC : UITableViewCell {
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Dune : Part Two"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         return label
@@ -29,7 +27,6 @@ class SearchMovieTVC : UITableViewCell {
     
     private lazy var genresLabel : UILabel = {
         let label = UILabel()
-        label.text = "Dram,Action"
         label.font = Theme.theme.themeFont.cellSubLabelFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         return label
@@ -38,7 +35,6 @@ class SearchMovieTVC : UITableViewCell {
     
     private lazy var detailLabelLabel : UILabel = {
         let label = UILabel()
-        label.text = "In publishing and graphic design, Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/) is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design."
         label.font = Theme.theme.themeFont.cellSubLabelFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.numberOfLines = .zero
@@ -53,8 +49,6 @@ class SearchMovieTVC : UITableViewCell {
         detailLabelLabel.text = movieResult.movieInfo
         
     }
-    
-   
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -91,8 +85,6 @@ class SearchMovieTVC : UITableViewCell {
             make.bottom.equalToSuperview().offset(-5)
             make.height.equalTo(UIScreen.main.bounds.height / 10)
         }
-        
-        
     }
     
     required init?(coder: NSCoder) {

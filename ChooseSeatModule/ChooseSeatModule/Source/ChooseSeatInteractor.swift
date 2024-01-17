@@ -6,8 +6,6 @@ protocol ChooseSeatInteractorProtocol {
     func hoursAndSeats(chooseId:Int) async throws -> SeatAndHoursInfo
 }
 
-
-
 class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
     static let shared = ChooseSeatInteractor()
     
@@ -25,6 +23,7 @@ class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
             throw error
         }
     }
+    
     func hoursAndSeats(chooseId: Int) async throws -> SeatAndHoursInfo {
         do{
             let response = try await NetworkManager.shared.fetch(
@@ -34,6 +33,4 @@ class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
             return info[0]
             }
     }
-    
-    
 }

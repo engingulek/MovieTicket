@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         @Dependency var chooseSeatModule : ChooseSeatModuleInterface
-        window?.rootViewController = chooseSeatModule.createModule()
+        window?.rootViewController = chooseSeatModule.createModule(hallAndSessionId: 0, languageId: 0)
         window?.makeKeyAndVisible()
     }
 

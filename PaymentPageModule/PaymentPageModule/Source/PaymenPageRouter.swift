@@ -9,10 +9,11 @@ protocol PaymenPageRouterInterface {
 
 public class PaymenPageRouter : PaymentPageModuleInterface {
     public init(){}
-    public func createModule() -> UIViewController {
+    public func createModule(ticketInfo: [String : Any]) -> UIViewController {
         let view = PaymentPageViewController()
         let router = PaymenPageRouter()
         let presenter = PaymentPagePresenter(view: view, router: router)
+        print("Paymet Routerr : \(ticketInfo["seats"])")
         view.presenter = presenter
         return view
     }

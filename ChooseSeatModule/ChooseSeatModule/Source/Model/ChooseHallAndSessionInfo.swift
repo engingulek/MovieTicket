@@ -1,4 +1,3 @@
-
 // MARK: - ChooseHallAndSessionInfo
 struct ChooseHallAndSessionInfo: Decodable {
     let cinemaName, date: String
@@ -6,9 +5,10 @@ struct ChooseHallAndSessionInfo: Decodable {
     let language: Language
     let movieName: String
     let ticketAmount: Int
+    let movieimageUrl:String
 
     enum CodingKeys: String, CodingKey {
-        case cinemaName, date, hallNumber
+        case cinemaName, date, hallNumber,movieimageUrl
         case hallSessionID = "hallSessionId"
         case id, language, movieName, ticketAmount
     }

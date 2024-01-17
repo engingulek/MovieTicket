@@ -9,7 +9,6 @@ protocol ChooseSeatViewDelegate {
     func chooseSeat(chooseSeatInfo:SeatsInfo)
 }
 
-
 final class ChooseSeatView : UIView {
     var delegate :  ChooseSeatViewDelegate?
     private var seatCount : Int = 0
@@ -20,7 +19,6 @@ final class ChooseSeatView : UIView {
       
         return label
     }()
-    
     
     private lazy var moviedateLabel : UILabel = {
         let label = UILabel()
@@ -36,7 +34,6 @@ final class ChooseSeatView : UIView {
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         return label
     }()
-    
     
     private lazy var movieLanguageLabel : UILabel = {
         let label = UILabel()
@@ -63,14 +60,11 @@ final class ChooseSeatView : UIView {
         return collectionview
     }()
     
-    
-    
-    
     private lazy var screneLabel : UILabel = {
         let label = UILabel()
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "Scene"
+        label.text = Theme.theme.themeText.scene
         label.textAlignment = .center
         return label
     }()
@@ -88,7 +82,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "Full"
+        label.text = Theme.theme.themeText.full
         label.textAlignment = .center
         return label
     }()
@@ -107,7 +101,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "Chosen"
+        label.text = Theme.theme.themeText.chosen
         label.textAlignment = .center
         return label
     }()
@@ -125,7 +119,7 @@ final class ChooseSeatView : UIView {
         let label = UILabel()
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.text = "Empty"
+        label.text = Theme.theme.themeText.empty
         label.textAlignment = .center
         return label
     }()
@@ -143,7 +137,7 @@ final class ChooseSeatView : UIView {
     
     private lazy var payNowButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Pay Now", for: .normal)
+        button.setTitle(Theme.theme.themeText.payNowButton, for: .normal)
         button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)
@@ -168,7 +162,6 @@ final class ChooseSeatView : UIView {
         
     }
     
-    
     func prepareCollectionView(view:ChooseSeatViewController){
         hourcollectionview.delegate = view
         hourcollectionview.dataSource = view
@@ -184,7 +177,7 @@ final class ChooseSeatView : UIView {
     }
     
     func seatDesing(seatInfo:[SeatsInfo],selectedInfo:[SeatsInfo]){
-        var chosen = "Chosen Seat : "
+        var chosen = "\(Theme.theme.themeText.chosenSeat) : "
         for seat in selectedInfo {
             chosen += "(\(seat.row),\(seat.col))"
         }
@@ -248,7 +241,6 @@ final class ChooseSeatView : UIView {
               let columnIndex = tappedView.tag % 100
               let choseSeat = SeatsInfo(col: columnIndex, row: rowIndex, status: "full")
               self.delegate?.chooseSeat(chooseSeatInfo: choseSeat)
-              print("Tapped on square at Row \(rowIndex), Column \(columnIndex)")
           }
       }
     
@@ -260,10 +252,8 @@ final class ChooseSeatView : UIView {
        
     }
     
-    
     private func configureUI(){
-        
-        
+
         addSubview(movieNameLabel)
         movieNameLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
@@ -288,8 +278,6 @@ final class ChooseSeatView : UIView {
             make.top.equalTo(ticketAmountLabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
         }
-        
-        
         
         addSubview(screneLabel)
         screneLabel.snp.makeConstraints { make in
@@ -338,8 +326,7 @@ final class ChooseSeatView : UIView {
             make.leading.equalTo(seatChosenUIView.snp.trailing).offset(5)
             
         }
-        
-        
+    
         addSubview(seatEmptyUIView)
         seatEmptyUIView.snp.makeConstraints { make in
             make.top.equalTo(mainStackView.snp.bottom).offset(15)
@@ -380,13 +367,7 @@ final class ChooseSeatView : UIView {
             make.bottom.equalTo(payNowButton.snp.top).offset(-5)
             make.height.equalTo(80)
         }
-        
-      
     }
-    
-    
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

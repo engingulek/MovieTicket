@@ -32,6 +32,8 @@
 		7D515D3B2B55563B0067EFFC /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D515D392B55563B0067EFFC /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D515D3D2B5557110067EFFC /* ChooseHallAndSessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D515D3C2B5557110067EFFC /* ChooseHallAndSessionInfo.swift */; };
 		7D515D402B556B100067EFFC /* SeatAndHoursInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D515D3F2B556B100067EFFC /* SeatAndHoursInfo.swift */; };
+		7D75707E2B583B69000C71F5 /* ModelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D75707D2B583B69000C71F5 /* ModelKit.framework */; };
+		7D75707F2B583B69000C71F5 /* ModelKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D75707D2B583B69000C71F5 /* ModelKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +46,7 @@
 				7D51323B2B4320D400D6AD70 /* ThemeKit.framework in Embed Frameworks */,
 				7D5132392B4320D400D6AD70 /* CommenUIKit.framework in Embed Frameworks */,
 				7D515D3B2B55563B0067EFFC /* NetworkKit.framework in Embed Frameworks */,
+				7D75707F2B583B69000C71F5 /* ModelKit.framework in Embed Frameworks */,
 				7D51323D2B4320D400D6AD70 /* ViewControllerAbleKit.framework in Embed Frameworks */,
 				7D3F05072B459B3A00044D01 /* PaymentPageModule.framework in Embed Frameworks */,
 				7D5132332B4320C500D6AD70 /* DependenyKit.framework in Embed Frameworks */,
@@ -72,6 +75,7 @@
 		7D515D392B55563B0067EFFC /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D515D3C2B5557110067EFFC /* ChooseHallAndSessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHallAndSessionInfo.swift; sourceTree = "<group>"; };
 		7D515D3F2B556B100067EFFC /* SeatAndHoursInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatAndHoursInfo.swift; sourceTree = "<group>"; };
+		7D75707D2B583B69000C71F5 /* ModelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ModelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				7D5132702B4323C700D6AD70 /* SnapKit in Frameworks */,
 				7D3F05062B459B3A00044D01 /* PaymentPageModule.framework in Frameworks */,
 				7D5132722B4323C700D6AD70 /* SnapKit-Dynamic in Frameworks */,
+				7D75707E2B583B69000C71F5 /* ModelKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +128,7 @@
 		7D5132302B4320C500D6AD70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D75707D2B583B69000C71F5 /* ModelKit.framework */,
 				7D515D392B55563B0067EFFC /* NetworkKit.framework */,
 				7D3F05052B459B3A00044D01 /* PaymentPageModule.framework */,
 				7D5132352B4320D400D6AD70 /* CommenUIKit.framework */,

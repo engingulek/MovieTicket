@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D75707C2B5838F4000C71F5 /* TicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75707B2B5838F4000C71F5 /* TicketInfo.swift */; };
 		7DA1364B2B50545A00767870 /* ModelKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA1364A2B50545A00767870 /* ModelKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA136542B50548000767870 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA136532B50548000767870 /* MovieResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D75707B2B5838F4000C71F5 /* TicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfo.swift; sourceTree = "<group>"; };
 		7DA136472B50545A00767870 /* ModelKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModelKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA1364A2B50545A00767870 /* ModelKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelKit.h; sourceTree = "<group>"; };
 		7DA136532B50548000767870 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			children = (
 				7DA1364A2B50545A00767870 /* ModelKit.h */,
 				7DA136532B50548000767870 /* MovieResult.swift */,
+				7D75707B2B5838F4000C71F5 /* TicketInfo.swift */,
 			);
 			path = ModelKit;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA136542B50548000767870 /* MovieResult.swift in Sources */,
+				7D75707C2B5838F4000C71F5 /* TicketInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

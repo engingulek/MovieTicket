@@ -1,6 +1,4 @@
 import Foundation
-
-
 // MARK: - HallAndSessionValue
 struct HallAndSession: Codable {
     let cinameName, date: String

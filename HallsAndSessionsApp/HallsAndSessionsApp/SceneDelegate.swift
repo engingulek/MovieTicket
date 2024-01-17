@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         @Dependency var hallsAndSessionsModule : HallsAndSessionsModuleInterface
-        window?.rootViewController = hallsAndSessionsModule.createModule()
+        window?.rootViewController = hallsAndSessionsModule.createModule(movieId: 2)
         window?.makeKeyAndVisible()
     }
 

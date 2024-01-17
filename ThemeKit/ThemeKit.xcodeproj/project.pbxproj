@@ -11,6 +11,7 @@
 		7D4E7F5F2B403E0F00A7196B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F5E2B403E0F00A7196B /* Theme.swift */; };
 		7D4E7F722B40506B00A7196B /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F712B40506B00A7196B /* FontSize.swift */; };
 		7D4E7F742B407A8400A7196B /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F732B407A8400A7196B /* Radius.swift */; };
+		7D75707A2B57EE3F000C71F5 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7570792B57EE3F000C71F5 /* Spacing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		7D4E7F5E2B403E0F00A7196B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7D4E7F712B40506B00A7196B /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		7D4E7F732B407A8400A7196B /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
+		7D7570792B57EE3F000C71F5 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				7D4E7F712B40506B00A7196B /* FontSize.swift */,
 				7D4E7F732B407A8400A7196B /* Radius.swift */,
+				7D7570792B57EE3F000C71F5 /* Spacing.swift */,
 			);
 			path = Size;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4E7F5F2B403E0F00A7196B /* Theme.swift in Sources */,
+				7D75707A2B57EE3F000C71F5 /* Spacing.swift in Sources */,
 				7D4E7F722B40506B00A7196B /* FontSize.swift in Sources */,
 				7D4E7F742B407A8400A7196B /* Radius.swift in Sources */,
 			);

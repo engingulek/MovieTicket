@@ -3,6 +3,7 @@ import SnapKit
 import CommenUIKit
 import ViewControllerAbleKit
 import ModelKit
+
 typealias Ables = UIViewAble & NavConUIAble & SegueAble
 
 protocol MovieDetailViewControllerInterface : AnyObject,Ables {
@@ -15,11 +16,11 @@ protocol MovieDetailViewControllerInterface : AnyObject,Ables {
 final class MovieDetailViewController : UIViewController {
     lazy var presenter: MovieDetailPresenterInterface  = MovieDetailPresenter(view: self)
     private lazy var movieDetailView = MovieDetailView()
+    
     override func loadView() {
         view = movieDetailView
         movieDetailView.delegate = self
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ final class MovieDetailViewController : UIViewController {
     }
 }
 
-
+//MARK: UICollectionViewDelegate,UICollectionViewDataSource
 extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfItemsInSection()
@@ -47,7 +48,7 @@ extension  MovieDetailViewController : UICollectionViewDelegate,UICollectionView
     }
 }
 
-
+//MARK: UICollectionViewDelegateFlowLayout
 extension MovieDetailViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -57,6 +58,7 @@ extension MovieDetailViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: MovieDetailViewControllerInterface
 extension MovieDetailViewController : MovieDetailViewControllerInterface {
     func prepareCollectionView() {
         movieDetailView.prepareCollectionViewDelegate(view: self)
@@ -71,13 +73,11 @@ extension MovieDetailViewController : MovieDetailViewControllerInterface {
     }
 }
 
+//MARK: MovieDetailViewDelegate
 extension MovieDetailViewController : MovieDetailViewDelegate {
     func chooseCinema() {
         presenter.toHallsAndSessions()
     }
-    
-  
-   
 }
 
 

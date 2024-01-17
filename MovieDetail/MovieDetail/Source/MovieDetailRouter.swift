@@ -4,7 +4,6 @@ import HallsAndSessionsModule
 import ModelKit
 protocol MovieDetailRouterInterface {
     func toHallsAndSessions(view:MovieDetailViewControllerInterface?,movieId:Int)
-    
 }
 
 public final class MovieDetailRouter : MovieDetailModuleInterface {
@@ -29,7 +28,6 @@ extension MovieDetailRouter : MovieDetailRouterInterface {
         view?.pushViewControllerAble(
             viewController, 
             animated: true)
-        
     }
 
 }

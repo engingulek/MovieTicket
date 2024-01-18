@@ -4,6 +4,7 @@ import SnapKit
 import CommenUIKit
 import ViewControllerAbleKit
 import ThemeKit
+import ModelKit
 
 typealias Ables = UIViewAble & SegueAble & NavConUIAble & AlertMessageAble
 
@@ -14,7 +15,7 @@ protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     func reloadCollecionView()
     
     func configureMovieInfo(info:ChooseHallAndSessionInfo)
-    func seatIndos(info:[SeatsInfo],selectedInfo:[SeatsInfo])
+    func seatIndos(info:[SeatsInfo],selectedInfo:[SelectedSeat])
 }
 
 final class ChooseSeatViewController : UIViewController {
@@ -53,7 +54,7 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
         }
     }
     
-    func seatIndos(info: [SeatsInfo],selectedInfo:[SeatsInfo]) {
+    func seatIndos(info: [SeatsInfo],selectedInfo:[SelectedSeat]) {
         chooseSeatView.seatDesing(seatInfo: info,selectedInfo:selectedInfo)
     }
 }
@@ -88,7 +89,7 @@ extension ChooseSeatViewController : UICollectionViewDelegate,UICollectionViewDa
 
 //MARK: ChooseSeatViewDelegate
 extension ChooseSeatViewController : ChooseSeatViewDelegate {
-    func chooseSeat(chooseSeatInfo: SeatsInfo) {
+    func chooseSeat(chooseSeatInfo: SelectedSeat) {
         presenter.addSelectedInfos(chooseInfo: chooseSeatInfo)
     }
     

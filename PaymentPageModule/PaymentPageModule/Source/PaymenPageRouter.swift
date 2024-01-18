@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import DependenyKit
 import TicketModule
+import ModelKit
 protocol PaymenPageRouterInterface {
     func toTicket(view:PaymentPageViewControllerInterface?)
 }
@@ -9,11 +10,11 @@ protocol PaymenPageRouterInterface {
 
 public class PaymenPageRouter : PaymentPageModuleInterface {
     public init(){}
-    public func createModule(ticketInfo: [String : Any]) -> UIViewController {
+    public func createModule(createdTicket:CreatedTicketInfo) -> UIViewController {
         let view = PaymentPageViewController()
         let router = PaymenPageRouter()
         let presenter = PaymentPagePresenter(view: view, router: router)
-        print("Paymet Routerr : \(ticketInfo["seats"])")
+        presenter.createdTicket = createdTicket
         view.presenter = presenter
         return view
     }

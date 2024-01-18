@@ -14,7 +14,7 @@ protocol ChooseSeatPresenterInterface {
                                         backColor:String,
                                         labelColor:String)
     func didSelectItem(at indexPath: IndexPath)
-    func addSelectedInfos(chooseInfo:SeatsInfo)
+    func addSelectedInfos(chooseInfo:SelectedSeat)
 }
 
 
@@ -28,7 +28,7 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     private var chooseHallAndSessionInfo:ChooseHallAndSessionInfo?
     private var hours:[Hour] = []
     private var fullSeatInfos : [SeatsInfo] = []
-    private var selectedSeatInfos : [SeatsInfo] = []
+    private var selectedSeatInfos : [SelectedSeat] = []
     private var selectedHourId:Int = 0
     private var selecteedHour: String = ""
     
@@ -86,23 +86,30 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     }
     
     func toPaymentPage() {
-        guard let info = chooseHallAndSessionInfo  else {return}
-        
+        guard let info = chooseHallAndSessionInfo  else {
+            view?.createAlertMesssage(
+                title: "Error",
+                message: "Something went wrong",
+                actionTitle: "Ok")
+            return
+        }
         if selectedSeatInfos.isEmpty {
             view?.createAlertMesssage(title: "Error",
                                     message: "Please Choose Seat(s)",
                                     actionTitle: "Ok")
         }else{
-            let ticketInfo : [String:Any] = [
-                "movieName" : info.movieName,
-                "movieUrl": info.movieimageUrl,
-                "hallNumber" :info.hallNumber,
-                "date":info.date,
-                "hour" : selecteedHour,
-                "ticketAmount" : info.ticketAmount,
-                "seats":selectedSeatInfos
-            ]
-            router?.toPaymentPage(view: view,ticketInfo: ticketInfo)
+            let createdTicket = CreatedTicketInfo(
+                moveiImageUrl: info.movieimageUrl,
+                movieName: info.movieName,
+                selectedSeat: selectedSeatInfos,
+                selectedHour: selecteedHour,
+                selectedDate: info.date,
+                cinemaName: info.cinemaName,
+                hallNumber: info.hallNumber,
+                languageType: info.language.type,
+                ticketAmount: info.ticketAmount)
+            
+            router?.toPaymentPage(view: view,createdTicket: createdTicket)
         }
     }
     
@@ -136,7 +143,7 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
         view?.reloadCollecionView()
     }
     
-    func addSelectedInfos(chooseInfo: SeatsInfo) {
+    func addSelectedInfos(chooseInfo: SelectedSeat) {
         // Do not click full seat
        let fullcontrol =  fullSeatInfos.contains {
            $0.row ==  chooseInfo.row && 

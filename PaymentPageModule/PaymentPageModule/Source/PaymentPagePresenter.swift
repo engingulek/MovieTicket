@@ -1,6 +1,9 @@
 
 import Foundation
 import ThemeKit
+import ModelKit
+
+
 protocol PaymentPagePresenterInterface {
     var view : PaymentPageViewControllerInterface? {get}
     func viewDidLoad()
@@ -12,8 +15,10 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     weak var view: PaymentPageViewControllerInterface?
     var router: PaymenPageRouterInterface?
+    var createdTicket:CreatedTicketInfo = CreatedTicketInfo.defaultData
     private var interactor : PaymentPageInteractorProtocol
     private var controlInfo : Bool = false
+   
     
     init(view: PaymentPageViewControllerInterface?,
          router: PaymenPageRouterInterface? = nil,
@@ -35,7 +40,8 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     func viewDidLoad() {
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground )
-        view?.changeTitle(title: "Payment")
+        view?.changeTitle(title: Theme.theme.themeText.navTiletPayment)
+        view?.configureUIForMovieAndTicketInfo(createdTicket: createdTicket)
     }
     
     func buyTicketButtonTapped(contanctInfo:ContanctInfo,cardInfo:CardInfo) {
@@ -64,8 +70,8 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     }
     
     func generateRandom9DigitNumber() -> Int {
-        let lowerBound = 100_000_000 // En küçük 9 basamaklı sayı
-        let upperBound = 999_999_999 // En büyük 9 basamaklı sayı
+        let lowerBound = 100_000_000
+        let upperBound = 999_999_999 
 
         let randomNumber = Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
 

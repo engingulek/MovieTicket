@@ -3,7 +3,7 @@ import UIKit
 import ThemeKit
 
 final class SeatCVC : UICollectionViewCell {
-    static let identifier : String = "cell"
+    static let identifier : String = "seatCVC "
     
     private lazy var seatLabel : UILabel = {
        let label = UILabel()

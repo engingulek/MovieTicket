@@ -1,13 +1,7 @@
-//
-//  SceneDelegate.swift
-//  PaymentPageApp
-//
-//  Created by engin gülek on 3.01.2024.
-//
-
 import UIKit
 import DependenyKit
 import PaymentPageModule
+import ModelKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -20,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         @Dependency var paymentPageModule : PaymentPageModuleInterface
-        window?.rootViewController = paymentPageModule.createModule()
+        window?.rootViewController = paymentPageModule.createModule(createdTicket: CreatedTicketInfo.defaultData)
         window?.makeKeyAndVisible()
     }
 

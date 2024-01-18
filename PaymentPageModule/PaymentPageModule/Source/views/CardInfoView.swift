@@ -12,7 +12,7 @@ final class CardInfoView : UIView {
     var delegate : CardInfoViewDelegate?
     private lazy var nameOnTheCardabel : UILabel = {
         let label = UILabel()
-        label.text = "Name On The Card"
+        label.text = Theme.theme.themeText.nameOnTheCard
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
@@ -21,7 +21,7 @@ final class CardInfoView : UIView {
     
     private lazy var nameOnTheCardTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Name on the card"
+        textField.placeholder = Theme.theme.themeText.nameOnTheCard
         textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .default
@@ -34,7 +34,7 @@ final class CardInfoView : UIView {
     
     private lazy var cardNumberLabel : UILabel = {
         let label = UILabel()
-        label.text = "Card Number"
+        label.text = Theme.theme.themeText.cardNumber
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
@@ -54,7 +54,7 @@ final class CardInfoView : UIView {
     
     private lazy var expirationDateLabel : UILabel = {
         let label = UILabel()
-        label.text = "Expiration Date"
+        label.text = Theme.theme.themeText.expirationDate
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex: Theme.theme.themeColor.thirdLabel)
         return label
@@ -62,8 +62,9 @@ final class CardInfoView : UIView {
     
     private lazy var expirationDateTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "MM/YY"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
+        textField.placeholder = Theme.theme.themeText.expirationDatePlace
+        textField.backgroundColor = UIColor(
+            hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -74,7 +75,7 @@ final class CardInfoView : UIView {
     
     private lazy var securityCodeLabel : UILabel = {
         let label = UILabel()
-        label.text = "Security Code"
+        label.text = Theme.theme.themeText.securityCode
         label.font = Theme.theme.themeFont.cellSubLabelFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         label.textAlignment = .left
@@ -83,8 +84,9 @@ final class CardInfoView : UIView {
     
     private lazy var securityCodeTextField : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "***"
-        textField.backgroundColor = UIColor(hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
+        textField.placeholder = MaskFormat.securatiyCode.rawValue
+        textField.backgroundColor = UIColor(
+            hex:Theme.theme.themeColor.textFieldBackColor)?.withAlphaComponent(0.5)
         textField.textColor = UIColor(hex:Theme.theme.themeColor.thirdLabel)
         textField.keyboardType = .numberPad
         textField.layer.cornerRadius = Radius.small.rawValue
@@ -95,7 +97,7 @@ final class CardInfoView : UIView {
     
     private lazy var buyTicletButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Buy Ticket", for: .normal)
+        button.setTitle(Theme.theme.themeText.buyTicket, for: .normal)
         button.setTitleColor(UIColor(hex:Theme.theme.themeColor.primaryLabel), for: .normal)
         button.titleLabel?.font = Theme.theme.themeFont.cellLabelFont.boldVersion
         button.backgroundColor = UIColor(hex:Theme.theme.themeColor.thirdBack)

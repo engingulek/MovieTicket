@@ -3,10 +3,12 @@ import UIKit
 import SnapKit
 import CommenUIKit
 import ThemeKit
+import ModelKit
+
 
 protocol ChooseSeatViewDelegate {
     func payNowButtonTappedDelegate()
-    func chooseSeat(chooseSeatInfo:SeatsInfo)
+    func chooseSeat(chooseSeatInfo:SelectedSeat)
 }
 
 final class ChooseSeatView : UIView {
@@ -176,7 +178,7 @@ final class ChooseSeatView : UIView {
         configureUI()
     }
     
-    func seatDesing(seatInfo:[SeatsInfo],selectedInfo:[SeatsInfo]){
+    func seatDesing(seatInfo:[SeatsInfo],selectedInfo:[SelectedSeat]){
         var chosen = "\(Theme.theme.themeText.chosenSeat) : "
         for seat in selectedInfo {
             chosen += "(\(seat.row),\(seat.col))"
@@ -239,7 +241,7 @@ final class ChooseSeatView : UIView {
               /// 203 % 100 = 3 = Column
               let rowIndex = tappedView.tag / 100
               let columnIndex = tappedView.tag % 100
-              let choseSeat = SeatsInfo(col: columnIndex, row: rowIndex, status: "full")
+              let choseSeat = SelectedSeat(row: rowIndex, col: columnIndex)
               self.delegate?.chooseSeat(chooseSeatInfo: choseSeat)
           }
       }

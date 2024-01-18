@@ -1,7 +1,7 @@
 
 import Foundation
 import ThemeKit
-
+import CommenUIKit
 protocol HallsAndSessionsPresenterInterface {
     var view: HallsAndSessionsViewControllerInterface? {get}
     
@@ -25,7 +25,7 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     
     var movieId : Int = 0
     private var dataList : [String] = []
-    private lazy var selectedDate:String = dateFormantter(date: Date())
+    private lazy var selectedDate:String = ""
     private var hallsAndSessions : [HallAndSession] = []
     
     init(view: HallsAndSessionsViewControllerInterface?,
@@ -49,26 +49,19 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
             view?.reloadTableView()
         }
     }
-    
-    func dateFormantter(date:Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let formatted = dateFormatter.string(from: date)
-        return formatted
-    }
-    
+   
     private func futureDateCalculater(){
         let currentDate = Date()
         let calendar = Calendar.current
         for i in 0..<5 {
             if let date = calendar.date(byAdding: .day, value: i, to: currentDate) {
-                let formantDate = dateFormantter(date: date)
-                dataList.append(formantDate)
+                dataList.append(date.convertDateToString(format:"MM/dd/yyyy"))
             }
         }
     }
     
     func viewDidLoad() {
+        selectedDate = Date.now.convertDateToString(format: "MM/dd/yyyy")
         view?.setBackColorAble(color: Theme.theme.themeColor.primaryBackground)
         view?.changeTitle(title:Theme.theme.themeText.navTitleChooseCinema)
         view?.prepareCollectionView()

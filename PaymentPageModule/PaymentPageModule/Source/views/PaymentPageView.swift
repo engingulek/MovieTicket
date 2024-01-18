@@ -7,12 +7,12 @@ protocol PaymentPageViewDelegate {
     func buyTicketButtonTapped()
 }
 
-
 final class PaymentPageView : UIView{
     
-    private lazy var movieAndTicketView = MovieAndTicketInfoView()
-     lazy var contactionInfoView = ContactinfoView()
-   lazy var cardInfoView = CardInfoView()
+    lazy var movieAndTicketView = MovieAndTicketInfoView()
+    lazy var contactionInfoView = ContactinfoView()
+    lazy var cardInfoView = CardInfoView()
+    
     var delegate : PaymentPageViewDelegate?
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -72,6 +72,4 @@ extension PaymentPageView : CardInfoViewDelegate  {
     func buyTicketButtonTapped() {
         delegate?.buyTicketButtonTapped()
     }
-    
-    
 }

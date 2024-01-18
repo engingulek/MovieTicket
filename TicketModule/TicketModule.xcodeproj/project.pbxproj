@@ -21,7 +21,6 @@
 		7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */; };
 		7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; };
 		7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA75F5C2B46B65400AF1D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */; };
 		7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; };
 		7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */; };
@@ -57,7 +56,6 @@
 		7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRouter.swift; sourceTree = "<group>"; };
 		7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
 		7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +104,6 @@
 				7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */,
 				7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */,
 				7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */,
-				7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */,
 				7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */,
 				7D419D392B596DED0067DB57 /* TicketInteractor.swift */,
 				7D419D3E2B597DF30067DB57 /* Ticket.swift */,
@@ -205,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA75F5C2B46B65400AF1D25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

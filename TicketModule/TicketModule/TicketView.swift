@@ -23,7 +23,6 @@ final class TicketView : UIView {
     
     private lazy var dateInfoLabel : UILabel = {
         let label = UILabel()
-        label.text = "Jan 06, 04:15 p.m"
         label.font = Theme.theme.themeFont.secondaryFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -34,7 +33,7 @@ final class TicketView : UIView {
     
     private lazy var hallNumberTitleLabel : UILabel = {
         let label = UILabel()
-        label.text = "Hall"
+        label.text = Theme.theme.themeText.hall
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -43,7 +42,6 @@ final class TicketView : UIView {
     
     private lazy var hallNumberLabel : UILabel = {
         let label = UILabel()
-        label.text = "5"
         label.font = Theme.theme.themeFont.secondaryFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -55,7 +53,7 @@ final class TicketView : UIView {
     
     private lazy var seatsNumberTitleLabel : UILabel = {
         let label = UILabel()
-        label.text = "Seats"
+        label.text = Theme.theme.themeText.seats
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -64,7 +62,6 @@ final class TicketView : UIView {
     
     private lazy var seatsNumberLabel : UILabel = {
         let label = UILabel()
-        label.text = "2,3"
         label.font = Theme.theme.themeFont.secondaryFont
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -96,11 +93,9 @@ final class TicketView : UIView {
             from: "\(ticket.barcode)") {
             barcode = UIImageView(image: barcodeImage)
         }
-        
     }
     
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -123,15 +118,12 @@ final class TicketView : UIView {
             make.trailing.equalToSuperview()
         }
         
-        
         addSubview(dateInfoLabel)
         dateInfoLabel.snp.makeConstraints { make in
             make.top.equalTo(movieNameLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
-        
-        
         
         addSubview(hallNumberTitleLabel)
         hallNumberTitleLabel.snp.makeConstraints { make in
@@ -175,7 +167,6 @@ final class TicketView : UIView {
             
         }
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -46,6 +46,7 @@ public struct ThemeText {
     public let navTitleChooseCinema:String
     public let navTitleChooseSeat:String
     public let navTiletPayment:String
+    public let navTitleTicket:String
     public let scene : String
     public let full : String
     public let chosen:String
@@ -63,6 +64,7 @@ public struct ThemeText {
     public let expirationDatePlace:String
     public let securityCode:String
     public let buyTicket:String
+    public let seats:String
     
 }
 
@@ -105,6 +107,7 @@ extension Theme {
             navTitleChooseCinema: "Choose Cinema", 
             navTitleChooseSeat: "Choose Seat", 
             navTiletPayment: "Payment", 
+            navTitleTicket: "Ticket", 
             scene: "Scene",
             full: "Full",
             chosen: "Chosen",
@@ -121,7 +124,8 @@ extension Theme {
             expirationDate: "Expiration Date", 
             expirationDatePlace: "MM/YY", 
             securityCode: "Security Code", 
-            buyTicket: "Buy Ticket"
+            buyTicket: "Buy Ticket", 
+            seats: "Seats"
             ),
             
             themeSystemImageName: ThemeSystemNameImage(

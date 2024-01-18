@@ -32,7 +32,7 @@ final class TicketPresenter : TicketPresenterInterface {
         view?.navigationBarHidden(isHidden: false)
         view?.changeNavBarColor(color: Theme.theme.themeColor.primaryBackground)
         view?.changeTintColor(color: Theme.theme.themeColor.primaryLabel)
-        view?.changeTitle(title: "Ticket")
+        view?.changeTitle(title: Theme.theme.themeText.navTitleTicket)
         Task {
             @MainActor in
             await fetchTicket()

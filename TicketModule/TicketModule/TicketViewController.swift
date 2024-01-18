@@ -4,7 +4,6 @@ import ThemeKit
 import CommenUIKit
 import ViewControllerAbleKit
 
-
 typealias Ables = UIViewAble & NavConUIAble 
 
 protocol TicketViewControllerInterface : AnyObject,Ables {
@@ -29,6 +28,7 @@ final class TicketViewController : UIViewController {
     }
 }
 
+//MARK: TicketViewControllerInterface
 extension TicketViewController : TicketViewControllerInterface{
     func ticketInfoView(ticket: Ticket) {
         ticketView.configureData(ticket: ticket)

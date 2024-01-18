@@ -45,12 +45,25 @@ public struct ThemeText {
     public let navTitleSearchMovie:String
     public let navTitleChooseCinema:String
     public let navTitleChooseSeat:String
+    public let navTiletPayment:String
     public let scene : String
     public let full : String
     public let chosen:String
     public let empty:String
     public let payNowButton:String
     public let chosenSeat:String
+    public let contanctInfo:String
+    public let contanctDescription:String
+    public let namePlaceholder:String
+    public let surnamePlaceholder:String
+    public let emailPlaceholder:String
+    public let nameOnTheCard:String
+    public let cardNumber:String
+    public let expirationDate:String
+    public let expirationDatePlace:String
+    public let securityCode:String
+    public let buyTicket:String
+    
 }
 
 public struct ThemeSystemNameImage {
@@ -91,12 +104,24 @@ extension Theme {
             navTitleSearchMovie: "Search Movie", 
             navTitleChooseCinema: "Choose Cinema", 
             navTitleChooseSeat: "Choose Seat", 
-            scene: "Scene", 
+            navTiletPayment: "Payment", 
+            scene: "Scene",
             full: "Full",
             chosen: "Chosen",
             empty: "Empty", 
             payNowButton: "Pay Now", 
-            chosenSeat: "Chosen Seat"
+            chosenSeat: "Chosen Seat", 
+            contanctInfo: "Contanct Info", 
+            contanctDescription:  "Your ticket will be prepare according to the following information", 
+            namePlaceholder: "Name",
+            surnamePlaceholder: "Surname", 
+            emailPlaceholder: "Email", 
+            nameOnTheCard: "Name On The Card", 
+            cardNumber: "Card Number", 
+            expirationDate: "Expiration Date", 
+            expirationDatePlace: "MM/YY", 
+            securityCode: "Security Code", 
+            buyTicket: "Buy Ticket"
             ),
             
             themeSystemImageName: ThemeSystemNameImage(

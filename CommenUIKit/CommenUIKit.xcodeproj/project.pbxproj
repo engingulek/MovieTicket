@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D419D352B592F7F0067DB57 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D342B592F7F0067DB57 /* String+Extension.swift */; };
+		7D419D382B59300D0067DB57 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D372B59300D0067DB57 /* Date+Extension.swift */; };
 		7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */; };
 		7D4E7F672B4046A400A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; };
 		7D4E7F682B4046A400A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F662B4046A400A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D419D342B592F7F0067DB57 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7D419D372B59300D0067DB57 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyLabelCVC.swift; sourceTree = "<group>"; };
 		7D4E7F662B4046A400A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F622B46C56400AF1D25 /* DottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLineView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D419D362B592FF80067DB57 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7D419D342B592F7F0067DB57 /* String+Extension.swift */,
+				7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */,
+				7D419D372B59300D0067DB57 /* Date+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7D4E7F652B4046A400A7196B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,13 +104,13 @@
 		7DCAB34C2B3DBBD00045C37D /* CommenUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7D419D362B592FF80067DB57 /* Extension */,
 				7DCAB34D2B3DBBD00045C37D /* CommenUIKit.h */,
 				7DCAB3542B3DBBFB0045C37D /* PartnerCVC.swift */,
 				7DCAB3842B3DE8300045C37D /* UIScreen.swift */,
 				7D4E7F3A2B3EFAA000A7196B /* OnlyLabelCVC.swift */,
 				7DA75F622B46C56400AF1D25 /* DottedLineView.swift */,
 				7DA75F642B46C99F00AF1D25 /* Barcode.swift */,
-				7DF7B2252B541AE1001EBF94 /* UIColor+Extensions.swift */,
 			);
 			path = CommenUIKit;
 			sourceTree = "<group>";
@@ -192,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCAB3552B3DBBFB0045C37D /* PartnerCVC.swift in Sources */,
+				7D419D382B59300D0067DB57 /* Date+Extension.swift in Sources */,
+				7D419D352B592F7F0067DB57 /* String+Extension.swift in Sources */,
 				7DF7B2262B541AE1001EBF94 /* UIColor+Extensions.swift in Sources */,
 				7D4E7F3B2B3EFAA000A7196B /* OnlyLabelCVC.swift in Sources */,
 				7DA75F652B46C99F00AF1D25 /* Barcode.swift in Sources */,

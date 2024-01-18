@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import ThemeKit
 import ViewControllerAbleKit
-
+import ModelKit
 
 enum MaskFormat :String {
     case phoneNumber = "*** *** ** **"
@@ -18,6 +18,7 @@ protocol PaymentPageViewControllerInterface : AnyObject,Ables {
     var presenter : PaymentPagePresenterInterface {get}
     func congigureUIForContanctInfo(color:String,tag:Int)
     func congigureUIForCardInfo(color:String,tag:Int)
+    func configureUIForMovieAndTicketInfo(createdTicket:CreatedTicketInfo)
 }
 
 
@@ -35,7 +36,11 @@ final class PaymentPageViewController : UIViewController {
 }
 
 extension  PaymentPageViewController : PaymentPageViewControllerInterface {
+    func configureUIForMovieAndTicketInfo(createdTicket: CreatedTicketInfo) {
+        paymetPageView.movieAndTicketView.configureData(createdTicket: createdTicket)
+    }
     
+
     func congigureUIForContanctInfo(color: String, tag: Int) {
         paymetPageView.contactionInfoView.configureUIForAlert(color: color, tag: tag)
     }
@@ -43,8 +48,6 @@ extension  PaymentPageViewController : PaymentPageViewControllerInterface {
     func congigureUIForCardInfo(color: String, tag: Int) {
         paymetPageView.cardInfoView.configureUIForAlert(color: color, tag: tag)
     }
-    
-    
 }
 
 
@@ -53,7 +56,5 @@ extension PaymentPageViewController : PaymentPageViewDelegate {
         let infos = paymetPageView.returnInfos()
         presenter.buyTicketButtonTapped(contanctInfo:infos.contanctInfo,
                               cardInfo:infos.cardInfo)
-    }
-    
-    
+    } 
 }

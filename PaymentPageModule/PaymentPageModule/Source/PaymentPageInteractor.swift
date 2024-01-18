@@ -17,6 +17,4 @@ class PaymentPageInteractor : PaymentPageInteractorProtocol {
             throw error
         }
     }
-    
-    
 }

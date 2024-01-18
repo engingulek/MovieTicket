@@ -2,8 +2,9 @@ import Foundation
 import UIKit
 import PaymentPageModule
 import DependenyKit
+import ModelKit
 protocol ChooseSeatRouterInterface {
-    func toPaymentPage(view:ChooseSeatViewControllerInterface?,ticketInfo:[String:Any])
+    func toPaymentPage(view:ChooseSeatViewControllerInterface?,createdTicket:CreatedTicketInfo)
 }
 
 public final class ChooseSeatRouter : ChooseSeatModuleInterface {
@@ -20,9 +21,9 @@ public final class ChooseSeatRouter : ChooseSeatModuleInterface {
     }
 }
 extension ChooseSeatRouter : ChooseSeatRouterInterface {
-    func toPaymentPage(view: ChooseSeatViewControllerInterface?,ticketInfo:[String:Any]) {
+    func toPaymentPage(view: ChooseSeatViewControllerInterface?,createdTicket:CreatedTicketInfo) {
         @Dependency var paymentPageModule : PaymentPageModuleInterface
-        let viewController = paymentPageModule.createModule(ticketInfo: ticketInfo)
+        let viewController = paymentPageModule.createModule(createdTicket: createdTicket)
         view?.pushViewControllerAble(
             viewController,
             animated: true)

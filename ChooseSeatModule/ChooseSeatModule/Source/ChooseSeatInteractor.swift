@@ -2,14 +2,16 @@ import Foundation
 import NetworkKit
 
 protocol ChooseSeatInteractorProtocol {
-    func chooseHallAndSessionInfo( _ hallSessioniD:Int,_ languageId:Int)  async throws -> ChooseHallAndSessionInfo?
+    func chooseHallAndSessionInfo( _ hallSessioniD:Int,
+                         _ languageId:Int)  async throws -> ChooseHallAndSessionInfo?
     func hoursAndSeats(chooseId:Int) async throws -> SeatAndHoursInfo
 }
 
 class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
     static let shared = ChooseSeatInteractor()
     
-    func chooseHallAndSessionInfo(_ hallSessioniD:Int, _ languageId:Int) async throws -> ChooseHallAndSessionInfo? {
+    func chooseHallAndSessionInfo(_ hallSessioniD:Int, 
+                        _ languageId:Int) async throws -> ChooseHallAndSessionInfo? {
         do{
             let response = try await NetworkManager.shared.fetch(
                 target: .choosedHallAndSession,

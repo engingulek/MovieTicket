@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         @Dependency var ticketModule : TicketModuleInterface
-        window?.rootViewController = ticketModule.createModule()
+        window?.rootViewController = ticketModule.createModule(barcode: 100000000)
         window?.makeKeyAndVisible()
     }
 

@@ -18,6 +18,8 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     var createdTicket:CreatedTicketInfo = CreatedTicketInfo.defaultData
     private var interactor : PaymentPageInteractorProtocol
     private var controlInfo : Bool = false
+    private var barcodeCode :Int = 0
+    private var ticketId :String = ""
    
     
     init(view: PaymentPageViewControllerInterface?,
@@ -31,10 +33,10 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     private func createTicket(parameters:[String:Any]) async {
         
         do {
-            try await interactor.createTicket(parametets: parameters)
-            router?.toTicket(view: view)
+           let result =  try await interactor.createTicket(parametets: parameters)
+            ticketId = result
         }catch{
-            print(error.localizedDescription)
+            print("Erorcuk \(error.localizedDescription)")
         }
     }
     
@@ -47,19 +49,33 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     func buyTicketButtonTapped(contanctInfo:ContanctInfo,cardInfo:CardInfo) {
         controlForContanctInfo(contanctInfo: contanctInfo)
         controlForCardInfo(cardInfo: cardInfo)
-        router?.toTicket(view: view)
         
        if controlInfo {
-           let barcodeCode = generateRandom9DigitNumber()
+           barcodeCode = generateRandom9DigitNumber()
            let phoneNumber = contanctInfo.phoneNumber
+           var seats : [[String:Any]] = [[:]]
+           
+           for selectedSeat in createdTicket.selectedSeat {
+               let seat = ["row" : selectedSeat.row ,"col":selectedSeat.col]
+               seats.append(seat)
+           }
+           
            let parameters:[String:Any] = [
+            "movieUrl" : createdTicket.moveiImageUrl,
+            "movieName" : createdTicket.movieName,
+            "date" : createdTicket.selectedDate,
+            "hour" : createdTicket.selectedHour,
+            "hall": createdTicket.hallNumber,
+            "seats": seats,
             "barcode" : barcodeCode,
-            "phoneNumber":phoneNumber
+            "phoneNumber": phoneNumber
            ]
            Task {
                @MainActor in
                await createTicket(parameters:parameters)
            }
+           
+           router?.toTicket(view: view,ticketId:ticketId)
            
         }else{
             view?.createAlertMesssage(

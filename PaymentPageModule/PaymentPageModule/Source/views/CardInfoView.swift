@@ -114,6 +114,7 @@ final class CardInfoView : UIView {
         }
         
         if tag == 1 {
+            print(color)
             cardNumberTextField.layer.borderColor = UIColor(hex:color)?.cgColor
             cardNumberTextField.layer.borderWidth = 1
         }

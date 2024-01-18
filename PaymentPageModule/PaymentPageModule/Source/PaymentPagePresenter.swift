@@ -20,7 +20,7 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     private var controlInfo : Bool = false
     private var barcodeCode :Int = 0
     private var ticketId :String = ""
-   
+    
     
     init(view: PaymentPageViewControllerInterface?,
          router: PaymenPageRouterInterface? = nil,
@@ -31,9 +31,8 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     }
     
     private func createTicket(parameters:[String:Any]) async {
-        
         do {
-           let result =  try await interactor.createTicket(parametets: parameters)
+            let result =  try await interactor.createTicket(parametets: parameters)
             ticketId = result
         }catch{
             print("Erorcuk \(error.localizedDescription)")
@@ -50,34 +49,32 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
         controlForContanctInfo(contanctInfo: contanctInfo)
         controlForCardInfo(cardInfo: cardInfo)
         
-       if controlInfo {
-           barcodeCode = generateRandom9DigitNumber()
-           let phoneNumber = contanctInfo.phoneNumber
-           var seats : [[String:Any]] = []
-           
-           for selectedSeat in createdTicket.selectedSeat {
-               let seat = ["row" : selectedSeat.row ,"col":selectedSeat.col]
-               seats.append(seat)
-           }
-        
-          
-           
-           let parameters:[String:Any] = [
-            "movieUrl" : createdTicket.moveiImageUrl,
-            "movieName" : createdTicket.movieName,
-            "date" : createdTicket.selectedDate,
-            "hour" : createdTicket.selectedHour,
-            "hall": createdTicket.hallNumber,
-            "seats": seats,
-            "barcode" : barcodeCode,
-            "phoneNumber": phoneNumber
-           ]
-           Task {
-               @MainActor in
-               await createTicket(parameters:parameters)
-               router?.toTicket(view: view,ticketId:ticketId)
-           }
-
+        if controlInfo {
+            barcodeCode = generateRandom9DigitNumber()
+            let phoneNumber = contanctInfo.phoneNumber
+            var seats : [[String:Any]] = []
+            
+            for selectedSeat in createdTicket.selectedSeat {
+                let seat = ["row" : selectedSeat.row ,"col":selectedSeat.col]
+                seats.append(seat)
+            }
+            
+            let parameters:[String:Any] = [
+                "movieUrl" : createdTicket.moveiImageUrl,
+                "movieName" : createdTicket.movieName,
+                "date" : createdTicket.selectedDate,
+                "hour" : createdTicket.selectedHour,
+                "hall": createdTicket.hallNumber,
+                "seats": seats,
+                "barcode" : barcodeCode,
+                "phoneNumber": phoneNumber
+            ]
+            Task {
+                @MainActor in
+                await createTicket(parameters:parameters)
+                router?.toTicket(view: view,ticketId:ticketId)
+            }
+            
         }else{
             view?.createAlertMesssage(
                 title: "Alert",
@@ -88,10 +85,10 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
     
     func generateRandom9DigitNumber() -> Int {
         let lowerBound = 100_000_000
-        let upperBound = 999_999_999 
-
+        let upperBound = 999_999_999
+        
         let randomNumber = Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
-
+        
         return randomNumber
     }
     
@@ -110,7 +107,7 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
         }
         
         
-        if cardInfo.cardNumber.count != 16 {
+        if cardInfo.cardNumber.count != 19{
             view?.congigureUIForCardInfo(
                 color: Theme.theme.themeColor.alertTextFieldBorderColor,
                 tag: 1)
@@ -123,7 +120,7 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
         }
         
         if cardInfo.exparationDate.isEmpty ||
-         cardInfo.exparationDate.convertStringToDate()! < Date.now.convertDateToString().convertStringToDate()! {
+            cardInfo.exparationDate.convertStringToDate()! < Date.now.convertDateToString().convertStringToDate()! {
             view?.congigureUIForCardInfo(
                 color: Theme.theme.themeColor.alertTextFieldBorderColor,
                 tag: 2)

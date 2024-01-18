@@ -25,6 +25,31 @@ final class TicketViewController : UIViewController {
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
+        
+        let saveButton = UIBarButtonItem(
+                title: "Save",
+                style: .plain,
+                target: self,
+                action: #selector(saveButtonTapped))
+              self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @objc func saveButtonTapped() {
+        self.navigationController?.isNavigationBarHidden = true
+        let captureRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        saveScreenToGallery(in: captureRect)
+        self.navigationController?.isNavigationBarHidden = false
+        
+    }
+    
+    // Save Ticket to Gallery
+    func saveScreenToGallery(in rect: CGRect) {
+        let renderer = UIGraphicsImageRenderer(bounds: rect)
+        let capturedImage = renderer.image { (context) in
+            UIApplication.shared.keyWindow?.layer.render(in: context.cgContext)
+        }
+        UIImageWriteToSavedPhotosAlbum(capturedImage, nil, nil, nil)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

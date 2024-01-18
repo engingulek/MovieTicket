@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D419D3A2B596DED0067DB57 /* TicketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D392B596DED0067DB57 /* TicketInteractor.swift */; };
+		7D419D3C2B596E5F0067DB57 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */; };
+		7D419D3D2B596E5F0067DB57 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D419D3F2B597DF30067DB57 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D3E2B597DF30067DB57 /* Ticket.swift */; };
+		7D419D422B599A460067DB57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D419D412B599A460067DB57 /* Kingfisher */; };
 		7DA75F1A2B46B1E900AF1D25 /* TicketModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA75F192B46B1E900AF1D25 /* TicketModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */; };
 		7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */; };
@@ -33,6 +38,7 @@
 			files = (
 				7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */,
 				7DF7B2312B541F66001EBF94 /* ViewControllerAbleKit.framework in Embed Frameworks */,
+				7D419D3D2B596E5F0067DB57 /* NetworkKit.framework in Embed Frameworks */,
 				7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -41,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D419D392B596DED0067DB57 /* TicketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInteractor.swift; sourceTree = "<group>"; };
+		7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D419D3E2B597DF30067DB57 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		7DA75F162B46B1E900AF1D25 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA75F192B46B1E900AF1D25 /* TicketModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketModule.h; sourceTree = "<group>"; };
 		7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +70,8 @@
 			files = (
 				7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */,
 				7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */,
+				7D419D422B599A460067DB57 /* Kingfisher in Frameworks */,
+				7D419D3C2B596E5F0067DB57 /* NetworkKit.framework in Frameworks */,
 				7DF7B2302B541F66001EBF94 /* ViewControllerAbleKit.framework in Frameworks */,
 				7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */,
 				7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */,
@@ -97,6 +108,8 @@
 				7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */,
 				7DA75F5B2B46B65400AF1D25 /* Assets.xcassets */,
 				7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */,
+				7D419D392B596DED0067DB57 /* TicketInteractor.swift */,
+				7D419D3E2B597DF30067DB57 /* Ticket.swift */,
 			);
 			path = TicketModule;
 			sourceTree = "<group>";
@@ -104,6 +117,7 @@
 		7DA75F562B46B61B00AF1D25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */,
 				7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */,
 				7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */,
 				7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */,
@@ -143,6 +157,7 @@
 			packageProductDependencies = (
 				7DA75F522B46B5CF00AF1D25 /* SnapKit */,
 				7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */,
+				7D419D412B599A460067DB57 /* Kingfisher */,
 			);
 			productName = TicketModule;
 			productReference = 7DA75F162B46B1E900AF1D25 /* TicketModule.framework */;
@@ -174,6 +189,7 @@
 			mainGroup = 7DA75F0C2B46B1E900AF1D25;
 			packageReferences = (
 				7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7DA75F172B46B1E900AF1D25 /* Products */;
 			projectDirPath = "";
@@ -202,8 +218,10 @@
 			files = (
 				7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */,
 				7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */,
+				7D419D3A2B596DED0067DB57 /* TicketInteractor.swift in Sources */,
 				7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */,
 				7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */,
+				7D419D3F2B597DF30067DB57 /* Ticket.swift in Sources */,
 				7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +443,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 		7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -436,6 +462,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7D419D412B599A460067DB57 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		7DA75F522B46B5CF00AF1D25 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */;

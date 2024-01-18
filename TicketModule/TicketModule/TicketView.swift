@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Kingfisher
 import SnapKit
 import ThemeKit
 import CommenUIKit
@@ -7,14 +8,12 @@ import CommenUIKit
 final class TicketView : UIView {
     
     private lazy var movieImage : UIImageView = {
-       let imageView = UIImageView()
-        imageView.image = UIImage(resource: .dune)
+        let imageView = UIImageView()
         return imageView
     }()
     
     private lazy var movieNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Dune : Part Two"
         label.font = Theme.theme.themeFont.secondaryFont.boldVersion
         label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
         label.textAlignment = .center
@@ -31,7 +30,7 @@ final class TicketView : UIView {
         return label
     }()
     
-   
+    
     
     private lazy var hallNumberTitleLabel : UILabel = {
         let label = UILabel()
@@ -51,23 +50,6 @@ final class TicketView : UIView {
         return label
     }()
     
-    private lazy var rowNumberTitleLabel : UILabel = {
-        let label = UILabel()
-        label.text = "Row"
-        label.font = Theme.theme.themeFont.secondaryFont.boldVersion
-        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private lazy var rowNumberLabel : UILabel = {
-        let label = UILabel()
-        label.text = "2"
-        label.font = Theme.theme.themeFont.secondaryFont
-        label.textColor = UIColor(hex:Theme.theme.themeColor.primaryLabel)
-        label.textAlignment = .center
-        return label
-    }()
     
     
     
@@ -92,20 +74,35 @@ final class TicketView : UIView {
     private lazy var line = DottedLineView()
     
     private lazy var barcode : UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         return imageView
     }()
     
+    func configureData(ticket:Ticket) {
+        let url = URL(string: ticket.movieURL)
+        movieImage.kf.setImage(with: url)
+        movieNameLabel.text = ticket.movieName
+        let date = ticket.date.convertStringToDate(format: "MM/yy")
+        let dateString = date?.convertDateToString(format: "MM/yy")
+        let hour = ticket.hour
+        dateInfoLabel.text = "\(dateString ?? "") \(hour)"
+        hallNumberLabel.text = "\(ticket.hall)"
+        let seats = ticket.seats.map {
+            "(\($0.row),\($0.col)) "
+        }
+        seatsNumberLabel.text = "\(seats.joined(separator: ","))"
+        
+        if let barcodeImage = BarcodeGenerator.generateBarcode(
+            from: "\(ticket.barcode)") {
+            barcode = UIImageView(image: barcodeImage)
+        }
+        
+    }
     
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        if let barcodeImage = BarcodeGenerator.generateBarcode(
-            from: "123456789") {
-            barcode = UIImageView(image: barcodeImage)
-        }
-        
         
         backgroundColor = UIColor(hex:Theme.theme.themeColor.secondaryBack)
         layer.cornerRadius = Radius.medium.rawValue
@@ -135,47 +132,35 @@ final class TicketView : UIView {
         }
         
         
-        addSubview(rowNumberTitleLabel)
-        rowNumberTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateInfoLabel.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
-        }
-        addSubview(rowNumberLabel)
-        rowNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(rowNumberTitleLabel.snp.bottom).offset(5)
-            make.leading.equalTo(rowNumberTitleLabel.snp.leading)
-            make.trailing.equalTo(rowNumberTitleLabel.snp.trailing)
-        }
         
         addSubview(hallNumberTitleLabel)
         hallNumberTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(rowNumberTitleLabel.snp.top)
-            make.trailing.equalTo(rowNumberTitleLabel.snp.leading).offset(-25)
+            make.top.equalTo(dateInfoLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
         }
         
         addSubview(hallNumberLabel)
         hallNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(hallNumberTitleLabel.snp.bottom).offset(5)
-            make.leading.equalTo(hallNumberTitleLabel.snp.leading)
-            make.trailing.equalTo(hallNumberTitleLabel.snp.trailing)
+            make.centerX.equalToSuperview()
         }
         
         addSubview(seatsNumberTitleLabel)
         seatsNumberTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(rowNumberTitleLabel.snp.top)
-            make.leading.equalTo(rowNumberTitleLabel.snp.trailing).offset(25)
+            make.top.equalTo(hallNumberLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
         }
         
         addSubview(seatsNumberLabel)
         seatsNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(seatsNumberTitleLabel.snp.bottom).offset(5)
-            make.leading.equalTo(seatsNumberTitleLabel.snp.leading)
-            make.trailing.equalTo(seatsNumberTitleLabel.snp.trailing)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         addSubview(line)
         line.snp.makeConstraints { make in
-            make.top.equalTo(rowNumberLabel.snp.bottom).offset(15)
+            make.top.equalTo( seatsNumberLabel.snp.bottom).offset(15)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(5)
@@ -183,9 +168,11 @@ final class TicketView : UIView {
         
         addSubview(barcode)
         barcode.snp.makeConstraints { make in
+            make.top.equalTo(line.snp.bottom)
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
-            make.bottom.equalToSuperview().offset(-30)
+            make.height.equalTo(UIScreen.main.bounds.height / 3.5)
+            
         }
     }
     

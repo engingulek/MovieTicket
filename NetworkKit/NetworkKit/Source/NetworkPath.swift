@@ -9,6 +9,7 @@ public enum NetworkPath {
     case choosedHallAndSession
     case hoursAndSeats
     case createTicket(Parameters)
+    case ticketInfo(String)
 }
 
 extension NetworkPath : TargetType {
@@ -30,6 +31,9 @@ extension NetworkPath : TargetType {
             return Constants.constansts.hoursAndSeats
         case .createTicket:
             return Constants.constansts.createTicket
+        case .ticketInfo(let code):
+            print("ticketList/\(code).json")
+            return  "ticketList/\(code).json"
         }
     }
     

@@ -23,6 +23,7 @@ public class PaymenPageRouter : PaymentPageModuleInterface {
 extension PaymenPageRouter : PaymenPageRouterInterface {
     func toTicket(view:PaymentPageViewControllerInterface?,ticketId:String) {
         @Dependency var ticketModule : TicketModuleInterface
+        print("Router Payment \(ticketId)")
         let viewController = ticketModule.createModule(ticketId:ticketId)
         view?.pushViewControllerAble(
             viewController,

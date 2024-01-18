@@ -53,12 +53,14 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
        if controlInfo {
            barcodeCode = generateRandom9DigitNumber()
            let phoneNumber = contanctInfo.phoneNumber
-           var seats : [[String:Any]] = [[:]]
+           var seats : [[String:Any]] = []
            
            for selectedSeat in createdTicket.selectedSeat {
                let seat = ["row" : selectedSeat.row ,"col":selectedSeat.col]
                seats.append(seat)
            }
+        
+          
            
            let parameters:[String:Any] = [
             "movieUrl" : createdTicket.moveiImageUrl,
@@ -73,10 +75,9 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
            Task {
                @MainActor in
                await createTicket(parameters:parameters)
+               router?.toTicket(view: view,ticketId:ticketId)
            }
-           
-           router?.toTicket(view: view,ticketId:ticketId)
-           
+
         }else{
             view?.createAlertMesssage(
                 title: "Alert",

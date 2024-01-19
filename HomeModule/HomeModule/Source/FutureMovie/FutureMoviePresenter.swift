@@ -22,11 +22,14 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
     }
     
     private func fetchFutureMovie() async {
+        view?.startAnimatigIndicator()
         do{
             let result = try await interactor.fetchFutureMovie()
             futureMovie = result
+            view?.stopAnimatingIndicator()
             view?.realoadData()
         }catch{
+            view?.stopAnimatingIndicator()
             futureMovie = []
             view?.realoadData()
         }

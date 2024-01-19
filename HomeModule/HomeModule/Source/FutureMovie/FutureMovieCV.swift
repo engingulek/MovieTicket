@@ -4,14 +4,16 @@ import CommenUIKit
 import ThemeKit
 import ModelKit
 
-// MARK: - FutureMovieCVDelegate
-protocol FutureMovieCVDelegate {
-    func selectedMovie(movie:MovieResult)
-}
-
 // MARK: - FutureMovieCVInterface
 protocol FutureMovieCVInterface : AnyObject {
     func realoadData()
+    func startAnimatigIndicator()
+    func stopAnimatingIndicator()
+}
+
+// MARK: - FutureMovieCVDelegate
+protocol FutureMovieCVDelegate {
+    func selectedMovie(movie:MovieResult)
 }
 
 final class FutureMovieCV : BaseCollectionView {
@@ -19,8 +21,18 @@ final class FutureMovieCV : BaseCollectionView {
     var delegate : FutureMovieCVDelegate?
     lazy var presenter : FutureMoviePresenterInterface = FutureMoviePresenterr(view: self)
     
+    private lazy var futureMovieCollectionViewActivityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.color = UIColor(hex:Theme.theme.themeColor.activityIndicatorColor)
+        indicator.style = .large
+        return indicator
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.addSubview(futureMovieCollectionViewActivityIndicator)
         collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(PartnerCVC.self,
                          forCellWithReuseIdentifier: PartnerCVC.identifier)
@@ -30,6 +42,11 @@ final class FutureMovieCV : BaseCollectionView {
             layout.scrollDirection = .horizontal
         }
         presenter.viewDidLoad()
+        
+        futureMovieCollectionViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
 }
 
@@ -50,7 +67,7 @@ extension FutureMovieCV {
         
         cell.configureData(
             imageUrl: movie.imageURL,
-            firstText: "\(movie.name)",
+            firstText: movie.name,
             secondaryText: "\(movie.genres.joined(separator: ", "))")
         return cell
     }
@@ -76,10 +93,26 @@ extension FutureMovieCV : UICollectionViewDelegateFlowLayout {
 
 //MARK: FutureMovieCVInterface
 extension FutureMovieCV : FutureMovieCVInterface {
+   
     func realoadData() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
             collectionView.reloadData()
         }
     }
+    
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            futureMovieCollectionViewActivityIndicator.startAnimating()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            futureMovieCollectionViewActivityIndicator.stopAnimating()
+        }
+    }
+    
 }

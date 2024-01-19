@@ -20,6 +20,7 @@ public struct ThemeColor {
     public let thirdLabel :String
     public let textFieldBackColor : String
     public let alertTextFieldBorderColor:String
+    public let activityIndicatorColor:String
 }
 
 //MARK: ThemeFont
@@ -84,7 +85,8 @@ extension Theme {
             secondaryLabel: "#998396",
             thirdLabel: "#000000",
             textFieldBackColor: "#808080",
-            alertTextFieldBorderColor: "#FF0000"),
+            alertTextFieldBorderColor: "#FF0000", 
+            activityIndicatorColor: "#FEFFFF"),
             
             themeFont: ThemeFont(
             primaryFont: .systemFont(ofSize: FontSize.primarySize),

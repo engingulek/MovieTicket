@@ -3,21 +3,36 @@ import UIKit
 import ThemeKit
 import CommenUIKit
 import ModelKit
+import SnapKit
+
+
+protocol  MovieInCinemaCVInterface : AnyObject {
+    func realoadData()
+    func startAnimatigIndicator()
+    func stopAnimatingIndicator()
+}
 
 protocol MovieInCinemaCVDelegate {
     func selectedMovie(movie:MovieResult)
 }
-protocol  MovieInCinemaCVInterface : AnyObject {
-    func realoadData()
-}
 
 final class MovieInCinemaCV : BaseCollectionView {
+    
+    private lazy var movieInCinemaCollectionViewActivityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.color = UIColor(hex:Theme.theme.themeColor.activityIndicatorColor)
+        indicator.style = .large
+        return indicator
+    }()
+    
+    
     var delegate : MovieInCinemaCVDelegate?
     lazy var presenter : MovieInCinemaPresenterInterface = MovieInCinemaPresenter(view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView.addSubview(movieInCinemaCollectionViewActivityIndicator)
         collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(PartnerCVC.self,
                         forCellWithReuseIdentifier: PartnerCVC.identifier)
@@ -25,8 +40,12 @@ final class MovieInCinemaCV : BaseCollectionView {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
                     layout.scrollDirection = .horizontal
                 }
-        
         presenter.viewDidLoad()
+        
+        movieInCinemaCollectionViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
 }
 
@@ -77,4 +96,19 @@ extension MovieInCinemaCV : MovieInCinemaCVInterface {
             collectionView.reloadData()
         }
     }
+    
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            movieInCinemaCollectionViewActivityIndicator.startAnimating()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            movieInCinemaCollectionViewActivityIndicator.stopAnimating()
+        }
+    }
 }
+

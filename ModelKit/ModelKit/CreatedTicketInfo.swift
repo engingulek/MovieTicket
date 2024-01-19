@@ -43,7 +43,7 @@ public struct CreatedTicketInfo {
     public func seatsInfo() -> String {
         var seatsInfo = "Seat(s) : "
         for seat in selectedSeat {
-            seatsInfo += "(R:\(seat.row) C:\(seat.col)) - "
+            seatsInfo += "-(R:\(seat.row) C:\(seat.col)) - "
         }
         return seatsInfo
     }

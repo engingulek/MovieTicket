@@ -35,7 +35,13 @@ class PaymentPagePresenter : PaymentPagePresenterInterface {
             let result =  try await interactor.createTicket(parametets: parameters)
             ticketId = result
         }catch{
-            print("Erorcuk \(error.localizedDescription)")
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {return}
+                view?.createAlertMesssage(
+                    title: "Error",
+                    message: "Something went wrong",
+                    actionTitle: "Ok")
+            }
         }
     }
     

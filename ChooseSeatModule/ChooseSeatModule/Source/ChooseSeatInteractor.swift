@@ -1,6 +1,10 @@
 import Foundation
 import NetworkKit
 
+private enum ChooseSeatError : Error {
+    case indexRange
+}
+
 protocol ChooseSeatInteractorProtocol {
     func chooseHallAndSessionInfo( _ hallSessioniD:Int,
                          _ languageId:Int)  async throws -> ChooseHallAndSessionInfo?
@@ -32,8 +36,11 @@ class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
                 target: .hoursAndSeats,
                 responseClass: DataResult<[SeatAndHoursInfo]>.self)
             let info = response.list.filter{$0.chooseID == chooseId }
-            return info[0]
-           
+            if info.isEmpty {
+                throw ChooseSeatError.indexRange
+            }else{
+                return info[0]
+            }
         }catch {
             throw error
         }

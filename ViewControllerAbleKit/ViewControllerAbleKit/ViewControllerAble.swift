@@ -29,6 +29,7 @@ public protocol NavConUIAble {
     func changeTintColor(color:String)
     func changeTitle(title:String)
     func navigationBarHidden(isHidden:Bool)
+    
 }
 
 extension NavConUIAble where Self :  UIViewController{
@@ -51,7 +52,7 @@ extension NavConUIAble where Self :  UIViewController{
         navigationController?.navigationBar.isHidden = isHidden
     }
     
-   
+    
 }
 
 //MARK: - AlertMessageAble

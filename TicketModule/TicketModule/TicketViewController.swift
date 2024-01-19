@@ -4,7 +4,7 @@ import ThemeKit
 import CommenUIKit
 import ViewControllerAbleKit
 
-typealias Ables = UIViewAble & NavConUIAble 
+typealias Ables = UIViewAble & NavConUIAble & AlertMessageAble
 
 protocol TicketViewControllerInterface : AnyObject,Ables {
     var presenter : TicketPresenterInterface {get}

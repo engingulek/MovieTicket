@@ -23,7 +23,13 @@ final class TicketPresenter : TicketPresenterInterface {
             let result = try await interactor.fetchTicket(ticketId: id)
             ticket = result
         }catch{
-            print(error.localizedDescription)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {return}
+                view?.createAlertMesssage(
+                    title: "Error",
+                    message: "Something went wrong",
+                    actionTitle: "Ok")
+            }
         }
     }
     

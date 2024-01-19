@@ -16,6 +16,9 @@ protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
     
     func prepareTableView()
     func reloadTableView()
+    
+    func startAnimatigIndicator()
+    func stopAnimatingIndicator()
 }
 
 final class HallsAndSessionsViewController : UIViewController {
@@ -33,7 +36,7 @@ final class HallsAndSessionsViewController : UIViewController {
 
 //MARK: HallsAndSessionsViewControllerInterface
 extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterface {
-    
+
     func prepareCollectionView() {
         hallsAndSessionView.prepareCollectionView(view: self)
     }
@@ -53,6 +56,14 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
             guard let self = self else {return}
             hallsAndSessionView.reloadTableView()
         }
+    }
+    
+    func startAnimatigIndicator() {
+        hallsAndSessionView.startAnimatigIndicator()
+    }
+    
+    func stopAnimatingIndicator() {
+        hallsAndSessionView.stopAnimatingIndicator()
     }
 }
 

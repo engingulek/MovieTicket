@@ -6,6 +6,15 @@ import CommenUIKit
 import ThemeKit
 final class HallsAndSessionsView : UIView {
     
+    private lazy var hallsInfoTableViewActivityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.color = UIColor(hex:Theme.theme.themeColor.activityIndicatorColor)
+        indicator.style = .large
+        return indicator
+    }()
+    
+    
     private lazy var datecollectionview : UICollectionView  = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -52,6 +61,20 @@ final class HallsAndSessionsView : UIView {
         hallsInfoTableView.reloadData()
     }
     
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hallsInfoTableViewActivityIndicator.startAnimating()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hallsInfoTableViewActivityIndicator.stopAnimating()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(datecollectionview)
@@ -68,6 +91,12 @@ final class HallsAndSessionsView : UIView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+        }
+        
+        hallsInfoTableView.addSubview(hallsInfoTableViewActivityIndicator)
+        hallsInfoTableViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
     }
     

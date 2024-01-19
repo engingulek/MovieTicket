@@ -72,9 +72,6 @@
             location = "group:../SearchMovie/SearchMovie.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:../TicketModule/TicketModule.xcodeproj">
-         </FileRef>
-         <FileRef
             location = "group:../HallsAndSessionsModule/HallsAndSessionsModule.xcodeproj">
          </FileRef>
          <FileRef
@@ -82,6 +79,9 @@
          </FileRef>
          <FileRef
             location = "group:../PaymentPageModule/PaymentPageModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../TicketModule/TicketModule.xcodeproj">
          </FileRef>
       </Group>
       <Group

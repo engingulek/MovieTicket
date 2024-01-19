@@ -50,6 +50,8 @@ extension NavConUIAble where Self :  UIViewController{
     public func navigationBarHidden(isHidden:Bool){
         navigationController?.navigationBar.isHidden = isHidden
     }
+    
+   
 }
 
 //MARK: - AlertMessageAble

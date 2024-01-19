@@ -16,6 +16,9 @@ protocol ChooseSeatViewControllerInterface : AnyObject,Ables {
     
     func configureMovieInfo(info:ChooseHallAndSessionInfo)
     func seatIndos(info:[SeatsInfo],selectedInfo:[SelectedSeat])
+    
+    func startAnimatigIndicator()
+    func stopAnimatingIndicator()
 }
 
 final class ChooseSeatViewController : UIViewController {
@@ -57,6 +60,15 @@ extension ChooseSeatViewController : ChooseSeatViewControllerInterface {
     func seatIndos(info: [SeatsInfo],selectedInfo:[SelectedSeat]) {
         chooseSeatView.seatDesing(seatInfo: info,selectedInfo:selectedInfo)
     }
+    
+    func startAnimatigIndicator() {
+        chooseSeatView.startAnimatigIndicator()
+    }
+    
+    func stopAnimatingIndicator() {
+        chooseSeatView.stopAnimatingIndicator()
+    }
+    
 }
 
 //MARK: UICollectionViewDelegate,UICollectionViewDataSource

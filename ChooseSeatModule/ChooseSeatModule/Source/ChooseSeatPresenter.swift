@@ -57,14 +57,16 @@ final class ChooseSeatPresenter : ChooseSeatPresenterInterface {
     }
     
     private func fetchSeatAndHoursInfo(chooseId:Int) async {
+        view?.startAnimatigIndicator()
         do{
             let result = try await interactor.hoursAndSeats(chooseId: chooseId)
             hours = result.hours
             view?.reloadCollecionView()
+            view?.stopAnimatingIndicator()
           
         }catch{
-            hours = []
             view?.reloadCollecionView()
+            view?.stopAnimatingIndicator()
         }
     }
     

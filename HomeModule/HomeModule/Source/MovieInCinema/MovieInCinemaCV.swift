@@ -10,6 +10,7 @@ protocol  MovieInCinemaCVInterface : AnyObject {
     func realoadData()
     func startAnimatigIndicator()
     func stopAnimatingIndicator()
+    func messageWithLabel(text:String)
 }
 
 protocol MovieInCinemaCVDelegate {
@@ -26,6 +27,14 @@ final class MovieInCinemaCV : BaseCollectionView {
         return indicator
     }()
     
+    private lazy var movieListEmpty :  UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.font = Theme.theme.themeFont.cellLabelFont
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
+        return label
+    }()
+    
     
     var delegate : MovieInCinemaCVDelegate?
     lazy var presenter : MovieInCinemaPresenterInterface = MovieInCinemaPresenter(view: self)
@@ -33,6 +42,7 @@ final class MovieInCinemaCV : BaseCollectionView {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.addSubview(movieInCinemaCollectionViewActivityIndicator)
+        collectionView.addSubview(movieListEmpty)
         collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(PartnerCVC.self,
                         forCellWithReuseIdentifier: PartnerCVC.identifier)
@@ -43,6 +53,11 @@ final class MovieInCinemaCV : BaseCollectionView {
         presenter.viewDidLoad()
         
         movieInCinemaCollectionViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        movieListEmpty.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
@@ -90,6 +105,15 @@ extension MovieInCinemaCV : UICollectionViewDelegateFlowLayout  {
 
 //MARK :  MovieInCinemaCVInterface
 extension MovieInCinemaCV : MovieInCinemaCVInterface {
+    func messageWithLabel(text:String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            movieListEmpty.isHidden = false
+            movieListEmpty.text = text
+        }
+      
+    }
+    
     func realoadData() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}

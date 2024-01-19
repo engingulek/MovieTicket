@@ -19,6 +19,7 @@ protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
     
     func startAnimatigIndicator()
     func stopAnimatingIndicator()
+    func messageText(text:String)
 }
 
 final class HallsAndSessionsViewController : UIViewController {
@@ -36,7 +37,8 @@ final class HallsAndSessionsViewController : UIViewController {
 
 //MARK: HallsAndSessionsViewControllerInterface
 extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterface {
-
+   
+    
     func prepareCollectionView() {
         hallsAndSessionView.prepareCollectionView(view: self)
     }
@@ -52,10 +54,7 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
     }
     
     func reloadTableView() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            hallsAndSessionView.reloadTableView()
-        }
+        hallsAndSessionView.reloadTableView()
     }
     
     func startAnimatigIndicator() {
@@ -64,6 +63,10 @@ extension HallsAndSessionsViewController : HallsAndSessionsViewControllerInterfa
     
     func stopAnimatingIndicator() {
         hallsAndSessionView.stopAnimatingIndicator()
+    }
+    
+    func messageText(text: String) {
+        hallsAndSessionView.messageText(text: text)
     }
 }
 

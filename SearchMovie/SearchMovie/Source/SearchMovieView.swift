@@ -62,7 +62,11 @@ class SearchMovieView : UIView {
     }
     
     func reloadTableView(){
-        searchMovieTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            searchMovieTableView.reloadData()
+        }
+        
     }
     
     func prepareTextField(view:SearchMovieViewController) {
@@ -107,6 +111,13 @@ class SearchMovieView : UIView {
             make.trailing.equalToSuperview().offset(-10)
         }
         
+        
+        addSubview(searchMovieTableViewActivityIndicator)
+        searchMovieTableViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
         addSubview(searchMovieTableView)
         searchMovieTableView.snp.makeConstraints { make in
             make.top.equalTo(searchView.snp.bottom).offset(10)
@@ -114,14 +125,8 @@ class SearchMovieView : UIView {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
-        searchMovieTableView.addSubview(searchMovieTableViewActivityIndicator)
-        searchMovieTableViewActivityIndicator.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
     }
-        
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

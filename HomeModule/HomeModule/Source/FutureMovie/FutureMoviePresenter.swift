@@ -26,11 +26,17 @@ class FutureMoviePresenterr : FutureMoviePresenterInterface {
         do{
             let result = try await interactor.fetchFutureMovie()
             futureMovie = result
+            if futureMovie.isEmpty {
+                view?.messageWithLabel(text: "No Movie")
+            }else{
+                view?.messageWithLabel(text: "")
+            }
             view?.stopAnimatingIndicator()
             view?.realoadData()
         }catch{
             view?.stopAnimatingIndicator()
             futureMovie = []
+            view?.messageWithLabel(text: "Something went wrong")
             view?.realoadData()
         }
     }

@@ -28,11 +28,17 @@ class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
         do{
             let result = try await interactor.fetchMovieInCinema()
             movieInCinema = result
+            if movieInCinema.isEmpty {
+                view?.messageWithLabel(text: "No Movie")
+            }else{
+                view?.messageWithLabel(text: "")
+            }
             view?.stopAnimatingIndicator()
             view?.realoadData()
         }catch{
             view?.stopAnimatingIndicator()
             movieInCinema = []
+            view?.messageWithLabel(text: "Something went wrong")
             view?.realoadData()
         }
     }

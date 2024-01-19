@@ -14,7 +14,6 @@ final class HallsAndSessionsView : UIView {
         return indicator
     }()
     
-    
     private lazy var datecollectionview : UICollectionView  = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -32,6 +31,13 @@ final class HallsAndSessionsView : UIView {
         return collectionview
     }()
     
+    private lazy var movieListEmpty :  UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.font = Theme.theme.themeFont.cellLabelFont
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
+        return label
+    }()
     
     private lazy var hallsInfoTableView : UITableView = {
         let tableView = UITableView()
@@ -58,7 +64,11 @@ final class HallsAndSessionsView : UIView {
     }
     
     func reloadTableView(){
-        hallsInfoTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hallsInfoTableView.reloadData()
+        }
+      
     }
     
     func startAnimatigIndicator() {
@@ -72,6 +82,14 @@ final class HallsAndSessionsView : UIView {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
             hallsInfoTableViewActivityIndicator.stopAnimating()
+        }
+    }
+    
+    func messageText(text:String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            movieListEmpty.isHidden = false
+            movieListEmpty.text = text
         }
     }
     
@@ -93,8 +111,14 @@ final class HallsAndSessionsView : UIView {
             make.bottom.equalToSuperview()
         }
         
-        hallsInfoTableView.addSubview(hallsInfoTableViewActivityIndicator)
+        addSubview(hallsInfoTableViewActivityIndicator)
         hallsInfoTableViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        addSubview(movieListEmpty)
+        movieListEmpty.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }

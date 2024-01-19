@@ -6,6 +6,7 @@ import ModelKit
 
 // MARK: - FutureMovieCVInterface
 protocol FutureMovieCVInterface : AnyObject {
+    func messageWithLabel(text:String)
     func realoadData()
     func startAnimatigIndicator()
     func stopAnimatingIndicator()
@@ -21,6 +22,14 @@ final class FutureMovieCV : BaseCollectionView {
     var delegate : FutureMovieCVDelegate?
     lazy var presenter : FutureMoviePresenterInterface = FutureMoviePresenterr(view: self)
     
+    private lazy var movieListEmpty :  UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.font = Theme.theme.themeFont.cellLabelFont
+        label.textColor = UIColor(hex: Theme.theme.themeColor.primaryLabel)
+        return label
+    }()
+    
     private lazy var futureMovieCollectionViewActivityIndicator : UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.hidesWhenStopped = true
@@ -33,6 +42,7 @@ final class FutureMovieCV : BaseCollectionView {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.addSubview(futureMovieCollectionViewActivityIndicator)
+        collectionView.addSubview(movieListEmpty)
         collectionView.backgroundColor = UIColor(hex:Theme.theme.themeColor.primaryBackground)
         collectionView.register(PartnerCVC.self,
                          forCellWithReuseIdentifier: PartnerCVC.identifier)
@@ -42,7 +52,10 @@ final class FutureMovieCV : BaseCollectionView {
             layout.scrollDirection = .horizontal
         }
         presenter.viewDidLoad()
-        
+        movieListEmpty.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
         futureMovieCollectionViewActivityIndicator.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -93,6 +106,14 @@ extension FutureMovieCV : UICollectionViewDelegateFlowLayout {
 
 //MARK: FutureMovieCVInterface
 extension FutureMovieCV : FutureMovieCVInterface {
+    func messageWithLabel(text:String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            movieListEmpty.isHidden = false
+            movieListEmpty.text = text
+        }
+      
+    }
    
     func realoadData() {
         DispatchQueue.main.async { [weak self] in

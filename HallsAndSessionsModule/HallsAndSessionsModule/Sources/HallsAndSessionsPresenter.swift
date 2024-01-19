@@ -43,9 +43,15 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
                 movieId: movieId,
                 date: selectedDate)
             hallsAndSessions = result
+            if hallsAndSessions.isEmpty {
+                view?.messageText(text: "No Hall And Session")
+            }else{
+                view?.messageText(text: "")
+            }
             view?.stopAnimatingIndicator()
             view?.reloadTableView()
         }catch{
+            view?.messageText(text: "Something went wrong")
             view?.stopAnimatingIndicator()
             hallsAndSessions = []
             view?.reloadTableView()

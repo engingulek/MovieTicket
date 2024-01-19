@@ -51,25 +51,18 @@ extension SearchMovieViewController : SearchMovieViewControllerInterface {
     }
     
     func relaodTableView() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            searchMovieView.reloadTableView()
-        }
+        searchMovieView.reloadTableView()
     }
     
     func startAnimatigIndicator() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            searchMovieView.startAnimatigIndicator()
-        }
+        searchMovieView.startAnimatigIndicator()
     }
     
     func stopAnimatingIndicator() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            searchMovieView.stopAnimatingIndicator()
-        }
+        searchMovieView.stopAnimatingIndicator()
     }
+    
+   
     
 }
 

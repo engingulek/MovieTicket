@@ -165,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				7DCAB3662B3DD8AA0045C37D /* view */,
-				7D2F45172B3C7A9200B4C31D /* FutureMovie */,
 				7D2F45142B3C78DB00B4C31D /* MovieInCinema */,
+				7D2F45172B3C7A9200B4C31D /* FutureMovie */,
 				7D2F44A62B3B57AF00B4C31D /* HomeRouter.swift */,
 				7D2F44A42B3B575200B4C31D /* HomeViewController.swift */,
 				7D74F75B2B4ED5080000A9BA /* HomeInteractor.swift */,

@@ -32,7 +32,6 @@ extension NetworkPath : TargetType {
         case .createTicket:
             return Constants.constansts.createTicket
         case .ticketInfo(let code):
-            print("ticketList/\(code).json")
             return  "ticketList/\(code).json"
         }
     }

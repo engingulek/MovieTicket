@@ -45,6 +45,14 @@ final class ChooseSeatView : UIView {
         return label
     }()
     
+    private lazy var hourcollectionviewActivityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.color = UIColor(hex:Theme.theme.themeColor.activityIndicatorColor)
+        indicator.style = .large
+        return indicator
+    }()
+    
     private lazy var hourcollectionview : UICollectionView  = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -254,6 +262,21 @@ final class ChooseSeatView : UIView {
        
     }
     
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hourcollectionviewActivityIndicator.startAnimating()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            hourcollectionviewActivityIndicator.stopAnimating()
+        }
+    }
+
+    
     private func configureUI(){
 
         addSubview(movieNameLabel)
@@ -342,6 +365,12 @@ final class ChooseSeatView : UIView {
             make.top.equalTo(seatEmptyUIView.snp.top)
             make.leading.equalTo(seatEmptyUIView.snp.trailing).offset(5)
             
+        }
+        
+        addSubview(hourcollectionviewActivityIndicator)
+        hourcollectionviewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         
         addSubview(hourcollectionview)

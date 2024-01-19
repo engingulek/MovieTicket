@@ -33,6 +33,9 @@ class ChooseSeatInteractor : ChooseSeatInteractorProtocol {
                 responseClass: DataResult<[SeatAndHoursInfo]>.self)
             let info = response.list.filter{$0.chooseID == chooseId }
             return info[0]
-            }
+           
+        }catch {
+            throw error
+        }
     }
 }

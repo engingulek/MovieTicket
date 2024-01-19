@@ -38,7 +38,7 @@ final class HomeViewController: UIViewController {
 
 //MARK:  HomeViewControllerInterface
 extension HomeViewController : HomeViewControllerInterface {
-    
+ 
     func prepareCollectionView() {
         homeView.prepareCollectionView(view: self)
     }
@@ -86,7 +86,7 @@ extension HomeViewController : UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return cellTypes.count
+        return presenter.numberOfSection()
     }
 }
 
@@ -123,15 +123,15 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
         return size
     }
     
-    func collectionView(_ collectionView: UICollectionView, 
-                    viewForSupplementaryElementOfKind kind: String,
-                    at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionView.elementKindSectionHeader {
             guard let header = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: HeaderCollectionReuableView.identifier,
-                for: indexPath) as? HeaderCollectionReuableView 
+                for: indexPath) as? HeaderCollectionReuableView
                     
             else {return UICollectionReusableView()}
             
@@ -143,9 +143,9 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
         return UICollectionReusableView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, 
-                 layout collectionViewLayout: UICollectionViewLayout,
-                referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         let size = presenter.referenceSizeForHeaderInSection()
         return size
     }

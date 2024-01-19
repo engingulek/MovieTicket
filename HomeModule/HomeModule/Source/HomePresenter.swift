@@ -10,6 +10,7 @@ protocol HomePresenterInterface {
     func viewWilAppear()
     
     func numberOfItemsInSection() -> Int
+    func numberOfSection() -> Int
     func cellForItemAt(at indexPath: IndexPath) -> String
     func sizeForItemAt(at indexPath: IndexPath) -> CGSize
     func headerCollectionReuableView(at indexPath: IndexPath) -> String
@@ -49,6 +50,10 @@ extension HomePresenter : HomePresenterInterface {
     
     func numberOfItemsInSection() -> Int {
         return 1
+    }
+    
+    func numberOfSection() -> Int {
+        return cellTypes.count
     }
     
     func cellForItemAt(at indexPath: IndexPath) -> String {

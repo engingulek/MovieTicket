@@ -28,6 +28,7 @@ class SearchMoviePresenter  {
     
     private var movieInCinemaList : [MovieResult] = []
     private var futureCinemaList : [MovieResult] = []
+    
     init(view: SearchMovieViewControllerInterface?,
          router : SearchMovieRouterInterface? = nil,
          interactor : SearchViewInteractorProtocol = SearchViewInteractor.shared) {
@@ -37,6 +38,7 @@ class SearchMoviePresenter  {
     }
     
     private func searchMovieInCinema() async {
+        view?.startAnimatigIndicator()
         do {
             let result = try await interactor.searchMovieInCinema()
             if searchText.isEmpty {
@@ -46,6 +48,7 @@ class SearchMoviePresenter  {
                     $0.name.contains(searchText)
                 }
             }
+            view?.stopAnimatingIndicator()
             view?.relaodTableView()
             
         }catch{
@@ -56,6 +59,7 @@ class SearchMoviePresenter  {
     
     
     private func searchFutureSinema() async {
+        view?.startAnimatigIndicator()
         do {
             let result = try await interactor.searchFutureMovie()
             
@@ -66,9 +70,11 @@ class SearchMoviePresenter  {
                     $0.name.contains(searchText)
                 }
             }
+            view?.stopAnimatingIndicator()
             view?.relaodTableView()
         }catch{
             futureCinemaList = []
+            view?.stopAnimatingIndicator()
             view?.relaodTableView()
         }
     }

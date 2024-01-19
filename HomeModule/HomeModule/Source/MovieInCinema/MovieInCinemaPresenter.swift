@@ -24,13 +24,16 @@ class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
     }
     
     private func fetchMoveiInCinema() async {
+        view?.startAnimatigIndicator()
         do{
             let result = try await interactor.fetchMovieInCinema()
             movieInCinema = result
+            view?.stopAnimatingIndicator()
             view?.realoadData()
         }catch{
+            view?.stopAnimatingIndicator()
             movieInCinema = []
-            
+            view?.realoadData()
         }
     }
     

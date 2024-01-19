@@ -37,14 +37,16 @@ final class HallsAndSessionsPresenter : HallsAndSessionsPresenterInterface {
     }
     
     private func fetchHallsAndSessions(selectedDate:String) async {
-        
+        view?.startAnimatigIndicator()
         do {
             let result = try await interactor.filterHallsAndSessionsFilterDate(
                 movieId: movieId,
                 date: selectedDate)
             hallsAndSessions = result
+            view?.stopAnimatingIndicator()
             view?.reloadTableView()
         }catch{
+            view?.stopAnimatingIndicator()
             hallsAndSessions = []
             view?.reloadTableView()
         }

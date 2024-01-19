@@ -28,6 +28,14 @@ class SearchMovieView : UIView {
         return uiview
     }()
     
+    private lazy var searchMovieTableViewActivityIndicator : UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        indicator.color = UIColor(hex:Theme.theme.themeColor.activityIndicatorColor)
+        indicator.style = .large
+        return indicator
+    }()
+    
     private lazy var searchMovieTableView : UITableView = {
         let tableView = UITableView()
         tableView.register(SearchMovieTVC.self,
@@ -61,6 +69,20 @@ class SearchMovieView : UIView {
         searhTextField.delegate = view
     }
     
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            searchMovieTableViewActivityIndicator.startAnimating()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            searchMovieTableViewActivityIndicator.stopAnimating()
+        }
+    }
+    
     private func configureUI(){
         addSubview(searchView)
         searchView.snp.makeConstraints { make in
@@ -91,6 +113,12 @@ class SearchMovieView : UIView {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
+        }
+        
+        searchMovieTableView.addSubview(searchMovieTableViewActivityIndicator)
+        searchMovieTableViewActivityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
     }
         

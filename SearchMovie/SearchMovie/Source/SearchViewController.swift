@@ -13,6 +13,8 @@ protocol SearchMovieViewControllerInterface :  AnyObject,Ables {
     func prepareTableView()
     func relaodTableView()
     func searchTextfieldText(searchText:String)
+    func startAnimatigIndicator()
+    func stopAnimatingIndicator()
 }
 
 final class SearchMovieViewController : UIViewController {
@@ -38,7 +40,6 @@ extension SearchMovieViewController :  UITextFieldDelegate {
 }
 
 extension SearchMovieViewController : SearchMovieViewControllerInterface {
-   
     
     func prepareTableView() {
         searchMovieView.prepareTableView(view: self)
@@ -55,6 +56,21 @@ extension SearchMovieViewController : SearchMovieViewControllerInterface {
             searchMovieView.reloadTableView()
         }
     }
+    
+    func startAnimatigIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            searchMovieView.startAnimatigIndicator()
+        }
+    }
+    
+    func stopAnimatingIndicator() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            searchMovieView.stopAnimatingIndicator()
+        }
+    }
+    
 }
 
 extension SearchMovieViewController : UITableViewDelegate,UITableViewDataSource {

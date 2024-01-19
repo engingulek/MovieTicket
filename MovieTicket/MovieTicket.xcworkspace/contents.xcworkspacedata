@@ -69,7 +69,10 @@
             location = "group:../HomeModule/HomeModule.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:../MovieDetail/MovieDetail.xcodeproj">
+            location = "group:../SearchMovie/SearchMovie.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../TicketModule/TicketModule.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:../HallsAndSessionsModule/HallsAndSessionsModule.xcodeproj">
@@ -85,10 +88,7 @@
          location = "container:"
          name = "Shared">
          <FileRef
-            location = "group:../SearchMovie/SearchMovie.xcodeproj">
-         </FileRef>
-         <FileRef
-            location = "group:../TicketModule/TicketModule.xcodeproj">
+            location = "group:../MovieDetail/MovieDetail.xcodeproj">
          </FileRef>
       </Group>
    </Group>

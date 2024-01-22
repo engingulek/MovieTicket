@@ -22,6 +22,10 @@
 		7D4E7F402B3EFEF300A7196B /* HallınfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */; };
 		7D4E7F6E2B40497100A7196B /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6D2B40497100A7196B /* ThemeKit.framework */; };
 		7D4E7F6F2B40497100A7196B /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F6D2B40497100A7196B /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DD6C77F2B5EE87600E94F46 /* HallsAndSessionsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6C77E2B5EE87600E94F46 /* HallsAndSessionsModuleTests.swift */; };
+		7DD6C7802B5EE87600E94F46 /* HallsAndSessionsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7EEB2B3EEB7300A7196B /* HallsAndSessionsModule.framework */; };
+		7DD6C7872B5EE8A000E94F46 /* MockHallsAndSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6C7862B5EE8A000E94F46 /* MockHallsAndSessionsViewController.swift */; };
+		7DD6C7892B5EEB2400E94F46 /* MockHallsAndSessionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6C7882B5EEB2400E94F46 /* MockHallsAndSessionsInteractor.swift */; };
 		7DF7B21C2B53FB1B001EBF94 /* HallAndSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7B21B2B53FB1B001EBF94 /* HallAndSession.swift */; };
 		7DF7B21E2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7B21D2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift */; };
 		7DF7B2202B53FBA3001EBF94 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */; };
@@ -29,6 +33,16 @@
 		7DF7B2232B5404B0001EBF94 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */; };
 		7DF7B2242B5404B0001EBF94 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B2222B5404B0001EBF94 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DD6C7812B5EE87600E94F46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D4E7EE22B3EEB7300A7196B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D4E7EEA2B3EEB7300A7196B;
+			remoteInfo = HallsAndSessionsModule;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7D4E7F2E2B3EEF1500A7196B /* Embed Frameworks */ = {
@@ -60,6 +74,10 @@
 		7D4E7F362B3EF36700A7196B /* HallsAndSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsView.swift; sourceTree = "<group>"; };
 		7D4E7F3F2B3EFEF300A7196B /* HallınfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HallınfoTVC.swift"; sourceTree = "<group>"; };
 		7D4E7F6D2B40497100A7196B /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD6C77C2B5EE87600E94F46 /* HallsAndSessionsModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HallsAndSessionsModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD6C77E2B5EE87600E94F46 /* HallsAndSessionsModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsModuleTests.swift; sourceTree = "<group>"; };
+		7DD6C7862B5EE8A000E94F46 /* MockHallsAndSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHallsAndSessionsViewController.swift; sourceTree = "<group>"; };
+		7DD6C7882B5EEB2400E94F46 /* MockHallsAndSessionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHallsAndSessionsInteractor.swift; sourceTree = "<group>"; };
 		7DF7B21B2B53FB1B001EBF94 /* HallAndSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallAndSession.swift; sourceTree = "<group>"; };
 		7DF7B21D2B53FB74001EBF94 /* HallsAndSessionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsAndSessionsInteractor.swift; sourceTree = "<group>"; };
 		7DF7B21F2B53FBA3001EBF94 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +99,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DD6C7792B5EE87600E94F46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD6C7802B5EE87600E94F46 /* HallsAndSessionsModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4E7EED2B3EEB7300A7196B /* HallsAndSessionsModule */,
+				7DD6C77D2B5EE87600E94F46 /* HallsAndSessionsModuleTests */,
 				7D4E7EEC2B3EEB7300A7196B /* Products */,
 				7D4E7F272B3EEF1500A7196B /* Frameworks */,
 			);
@@ -97,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4E7EEB2B3EEB7300A7196B /* HallsAndSessionsModule.framework */,
+				7DD6C77C2B5EE87600E94F46 /* HallsAndSessionsModuleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +173,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7DD6C77D2B5EE87600E94F46 /* HallsAndSessionsModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DD6C77E2B5EE87600E94F46 /* HallsAndSessionsModuleTests.swift */,
+				7DD6C7862B5EE8A000E94F46 /* MockHallsAndSessionsViewController.swift */,
+				7DD6C7882B5EEB2400E94F46 /* MockHallsAndSessionsInteractor.swift */,
+			);
+			path = HallsAndSessionsModuleTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -182,6 +220,24 @@
 			productReference = 7D4E7EEB2B3EEB7300A7196B /* HallsAndSessionsModule.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		7DD6C77B2B5EE87600E94F46 /* HallsAndSessionsModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD6C7852B5EE87600E94F46 /* Build configuration list for PBXNativeTarget "HallsAndSessionsModuleTests" */;
+			buildPhases = (
+				7DD6C7782B5EE87600E94F46 /* Sources */,
+				7DD6C7792B5EE87600E94F46 /* Frameworks */,
+				7DD6C77A2B5EE87600E94F46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DD6C7822B5EE87600E94F46 /* PBXTargetDependency */,
+			);
+			name = HallsAndSessionsModuleTests;
+			productName = HallsAndSessionsModuleTests;
+			productReference = 7DD6C77C2B5EE87600E94F46 /* HallsAndSessionsModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,11 +245,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					7D4E7EEA2B3EEB7300A7196B = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
+					};
+					7DD6C77B2B5EE87600E94F46 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -214,12 +274,20 @@
 			projectRoot = "";
 			targets = (
 				7D4E7EEA2B3EEB7300A7196B /* HallsAndSessionsModule */,
+				7DD6C77B2B5EE87600E94F46 /* HallsAndSessionsModuleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7D4E7EE92B3EEB7300A7196B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD6C77A2B5EE87600E94F46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -244,7 +312,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DD6C7782B5EE87600E94F46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD6C77F2B5EE87600E94F46 /* HallsAndSessionsModuleTests.swift in Sources */,
+				7DD6C7892B5EEB2400E94F46 /* MockHallsAndSessionsInteractor.swift in Sources */,
+				7DD6C7872B5EE8A000E94F46 /* MockHallsAndSessionsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DD6C7822B5EE87600E94F46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D4E7EEA2B3EEB7300A7196B /* HallsAndSessionsModule */;
+			targetProxy = 7DD6C7812B5EE87600E94F46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7D4E7EF02B3EEB7300A7196B /* Debug */ = {
@@ -437,6 +523,38 @@
 			};
 			name = Release;
 		};
+		7DD6C7832B5EE87600E94F46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 34G99QRS57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.HallsAndSessionsModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DD6C7842B5EE87600E94F46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 34G99QRS57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.HallsAndSessionsModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -454,6 +572,15 @@
 			buildConfigurations = (
 				7D4E7EF32B3EEB7400A7196B /* Debug */,
 				7D4E7EF42B3EEB7400A7196B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DD6C7852B5EE87600E94F46 /* Build configuration list for PBXNativeTarget "HallsAndSessionsModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DD6C7832B5EE87600E94F46 /* Debug */,
+				7DD6C7842B5EE87600E94F46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

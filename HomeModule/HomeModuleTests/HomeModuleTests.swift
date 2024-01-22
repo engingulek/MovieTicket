@@ -14,8 +14,6 @@ final class HomeModuleTests: XCTestCase {
     }
     
     override func tearDown() {
-        view = nil
-        presenter = nil
         super.tearDown()
     }
     
@@ -28,7 +26,6 @@ final class HomeModuleTests: XCTestCase {
     
     func test_numberOfSection_ReturnTwo() {
         presenter.viewDidLoad()
-        
         XCTAssertEqual(presenter.numberOfSection(), 2)
     }
     
@@ -144,9 +141,4 @@ final class HomeModuleTests: XCTestCase {
         XCTAssertEqual(view.invokednavigationBarHiddenCount, 1)
         XCTAssertEqual(view.invokednavigationBarHiddenParameters?.isHidden, true)
     }
-    
-    
-    
-
-
 }

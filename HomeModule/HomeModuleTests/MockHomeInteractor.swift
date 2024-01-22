@@ -11,6 +11,7 @@ class MockHomeInteractor : HomeInteractorProtocol {
     var movieInCinemaShouldReturnError : Bool = false
     func fetchMovieInCinema() async throws -> [MovieResult] {
         if movieInCinemaShouldReturnError {
+            print("Deneme")
             throw MockError.mockError
         }else{
             return mockMovieResultData

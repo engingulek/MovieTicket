@@ -8,10 +8,10 @@ typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol HomeViewControllerInterface : AnyObject,Ables {
     
-    var presenter : HomePresenterInterface {get}
+   // var presenter : HomePresenterInterface {get}
     func prepareCollectionView()
     func reloadCollectionView()
-    func textFieldAction()
+    func textFieldAction(text:String)
 }
 
 final class HomeViewController: UIViewController {
@@ -47,8 +47,8 @@ extension HomeViewController : HomeViewControllerInterface {
         homeView.reloadCollectionView()
     }
     
-    func textFieldAction() {
-        homeView.textFieldTextRemove()
+    func textFieldAction(text:String) {
+        homeView.textFieldTextRemove(text:text)
     }
 }
 

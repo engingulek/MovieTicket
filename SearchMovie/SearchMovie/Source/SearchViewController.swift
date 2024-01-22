@@ -9,7 +9,6 @@ import ThemeKit
 typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol SearchMovieViewControllerInterface :  AnyObject,Ables {
-    var presenter : SearchMoviePresenterInterface {get}
     func prepareTableView()
     func relaodTableView()
     func searchTextfieldText(searchText:String)

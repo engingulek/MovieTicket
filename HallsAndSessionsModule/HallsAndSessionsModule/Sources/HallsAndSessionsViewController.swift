@@ -9,7 +9,6 @@ import ThemeKit
 typealias Ables = UIViewAble & SegueAble & NavConUIAble
 
 protocol HallsAndSessionsViewControllerInterface : AnyObject,Ables {
-    var presenter : HallsAndSessionsPresenterInterface {get}
     
     func prepareCollectionView()
     func reloadCollectionView()

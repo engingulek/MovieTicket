@@ -97,7 +97,7 @@ extension HomePresenter : HomePresenterInterface {
     func textDidChange(text: String) {
         if text.count > 4{
             router?.toSearchMovie(searchText: text, view: view)
-            view?.textFieldAction()
+            view?.textFieldAction(text:"")
         }
     }
 }

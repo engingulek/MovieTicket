@@ -10,6 +10,16 @@ struct HallAndSession: Codable {
         case cinameName, date, hallNumber, id, language
         case movieID = "movieId"
     }
+    
+    static let defaultData : HallAndSession =
+        .init(cinameName: "Test",
+              date: "Test",
+              hallNumber: 0,
+              id: 0,
+              language: [.init(id: 0, type: "Test")],
+              movieID: 0)
+    
+    
 }
 
 // MARK: - Language

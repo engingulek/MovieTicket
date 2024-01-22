@@ -3,10 +3,11 @@ import XCTest
 import ModelKit
 @testable import HomeModule
 
-final class MockMovieInCinemaPresenterTests : XCTestCase {
-    private var view : MockMovieInCV!
+final class FutureMoviePresenterTests : XCTestCase {
+    private var view : MockFutureMovieCV!
     private var interactor : MockHomeInteractor!
-    private var presenter : MovieInCinemaPresenter!
+    private var presenter : FutureMoviePresenterr!
+    
     
     override func setUp() {
         view = .init()
@@ -19,11 +20,10 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     }
     
     
-    
     func test_WhenViewDidLoad_fetchMovieInCinema_ReturnData() {
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = false
+        interactor.futureMovieShouldReturnError = false
         let moveiData = MovieResult.defaultData
         interactor.mockMovieResultData.append(moveiData)
         
@@ -42,7 +42,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_ReturnError() {
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = true
+        interactor.futureMovieShouldReturnError = true
         presenter.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -58,7 +58,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_ReturnEmptyData() {
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = false
+        interactor.futureMovieShouldReturnError = false
         interactor.mockMovieResultData = []
         presenter.viewDidLoad()
         
@@ -75,7 +75,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_startAnimating(){
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = false
+        interactor.futureMovieShouldReturnError = false
         interactor.mockMovieResultData = []
         presenter.viewDidLoad()
         
@@ -91,7 +91,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_IfSuccess_stopAnimating(){
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = true
+        interactor.futureMovieShouldReturnError = true
         presenter.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -105,7 +105,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_IfError_stopAnimating(){
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = true
+        interactor.futureMovieShouldReturnError = true
         presenter.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -120,7 +120,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_IfSuccess_reloadData(){
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = false
+        interactor.futureMovieShouldReturnError = false
         presenter.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -135,7 +135,7 @@ final class MockMovieInCinemaPresenterTests : XCTestCase {
     func test_WhenViewDidLoad_fetchMovieInCinema_IfError_reloadData(){
         let expectation = XCTestExpectation(description: "Async task completed")
         XCTAssertFalse(view.invokedMessageWithLabel)
-        interactor.movieInCinemaShouldReturnError = true
+        interactor.futureMovieShouldReturnError = true
         presenter.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

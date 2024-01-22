@@ -1,8 +1,8 @@
-
 import Foundation
 @testable import HomeModule
 
-class MockMovieInCV : MovieInCinemaCVInterface {
+class MockFutureMovieCV : FutureMovieCVInterface {
+    
     var invokedrealoadData : Bool = false
     var invokedrealoadDataCount = 0
     func realoadData() {
@@ -33,6 +33,4 @@ class MockMovieInCV : MovieInCinemaCVInterface {
          invokedMessageWithLabelCount += 1
          invokedMessageWithLabelParameters = (text:text,())
     }
-    
-    
 }

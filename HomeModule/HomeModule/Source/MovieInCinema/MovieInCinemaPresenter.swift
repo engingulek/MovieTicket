@@ -25,7 +25,6 @@ class MovieInCinemaPresenter : MovieInCinemaPresenterInterface {
     
     private func fetchMoveiInCinema() async {
         view?.startAnimatigIndicator()
-        print("Presenter Test")
         do{
             let result = try await interactor.fetchMovieInCinema()
             movieInCinema = result

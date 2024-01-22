@@ -6,16 +6,90 @@
    </FileRef>
    <Group
       location = "container:"
-      name = "Kits">
+      name = "Apss">
       <FileRef
-         location = "group:../DependenyKit/DependenyKit.xcodeproj">
+         location = "group:../Apps/TicketApp/TicketApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/SearchMovieApp/SearchMovieApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/PaymentPageApp/PaymentPageApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/HallsAndSessionsApp/HallsAndSessionsApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/ChooseSeatApp/ChooseSeatApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/MovieDetailApp/MovieDetailApp.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../Apps/HomeApp/HomeApp.xcodeproj">
       </FileRef>
    </Group>
    <Group
       location = "container:"
+      name = "Kits">
+      <Group
+         location = "container:"
+         name = "DomanKits">
+         <FileRef
+            location = "group:../Kits/DomainKits/DependenyKit/DependenyKit.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "SharedKits">
+         <FileRef
+            location = "group:../Kits/SharedKits/ModelKit/ModelKit.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Kits/SharedKits/CommenUIKit/CommenUIKit.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Kits/SharedKits/ViewControllerAbleKit/ViewControllerAbleKit.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Kits/SharedKits/NetworkKit/NetworkKit.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Kits/SharedKits/ThemeKit/ThemeKit.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "container:"
       name = "Moduls">
-      <FileRef
-         location = "group:../HomeModule/HomeModule.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "Domain">
+         <FileRef
+            location = "group:../Modules/DomainModule/SearchMovie/SearchMovie.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Modules/DomainModule/ChooseSeatModule/ChooseSeatModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Modules/DomainModule/HallsAndSessionsModule/HallsAndSessionsModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Modules/DomainModule/HomeModule/HomeModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Modules/DomainModule/PaymentPageModule/PaymentPageModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:../Modules/DomainModule/TicketModule/TicketModule.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Shared">
+         <FileRef
+            location = "group:../Modules/SharedMocule/MovieDetail/MovieDetail.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>

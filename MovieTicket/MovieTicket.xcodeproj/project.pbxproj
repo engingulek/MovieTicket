@@ -9,21 +9,66 @@
 /* Begin PBXBuildFile section */
 		7D2F44602B3B53A200B4C31D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */; };
 		7D2F44622B3B53A200B4C31D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */; };
-		7D2F44642B3B53A200B4C31D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44632B3B53A200B4C31D /* ViewController.swift */; };
-		7D2F44672B3B53A200B4C31D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F44652B3B53A200B4C31D /* Main.storyboard */; };
 		7D2F44692B3B53A500B4C31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F44682B3B53A500B4C31D /* Assets.xcassets */; };
 		7D2F446C2B3B53A500B4C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */; };
+		7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44A92B3B587100B4C31D /* DependenyKit.framework */; };
+		7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44A92B3B587100B4C31D /* DependenyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; };
+		7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2F44AD2B3B588600B4C31D /* HomeModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */; };
+		7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; };
+		7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F05082B459E0700044D01 /* PaymentPageModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D4372D42B4C11DA0049DB05 /* SearchMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */; };
+		7D4372D52B4C11DA0049DB05 /* SearchMovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; };
+		7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; };
+		7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA75F6F2B46E05400AF1D25 /* TicketModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */; };
+		7DA75F702B46E05400AF1D25 /* TicketModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */; };
+		7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D2F44AC2B3B587100B4C31D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D4E7F462B4035A700A7196B /* HallsAndSessionsModule.framework in Embed Frameworks */,
+				7DCAB33F2B3DA4160045C37D /* MovieDetail.framework in Embed Frameworks */,
+				7D51329D2B4347CA00D6AD70 /* ChooseSeatModule.framework in Embed Frameworks */,
+				7DA75F702B46E05400AF1D25 /* TicketModule.framework in Embed Frameworks */,
+				7D2F44AB2B3B587100B4C31D /* DependenyKit.framework in Embed Frameworks */,
+				7D4372D52B4C11DA0049DB05 /* SearchMovie.framework in Embed Frameworks */,
+				7D3F050A2B459E0700044D01 /* PaymentPageModule.framework in Embed Frameworks */,
+				7D2F44AF2B3B588600B4C31D /* HomeModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D2F445C2B3B53A200B4C31D /* MovieTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D2F44632B3B53A200B4C31D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7D2F44662B3B53A200B4C31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D2F44682B3B53A500B4C31D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D2F446B2B3B53A500B4C31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2F446D2B3B53A500B4C31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D2F44A92B3B587100B4C31D /* DependenyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DependenyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2F44AD2B3B588600B4C31D /* HomeModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomeModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegister.swift; sourceTree = "<group>"; };
+		7D3F05082B459E0700044D01 /* PaymentPageModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PaymentPageModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3F053B2B45D1F500044D01 /* TabbarModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabbarModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HallsAndSessionsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChooseSeatModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F6B2B46E05400AF1D25 /* TicketListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TicketListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +76,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4E7F452B4035A700A7196B /* HallsAndSessionsModule.framework in Frameworks */,
+				7DCAB33E2B3DA4160045C37D /* MovieDetail.framework in Frameworks */,
+				7D51329C2B4347CA00D6AD70 /* ChooseSeatModule.framework in Frameworks */,
+				7DA75F6F2B46E05400AF1D25 /* TicketModule.framework in Frameworks */,
+				7D2F44AA2B3B587100B4C31D /* DependenyKit.framework in Frameworks */,
+				7D4372D42B4C11DA0049DB05 /* SearchMovie.framework in Frameworks */,
+				7D3F05092B459E0700044D01 /* PaymentPageModule.framework in Frameworks */,
+				7D2F44AE2B3B588600B4C31D /* HomeModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +95,7 @@
 			children = (
 				7D2F445E2B3B53A200B4C31D /* MovieTicket */,
 				7D2F445D2B3B53A200B4C31D /* Products */,
+				7D2F44A82B3B587100B4C31D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +112,29 @@
 			children = (
 				7D2F445F2B3B53A200B4C31D /* AppDelegate.swift */,
 				7D2F44612B3B53A200B4C31D /* SceneDelegate.swift */,
-				7D2F44632B3B53A200B4C31D /* ViewController.swift */,
-				7D2F44652B3B53A200B4C31D /* Main.storyboard */,
 				7D2F44682B3B53A500B4C31D /* Assets.xcassets */,
 				7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */,
 				7D2F446D2B3B53A500B4C31D /* Info.plist */,
+				7D2F44B02B3B58E600B4C31D /* DependencyRegister.swift */,
 			);
 			path = MovieTicket;
+			sourceTree = "<group>";
+		};
+		7D2F44A82B3B587100B4C31D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D4372D32B4C11DA0049DB05 /* SearchMovie.framework */,
+				7DA75F6B2B46E05400AF1D25 /* TicketListModule.framework */,
+				7DA75F6C2B46E05400AF1D25 /* TicketModule.framework */,
+				7D3F053B2B45D1F500044D01 /* TabbarModule.framework */,
+				7D3F05082B459E0700044D01 /* PaymentPageModule.framework */,
+				7D51329B2B4347CA00D6AD70 /* ChooseSeatModule.framework */,
+				7D4E7F442B4035A700A7196B /* HallsAndSessionsModule.framework */,
+				7DCAB33D2B3DA4160045C37D /* MovieDetail.framework */,
+				7D2F44AD2B3B588600B4C31D /* HomeModule.framework */,
+				7D2F44A92B3B587100B4C31D /* DependenyKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +147,7 @@
 				7D2F44582B3B53A200B4C31D /* Sources */,
 				7D2F44592B3B53A200B4C31D /* Frameworks */,
 				7D2F445A2B3B53A200B4C31D /* Resources */,
+				7D2F44AC2B3B587100B4C31D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,7 +198,6 @@
 			files = (
 				7D2F446C2B3B53A500B4C31D /* LaunchScreen.storyboard in Resources */,
 				7D2F44692B3B53A500B4C31D /* Assets.xcassets in Resources */,
-				7D2F44672B3B53A200B4C31D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2F44642B3B53A200B4C31D /* ViewController.swift in Sources */,
+				7D2F44B12B3B58E600B4C31D /* DependencyRegister.swift in Sources */,
 				7D2F44602B3B53A200B4C31D /* AppDelegate.swift in Sources */,
 				7D2F44622B3B53A200B4C31D /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +217,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D2F44652B3B53A200B4C31D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D2F44662B3B53A200B4C31D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7D2F446A2B3B53A500B4C31D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +359,6 @@
 				INFOPLIST_FILE = MovieTicket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +386,6 @@
 				INFOPLIST_FILE = MovieTicket/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D419D3A2B596DED0067DB57 /* TicketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D392B596DED0067DB57 /* TicketInteractor.swift */; };
+		7D419D3C2B596E5F0067DB57 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */; };
+		7D419D3D2B596E5F0067DB57 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D419D3F2B597DF30067DB57 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D419D3E2B597DF30067DB57 /* Ticket.swift */; };
+		7D419D422B599A460067DB57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D419D412B599A460067DB57 /* Kingfisher */; };
+		7DA75F1A2B46B1E900AF1D25 /* TicketModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA75F192B46B1E900AF1D25 /* TicketModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */; };
+		7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */; };
+		7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */; };
+		7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */; };
+		7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA75F522B46B5CF00AF1D25 /* SnapKit */; };
+		7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */; };
+		7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; };
+		7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; };
+		7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */; };
+		7DF7B2302B541F66001EBF94 /* ViewControllerAbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */; };
+		7DF7B2312B541F66001EBF94 /* ViewControllerAbleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DA75F5A2B46B61B00AF1D25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DA75F612B46BAA500AF1D25 /* CommenUIKit.framework in Embed Frameworks */,
+				7DF7B2312B541F66001EBF94 /* ViewControllerAbleKit.framework in Embed Frameworks */,
+				7D419D3D2B596E5F0067DB57 /* NetworkKit.framework in Embed Frameworks */,
+				7DA75F592B46B61B00AF1D25 /* ThemeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7D419D392B596DED0067DB57 /* TicketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInteractor.swift; sourceTree = "<group>"; };
+		7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D419D3E2B597DF30067DB57 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		7DA75F162B46B1E900AF1D25 /* TicketModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TicketModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F192B46B1E900AF1D25 /* TicketModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketModule.h; sourceTree = "<group>"; };
+		7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModuleInterface.swift; sourceTree = "<group>"; };
+		7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRouter.swift; sourceTree = "<group>"; };
+		7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommenUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
+		7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewControllerAbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DA75F132B46B1E900AF1D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA75F582B46B61B00AF1D25 /* ThemeKit.framework in Frameworks */,
+				7DA75F532B46B5CF00AF1D25 /* SnapKit in Frameworks */,
+				7D419D422B599A460067DB57 /* Kingfisher in Frameworks */,
+				7D419D3C2B596E5F0067DB57 /* NetworkKit.framework in Frameworks */,
+				7DF7B2302B541F66001EBF94 /* ViewControllerAbleKit.framework in Frameworks */,
+				7DA75F602B46BAA500AF1D25 /* CommenUIKit.framework in Frameworks */,
+				7DA75F552B46B5CF00AF1D25 /* SnapKit-Dynamic in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DA75F0C2B46B1E900AF1D25 = {
+			isa = PBXGroup;
+			children = (
+				7DA75F182B46B1E900AF1D25 /* TicketModule */,
+				7DA75F172B46B1E900AF1D25 /* Products */,
+				7DA75F562B46B61B00AF1D25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7DA75F172B46B1E900AF1D25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DA75F162B46B1E900AF1D25 /* TicketModule.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DA75F182B46B1E900AF1D25 /* TicketModule */ = {
+			isa = PBXGroup;
+			children = (
+				7DA75F192B46B1E900AF1D25 /* TicketModule.h */,
+				7DA75F202B46B23F00AF1D25 /* TicketViewController.swift */,
+				7DA75F222B46B29400AF1D25 /* TicketModuleInterface.swift */,
+				7DA75F242B46B2EE00AF1D25 /* TicketRouter.swift */,
+				7DA75F4F2B46B5BF00AF1D25 /* TicketView.swift */,
+				7DA75F712B46F10F00AF1D25 /* TicketPresenter.swift */,
+				7D419D392B596DED0067DB57 /* TicketInteractor.swift */,
+				7D419D3E2B597DF30067DB57 /* Ticket.swift */,
+			);
+			path = TicketModule;
+			sourceTree = "<group>";
+		};
+		7DA75F562B46B61B00AF1D25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D419D3B2B596E5F0067DB57 /* NetworkKit.framework */,
+				7DF7B22F2B541F66001EBF94 /* ViewControllerAbleKit.framework */,
+				7DA75F5F2B46BAA500AF1D25 /* CommenUIKit.framework */,
+				7DA75F572B46B61B00AF1D25 /* ThemeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7DA75F112B46B1E900AF1D25 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA75F1A2B46B1E900AF1D25 /* TicketModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7DA75F152B46B1E900AF1D25 /* TicketModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DA75F1D2B46B1E900AF1D25 /* Build configuration list for PBXNativeTarget "TicketModule" */;
+			buildPhases = (
+				7DA75F112B46B1E900AF1D25 /* Headers */,
+				7DA75F122B46B1E900AF1D25 /* Sources */,
+				7DA75F132B46B1E900AF1D25 /* Frameworks */,
+				7DA75F142B46B1E900AF1D25 /* Resources */,
+				7DA75F5A2B46B61B00AF1D25 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TicketModule;
+			packageProductDependencies = (
+				7DA75F522B46B5CF00AF1D25 /* SnapKit */,
+				7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */,
+				7D419D412B599A460067DB57 /* Kingfisher */,
+			);
+			productName = TicketModule;
+			productReference = 7DA75F162B46B1E900AF1D25 /* TicketModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DA75F0D2B46B1E900AF1D25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7DA75F152B46B1E900AF1D25 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+				};
+			};
+			buildConfigurationList = 7DA75F102B46B1E900AF1D25 /* Build configuration list for PBXProject "TicketModule" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DA75F0C2B46B1E900AF1D25;
+			packageReferences = (
+				7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = 7DA75F172B46B1E900AF1D25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DA75F152B46B1E900AF1D25 /* TicketModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DA75F142B46B1E900AF1D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DA75F122B46B1E900AF1D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA75F212B46B23F00AF1D25 /* TicketViewController.swift in Sources */,
+				7DA75F722B46F10F00AF1D25 /* TicketPresenter.swift in Sources */,
+				7D419D3A2B596DED0067DB57 /* TicketInteractor.swift in Sources */,
+				7DA75F232B46B29400AF1D25 /* TicketModuleInterface.swift in Sources */,
+				7DA75F502B46B5BF00AF1D25 /* TicketView.swift in Sources */,
+				7D419D3F2B597DF30067DB57 /* Ticket.swift in Sources */,
+				7DA75F252B46B2EE00AF1D25 /* TicketRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7DA75F1B2B46B1E900AF1D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7DA75F1C2B46B1E900AF1D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7DA75F1E2B46B1E900AF1D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 34G99QRS57;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.TicketModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7DA75F1F2B46B1E900AF1D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 34G99QRS57;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.engingulek.TicketModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DA75F102B46B1E900AF1D25 /* Build configuration list for PBXProject "TicketModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DA75F1B2B46B1E900AF1D25 /* Debug */,
+				7DA75F1C2B46B1E900AF1D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DA75F1D2B46B1E900AF1D25 /* Build configuration list for PBXNativeTarget "TicketModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DA75F1E2B46B1E900AF1D25 /* Debug */,
+				7DA75F1F2B46B1E900AF1D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+		7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D419D412B599A460067DB57 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D419D402B599A460067DB57 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7DA75F522B46B5CF00AF1D25 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7DA75F542B46B5CF00AF1D25 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DA75F512B46B5CF00AF1D25 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7DA75F0D2B46B1E900AF1D25 /* Project object */;
+}

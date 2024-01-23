@@ -189,7 +189,7 @@ final class ChooseSeatView : UIView {
     func seatDesing(seatInfo:[SeatsInfo],selectedInfo:[SelectedSeat]){
         var chosen = "\(Theme.theme.themeText.chosenSeat) : "
         for seat in selectedInfo {
-            chosen += "(\(seat.row),\(seat.col))"
+            chosen += "(R:\(seat.row),C:\(seat.col))"
         }
         choosenSeatsLabel.text = chosen
         seatCount = selectedInfo.count
@@ -215,13 +215,13 @@ final class ChooseSeatView : UIView {
                         if seatTypes[0].status == "disable"{
                             squareView.backgroundColor = UIColor(hex: Theme.theme.themeColor.primaryBackground)
                         }else{
-                            squareView.backgroundColor = UIColor.red
+                            squareView.backgroundColor = UIColor(hex: Theme.theme.themeColor.fullSeat)
                         }
                       
                     }else if selectedControl{
-                        squareView.backgroundColor = UIColor.green
+                        squareView.backgroundColor = UIColor(hex: Theme.theme.themeColor.choosenSeat)
                     }else{
-                        squareView.backgroundColor = UIColor.white
+                        squareView.backgroundColor = UIColor(hex: Theme.theme.themeColor.emptySeat)
                     }
                     
                     squareView.layer.cornerRadius = Radius.small.rawValue

@@ -21,6 +21,9 @@ public struct ThemeColor {
     public let textFieldBackColor : String
     public let alertTextFieldBorderColor:String
     public let activityIndicatorColor:String
+    public let fullSeat:String
+    public let choosenSeat:String
+    public let emptySeat:String
 }
 
 //MARK: ThemeFont
@@ -86,7 +89,12 @@ extension Theme {
             thirdLabel: "#000000",
             textFieldBackColor: "#808080",
             alertTextFieldBorderColor: "#FF0000", 
-            activityIndicatorColor: "#FEFFFF"),
+            activityIndicatorColor: "#FEFFFF",
+            fullSeat: "#FF0000",
+            choosenSeat: "#7C44C2",
+            emptySeat: "#FEFFFF"
+            
+            ),
             
             themeFont: ThemeFont(
             primaryFont: .systemFont(ofSize: FontSize.primarySize),
@@ -97,7 +105,7 @@ extension Theme {
             
             themeText: ThemeText(
             movieInCinema: "Movie In Cinema",
-            future: "Future Movie",
+            future: "Upcoming Movie",
             defaultText: "", 
             searchTextFieldPlaceholder: "Search Movie",
             movieInfo: "Movie Info", 
